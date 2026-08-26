@@ -377,6 +377,8 @@ def log_run(run_id: str, task: str, sub: str, description: str, config: dict,
             results: dict) -> None:
     """
     Append one JSON line per experiment run to prediction/experiments/runs.jsonl.
+    Note: `git_sha`/`commit` record PRE-COMMIT HEAD (the sha of the worktree
+    before this sub-stage's commit), not the final commit containing the run.
     Schema (superset of both the approved plan and the registry convention):
     {id, run_id, task, sub, description, config, metrics_per_fold, metrics_agg,
      baseline_metrics_agg, cv_metrics, baseline_metrics, timestamp, date,

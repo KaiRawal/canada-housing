@@ -9,7 +9,7 @@ Conventions: each sub-stage = one approved plan -> one experimenter run -> one c
 ## T1. Harness & CV protocol
 **Mini-goal**: shared experiment infrastructure so every later task is comparable.
 - [x] T1.1 — Build `prediction/experiments/harness.py`: loads imputation outputs, defines expanding-window folds (grouped by CMA) ONCE, computes MDA/NMSE/NRMSE/NMAE via evaluation.py, writes runs.jsonl rows
-- [ ] T1.2 — Validate harness by reproducing persistence-baseline CV metrics; confirm no leakage paths
+- [x] T1.2 — Validate harness by reproducing persistence-baseline CV metrics; confirm no leakage paths
 
 *Learning target: the exact fold design and metric conventions used everywhere.*
 
