@@ -34,6 +34,7 @@ Persistence is reported alongside EVERY model by the harness itself
 No test-split files are read anywhere in this script.
 """
 
+import argparse
 import json
 import sys
 import warnings
@@ -145,6 +146,96 @@ def arima_model_fn(train_features: pd.DataFrame, train_target: pd.Series):
     return predict_fn
 
 
+def _past_lag1(full_df: pd.DataFrame) -> pd.Series:
+    """
+    Actual y_{t-1} for every row, computed by a backward-looking within-CMA
+    shift over the FULL train split. Uses past observations only (shift(1)),
+    so reading it inside predict_fn is one-step-refreshed conditioning on the
+    same information set persistence itself uses — no leakage.
+    """
+    return full_df.sort_values(ID_COLS).groupby("cma_canonical")[TARGET].shift(1)
+
+
+def make_drift_recursive_model_fn(full_df: pd.DataFrame):
+    """
+    T2.1 critic fix #2: recursive-update drift. One-step-ahead forecast
+    y_hat(t) = y_{t-1}(ACTUAL) + mu_c, i.e. truth-refreshed anchor instead of
+    the frozen last-train-value + h*mu extrapolation. Same information set as
+    persistence/ridge-on-lags (which both condition on lag-1 actuals), making
+    cross-model ranking apples-to-apples.
+    """
+    lag1 = _past_lag1(full_df)
+
+    def model_fn(train_features: pd.DataFrame, train_target: pd.Series):
+        df = pd.concat(
+            [train_features[ID_COLS], train_target.rename("_y")], axis=1
+        ).sort_values(ID_COLS)
+        diffs = df.assign(_d=df.groupby("cma_canonical")["_y"].diff())
+        drift = diffs.groupby("cma_canonical")["_d"].mean()
+
+        def predict_fn(val_features: pd.DataFrame) -> pd.Series:
+            prev = pd.to_numeric(lag1.loc[val_features.index],
+                                 errors="coerce")
+            mu = val_features["cma_canonical"].map(drift)
+            return pd.Series(prev.to_numpy() + mu.to_numpy(),
+                             index=val_features.index)
+
+        return predict_fn
+
+    return model_fn
+
+
+def make_arima_recursive_model_fn(full_df: pd.DataFrame):
+    """
+    T2.1 critic fix #2: recursive-update ARIMA(1,1,0). Fit per CMA on the
+    train window only, then forecast ONE step at a time across the validation
+    window, appending each ACTUAL observation through t-1 before the next
+    forecast (statsmodels .append(refit=False)). Same information set as
+    persistence / ridge / recursive drift.
+    """
+    lag1 = _past_lag1(full_df)
+
+    def model_fn(train_features: pd.DataFrame, train_target: pd.Series):
+        from statsmodels.tsa.arima.model import ARIMA
+
+        df = pd.concat(
+            [train_features[ID_COLS], train_target.rename("_y")], axis=1
+        ).sort_values(ID_COLS)
+        fits = {}
+        for cma, g in df.groupby("cma_canonical", sort=False):
+            y = g["_y"].to_numpy(dtype=float)
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                res = ARIMA(y, order=ARIMA_ORDER,
+                            enforce_stationarity=False,
+                            enforce_invertibility=False).fit()
+            fits[cma] = res
+
+        def predict_fn(val_features: pd.DataFrame) -> pd.Series:
+            out = pd.Series(np.nan, index=val_features.index, dtype=float)
+            v = val_features[ID_COLS].copy()
+            v["_lag1"] = lag1.loc[val_features.index]
+            for cma, g in v.sort_values("date").groupby("cma_canonical",
+                                                        sort=False):
+                if cma not in fits:
+                    continue  # no train history this fold -> NaN -> mask
+                res = fits[cma]
+                months = _month_number(g["date"])
+                assert (np.diff(months) == 1).all(), \
+                    f"non-contiguous monthly series for {cma}"
+                for idx in g.index:
+                    fc = float(np.asarray(res.forecast(steps=1),
+                                          dtype=float)[0])
+                    out[idx] = fc
+                    res = res.append([float(v["_lag1"].loc[idx])],
+                                     refit=False)
+            return out
+
+        return predict_fn
+
+    return model_fn
+
+
 def ridge_lags_model_fn(train_features: pd.DataFrame, train_target: pd.Series):
     """Pooled Ridge on lag features + CMA dummies, standardized train-only."""
     from sklearn.linear_model import Ridge
@@ -228,6 +319,13 @@ def fmt(mean_std) -> str:
 # ---------------------------------------------------------------------------
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--recursive", action="store_true",
+                        help="run ONLY the recursive-update drift/ARIMA "
+                             "variants (T2.1 critic fix #2) and append their "
+                             "registry rows; original rows stay untouched")
+    args = parser.parse_args()
+
     print("=== T2.1 baseline suite under the harness ===")
     df = load_train_data(TARGET)
     print(f"train split: {len(df)} rows, {df['cma_canonical'].nunique()} CMAs, "
@@ -236,7 +334,7 @@ def main() -> None:
     folds = build_folds(df, n_folds=5, val_window_years=2)
     print("\nfold design:\n" + describe_folds(folds))
 
-    specs = [
+    specs = [] if args.recursive else [
         ("T2.1-drift",
          drift_model_fn,
          "Random walk with drift: per-CMA mean first difference of the level "
@@ -262,6 +360,29 @@ def main() -> None:
           "features": "all 176 lag-1 columns from X_train_full_total.csv",
           "scaling": "StandardScaler fit on train window only"}),
     ]
+    if args.recursive:
+        # Critic fix #2: truth-refreshed one-step-ahead variants so drift and
+        # ARIMA compete on the SAME information set as persistence/ridge.
+        specs = [
+            ("T2.1-drift-recursive",
+             make_drift_recursive_model_fn(df),
+             "Recursive-update drift: y_hat(t) = ACTUAL y_{t-1} + mu_c "
+             "(truth-refreshed anchor), one-step-ahead — same information set "
+             "as persistence / ridge-on-lags.",
+             {"model": "drift_rw_recursive", "target_form": "level",
+              "update_rule": "one-step-ahead, actual y_{t-1} anchor",
+              "critic_fix": "T2.1-fix-2"}),
+            ("T2.1-arima-recursive",
+             make_arima_recursive_model_fn(df),
+             f"Recursive-update ARIMA{ARIMA_ORDER}: per-CMA fit on train "
+             "window only, then rolling ONE-step-ahead forecasts appending "
+             "actuals through t-1 within the validation window.",
+             {"model": f"arima{ARIMA_ORDER}_recursive", "target_form": "level",
+              "package": "statsmodels.tsa.arima.model.ARIMA",
+              "update_rule": "rolling one-step-ahead, .append(actuals)",
+              "order_policy": "fixed a priori, no search",
+              "critic_fix": "T2.1-fix-2"}),
+        ]
 
     runs = {}
     for run_id, fn, desc, cfg in specs:
@@ -285,7 +406,23 @@ def main() -> None:
               "  ".join(f"{m}={fmt((agg['baseline'][m]['mean'], agg['baseline'][m]['std']))}"
                         for m in harness.METRIC_NAMES))
 
-    # -- Leaderboard ----------------------------------------------------------
+    # -- Leaderboard / plot / summary (full suite only) ------------------------
+    if args.recursive:
+        # Registry rows + per-run artifacts already saved above; the original
+        # leaderboard/plot artifacts are left untouched (append-only policy).
+        summary = {
+            "run_id": "T2.1-recursive-variants",
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "git_sha_pre_commit": current_git_sha(),
+            "runs": {rid: {"agg_model": res["agg"]["model"],
+                           "per_fold": res["per_fold"]}
+                     for rid, res in runs.items()},
+            "verdict_hint": "see analyses/T2.1.md (recursive variants section)",
+        }
+        save_results_json(summary, OUT_DIR / "recursive_variants_summary.json")
+        print("\n=== T2.1 recursive variants complete ===")
+        return
+
     board = build_leaderboard(runs)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     board_out = OUT_DIR / "leaderboard.csv"
