@@ -1,0 +1,1286 @@
+{
+  "source_shapefile": "data_cleaning/data/cleaned/cma_boundary/lcma000b21a_e.shp",
+  "centroid_method": "representative_point (EPSG:3347 -> WGS84 lon/lat)",
+  "distance": "great-circle km",
+  "caveat": "Census 2021 boundaries applied to the 1981-2022 panel (benign for kNN weights; centroid drift negligible)",
+  "centroids": {
+    "St. John's, Newfoundland and Labrador": {
+      "shape_cmaname": "St. John's",
+      "lat": 2137633.2028586264,
+      "lon": 8979192.652123008
+    },
+    "Halifax, Nova Scotia": {
+      "shape_cmaname": "Halifax",
+      "lat": 1474131.0985720628,
+      "lon": 8405623.792507168
+    },
+    "Montr\u00e9al, Quebec": {
+      "shape_cmaname": "Montr\u00e9al",
+      "lat": 1264114.8528569015,
+      "lon": 7600635.486233264
+    },
+    "Ottawa-Gatineau, Ontario part, Ontario/Quebec": {
+      "shape_cmaname": "Ottawa - Gatineau (Ontario part / partie de l'Ontario)",
+      "lat": 1173164.4214295754,
+      "lon": 7452816.196618632
+    },
+    "Ottawa-Gatineau, Quebec part, Ontario/Quebec": {
+      "shape_cmaname": "Ottawa - Gatineau (partie du Qu\u00e9bec / Quebec part)",
+      "lat": 1219837.6214293945,
+      "lon": 7470606.101154016
+    },
+    "Qu\u00e9bec, Quebec": {
+      "shape_cmaname": "Qu\u00e9bec",
+      "lat": 1451864.7600014992,
+      "lon": 7743425.23745168
+    },
+    "Sherbrooke, Quebec": {
+      "shape_cmaname": "Sherbrooke",
+      "lat": 1270914.530001965,
+      "lon": 7755572.994975298
+    },
+    "Trois-Rivi\u00e8res, Quebec": {
+      "shape_cmaname": "Trois-Rivi\u00e8res",
+      "lat": 1360290.524286686,
+      "lon": 7697143.683687262
+    },
+    "Greater Sudbury, Ontario": {
+      "shape_cmaname": "Greater Sudbury / Grand Sudbury",
+      "lat": 1229061.897144151,
+      "lon": 7047862.030743437
+    },
+    "Hamilton, Ontario": {
+      "shape_cmaname": "Hamilton",
+      "lat": 878118.5914301868,
+      "lon": 7177105.849901156
+    },
+    "St. Catharines-Niagara, Ontario": {
+      "shape_cmaname": "St. Catharines - Niagara",
+      "lat": 865078.1314302427,
+      "lon": 7252672.920663552
+    },
+    "Kitchener-Cambridge-Waterloo, Ontario": {
+      "shape_cmaname": "Kitchener - Cambridge - Waterloo",
+      "lat": 891651.9814301399,
+      "lon": 7141184.281736904
+    },
+    "Guelph, Ontario": {
+      "shape_cmaname": "Guelph",
+      "lat": 904462.1957176114,
+      "lon": 7155071.793733953
+    },
+    "London, Ontario": {
+      "shape_cmaname": "London",
+      "lat": 820916.1028602831,
+      "lon": 7076379.394511307
+    },
+    "Oshawa, Ontario": {
+      "shape_cmaname": "Oshawa",
+      "lat": 974109.2871449892,
+      "lon": 7269578.043197921
+    },
+    "Windsor, Ontario": {
+      "shape_cmaname": "Windsor",
+      "lat": 711031.6914304877,
+      "lon": 6975615.603795398
+    },
+    "Winnipeg, Manitoba": {
+      "shape_cmaname": "Winnipeg",
+      "lat": 1558248.4271455766,
+      "lon": 5807918.484997431
+    },
+    "Regina, Saskatchewan": {
+      "shape_cmaname": "Regina",
+      "lat": 1676716.5014304766,
+      "lon": 5294615.98897658
+    },
+    "Saskatoon, Saskatchewan": {
+      "shape_cmaname": "Saskatoon",
+      "lat": 1885463.8271424975,
+      "lon": 5201605.682320187
+    },
+    "Kelowna, British Columbia": {
+      "shape_cmaname": "Kelowna",
+      "lat": 1959484.208570542,
+      "lon": 4280516.052212337
+    },
+    "Vancouver, British Columbia": {
+      "shape_cmaname": "Vancouver",
+      "lat": 1994948.8257157316,
+      "lon": 4040226.089680695
+    },
+    "Victoria, British Columbia": {
+      "shape_cmaname": "Victoria",
+      "lat": 1944744.9342859264,
+      "lon": 3940895.403699442
+    },
+    "Edmonton, Alberta": {
+      "shape_cmaname": "Edmonton",
+      "lat": 2169053.012857253,
+      "lon": 4799230.432101159
+    },
+    "Charlottetown, Prince Edward Island": {
+      "shape_cmaname": "Charlottetown",
+      "lat": 1625216.9628591063,
+      "lon": 8352036.886688717
+    }
+  },
+  "knn": {
+    "3": [
+      {
+        "cma": "St. John's, Newfoundland and Labrador",
+        "neighbor": "Oshawa, Ontario",
+        "dist_km": 1901.4574442745097,
+        "rank": 1
+      },
+      {
+        "cma": "St. John's, Newfoundland and Labrador",
+        "neighbor": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "dist_km": 3383.41044405451,
+        "rank": 2
+      },
+      {
+        "cma": "St. John's, Newfoundland and Labrador",
+        "neighbor": "Halifax, Nova Scotia",
+        "dist_km": 5200.206024278045,
+        "rank": 3
+      },
+      {
+        "cma": "Halifax, Nova Scotia",
+        "neighbor": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "dist_km": 3292.6605802073905,
+        "rank": 1
+      },
+      {
+        "cma": "Halifax, Nova Scotia",
+        "neighbor": "Kitchener-Cambridge-Waterloo, Ontario",
+        "dist_km": 4112.79754744693,
+        "rank": 2
+      },
+      {
+        "cma": "Halifax, Nova Scotia",
+        "neighbor": "St. John's, Newfoundland and Labrador",
+        "dist_km": 5200.206024278045,
+        "rank": 3
+      },
+      {
+        "cma": "Montr\u00e9al, Quebec",
+        "neighbor": "Greater Sudbury, Ontario",
+        "dist_km": 758.6528503458188,
+        "rank": 1
+      },
+      {
+        "cma": "Montr\u00e9al, Quebec",
+        "neighbor": "Saskatoon, Saskatchewan",
+        "dist_km": 1564.4594021756488,
+        "rank": 2
+      },
+      {
+        "cma": "Montr\u00e9al, Quebec",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 3119.144427663849,
+        "rank": 3
+      },
+      {
+        "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "neighbor": "Oshawa, Ontario",
+        "dist_km": 2766.1857795484375,
+        "rank": 1
+      },
+      {
+        "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "neighbor": "Halifax, Nova Scotia",
+        "dist_km": 3292.6605802073905,
+        "rank": 2
+      },
+      {
+        "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "neighbor": "St. John's, Newfoundland and Labrador",
+        "dist_km": 3383.41044405451,
+        "rank": 3
+      },
+      {
+        "cma": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+        "neighbor": "Edmonton, Alberta",
+        "dist_km": 3426.192250474737,
+        "rank": 1
+      },
+      {
+        "cma": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+        "neighbor": "London, Ontario",
+        "dist_km": 5019.694662124871,
+        "rank": 2
+      },
+      {
+        "cma": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 5736.272698167223,
+        "rank": 3
+      },
+      {
+        "cma": "Qu\u00e9bec, Quebec",
+        "neighbor": "Trois-Rivi\u00e8res, Quebec",
+        "dist_km": 2776.7944213082633,
+        "rank": 1
+      },
+      {
+        "cma": "Qu\u00e9bec, Quebec",
+        "neighbor": "Charlottetown, Prince Edward Island",
+        "dist_km": 4032.8242462097696,
+        "rank": 2
+      },
+      {
+        "cma": "Qu\u00e9bec, Quebec",
+        "neighbor": "Winnipeg, Manitoba",
+        "dist_km": 4721.223440728875,
+        "rank": 3
+      },
+      {
+        "cma": "Sherbrooke, Quebec",
+        "neighbor": "Guelph, Ontario",
+        "dist_km": 3368.2799664978565,
+        "rank": 1
+      },
+      {
+        "cma": "Sherbrooke, Quebec",
+        "neighbor": "Hamilton, Ontario",
+        "dist_km": 3628.1720081298886,
+        "rank": 2
+      },
+      {
+        "cma": "Sherbrooke, Quebec",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 3937.23245461717,
+        "rank": 3
+      },
+      {
+        "cma": "Trois-Rivi\u00e8res, Quebec",
+        "neighbor": "Qu\u00e9bec, Quebec",
+        "dist_km": 2776.7944213082633,
+        "rank": 1
+      },
+      {
+        "cma": "Trois-Rivi\u00e8res, Quebec",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 4581.477690211961,
+        "rank": 2
+      },
+      {
+        "cma": "Trois-Rivi\u00e8res, Quebec",
+        "neighbor": "Kitchener-Cambridge-Waterloo, Ontario",
+        "dist_km": 5671.325459564753,
+        "rank": 3
+      },
+      {
+        "cma": "Greater Sudbury, Ontario",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 758.6528503458188,
+        "rank": 1
+      },
+      {
+        "cma": "Greater Sudbury, Ontario",
+        "neighbor": "Saskatoon, Saskatchewan",
+        "dist_km": 1626.2121959183635,
+        "rank": 2
+      },
+      {
+        "cma": "Greater Sudbury, Ontario",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 3421.5357822786123,
+        "rank": 3
+      },
+      {
+        "cma": "Hamilton, Ontario",
+        "neighbor": "London, Ontario",
+        "dist_km": 3466.2702351653807,
+        "rank": 1
+      },
+      {
+        "cma": "Hamilton, Ontario",
+        "neighbor": "Sherbrooke, Quebec",
+        "dist_km": 3628.1720081298886,
+        "rank": 2
+      },
+      {
+        "cma": "Hamilton, Ontario",
+        "neighbor": "Edmonton, Alberta",
+        "dist_km": 3960.1936514993113,
+        "rank": 3
+      },
+      {
+        "cma": "St. Catharines-Niagara, Ontario",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 760.0811161784534,
+        "rank": 1
+      },
+      {
+        "cma": "St. Catharines-Niagara, Ontario",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 1649.6463049714885,
+        "rank": 2
+      },
+      {
+        "cma": "St. Catharines-Niagara, Ontario",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 3864.3734150122823,
+        "rank": 3
+      },
+      {
+        "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+        "neighbor": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "dist_km": 3646.996254549676,
+        "rank": 1
+      },
+      {
+        "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+        "neighbor": "Halifax, Nova Scotia",
+        "dist_km": 4112.79754744693,
+        "rank": 2
+      },
+      {
+        "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+        "neighbor": "Trois-Rivi\u00e8res, Quebec",
+        "dist_km": 5671.325459564753,
+        "rank": 3
+      },
+      {
+        "cma": "Guelph, Ontario",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 763.4799516042833,
+        "rank": 1
+      },
+      {
+        "cma": "Guelph, Ontario",
+        "neighbor": "Sherbrooke, Quebec",
+        "dist_km": 3368.2799664978565,
+        "rank": 2
+      },
+      {
+        "cma": "Guelph, Ontario",
+        "neighbor": "Winnipeg, Manitoba",
+        "dist_km": 4409.865248795387,
+        "rank": 3
+      },
+      {
+        "cma": "London, Ontario",
+        "neighbor": "Edmonton, Alberta",
+        "dist_km": 2140.065181528816,
+        "rank": 1
+      },
+      {
+        "cma": "London, Ontario",
+        "neighbor": "Hamilton, Ontario",
+        "dist_km": 3466.2702351653807,
+        "rank": 2
+      },
+      {
+        "cma": "London, Ontario",
+        "neighbor": "Sherbrooke, Quebec",
+        "dist_km": 4990.6919004606325,
+        "rank": 3
+      },
+      {
+        "cma": "Oshawa, Ontario",
+        "neighbor": "St. John's, Newfoundland and Labrador",
+        "dist_km": 1901.4574442745097,
+        "rank": 1
+      },
+      {
+        "cma": "Oshawa, Ontario",
+        "neighbor": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "dist_km": 2766.1857795484375,
+        "rank": 2
+      },
+      {
+        "cma": "Oshawa, Ontario",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 5321.47312717225,
+        "rank": 3
+      },
+      {
+        "cma": "Windsor, Ontario",
+        "neighbor": "Guelph, Ontario",
+        "dist_km": 763.4799516042833,
+        "rank": 1
+      },
+      {
+        "cma": "Windsor, Ontario",
+        "neighbor": "Sherbrooke, Quebec",
+        "dist_km": 3937.23245461717,
+        "rank": 2
+      },
+      {
+        "cma": "Windsor, Ontario",
+        "neighbor": "Winnipeg, Manitoba",
+        "dist_km": 4407.5990040352,
+        "rank": 3
+      },
+      {
+        "cma": "Winnipeg, Manitoba",
+        "neighbor": "Charlottetown, Prince Edward Island",
+        "dist_km": 965.3296535795184,
+        "rank": 1
+      },
+      {
+        "cma": "Winnipeg, Manitoba",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 4407.5990040352,
+        "rank": 2
+      },
+      {
+        "cma": "Winnipeg, Manitoba",
+        "neighbor": "Guelph, Ontario",
+        "dist_km": 4409.865248795387,
+        "rank": 3
+      },
+      {
+        "cma": "Regina, Saskatchewan",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 5783.2007888774915,
+        "rank": 1
+      },
+      {
+        "cma": "Regina, Saskatchewan",
+        "neighbor": "Guelph, Ontario",
+        "dist_km": 6546.578717479315,
+        "rank": 2
+      },
+      {
+        "cma": "Regina, Saskatchewan",
+        "neighbor": "Kitchener-Cambridge-Waterloo, Ontario",
+        "dist_km": 6775.773483909827,
+        "rank": 3
+      },
+      {
+        "cma": "Saskatoon, Saskatchewan",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 1564.4594021756488,
+        "rank": 1
+      },
+      {
+        "cma": "Saskatoon, Saskatchewan",
+        "neighbor": "Greater Sudbury, Ontario",
+        "dist_km": 1626.2121959183635,
+        "rank": 2
+      },
+      {
+        "cma": "Saskatoon, Saskatchewan",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 4670.578859717346,
+        "rank": 3
+      },
+      {
+        "cma": "Kelowna, British Columbia",
+        "neighbor": "St. Catharines-Niagara, Ontario",
+        "dist_km": 760.0811161784534,
+        "rank": 1
+      },
+      {
+        "cma": "Kelowna, British Columbia",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 1827.266995380108,
+        "rank": 2
+      },
+      {
+        "cma": "Kelowna, British Columbia",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 3119.144427663849,
+        "rank": 3
+      },
+      {
+        "cma": "Vancouver, British Columbia",
+        "neighbor": "St. Catharines-Niagara, Ontario",
+        "dist_km": 1649.6463049714885,
+        "rank": 1
+      },
+      {
+        "cma": "Vancouver, British Columbia",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 1827.266995380108,
+        "rank": 2
+      },
+      {
+        "cma": "Vancouver, British Columbia",
+        "neighbor": "Greater Sudbury, Ontario",
+        "dist_km": 3833.2611368472,
+        "rank": 3
+      },
+      {
+        "cma": "Victoria, British Columbia",
+        "neighbor": "Sherbrooke, Quebec",
+        "dist_km": 6236.886205209907,
+        "rank": 1
+      },
+      {
+        "cma": "Victoria, British Columbia",
+        "neighbor": "London, Ontario",
+        "dist_km": 6270.297294051181,
+        "rank": 2
+      },
+      {
+        "cma": "Victoria, British Columbia",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 7674.219368332699,
+        "rank": 3
+      },
+      {
+        "cma": "Edmonton, Alberta",
+        "neighbor": "London, Ontario",
+        "dist_km": 2140.065181528816,
+        "rank": 1
+      },
+      {
+        "cma": "Edmonton, Alberta",
+        "neighbor": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+        "dist_km": 3426.192250474737,
+        "rank": 2
+      },
+      {
+        "cma": "Edmonton, Alberta",
+        "neighbor": "Hamilton, Ontario",
+        "dist_km": 3960.1936514993113,
+        "rank": 3
+      },
+      {
+        "cma": "Charlottetown, Prince Edward Island",
+        "neighbor": "Winnipeg, Manitoba",
+        "dist_km": 965.3296535795184,
+        "rank": 1
+      },
+      {
+        "cma": "Charlottetown, Prince Edward Island",
+        "neighbor": "Qu\u00e9bec, Quebec",
+        "dist_km": 4032.8242462097696,
+        "rank": 2
+      },
+      {
+        "cma": "Charlottetown, Prince Edward Island",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 5149.029551876714,
+        "rank": 3
+      }
+    ],
+    "5": [
+      {
+        "cma": "St. John's, Newfoundland and Labrador",
+        "neighbor": "Oshawa, Ontario",
+        "dist_km": 1901.4574442745097,
+        "rank": 1
+      },
+      {
+        "cma": "St. John's, Newfoundland and Labrador",
+        "neighbor": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "dist_km": 3383.41044405451,
+        "rank": 2
+      },
+      {
+        "cma": "St. John's, Newfoundland and Labrador",
+        "neighbor": "Halifax, Nova Scotia",
+        "dist_km": 5200.206024278045,
+        "rank": 3
+      },
+      {
+        "cma": "St. John's, Newfoundland and Labrador",
+        "neighbor": "St. Catharines-Niagara, Ontario",
+        "dist_km": 6328.963845411714,
+        "rank": 4
+      },
+      {
+        "cma": "St. John's, Newfoundland and Labrador",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 6562.154809556011,
+        "rank": 5
+      },
+      {
+        "cma": "Halifax, Nova Scotia",
+        "neighbor": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "dist_km": 3292.6605802073905,
+        "rank": 1
+      },
+      {
+        "cma": "Halifax, Nova Scotia",
+        "neighbor": "Kitchener-Cambridge-Waterloo, Ontario",
+        "dist_km": 4112.79754744693,
+        "rank": 2
+      },
+      {
+        "cma": "Halifax, Nova Scotia",
+        "neighbor": "St. John's, Newfoundland and Labrador",
+        "dist_km": 5200.206024278045,
+        "rank": 3
+      },
+      {
+        "cma": "Halifax, Nova Scotia",
+        "neighbor": "Oshawa, Ontario",
+        "dist_km": 5677.871759268775,
+        "rank": 4
+      },
+      {
+        "cma": "Halifax, Nova Scotia",
+        "neighbor": "Regina, Saskatchewan",
+        "dist_km": 7417.797438143275,
+        "rank": 5
+      },
+      {
+        "cma": "Montr\u00e9al, Quebec",
+        "neighbor": "Greater Sudbury, Ontario",
+        "dist_km": 758.6528503458188,
+        "rank": 1
+      },
+      {
+        "cma": "Montr\u00e9al, Quebec",
+        "neighbor": "Saskatoon, Saskatchewan",
+        "dist_km": 1564.4594021756488,
+        "rank": 2
+      },
+      {
+        "cma": "Montr\u00e9al, Quebec",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 3119.144427663849,
+        "rank": 3
+      },
+      {
+        "cma": "Montr\u00e9al, Quebec",
+        "neighbor": "St. Catharines-Niagara, Ontario",
+        "dist_km": 3864.3734150122823,
+        "rank": 4
+      },
+      {
+        "cma": "Montr\u00e9al, Quebec",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 3912.352896857127,
+        "rank": 5
+      },
+      {
+        "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "neighbor": "Oshawa, Ontario",
+        "dist_km": 2766.1857795484375,
+        "rank": 1
+      },
+      {
+        "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "neighbor": "Halifax, Nova Scotia",
+        "dist_km": 3292.6605802073905,
+        "rank": 2
+      },
+      {
+        "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "neighbor": "St. John's, Newfoundland and Labrador",
+        "dist_km": 3383.41044405451,
+        "rank": 3
+      },
+      {
+        "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "neighbor": "Kitchener-Cambridge-Waterloo, Ontario",
+        "dist_km": 3646.996254549676,
+        "rank": 4
+      },
+      {
+        "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "neighbor": "Trois-Rivi\u00e8res, Quebec",
+        "dist_km": 6112.091963238419,
+        "rank": 5
+      },
+      {
+        "cma": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+        "neighbor": "Edmonton, Alberta",
+        "dist_km": 3426.192250474737,
+        "rank": 1
+      },
+      {
+        "cma": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+        "neighbor": "London, Ontario",
+        "dist_km": 5019.694662124871,
+        "rank": 2
+      },
+      {
+        "cma": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 5736.272698167223,
+        "rank": 3
+      },
+      {
+        "cma": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+        "neighbor": "St. Catharines-Niagara, Ontario",
+        "dist_km": 5746.889673762618,
+        "rank": 4
+      },
+      {
+        "cma": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 6987.344458295712,
+        "rank": 5
+      },
+      {
+        "cma": "Qu\u00e9bec, Quebec",
+        "neighbor": "Trois-Rivi\u00e8res, Quebec",
+        "dist_km": 2776.7944213082633,
+        "rank": 1
+      },
+      {
+        "cma": "Qu\u00e9bec, Quebec",
+        "neighbor": "Charlottetown, Prince Edward Island",
+        "dist_km": 4032.8242462097696,
+        "rank": 2
+      },
+      {
+        "cma": "Qu\u00e9bec, Quebec",
+        "neighbor": "Winnipeg, Manitoba",
+        "dist_km": 4721.223440728875,
+        "rank": 3
+      },
+      {
+        "cma": "Qu\u00e9bec, Quebec",
+        "neighbor": "Greater Sudbury, Ontario",
+        "dist_km": 6263.0208281877185,
+        "rank": 4
+      },
+      {
+        "cma": "Qu\u00e9bec, Quebec",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 6454.239315593464,
+        "rank": 5
+      },
+      {
+        "cma": "Sherbrooke, Quebec",
+        "neighbor": "Guelph, Ontario",
+        "dist_km": 3368.2799664978565,
+        "rank": 1
+      },
+      {
+        "cma": "Sherbrooke, Quebec",
+        "neighbor": "Hamilton, Ontario",
+        "dist_km": 3628.1720081298886,
+        "rank": 2
+      },
+      {
+        "cma": "Sherbrooke, Quebec",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 3937.23245461717,
+        "rank": 3
+      },
+      {
+        "cma": "Sherbrooke, Quebec",
+        "neighbor": "London, Ontario",
+        "dist_km": 4990.6919004606325,
+        "rank": 4
+      },
+      {
+        "cma": "Sherbrooke, Quebec",
+        "neighbor": "Victoria, British Columbia",
+        "dist_km": 6236.886205209907,
+        "rank": 5
+      },
+      {
+        "cma": "Trois-Rivi\u00e8res, Quebec",
+        "neighbor": "Qu\u00e9bec, Quebec",
+        "dist_km": 2776.7944213082633,
+        "rank": 1
+      },
+      {
+        "cma": "Trois-Rivi\u00e8res, Quebec",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 4581.477690211961,
+        "rank": 2
+      },
+      {
+        "cma": "Trois-Rivi\u00e8res, Quebec",
+        "neighbor": "Kitchener-Cambridge-Waterloo, Ontario",
+        "dist_km": 5671.325459564753,
+        "rank": 3
+      },
+      {
+        "cma": "Trois-Rivi\u00e8res, Quebec",
+        "neighbor": "Oshawa, Ontario",
+        "dist_km": 5762.514014213075,
+        "rank": 4
+      },
+      {
+        "cma": "Trois-Rivi\u00e8res, Quebec",
+        "neighbor": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "dist_km": 6112.091963238419,
+        "rank": 5
+      },
+      {
+        "cma": "Greater Sudbury, Ontario",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 758.6528503458188,
+        "rank": 1
+      },
+      {
+        "cma": "Greater Sudbury, Ontario",
+        "neighbor": "Saskatoon, Saskatchewan",
+        "dist_km": 1626.2121959183635,
+        "rank": 2
+      },
+      {
+        "cma": "Greater Sudbury, Ontario",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 3421.5357822786123,
+        "rank": 3
+      },
+      {
+        "cma": "Greater Sudbury, Ontario",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 3833.2611368472,
+        "rank": 4
+      },
+      {
+        "cma": "Greater Sudbury, Ontario",
+        "neighbor": "St. Catharines-Niagara, Ontario",
+        "dist_km": 4120.2764603188825,
+        "rank": 5
+      },
+      {
+        "cma": "Hamilton, Ontario",
+        "neighbor": "London, Ontario",
+        "dist_km": 3466.2702351653807,
+        "rank": 1
+      },
+      {
+        "cma": "Hamilton, Ontario",
+        "neighbor": "Sherbrooke, Quebec",
+        "dist_km": 3628.1720081298886,
+        "rank": 2
+      },
+      {
+        "cma": "Hamilton, Ontario",
+        "neighbor": "Edmonton, Alberta",
+        "dist_km": 3960.1936514993113,
+        "rank": 3
+      },
+      {
+        "cma": "Hamilton, Ontario",
+        "neighbor": "Saskatoon, Saskatchewan",
+        "dist_km": 4716.743043786731,
+        "rank": 4
+      },
+      {
+        "cma": "Hamilton, Ontario",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 5965.879218017386,
+        "rank": 5
+      },
+      {
+        "cma": "St. Catharines-Niagara, Ontario",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 760.0811161784534,
+        "rank": 1
+      },
+      {
+        "cma": "St. Catharines-Niagara, Ontario",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 1649.6463049714885,
+        "rank": 2
+      },
+      {
+        "cma": "St. Catharines-Niagara, Ontario",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 3864.3734150122823,
+        "rank": 3
+      },
+      {
+        "cma": "St. Catharines-Niagara, Ontario",
+        "neighbor": "Greater Sudbury, Ontario",
+        "dist_km": 4120.2764603188825,
+        "rank": 4
+      },
+      {
+        "cma": "St. Catharines-Niagara, Ontario",
+        "neighbor": "Saskatoon, Saskatchewan",
+        "dist_km": 5421.782570064808,
+        "rank": 5
+      },
+      {
+        "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+        "neighbor": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "dist_km": 3646.996254549676,
+        "rank": 1
+      },
+      {
+        "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+        "neighbor": "Halifax, Nova Scotia",
+        "dist_km": 4112.79754744693,
+        "rank": 2
+      },
+      {
+        "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+        "neighbor": "Trois-Rivi\u00e8res, Quebec",
+        "dist_km": 5671.325459564753,
+        "rank": 3
+      },
+      {
+        "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+        "neighbor": "Oshawa, Ontario",
+        "dist_km": 6084.32086843261,
+        "rank": 4
+      },
+      {
+        "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+        "neighbor": "Qu\u00e9bec, Quebec",
+        "dist_km": 6491.89885712232,
+        "rank": 5
+      },
+      {
+        "cma": "Guelph, Ontario",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 763.4799516042833,
+        "rank": 1
+      },
+      {
+        "cma": "Guelph, Ontario",
+        "neighbor": "Sherbrooke, Quebec",
+        "dist_km": 3368.2799664978565,
+        "rank": 2
+      },
+      {
+        "cma": "Guelph, Ontario",
+        "neighbor": "Winnipeg, Manitoba",
+        "dist_km": 4409.865248795387,
+        "rank": 3
+      },
+      {
+        "cma": "Guelph, Ontario",
+        "neighbor": "Charlottetown, Prince Edward Island",
+        "dist_km": 5247.717532088905,
+        "rank": 4
+      },
+      {
+        "cma": "Guelph, Ontario",
+        "neighbor": "Hamilton, Ontario",
+        "dist_km": 6236.672970237081,
+        "rank": 5
+      },
+      {
+        "cma": "London, Ontario",
+        "neighbor": "Edmonton, Alberta",
+        "dist_km": 2140.065181528816,
+        "rank": 1
+      },
+      {
+        "cma": "London, Ontario",
+        "neighbor": "Hamilton, Ontario",
+        "dist_km": 3466.2702351653807,
+        "rank": 2
+      },
+      {
+        "cma": "London, Ontario",
+        "neighbor": "Sherbrooke, Quebec",
+        "dist_km": 4990.6919004606325,
+        "rank": 3
+      },
+      {
+        "cma": "London, Ontario",
+        "neighbor": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+        "dist_km": 5019.694662124871,
+        "rank": 4
+      },
+      {
+        "cma": "London, Ontario",
+        "neighbor": "Victoria, British Columbia",
+        "dist_km": 6270.297294051181,
+        "rank": 5
+      },
+      {
+        "cma": "Oshawa, Ontario",
+        "neighbor": "St. John's, Newfoundland and Labrador",
+        "dist_km": 1901.4574442745097,
+        "rank": 1
+      },
+      {
+        "cma": "Oshawa, Ontario",
+        "neighbor": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+        "dist_km": 2766.1857795484375,
+        "rank": 2
+      },
+      {
+        "cma": "Oshawa, Ontario",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 5321.47312717225,
+        "rank": 3
+      },
+      {
+        "cma": "Oshawa, Ontario",
+        "neighbor": "St. Catharines-Niagara, Ontario",
+        "dist_km": 5608.628975536896,
+        "rank": 4
+      },
+      {
+        "cma": "Oshawa, Ontario",
+        "neighbor": "Halifax, Nova Scotia",
+        "dist_km": 5677.871759268775,
+        "rank": 5
+      },
+      {
+        "cma": "Windsor, Ontario",
+        "neighbor": "Guelph, Ontario",
+        "dist_km": 763.4799516042833,
+        "rank": 1
+      },
+      {
+        "cma": "Windsor, Ontario",
+        "neighbor": "Sherbrooke, Quebec",
+        "dist_km": 3937.23245461717,
+        "rank": 2
+      },
+      {
+        "cma": "Windsor, Ontario",
+        "neighbor": "Winnipeg, Manitoba",
+        "dist_km": 4407.5990040352,
+        "rank": 3
+      },
+      {
+        "cma": "Windsor, Ontario",
+        "neighbor": "Charlottetown, Prince Edward Island",
+        "dist_km": 5149.029551876714,
+        "rank": 4
+      },
+      {
+        "cma": "Windsor, Ontario",
+        "neighbor": "Regina, Saskatchewan",
+        "dist_km": 5783.2007888774915,
+        "rank": 5
+      },
+      {
+        "cma": "Winnipeg, Manitoba",
+        "neighbor": "Charlottetown, Prince Edward Island",
+        "dist_km": 965.3296535795184,
+        "rank": 1
+      },
+      {
+        "cma": "Winnipeg, Manitoba",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 4407.5990040352,
+        "rank": 2
+      },
+      {
+        "cma": "Winnipeg, Manitoba",
+        "neighbor": "Guelph, Ontario",
+        "dist_km": 4409.865248795387,
+        "rank": 3
+      },
+      {
+        "cma": "Winnipeg, Manitoba",
+        "neighbor": "Qu\u00e9bec, Quebec",
+        "dist_km": 4721.223440728875,
+        "rank": 4
+      },
+      {
+        "cma": "Winnipeg, Manitoba",
+        "neighbor": "Regina, Saskatchewan",
+        "dist_km": 7050.4794333023565,
+        "rank": 5
+      },
+      {
+        "cma": "Regina, Saskatchewan",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 5783.2007888774915,
+        "rank": 1
+      },
+      {
+        "cma": "Regina, Saskatchewan",
+        "neighbor": "Guelph, Ontario",
+        "dist_km": 6546.578717479315,
+        "rank": 2
+      },
+      {
+        "cma": "Regina, Saskatchewan",
+        "neighbor": "Kitchener-Cambridge-Waterloo, Ontario",
+        "dist_km": 6775.773483909827,
+        "rank": 3
+      },
+      {
+        "cma": "Regina, Saskatchewan",
+        "neighbor": "Charlottetown, Prince Edward Island",
+        "dist_km": 6842.430855986401,
+        "rank": 4
+      },
+      {
+        "cma": "Regina, Saskatchewan",
+        "neighbor": "Winnipeg, Manitoba",
+        "dist_km": 7050.4794333023565,
+        "rank": 5
+      },
+      {
+        "cma": "Saskatoon, Saskatchewan",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 1564.4594021756488,
+        "rank": 1
+      },
+      {
+        "cma": "Saskatoon, Saskatchewan",
+        "neighbor": "Greater Sudbury, Ontario",
+        "dist_km": 1626.2121959183635,
+        "rank": 2
+      },
+      {
+        "cma": "Saskatoon, Saskatchewan",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 4670.578859717346,
+        "rank": 3
+      },
+      {
+        "cma": "Saskatoon, Saskatchewan",
+        "neighbor": "Hamilton, Ontario",
+        "dist_km": 4716.743043786731,
+        "rank": 4
+      },
+      {
+        "cma": "Saskatoon, Saskatchewan",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 5407.246831707094,
+        "rank": 5
+      },
+      {
+        "cma": "Kelowna, British Columbia",
+        "neighbor": "St. Catharines-Niagara, Ontario",
+        "dist_km": 760.0811161784534,
+        "rank": 1
+      },
+      {
+        "cma": "Kelowna, British Columbia",
+        "neighbor": "Vancouver, British Columbia",
+        "dist_km": 1827.266995380108,
+        "rank": 2
+      },
+      {
+        "cma": "Kelowna, British Columbia",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 3119.144427663849,
+        "rank": 3
+      },
+      {
+        "cma": "Kelowna, British Columbia",
+        "neighbor": "Greater Sudbury, Ontario",
+        "dist_km": 3421.5357822786123,
+        "rank": 4
+      },
+      {
+        "cma": "Kelowna, British Columbia",
+        "neighbor": "Saskatoon, Saskatchewan",
+        "dist_km": 4670.578859717346,
+        "rank": 5
+      },
+      {
+        "cma": "Vancouver, British Columbia",
+        "neighbor": "St. Catharines-Niagara, Ontario",
+        "dist_km": 1649.6463049714885,
+        "rank": 1
+      },
+      {
+        "cma": "Vancouver, British Columbia",
+        "neighbor": "Kelowna, British Columbia",
+        "dist_km": 1827.266995380108,
+        "rank": 2
+      },
+      {
+        "cma": "Vancouver, British Columbia",
+        "neighbor": "Greater Sudbury, Ontario",
+        "dist_km": 3833.2611368472,
+        "rank": 3
+      },
+      {
+        "cma": "Vancouver, British Columbia",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 3912.352896857127,
+        "rank": 4
+      },
+      {
+        "cma": "Vancouver, British Columbia",
+        "neighbor": "Trois-Rivi\u00e8res, Quebec",
+        "dist_km": 4581.477690211961,
+        "rank": 5
+      },
+      {
+        "cma": "Victoria, British Columbia",
+        "neighbor": "Sherbrooke, Quebec",
+        "dist_km": 6236.886205209907,
+        "rank": 1
+      },
+      {
+        "cma": "Victoria, British Columbia",
+        "neighbor": "London, Ontario",
+        "dist_km": 6270.297294051181,
+        "rank": 2
+      },
+      {
+        "cma": "Victoria, British Columbia",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 7674.219368332699,
+        "rank": 3
+      },
+      {
+        "cma": "Victoria, British Columbia",
+        "neighbor": "Guelph, Ontario",
+        "dist_km": 7809.854540022685,
+        "rank": 4
+      },
+      {
+        "cma": "Victoria, British Columbia",
+        "neighbor": "Regina, Saskatchewan",
+        "dist_km": 7914.532784585794,
+        "rank": 5
+      },
+      {
+        "cma": "Edmonton, Alberta",
+        "neighbor": "London, Ontario",
+        "dist_km": 2140.065181528816,
+        "rank": 1
+      },
+      {
+        "cma": "Edmonton, Alberta",
+        "neighbor": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+        "dist_km": 3426.192250474737,
+        "rank": 2
+      },
+      {
+        "cma": "Edmonton, Alberta",
+        "neighbor": "Hamilton, Ontario",
+        "dist_km": 3960.1936514993113,
+        "rank": 3
+      },
+      {
+        "cma": "Edmonton, Alberta",
+        "neighbor": "Saskatoon, Saskatchewan",
+        "dist_km": 5946.720977914241,
+        "rank": 4
+      },
+      {
+        "cma": "Edmonton, Alberta",
+        "neighbor": "Montr\u00e9al, Quebec",
+        "dist_km": 6150.2482943722125,
+        "rank": 5
+      },
+      {
+        "cma": "Charlottetown, Prince Edward Island",
+        "neighbor": "Winnipeg, Manitoba",
+        "dist_km": 965.3296535795184,
+        "rank": 1
+      },
+      {
+        "cma": "Charlottetown, Prince Edward Island",
+        "neighbor": "Qu\u00e9bec, Quebec",
+        "dist_km": 4032.8242462097696,
+        "rank": 2
+      },
+      {
+        "cma": "Charlottetown, Prince Edward Island",
+        "neighbor": "Windsor, Ontario",
+        "dist_km": 5149.029551876714,
+        "rank": 3
+      },
+      {
+        "cma": "Charlottetown, Prince Edward Island",
+        "neighbor": "Guelph, Ontario",
+        "dist_km": 5247.717532088905,
+        "rank": 4
+      },
+      {
+        "cma": "Charlottetown, Prince Edward Island",
+        "neighbor": "Trois-Rivi\u00e8res, Quebec",
+        "dist_km": 6757.183674035994,
+        "rank": 5
+      }
+    ]
+  }
+}

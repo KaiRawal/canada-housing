@@ -1,0 +1,277 @@
+{
+  "folds": [
+    {
+      "fold_id": 1,
+      "val_start_year": 2008,
+      "val_end_year": 2009
+    },
+    {
+      "fold_id": 2,
+      "val_start_year": 2010,
+      "val_end_year": 2011
+    },
+    {
+      "fold_id": 3,
+      "val_start_year": 2012,
+      "val_end_year": 2013
+    },
+    {
+      "fold_id": 4,
+      "val_start_year": 2014,
+      "val_end_year": 2015
+    },
+    {
+      "fold_id": 5,
+      "val_start_year": 2016,
+      "val_end_year": 2017
+    }
+  ],
+  "per_fold": [
+    {
+      "fold_id": 1,
+      "n_eval_rows": 432,
+      "model": {
+        "MDA": 0.6887755102040817,
+        "NMSE": 5.498547518893209e-05,
+        "NRMSE": 0.007415219159871951,
+        "NMAE": 0.005134118685501503
+      },
+      "baseline": {
+        "MDA": 0.7040816326530612,
+        "NMSE": 3.193556681314757e-05,
+        "NRMSE": 0.0056511562368375175,
+        "NMAE": 0.003644314868804662
+      }
+    },
+    {
+      "fold_id": 2,
+      "n_eval_rows": 432,
+      "model": {
+        "MDA": 0.6309523809523809,
+        "NMSE": 1.465955392331574e-05,
+        "NRMSE": 0.0038287796911438687,
+        "NMAE": 0.0027880306715543516
+      },
+      "baseline": {
+        "MDA": 0.6607142857142857,
+        "NMSE": 1.0327667773458597e-05,
+        "NRMSE": 0.0032136688960530137,
+        "NMAE": 0.002178996598639454
+      }
+    },
+    {
+      "fold_id": 3,
+      "n_eval_rows": 432,
+      "model": {
+        "MDA": 0.5828220858895705,
+        "NMSE": 1.5260727664324388e-05,
+        "NRMSE": 0.003906498133152554,
+        "NMAE": 0.0030145525489387497
+      },
+      "baseline": {
+        "MDA": 0.6196319018404908,
+        "NMSE": 4.193271969015964e-06,
+        "NRMSE": 0.0020477480238095614,
+        "NMAE": 0.001641010199856977
+      }
+    },
+    {
+      "fold_id": 4,
+      "n_eval_rows": 432,
+      "model": {
+        "MDA": 0.6333333333333333,
+        "NMSE": 1.4384926326002796e-05,
+        "NRMSE": 0.00379274654122877,
+        "NMAE": 0.002974437570079748
+      },
+      "baseline": {
+        "MDA": 0.6466666666666666,
+        "NMSE": 4.71407407407407e-06,
+        "NRMSE": 0.002171191855657641,
+        "NMAE": 0.0016399999999999978
+      }
+    },
+    {
+      "fold_id": 5,
+      "n_eval_rows": 317,
+      "model": {
+        "MDA": 0.7636363636363637,
+        "NMSE": 1.8173584966295848e-05,
+        "NRMSE": 0.004263048787698289,
+        "NMAE": 0.0033653485756296522
+      },
+      "baseline": {
+        "MDA": 0.7545454545454545,
+        "NMSE": 2.3824192336589046e-05,
+        "NRMSE": 0.0048810032100572364,
+        "NMAE": 0.003793388429752064
+      }
+    }
+  ],
+  "agg": {
+    "model": {
+      "MDA": {
+        "mean": 0.6599039348031461,
+        "std": 0.061773433484868114
+      },
+      "NMSE": {
+        "mean": 2.349285361377417e-05,
+        "std": 1.5803982113179804e-05
+      },
+      "NRMSE": {
+        "mean": 0.004641258462619087,
+        "std": 0.0013969872930491838
+      },
+      "NMAE": {
+        "mean": 0.0034552976103408004,
+        "std": 0.0008599138080432016
+      }
+    },
+    "baseline": {
+      "MDA": {
+        "mean": 0.6771279882839918,
+        "std": 0.04737734633800933
+      },
+      "NMSE": {
+        "mean": 1.499895459325705e-05,
+        "std": 1.1037174634260298e-05
+      },
+      "NRMSE": {
+        "mean": 0.003592953644482994,
+        "std": 0.001445558266502399
+      },
+      "NMAE": {
+        "mean": 0.002579542019410631,
+        "std": 0.0009519645104056274
+      }
+    }
+  },
+  "detail": [
+    {
+      "fold_id": 1,
+      "n_val_rows_common_mask": 432,
+      "counts": {
+        "n_candidate_directions": 432,
+        "n_scored_directions_intersection": 196,
+        "n_dropped_any_zero": 236,
+        "n_pred_zero_model": 24,
+        "n_pred_zero_persistence": 160
+      },
+      "model": {
+        "MDA": 0.6887755102040817,
+        "NMSE": 5.498547518893209e-05,
+        "NRMSE": 0.007415219159871951,
+        "NMAE": 0.005134118685501503
+      },
+      "persistence": {
+        "MDA": 0.7040816326530612,
+        "NMSE": 3.193556681314757e-05,
+        "NRMSE": 0.0056511562368375175,
+        "NMAE": 0.003644314868804662
+      },
+      "delta_MDA_model_minus_persistence": -0.015306122448979553
+    },
+    {
+      "fold_id": 2,
+      "n_val_rows_common_mask": 432,
+      "counts": {
+        "n_candidate_directions": 432,
+        "n_scored_directions_intersection": 168,
+        "n_dropped_any_zero": 264,
+        "n_pred_zero_model": 25,
+        "n_pred_zero_persistence": 177
+      },
+      "model": {
+        "MDA": 0.6309523809523809,
+        "NMSE": 1.465955392331574e-05,
+        "NRMSE": 0.0038287796911438687,
+        "NMAE": 0.0027880306715543516
+      },
+      "persistence": {
+        "MDA": 0.6607142857142857,
+        "NMSE": 1.0327667773458597e-05,
+        "NRMSE": 0.0032136688960530137,
+        "NMAE": 0.002178996598639454
+      },
+      "delta_MDA_model_minus_persistence": -0.029761904761904767
+    },
+    {
+      "fold_id": 3,
+      "n_val_rows_common_mask": 432,
+      "counts": {
+        "n_candidate_directions": 432,
+        "n_scored_directions_intersection": 163,
+        "n_dropped_any_zero": 269,
+        "n_pred_zero_model": 28,
+        "n_pred_zero_persistence": 177
+      },
+      "model": {
+        "MDA": 0.5828220858895705,
+        "NMSE": 1.5260727664324388e-05,
+        "NRMSE": 0.003906498133152554,
+        "NMAE": 0.0030145525489387497
+      },
+      "persistence": {
+        "MDA": 0.6196319018404908,
+        "NMSE": 4.193271969015964e-06,
+        "NRMSE": 0.0020477480238095614,
+        "NMAE": 0.001641010199856977
+      },
+      "delta_MDA_model_minus_persistence": -0.036809815950920255
+    },
+    {
+      "fold_id": 4,
+      "n_val_rows_common_mask": 432,
+      "counts": {
+        "n_candidate_directions": 432,
+        "n_scored_directions_intersection": 150,
+        "n_dropped_any_zero": 282,
+        "n_pred_zero_model": 32,
+        "n_pred_zero_persistence": 191
+      },
+      "model": {
+        "MDA": 0.6333333333333333,
+        "NMSE": 1.4384926326002796e-05,
+        "NRMSE": 0.00379274654122877,
+        "NMAE": 0.002974437570079748
+      },
+      "persistence": {
+        "MDA": 0.6466666666666666,
+        "NMSE": 4.71407407407407e-06,
+        "NRMSE": 0.002171191855657641,
+        "NMAE": 0.0016399999999999978
+      },
+      "delta_MDA_model_minus_persistence": -0.013333333333333308
+    },
+    {
+      "fold_id": 5,
+      "n_val_rows_common_mask": 317,
+      "counts": {
+        "n_candidate_directions": 311,
+        "n_scored_directions_intersection": 110,
+        "n_dropped_any_zero": 201,
+        "n_pred_zero_model": 19,
+        "n_pred_zero_persistence": 148
+      },
+      "model": {
+        "MDA": 0.7636363636363637,
+        "NMSE": 1.8173584966295848e-05,
+        "NRMSE": 0.004263048787698289,
+        "NMAE": 0.0033653485756296522
+      },
+      "persistence": {
+        "MDA": 0.7545454545454545,
+        "NMSE": 2.3824192336589046e-05,
+        "NRMSE": 0.0048810032100572364,
+        "NMAE": 0.003793388429752064
+      },
+      "delta_MDA_model_minus_persistence": 0.00909090909090915
+    }
+  ],
+  "config": {
+    "n_folds": 5,
+    "target": "total",
+    "anchor_year": 2017,
+    "scoring": "paired intersection-mask (shared nonzero-direction set)"
+  }
+}

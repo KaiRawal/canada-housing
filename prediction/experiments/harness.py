@@ -8,11 +8,13 @@ apples-to-apples:
               windows anchored at the last year where >=50% of CMAs are still
               active), grouped by CMA.
               Random shuffles / KFold across time are banned.
-  * Metrics : NMSE/NRMSE/NMAE reused from evaluation/evaluation.py.
+    * Metrics : NMSE/NRMSE/NMAE reused from evaluation/evaluation.py.
               MDA uses the CANONICAL harness scorer `mda_zero_drop`
               (boundary-anchored, symmetric zero-direction drop — T2.3 critic
               fix #2; supersedes the plain grouped-MDA call which carried a
               systematic anti-persistence boundary bias).
+              For paired sensitivity, `paired_intersection_scores` scores all
+              predictors on the SHARED nonzero-direction set (T3.1 critic fix).
               Persistence baseline computed on the IDENTICAL folds and scored
               on the IDENTICAL row sets.
   * Logging : one JSON line per run appended to prediction/experiments/runs.jsonl.
@@ -321,6 +323,114 @@ def _anchored_mda(train_df: pd.DataFrame, val_eval_df: pd.DataFrame,
     return _anchored_mda_detail(train_df, val_eval_df, pred, target)["MDA"]
 
 
+def paired_intersection_scores(train_df: pd.DataFrame,
+                               val_eval_df: pd.DataFrame,
+                               preds: dict[str, pd.Series],
+                               target: str = TARGET) -> dict:
+    """
+    PAIRED intersection-mask scorer (T3.1 critic fix #2 companion to
+    mda_zero_drop): every predictor in `preds` is scored on ONE SHARED set of
+    directions — the intersection of the nonzero-direction sets each side
+    keeps under the symmetric zero-drop rule. Under plain `mda_zero_drop`
+    each block drops ITS OWN predicted-zero/true-zero directions, so model
+    and baseline can be scored on marginally different direction sets; this
+    variant removes even that residual asymmetry by restricting ALL blocks
+    (and the point metrics) to directions where the TRUE change and EVERY
+    predictor's implied change are all nonzero.
+
+    Rows align across predictors because every predictor is anchored by the
+    identical `_anchored_frame` construction (one prepended last-train row
+    per CMA with history, in the same group order).
+
+    Returns
+    -------
+    {"n_directions": kept-direction count,
+     "kept_row_indices": val rows backing the kept directions,
+     "per_predictor": {name: {MDA, NMSE, NRMSE, NMAE}},
+     "counts": {n_candidate, n_dropped_any_zero, per-predictor zero counts}}
+    """
+    if len(preds) < 2:
+        raise ValueError("intersection scoring needs >= 2 predictors")
+    train_last = (
+        train_df.sort_values(ID_COLS)
+        .groupby("cma_canonical", sort=False).tail(1)
+        .set_index("cma_canonical")
+    )
+
+    tdir_parts: list[np.ndarray] = []
+    pdir_parts: dict[str, list[np.ndarray]] = {n: [] for n in preds}
+    row_map_parts: list[list] = []  # candidate-position -> val row index
+
+    for cma, g in val_eval_df.groupby("cma_canonical", sort=False):
+        vidx = g.index.tolist()
+        if cma in train_last.index:
+            anchor = float(train_last.loc[cma, target])
+            true_seq = np.array([anchor] + g[target].tolist(), dtype=float)
+            pred_seqs = {
+                n: np.array([float(p.loc[vidx[0]])] + p.loc[vidx].tolist(),
+                            dtype=float)
+                for n, p in preds.items()}
+            row_map = vidx  # diff j (into row j+1 of seq) == val row j
+        else:
+            true_seq = np.asarray(g[target].tolist(), dtype=float)
+            pred_seqs = {n: np.asarray(p.loc[vidx].tolist(), dtype=float)
+                         for n, p in preds.items()}
+            row_map = vidx[1:]  # first in-window direction is NaN
+        td = np.sign(np.diff(true_seq))
+        tdir_parts.append(td)
+        for n in preds:
+            pdir_parts[n].append(np.sign(np.diff(pred_seqs[n])))
+        row_map_parts.append(row_map)
+
+    tdir = np.concatenate(tdir_parts)
+    pdirs = {n: np.concatenate(v) for n, v in pdir_parts.items()}
+    row_map = np.concatenate([np.asarray(r, dtype=object) for r in row_map_parts])
+    if any(len(p) != len(tdir) for p in pdirs.values()):
+        raise AssertionError("direction vectors misaligned across predictors")
+
+    candidate = ~np.isnan(tdir)
+    for p in pdirs.values():
+        candidate &= ~np.isnan(p)
+    with np.errstate(invalid="ignore"):  # NaN comparisons are pre-masked
+        kept = candidate & (tdir != 0)
+        for p in pdirs.values():
+            kept &= p != 0
+
+    kept_idx = pd.Index([row_map[j] for j in np.flatnonzero(kept)])
+
+    def point_metrics(pred: pd.Series) -> dict:
+        if len(kept_idx) == 0:
+            return {m: float("nan") for m in ("NMSE", "NRMSE", "NMAE")}
+        sub = val_eval_df.loc[kept_idx]
+        frame = pd.DataFrame({
+            "cma_canonical": sub["cma_canonical"],
+            "date": sub["date"],
+            f"{target}_true": sub[target],
+            f"{target}_pred": pred.loc[kept_idx],
+        })
+        m = calculate_all_metrics(frame, target)
+        return {k: m[k] for k in ("NMSE", "NRMSE", "NMAE")}
+
+    out_dirs = int(kept.sum())
+    per_predictor = {}
+    for n, p in pdirs.items():
+        mda = (float((tdir[kept] == p[kept]).mean())
+               if out_dirs else float("nan"))
+        per_predictor[n] = {"MDA": mda, **point_metrics(preds[n])}
+
+    counts = {
+        "n_candidate_directions": int(candidate.sum()),
+        "n_scored_directions_intersection": out_dirs,
+        "n_dropped_any_zero": int(candidate.sum() - out_dirs),
+    }
+    for n, p in pdirs.items():
+        cand_nz = candidate & ~np.isnan(p)
+        counts[f"n_pred_zero_{n}"] = int((cand_nz & (p == 0)).sum())
+
+    return {"n_directions": out_dirs, "kept_row_indices": kept_idx,
+            "per_predictor": per_predictor, "counts": counts}
+
+
 def _score_fold(val_df: pd.DataFrame, train_df: pd.DataFrame,
                 model_pred: pd.Series, baseline_pred: pd.Series,
                 target: str = TARGET) -> dict:
@@ -467,6 +577,9 @@ def log_run(run_id: str, task: str, sub: str, description: str, config: dict,
     {id, run_id, task, sub, description, config, metrics_per_fold, metrics_agg,
      baseline_metrics_agg, cv_metrics, baseline_metrics, timestamp, date,
      git_sha, commit}
+    CONVENTION (standing decision): runs.jsonl is append-only, so duplicate
+    run_ids ARE possible across regeneration sweeps; downstream tooling MUST
+    dedupe by the (run_id, timestamp) pair — timestamp is unique per append.
     """
     now = datetime.now(timezone.utc)
     agg = results["agg"]

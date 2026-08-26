@@ -54,5 +54,17 @@
       "new_MDA": 0.5415779349379907
     }
   ],
-  "note": "Point metrics (NMSE/NRMSE/NMAE) are bit-identical pre/post fix; ONLY MDA moved. Canonical persistence reference is the T1.2-baseline-validation-mdazero row. PNG plots in artifacts/T2.1 and T2.2 were NOT regenerated (stale visually; tables/JSONs above are authoritative)."
+  "note": "Point metrics (NMSE/NRMSE/NMAE) are bit-identical pre/post fix; ONLY MDA moved. Canonical persistence reference is the T1.2-baseline-validation-mdazero row. PNG plots in artifacts/T2.1 and T2.2 were NOT regenerated (stale visually; tables/JSONs above are authoritative).",
+  "zero_decomposition": {
+    "predictor": "persistence (boundary-anchored, common-mask rows)",
+    "folds": "canonical 5 expanding folds (2008-09 ... 2016-17)",
+    "n_candidate_directions": 2039,
+    "n_pred_zero_directions": 853,
+    "n_true_zero_directions": 805,
+    "n_pred_and_true_zero_overlap": 406,
+    "frac_pred_zero": 0.4183,
+    "frac_true_zero": 0.3948,
+    "computed_by": "prediction/experiments/t31_critic_fixes.py (T2.3 critic fix #3)"
+  },
+  "zero_decomposition_added_at": "2026-08-26T09:48:53.505768+00:00"
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T09:04:59.287088+00:00",
+  "generated_at": "2026-08-26T09:50:03.961062+00:00",
   "diagnostics": {
     "dlog": {
       "signal_MDA_mean": 0.6075843390380573,
@@ -12,7 +12,23 @@
         263,
         250,
         181
-      ]
+      ],
+      "n_sign_directions_per_fold": [
+        281,
+        261,
+        263,
+        250,
+        181
+      ],
+      "n_momentum_directions_per_fold": [
+        202,
+        176,
+        168,
+        155,
+        116
+      ],
+      "n_sign_directions_total": 1236,
+      "n_momentum_directions_total": 817
     },
     "yoy": {
       "signal_MDA_mean": 0.5807902867250958,
@@ -25,7 +41,24 @@
         263,
         250,
         154
-      ]
+      ],
+      "n_sign_directions_per_fold": [
+        281,
+        261,
+        263,
+        250,
+        154
+      ],
+      "n_momentum_directions_per_fold": [
+        202,
+        176,
+        168,
+        155,
+        102
+      ],
+      "n_sign_directions_total": 1209,
+      "n_momentum_directions_total": 803
     }
-  }
+  },
+  "regeneration_note": "Counts added (T3.1 critic fix #5); all pre-existing values assert-verified identical to the previous artifact before saving."
 }

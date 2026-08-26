@@ -23,7 +23,7 @@ Conventions: each sub-stage = one approved plan -> one experimenter run -> one c
 
 ## T3. Feature engineering
 **Mini-goal**: give models spatial and temporal signal beyond lag-1.
-- [ ] T3.1 — Spatial features from CMA shapefile: kNN spatial weights, neighbor lag-1 targets/starts/rents, region encodings, centroid coordinates
+- [x] T3.1 — Spatial features from CMA shapefile: kNN spatial weights, neighbor lag-1 targets/starts/rents, region encodings, centroid coordinates (demoted cheap ablation per T2.3 — kNN neighbour-lag features tested: marginal keep for T6 screening only, +0.0006/+0.0077 mean paired ΔMDA, still ~0.06 MDA below persistence; all five T2.3 critic fixes folded in, incl. intersection-mask paired scorer showing drift's MDA edge is real but jointly irrelevant)
 - [ ] T3.2 — Temporal features: multi-year lags/diffs/rolling stats of key CMHC groups (SCSS starts/completions, RMS rents, Census)
 - [ ] T3.3 — Leakage audit of all new features (fit transforms per-fold only). **MUST include the train-only re-imputation sensitivity check** (T1.2/T2.1 critic gate): upstream `imputation/data_imputation.py` (~L458–467) fits annual→monthly distribution + bidirectional interpolation on train+test JOINTLY, so CV absolutes may be optimistic — re-run imputation restricted to the train split, re-score the then-current model on the canonical folds, and report any degradation BEFORE finalizing features (hard gate before T8).
 
