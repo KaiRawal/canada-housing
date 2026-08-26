@@ -1,0 +1,411 @@
+{
+  "generated_at": "2026-08-26T10:44:35.946244+00:00",
+  "git_sha_pre_commit": "b66cd157c6fa266c4600f7a5f5662720fdb43bc5",
+  "decision_rule": "KEEP block for T6 iff mean paired \u0394MDA(intersection, increment - lag1-only) > 0 AND full-mask aggregate NRMSE <= 1.10 x lag1-only",
+  "increments": {
+    "OWN": {
+      "agg": {
+        "model": {
+          "MDA": {
+            "mean": 0.5921651879431666,
+            "std": 0.04098100444988855
+          },
+          "NMSE": {
+            "mean": 6.28265420878405e-06,
+            "std": 3.5777338823629324e-06
+          },
+          "NRMSE": {
+            "mean": 0.002419508972690702,
+            "std": 0.0006546988161385611
+          },
+          "NMAE": {
+            "mean": 0.001736090158541084,
+            "std": 0.0003999030752313572
+          }
+        },
+        "baseline": {
+          "MDA": {
+            "mean": 0.6050590971203519,
+            "std": 0.05174473373805493
+          },
+          "NMSE": {
+            "mean": 9.655275097031036e-06,
+            "std": 6.34458560711297e-06
+          },
+          "NRMSE": {
+            "mean": 0.0029785518062746754,
+            "std": 0.0008851577454719046
+          },
+          "NMAE": {
+            "mean": 0.0021619206972212975,
+            "std": 0.0005375455871519946
+          }
+        }
+      },
+      "detail": [
+        {
+          "fold_id": 1,
+          "val_window": "2008-2009",
+          "n_directions_intersection": 279,
+          "increment_MDA": 0.6379928315412187,
+          "lag1_only_MDA": 0.6845878136200717,
+          "delta_MDA_increment_minus_lag1only": -0.04659498207885304,
+          "increment_NRMSE": 0.0036174506329778367,
+          "lag1_only_NRMSE": 0.004714183267744603,
+          "persistence_MDA_paired": 0.7040816326530612
+        },
+        {
+          "fold_id": 2,
+          "val_window": "2010-2011",
+          "n_directions_intersection": 258,
+          "increment_MDA": 0.5968992248062015,
+          "lag1_only_MDA": 0.5968992248062015,
+          "delta_MDA_increment_minus_lag1only": 0.0,
+          "increment_NRMSE": 0.0024659136807118364,
+          "lag1_only_NRMSE": 0.002762998846022334,
+          "persistence_MDA_paired": 0.6607142857142857
+        },
+        {
+          "fold_id": 3,
+          "val_window": "2012-2013",
+          "n_directions_intersection": 257,
+          "increment_MDA": 0.5252918287937743,
+          "lag1_only_MDA": 0.556420233463035,
+          "delta_MDA_increment_minus_lag1only": -0.0311284046692607,
+          "increment_NRMSE": 0.00196367553231906,
+          "lag1_only_NRMSE": 0.0024873182487094104,
+          "persistence_MDA_paired": 0.6196319018404908
+        },
+        {
+          "fold_id": 4,
+          "val_window": "2014-2015",
+          "n_directions_intersection": 245,
+          "increment_MDA": 0.5714285714285714,
+          "lag1_only_MDA": 0.5469387755102041,
+          "delta_MDA_increment_minus_lag1only": 0.024489795918367308,
+          "increment_NRMSE": 0.0017192503545097912,
+          "lag1_only_NRMSE": 0.0022542839675601307,
+          "persistence_MDA_paired": 0.6466666666666666
+        },
+        {
+          "fold_id": 5,
+          "val_window": "2016-2017",
+          "n_directions_intersection": 178,
+          "increment_MDA": 0.6292134831460674,
+          "lag1_only_MDA": 0.6404494382022472,
+          "delta_MDA_increment_minus_lag1only": -0.011235955056179803,
+          "increment_NRMSE": 0.0023312546629349847,
+          "lag1_only_NRMSE": 0.002673974701336899,
+          "persistence_MDA_paired": 0.7545454545454545
+        }
+      ],
+      "folds_with_positive_delta_MDA": "1/5",
+      "mean_paired_delta_MDA": -0.012893909177185248,
+      "aggregate_full_mask_NRMSE_ratio_vs_lag1only": 0.778,
+      "verdict_keep_for_T6": false
+    },
+    "OWN+SCSS": {
+      "agg": {
+        "model": {
+          "MDA": {
+            "mean": 0.5899862196743855,
+            "std": 0.04616860288088479
+          },
+          "NMSE": {
+            "mean": 6.477147274787044e-06,
+            "std": 3.6434952400910108e-06
+          },
+          "NRMSE": {
+            "mean": 0.0024594401099041216,
+            "std": 0.0006544475690090433
+          },
+          "NMAE": {
+            "mean": 0.0017802366239352818,
+            "std": 0.00039582056141873704
+          }
+        },
+        "baseline": {
+          "MDA": {
+            "mean": 0.6050590971203519,
+            "std": 0.05174473373805493
+          },
+          "NMSE": {
+            "mean": 9.655275097031036e-06,
+            "std": 6.34458560711297e-06
+          },
+          "NRMSE": {
+            "mean": 0.0029785518062746754,
+            "std": 0.0008851577454719046
+          },
+          "NMAE": {
+            "mean": 0.0021619206972212975,
+            "std": 0.0005375455871519946
+          }
+        }
+      },
+      "detail": [
+        {
+          "fold_id": 1,
+          "val_window": "2008-2009",
+          "n_directions_intersection": 279,
+          "increment_MDA": 0.6379928315412187,
+          "lag1_only_MDA": 0.6845878136200717,
+          "delta_MDA_increment_minus_lag1only": -0.04659498207885304,
+          "increment_NRMSE": 0.003661645579014405,
+          "lag1_only_NRMSE": 0.004714183267744603,
+          "persistence_MDA_paired": 0.7040816326530612
+        },
+        {
+          "fold_id": 2,
+          "val_window": "2010-2011",
+          "n_directions_intersection": 258,
+          "increment_MDA": 0.5813953488372093,
+          "lag1_only_MDA": 0.5968992248062015,
+          "delta_MDA_increment_minus_lag1only": -0.015503875968992165,
+          "increment_NRMSE": 0.0025516158361954693,
+          "lag1_only_NRMSE": 0.002762998846022334,
+          "persistence_MDA_paired": 0.6607142857142857
+        },
+        {
+          "fold_id": 3,
+          "val_window": "2012-2013",
+          "n_directions_intersection": 257,
+          "increment_MDA": 0.5252918287937743,
+          "lag1_only_MDA": 0.556420233463035,
+          "delta_MDA_increment_minus_lag1only": -0.0311284046692607,
+          "increment_NRMSE": 0.0019975153422377044,
+          "lag1_only_NRMSE": 0.0024873182487094104,
+          "persistence_MDA_paired": 0.6196319018404908
+        },
+        {
+          "fold_id": 4,
+          "val_window": "2014-2015",
+          "n_directions_intersection": 245,
+          "increment_MDA": 0.5591836734693878,
+          "lag1_only_MDA": 0.5469387755102041,
+          "delta_MDA_increment_minus_lag1only": 0.01224489795918371,
+          "increment_NRMSE": 0.0017903805239614606,
+          "lag1_only_NRMSE": 0.0022542839675601307,
+          "persistence_MDA_paired": 0.6466666666666666
+        },
+        {
+          "fold_id": 5,
+          "val_window": "2016-2017",
+          "n_directions_intersection": 178,
+          "increment_MDA": 0.6460674157303371,
+          "lag1_only_MDA": 0.6404494382022472,
+          "delta_MDA_increment_minus_lag1only": 0.005617977528089901,
+          "increment_NRMSE": 0.002296043268111569,
+          "lag1_only_NRMSE": 0.002673974701336899,
+          "persistence_MDA_paired": 0.7545454545454545
+        }
+      ],
+      "folds_with_positive_delta_MDA": "2/5",
+      "mean_paired_delta_MDA": -0.01507287744596646,
+      "aggregate_full_mask_NRMSE_ratio_vs_lag1only": 0.7977,
+      "verdict_keep_for_T6": false
+    },
+    "OWN+SCSS+RMS": {
+      "agg": {
+        "model": {
+          "MDA": {
+            "mean": 0.58993305456373,
+            "std": 0.04238804701143268
+          },
+          "NMSE": {
+            "mean": 6.334669105162505e-06,
+            "std": 3.538553355534233e-06
+          },
+          "NRMSE": {
+            "mean": 0.0024272029397275846,
+            "std": 0.0006658490778999966
+          },
+          "NMAE": {
+            "mean": 0.0017522285326843645,
+            "std": 0.00042369801829844996
+          }
+        },
+        "baseline": {
+          "MDA": {
+            "mean": 0.6050590971203519,
+            "std": 0.05174473373805493
+          },
+          "NMSE": {
+            "mean": 9.655275097031036e-06,
+            "std": 6.34458560711297e-06
+          },
+          "NRMSE": {
+            "mean": 0.0029785518062746754,
+            "std": 0.0008851577454719046
+          },
+          "NMAE": {
+            "mean": 0.0021619206972212975,
+            "std": 0.0005375455871519946
+          }
+        }
+      },
+      "detail": [
+        {
+          "fold_id": 1,
+          "val_window": "2008-2009",
+          "n_directions_intersection": 279,
+          "increment_MDA": 0.6344086021505376,
+          "lag1_only_MDA": 0.6845878136200717,
+          "delta_MDA_increment_minus_lag1only": -0.05017921146953408,
+          "increment_NRMSE": 0.0035814276691252546,
+          "lag1_only_NRMSE": 0.004714183267744603,
+          "persistence_MDA_paired": 0.7040816326530612
+        },
+        {
+          "fold_id": 2,
+          "val_window": "2010-2011",
+          "n_directions_intersection": 258,
+          "increment_MDA": 0.5930232558139535,
+          "lag1_only_MDA": 0.5968992248062015,
+          "delta_MDA_increment_minus_lag1only": -0.003875968992247958,
+          "increment_NRMSE": 0.0025266932208376546,
+          "lag1_only_NRMSE": 0.002762998846022334,
+          "persistence_MDA_paired": 0.6607142857142857
+        },
+        {
+          "fold_id": 3,
+          "val_window": "2012-2013",
+          "n_directions_intersection": 257,
+          "increment_MDA": 0.5175097276264592,
+          "lag1_only_MDA": 0.556420233463035,
+          "delta_MDA_increment_minus_lag1only": -0.03891050583657585,
+          "increment_NRMSE": 0.0018744038831955154,
+          "lag1_only_NRMSE": 0.0024873182487094104,
+          "persistence_MDA_paired": 0.6196319018404908
+        },
+        {
+          "fold_id": 4,
+          "val_window": "2014-2015",
+          "n_directions_intersection": 245,
+          "increment_MDA": 0.5755102040816327,
+          "lag1_only_MDA": 0.5469387755102041,
+          "delta_MDA_increment_minus_lag1only": 0.02857142857142858,
+          "increment_NRMSE": 0.0016746171556054161,
+          "lag1_only_NRMSE": 0.0022542839675601307,
+          "persistence_MDA_paired": 0.6466666666666666
+        },
+        {
+          "fold_id": 5,
+          "val_window": "2016-2017",
+          "n_directions_intersection": 178,
+          "increment_MDA": 0.6292134831460674,
+          "lag1_only_MDA": 0.6404494382022472,
+          "delta_MDA_increment_minus_lag1only": -0.011235955056179803,
+          "increment_NRMSE": 0.0024788727698740838,
+          "lag1_only_NRMSE": 0.002673974701336899,
+          "persistence_MDA_paired": 0.7545454545454545
+        }
+      ],
+      "folds_with_positive_delta_MDA": "1/5",
+      "mean_paired_delta_MDA": -0.01512604255662182,
+      "aggregate_full_mask_NRMSE_ratio_vs_lag1only": 0.7944,
+      "verdict_keep_for_T6": false
+    },
+    "ALL blocks": {
+      "agg": {
+        "model": {
+          "MDA": {
+            "mean": 0.5879317682889045,
+            "std": 0.043814898143461616
+          },
+          "NMSE": {
+            "mean": 6.182206586401395e-06,
+            "std": 3.2351297254855704e-06
+          },
+          "NRMSE": {
+            "mean": 0.0024042161374140322,
+            "std": 0.0006339963335850988
+          },
+          "NMAE": {
+            "mean": 0.0017391940727749505,
+            "std": 0.00042409027023362347
+          }
+        },
+        "baseline": {
+          "MDA": {
+            "mean": 0.6050590971203519,
+            "std": 0.05174473373805493
+          },
+          "NMSE": {
+            "mean": 9.655275097031036e-06,
+            "std": 6.34458560711297e-06
+          },
+          "NRMSE": {
+            "mean": 0.0029785518062746754,
+            "std": 0.0008851577454719046
+          },
+          "NMAE": {
+            "mean": 0.0021619206972212975,
+            "std": 0.0005375455871519946
+          }
+        }
+      },
+      "detail": [
+        {
+          "fold_id": 1,
+          "val_window": "2008-2009",
+          "n_directions_intersection": 279,
+          "increment_MDA": 0.6379928315412187,
+          "lag1_only_MDA": 0.6845878136200717,
+          "delta_MDA_increment_minus_lag1only": -0.04659498207885304,
+          "increment_NRMSE": 0.003448981781474744,
+          "lag1_only_NRMSE": 0.004714183267744603,
+          "persistence_MDA_paired": 0.7040816326530612
+        },
+        {
+          "fold_id": 2,
+          "val_window": "2010-2011",
+          "n_directions_intersection": 258,
+          "increment_MDA": 0.5930232558139535,
+          "lag1_only_MDA": 0.5968992248062015,
+          "delta_MDA_increment_minus_lag1only": -0.003875968992247958,
+          "increment_NRMSE": 0.002508808778039245,
+          "lag1_only_NRMSE": 0.002762998846022334,
+          "persistence_MDA_paired": 0.6607142857142857
+        },
+        {
+          "fold_id": 3,
+          "val_window": "2012-2013",
+          "n_directions_intersection": 257,
+          "increment_MDA": 0.5136186770428015,
+          "lag1_only_MDA": 0.556420233463035,
+          "delta_MDA_increment_minus_lag1only": -0.04280155642023353,
+          "increment_NRMSE": 0.0018872803116837052,
+          "lag1_only_NRMSE": 0.0024873182487094104,
+          "persistence_MDA_paired": 0.6196319018404908
+        },
+        {
+          "fold_id": 4,
+          "val_window": "2014-2015",
+          "n_directions_intersection": 245,
+          "increment_MDA": 0.5714285714285714,
+          "lag1_only_MDA": 0.5469387755102041,
+          "delta_MDA_increment_minus_lag1only": 0.024489795918367308,
+          "increment_NRMSE": 0.0016189206125825234,
+          "lag1_only_NRMSE": 0.0022542839675601307,
+          "persistence_MDA_paired": 0.6466666666666666
+        },
+        {
+          "fold_id": 5,
+          "val_window": "2016-2017",
+          "n_directions_intersection": 178,
+          "increment_MDA": 0.6235955056179775,
+          "lag1_only_MDA": 0.6404494382022472,
+          "delta_MDA_increment_minus_lag1only": -0.016853932584269704,
+          "increment_NRMSE": 0.002557089203289943,
+          "lag1_only_NRMSE": 0.002673974701336899,
+          "persistence_MDA_paired": 0.7545454545454545
+        }
+      ],
+      "folds_with_positive_delta_MDA": "1/5",
+      "mean_paired_delta_MDA": -0.017127328831447387,
+      "aggregate_full_mask_NRMSE_ratio_vs_lag1only": 0.7894,
+      "verdict_keep_for_T6": false
+    }
+  }
+}

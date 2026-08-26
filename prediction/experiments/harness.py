@@ -364,11 +364,16 @@ def paired_intersection_scores(train_df: pd.DataFrame,
     for cma, g in val_eval_df.groupby("cma_canonical", sort=False):
         vidx = g.index.tolist()
         if cma in train_last.index:
+            # T3.2 critic fix #1: every predictor is anchored with the TRAIN
+            # ANCHOR value (its last-train observation), mirroring
+            # _anchored_frame. (Previously each predictor was anchored with a
+            # duplicate of its own first prediction, which forced the boundary
+            # direction to pred-zero and silently dropped it from the
+            # intersection set.)
             anchor = float(train_last.loc[cma, target])
             true_seq = np.array([anchor] + g[target].tolist(), dtype=float)
             pred_seqs = {
-                n: np.array([float(p.loc[vidx[0]])] + p.loc[vidx].tolist(),
-                            dtype=float)
+                n: np.array([anchor] + p.loc[vidx].tolist(), dtype=float)
                 for n, p in preds.items()}
             row_map = vidx  # diff j (into row j+1 of seq) == val row j
         else:
@@ -580,6 +585,10 @@ def log_run(run_id: str, task: str, sub: str, description: str, config: dict,
     CONVENTION (standing decision): runs.jsonl is append-only, so duplicate
     run_ids ARE possible across regeneration sweeps; downstream tooling MUST
     dedupe by the (run_id, timestamp) pair — timestamp is unique per append.
+    CAVEAT (T3.2 critic fix #3): when duplicates share a run_id, the EARLIEST
+    duplicate rows may be broken drafts of that run (e.g. T3.1's bit-identical
+    k3/k5 rows @09:53 were the all-NaN draft); the LATEST timestamp wins, so
+    dedupe tooling should keep the last row per run_id, not the first.
     """
     now = datetime.now(timezone.utc)
     agg = results["agg"]

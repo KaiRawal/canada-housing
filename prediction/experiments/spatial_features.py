@@ -30,10 +30,11 @@ Vehicle: the T2.x pooled Ridge(alpha=1)-on-lags + CMA dummies reused VERBATIM
   * + the four k-neighbour columns above
 on identical folds/masks; persistence reported alongside by the harness.
 
-DECISION RULE (stated up front): neighbour-lag features earn a place in T6
-ablations iff paired ΔMDA (intersection-masked, spatial minus temporal-only)
-> 0 on a MAJORITY of the 5 folds AND point metrics do not degrade materially
-(spatial aggregate NRMSE <= 1.10 x temporal-only).
+DECISION RULE (stated up front; mirrors decision_rule.json): neighbour-lag
+features earn a place in T6 ablations iff paired ΔMDA (intersection-masked,
+spatial minus temporal-only) > 0 on a MAJORITY of the 5 folds AND mean paired
+ΔMDA > 0 AND point errors do not degrade materially (full-mask aggregate NRMSE
+<= 1.10 x temporal-only).
 
 Optional LightGBM probe: SKIPPED — lightgbm is not installed in this
 environment and installing heavy deps is not warranted for an ablation slot.
@@ -181,12 +182,20 @@ def build_spatial_features_strict(df: pd.DataFrame, knn: pd.DataFrame,
       {pfx}_dlt_wmean =        "          on the Δ feature
     Aggregation goes through the date-pivoted wide panels so neighbour rows
     align by calendar month. NaN cells (each CMA's own first two panel months,
-    plus nothing else — late starters' neighbours have history) -> 0.0,
-    documented.
+    plus nothing else — late starters' neighbours have history) are filled
+    with the NEIGHBOUR-MEDIAN: the cross-sectional median of the same feature
+    across all CMAs in the same calendar month (falling back to the overall
+    column median if no CMA has a value that month). This replaces the earlier
+    NaN->0.0 fill (T3.2 critic fix #5): 0.0 is far outside the features'
+    support (~90-130 for levels), and the affected cells are ~1.8% of the
+    early-1980s rows only, so the fill choice cannot drive any validation-
+    window result — but the features are now clean if they ever advance past
+    ablation status.
     """
     wide_lvl, wide_dlt = _backward_panels(df)
     panels = {"lvl": wide_lvl, "dlt": wide_dlt}
     feats = pd.DataFrame(index=df.index)
+    n_nan = 0
     for c, grp in knn.groupby("cma"):
         nbrs = grp["neighbor"].tolist()
         w = grp["dist_km"].to_numpy()
@@ -202,10 +211,25 @@ def build_spatial_features_strict(df: pd.DataFrame, knn: pd.DataFrame,
                 feats.loc[idx_c, f"{prefix}_{feat}_wmean"] = \
                     np.nansum(np.where(obs, mat * w, 0.0), axis=1) \
                     / (obs * w).sum(axis=1)
-    n_nan = int(feats.isna().sum().sum())
+    # T3.2 critic fix #5: neighbour-median (cross-sectional, same month)
+    # imputation instead of the old 0.0 fill.
+    month_key = pd.to_datetime(df["date"]).dt.to_period("M")
+    for col in feats.columns:
+        nan_mask = feats[col].isna()
+        n_nan += int(nan_mask.sum())
+        if not nan_mask.any():
+            continue
+        xsec_median = feats.assign(_m=month_key).groupby("_m")[col] \
+            .transform("median")
+        feats.loc[nan_mask, col] = xsec_median.loc[nan_mask]
+        still = feats[col].isna()  # months where NO cma has a value
+        if still.any():
+            feats.loc[still, col] = feats[col].median()
     print(f"[spatial] {feats.shape[1]} features ({prefix}), NaN cells filled "
-          f"with 0.0: {n_nan} ({n_nan / feats.size:.3%} of cells)")
-    return feats.fillna(0.0)
+          f"with same-month cross-sectional neighbour median: {n_nan} "
+          f"({n_nan / feats.size:.3%} of cells)")
+    assert not feats.isna().any().any()
+    return feats
 
 
 def make_spatial_ridge_model_fn(feats: pd.DataFrame):
@@ -235,6 +259,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--no-log", action="store_true",
                         help="recompute artifacts but skip runs.jsonl rows")
+    parser.add_argument("--paired-only", action="store_true",
+                        help="rerun ONLY the paired intersection-mask delta "
+                             "block (CV fits recomputed for like-for-like "
+                             "NRMSE ratios but NOT re-logged); used by the "
+                             "T3.2 critic-fix #1 regeneration after the "
+                             "paired-scorer anchor fix + neighbour-median "
+                             "fill change")
     args = parser.parse_args()
 
     print("=== T3.1 kNN neighbour-lag feature ablation ===")
@@ -308,7 +339,9 @@ def main() -> None:
                      "spatial_features": (list(feats_by_k[k].columns)
                                           if k else [])}
         save_results_json(res, OUT_DIR / f"{run_id}_results.json")
-        if not args.no_log:
+        if args.paired_only:
+            print("  [--paired-only] CV row not re-logged (append-only)")
+        elif not args.no_log:
             log_run(run_id=run_id, task="T3", sub="T3.1", description=desc,
                     config={"git_sha_pre_commit": sha, **cfg_extra},
                     results=res)

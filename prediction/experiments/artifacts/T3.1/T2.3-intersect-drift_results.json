@@ -154,7 +154,7 @@
         "n_candidate_directions": 432,
         "n_scored_directions_intersection": 196,
         "n_dropped_any_zero": 236,
-        "n_pred_zero_model": 18,
+        "n_pred_zero_model": 0,
         "n_pred_zero_persistence": 160
       },
       "model": {
@@ -178,7 +178,7 @@
         "n_candidate_directions": 432,
         "n_scored_directions_intersection": 168,
         "n_dropped_any_zero": 264,
-        "n_pred_zero_model": 18,
+        "n_pred_zero_model": 0,
         "n_pred_zero_persistence": 177
       },
       "model": {
@@ -202,7 +202,7 @@
         "n_candidate_directions": 432,
         "n_scored_directions_intersection": 163,
         "n_dropped_any_zero": 269,
-        "n_pred_zero_model": 18,
+        "n_pred_zero_model": 0,
         "n_pred_zero_persistence": 177
       },
       "model": {
@@ -226,7 +226,7 @@
         "n_candidate_directions": 432,
         "n_scored_directions_intersection": 150,
         "n_dropped_any_zero": 282,
-        "n_pred_zero_model": 18,
+        "n_pred_zero_model": 0,
         "n_pred_zero_persistence": 191
       },
       "model": {
@@ -250,7 +250,7 @@
         "n_candidate_directions": 245,
         "n_scored_directions_intersection": 96,
         "n_dropped_any_zero": 149,
-        "n_pred_zero_model": 18,
+        "n_pred_zero_model": 0,
         "n_pred_zero_persistence": 109
       },
       "model": {

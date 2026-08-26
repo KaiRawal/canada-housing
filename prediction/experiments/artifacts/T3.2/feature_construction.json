@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-08-26T10:44:33.977937+00:00",
+  "git_sha_pre_commit": "b66cd157c6fa266c4600f7a5f5662720fdb43bc5",
+  "construction": "strictly backward-looking shifts/rollings computed once from the train split (window ends t-1); causal NaN fill: per-CMA ffill -> same-month cross-sectional median -> column median",
+  "roll_windows_months": [
+    12,
+    36
+  ],
+  "roll_min_periods": 6,
+  "blocks": {
+    "own": [
+      "tot_lag3",
+      "tot_lag6",
+      "tot_lag12",
+      "tot_lag24",
+      "tot_d1",
+      "tot_d12",
+      "tot_dlog1",
+      "tot_mom_sign"
+    ],
+    "scss": {
+      "key_covariates": [
+        "scss_starts_dwelling_type_all_lag_1",
+        "scss_completions_dwelling_type_all_lag_1"
+      ],
+      "features": [
+        "scss_starts_dwelling_type_all_lag_1_d12",
+        "scss_starts_dwelling_type_all_lag_1_roll12_mean",
+        "scss_starts_dwelling_type_all_lag_1_roll12_std",
+        "scss_starts_dwelling_type_all_lag_1_roll36_mean",
+        "scss_starts_dwelling_type_all_lag_1_roll36_std",
+        "scss_completions_dwelling_type_all_lag_1_d12",
+        "scss_completions_dwelling_type_all_lag_1_roll12_mean",
+        "scss_completions_dwelling_type_all_lag_1_roll12_std",
+        "scss_completions_dwelling_type_all_lag_1_roll36_mean",
+        "scss_completions_dwelling_type_all_lag_1_roll36_std"
+      ]
+    },
+    "rms": {
+      "key_covariates": [
+        "rms_average_rent_bedroom_type_total_lag_1",
+        "rms_vacancy_rate_bedroom_type_total_lag_1"
+      ],
+      "features": [
+        "rms_average_rent_bedroom_type_total_lag_1_d12",
+        "rms_average_rent_bedroom_type_total_lag_1_roll12_mean",
+        "rms_average_rent_bedroom_type_total_lag_1_roll12_std",
+        "rms_average_rent_bedroom_type_total_lag_1_roll36_mean",
+        "rms_average_rent_bedroom_type_total_lag_1_roll36_std",
+        "rms_vacancy_rate_bedroom_type_total_lag_1_d12",
+        "rms_vacancy_rate_bedroom_type_total_lag_1_roll12_mean",
+        "rms_vacancy_rate_bedroom_type_total_lag_1_roll12_std",
+        "rms_vacancy_rate_bedroom_type_total_lag_1_roll36_mean",
+        "rms_vacancy_rate_bedroom_type_total_lag_1_roll36_std"
+      ]
+    },
+    "census": {
+      "key_covariates": [
+        "census_dwelling_value_average_total_lag_1",
+        "census_income_average_and_median_median_household_income_before_taxes_lag_1"
+      ],
+      "features": [
+        "census_dwelling_value_average_total_lag_1_d12",
+        "census_dwelling_value_average_total_lag_1_roll12_mean",
+        "census_dwelling_value_average_total_lag_1_roll36_mean",
+        "census_income_average_and_median_median_household_income_before_taxes_lag_1_d12",
+        "census_income_average_and_median_median_household_income_before_taxes_lag_1_roll12_mean",
+        "census_income_average_and_median_median_household_income_before_taxes_lag_1_roll36_mean"
+      ]
+    }
+  },
+  "n_features_total": 34
+}

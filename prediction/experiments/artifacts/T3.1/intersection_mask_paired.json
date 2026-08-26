@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T09:50:03.287120+00:00",
-  "git_sha_pre_commit": "05a6de689121e21dac5f517a4ef0f3704af5c565",
+  "generated_at": "2026-08-26T10:39:33.391332+00:00",
+  "git_sha_pre_commit": "b66cd157c6fa266c4600f7a5f5662720fdb43bc5",
   "scorer": "harness.paired_intersection_scores",
   "purpose": "decide whether the zero-drop-per-side headline conclusions survive when model and baseline are restricted to their SHARED kept-direction set",
   "comparisons": {
@@ -52,7 +52,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 196,
             "n_dropped_any_zero": 236,
-            "n_pred_zero_model": 18,
+            "n_pred_zero_model": 0,
             "n_pred_zero_persistence": 160
           },
           "model": {
@@ -76,7 +76,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 168,
             "n_dropped_any_zero": 264,
-            "n_pred_zero_model": 18,
+            "n_pred_zero_model": 0,
             "n_pred_zero_persistence": 177
           },
           "model": {
@@ -100,7 +100,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 163,
             "n_dropped_any_zero": 269,
-            "n_pred_zero_model": 18,
+            "n_pred_zero_model": 0,
             "n_pred_zero_persistence": 177
           },
           "model": {
@@ -124,7 +124,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 150,
             "n_dropped_any_zero": 282,
-            "n_pred_zero_model": 18,
+            "n_pred_zero_model": 0,
             "n_pred_zero_persistence": 191
           },
           "model": {
@@ -148,7 +148,7 @@
             "n_candidate_directions": 245,
             "n_scored_directions_intersection": 96,
             "n_dropped_any_zero": 149,
-            "n_pred_zero_model": 18,
+            "n_pred_zero_model": 0,
             "n_pred_zero_persistence": 109
           },
           "model": {
@@ -215,7 +215,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 196,
             "n_dropped_any_zero": 236,
-            "n_pred_zero_model": 160,
+            "n_pred_zero_model": 142,
             "n_pred_zero_persistence": 160
           },
           "model": {
@@ -239,7 +239,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 168,
             "n_dropped_any_zero": 264,
-            "n_pred_zero_model": 177,
+            "n_pred_zero_model": 159,
             "n_pred_zero_persistence": 177
           },
           "model": {
@@ -263,7 +263,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 163,
             "n_dropped_any_zero": 269,
-            "n_pred_zero_model": 177,
+            "n_pred_zero_model": 159,
             "n_pred_zero_persistence": 177
           },
           "model": {
@@ -287,7 +287,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 150,
             "n_dropped_any_zero": 282,
-            "n_pred_zero_model": 191,
+            "n_pred_zero_model": 173,
             "n_pred_zero_persistence": 191
           },
           "model": {
@@ -311,7 +311,7 @@
             "n_candidate_directions": 245,
             "n_scored_directions_intersection": 96,
             "n_dropped_any_zero": 149,
-            "n_pred_zero_model": 109,
+            "n_pred_zero_model": 91,
             "n_pred_zero_persistence": 109
           },
           "model": {
@@ -378,7 +378,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 196,
             "n_dropped_any_zero": 236,
-            "n_pred_zero_model": 24,
+            "n_pred_zero_model": 6,
             "n_pred_zero_persistence": 160
           },
           "model": {
@@ -402,7 +402,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 168,
             "n_dropped_any_zero": 264,
-            "n_pred_zero_model": 25,
+            "n_pred_zero_model": 7,
             "n_pred_zero_persistence": 177
           },
           "model": {
@@ -426,7 +426,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 163,
             "n_dropped_any_zero": 269,
-            "n_pred_zero_model": 28,
+            "n_pred_zero_model": 10,
             "n_pred_zero_persistence": 177
           },
           "model": {
@@ -450,7 +450,7 @@
             "n_candidate_directions": 432,
             "n_scored_directions_intersection": 150,
             "n_dropped_any_zero": 282,
-            "n_pred_zero_model": 32,
+            "n_pred_zero_model": 14,
             "n_pred_zero_persistence": 191
           },
           "model": {
@@ -474,7 +474,7 @@
             "n_candidate_directions": 311,
             "n_scored_directions_intersection": 110,
             "n_dropped_any_zero": 201,
-            "n_pred_zero_model": 19,
+            "n_pred_zero_model": 1,
             "n_pred_zero_persistence": 148
           },
           "model": {
@@ -498,6 +498,7 @@
     "question": "drift nominally edged persistence on zero-drop-per-side MDA (0.6852 vs 0.6721) \u2014 is the edge real?",
     "mean_paired_delta_MDA_intersection": 0.025357007220065973,
     "edge_positive_on_all_folds": false,
+    "verdict_wording": "sign-consistent under stricter pairing but NOT statistically established (|t| < 1); jointly irrelevant regardless \u2014 NRMSE ~5x worse on the same rows (T3.2 critic fix #2 wording)",
     "note": "point-error class unchanged (~40x NRMSE) either way"
   }
 }

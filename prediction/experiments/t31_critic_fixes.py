@@ -273,6 +273,10 @@ def main() -> None:
                     "MDA (0.6852 vs 0.6721) — is the edge real?",
         "mean_paired_delta_MDA_intersection": mean_delta,
         "edge_positive_on_all_folds": bool(drift_edge_survives),
+        "verdict_wording": "sign-consistent under stricter pairing but NOT "
+                           "statistically established (|t| < 1); jointly "
+                           "irrelevant regardless — NRMSE ~5x worse on the "
+                           "same rows (T3.2 critic fix #2 wording)",
         "note": "point-error class unchanged (~40x NRMSE) either way",
     }
     OUT_T31.mkdir(parents=True, exist_ok=True)
