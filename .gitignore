@@ -203,3 +203,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Regenerable imputation outputs in prediction/ (run `python imputation/data_imputation.py`).
+# Kept out of git: they include the held-out test splits, which must not be
+# touched before stage T8, and the full train matrices are ~10MB each.
+prediction/*.csv
