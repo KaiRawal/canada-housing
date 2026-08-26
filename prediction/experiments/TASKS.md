@@ -15,7 +15,7 @@ Conventions: each sub-stage = one approved plan -> one experimenter run -> one c
 
 ## T2. Baselines & target formulation
 **Mini-goal**: establish what "beating persistence" means and predict the right quantity.
-- [ ] T2.1 — Baseline suite under the harness: persistence, drift (random walk with drift), per-CMA ARIMA/SARIMAX, ridge-on-lags
+- [x] T2.1 — Baseline suite under the harness: persistence, drift (random walk with drift), per-CMA ARIMA/SARIMAX, ridge-on-lags
 - [ ] T2.2 — Target formulation study: level vs Δlog vs YoY % change, compared head-to-head on identical folds; decide empirically and record rationale
 - [ ] T2.3 — Spatial sanity check: leave-one-CMA-out probe to see whether spatial pooling helps at all
 
@@ -25,7 +25,7 @@ Conventions: each sub-stage = one approved plan -> one experimenter run -> one c
 **Mini-goal**: give models spatial and temporal signal beyond lag-1.
 - [ ] T3.1 — Spatial features from CMA shapefile: kNN spatial weights, neighbor lag-1 targets/starts/rents, region encodings, centroid coordinates
 - [ ] T3.2 — Temporal features: multi-year lags/diffs/rolling stats of key CMHC groups (SCSS starts/completions, RMS rents, Census)
-- [ ] T3.3 — Leakage audit of all new features (fit transforms per-fold only)
+- [ ] T3.3 — Leakage audit of all new features (fit transforms per-fold only). **MUST include the train-only re-imputation sensitivity check** (T1.2/T2.1 critic gate): upstream `imputation/data_imputation.py` (~L458–467) fits annual→monthly distribution + bidirectional interpolation on train+test JOINTLY, so CV absolutes may be optimistic — re-run imputation restricted to the train split, re-score the then-current model on the canonical folds, and report any degradation BEFORE finalizing features (hard gate before T8).
 
 *Learning target: which engineered feature families carry signal.*
 

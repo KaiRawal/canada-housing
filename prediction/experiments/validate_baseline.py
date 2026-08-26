@@ -6,14 +6,22 @@ What it does
 ------------
 Run A (exact reproduction): re-runs the T1.1 smoke configuration
 (`harness.evaluate` + `last_value_model_fn`) so the persistence baseline is
-scored on the IDENTICAL folds and row sets as the smoke test, then asserts the
-per-fold baseline metrics match artifacts/T1.1/smoke_test_results.json exactly.
+scored on the IDENTICAL folds and row sets as the smoke test, then asserts BOTH
+the per-fold model (frozen last-value) AND baseline metric blocks match
+artifacts/T1.1/smoke_test_results.json exactly.
 
 Run B (canonical persistence reference): scores persistence AS BOTH the model
 and the baseline (`_score_fold` with model_pred == baseline_pred), i.e. the
 persistence predictor run through the harness on its own maximal evaluation
 set. This produces the reference numbers all later models are judged against,
 plus per-fold eval-row attrition (val rows lost to NaN persistence predictions).
+
+T1.2 critic-fix re-run (2026-08-26): `_anchored_mda` now lets CMAs with no
+train history contribute unanchored within-window directions (losing only
+their first in-window direction), so fold 5's MDA includes the six
+late-starter CMAs instead of silently dropping them. This script regenerates
+the canonical reference numbers and appends a CORRECTED run row to runs.jsonl
+(never edits old rows). Folds 1-4 are unchanged; only fold-5 MDA can move.
 
 Cross-checks / sanity checks (all asserted, all reported):
   1. Persistence definition matches prediction/prediction.py exactly:
@@ -65,7 +73,7 @@ from harness import (  # noqa: E402
     save_results_json,
 )
 
-RUN_ID = "T1.2-baseline-validation"
+RUN_ID = "T1.2-baseline-validation-mdafix"
 SMOKE_JSON = ARTIFACTS_DIR / "T1.1" / "smoke_test_results.json"
 OUT_JSON = ARTIFACTS_DIR / "T1.2" / "baseline_validation_results.json"
 
@@ -187,20 +195,25 @@ def main() -> None:
                      folds=folds, target=TARGET)
 
     smoke = json.loads(SMOKE_JSON.read_text())
+    assert len(res_a["per_fold"]) == len(smoke["per_fold"]), (
+        f"fold-list length mismatch: harness produced {len(res_a['per_fold'])} "
+        f"folds but smoke JSON has {len(smoke['per_fold'])}"
+    )
     repro_report = []
     for pf_a, pf_s in zip(res_a["per_fold"], smoke["per_fold"]):
         assert pf_a["fold_id"] == pf_s["fold_id"]
-        for metric in harness.METRIC_NAMES:
-            a, s = pf_a["baseline"][metric], pf_s["baseline"][metric]
-            assert a == s, (f"baseline {metric} differs from smoke test in fold "
-                            f"{pf_a['fold_id']}: {a} vs {s}")
+        for block in ("model", "baseline"):  # model = frozen last-value block
+            for metric in harness.METRIC_NAMES:
+                a, s = pf_a[block][metric], pf_s[block][metric]
+                assert a == s, (f"{block} {metric} differs from smoke test in fold "
+                                f"{pf_a['fold_id']}: {a} vs {s}")
         repro_report.append({
             "fold_id": pf_a["fold_id"],
             "matches_smoke_exactly": True,
             "n_eval_rows": pf_a["n_eval_rows"],
             "smoke_n_eval_rows": pf_s["n_eval_rows"],
         })
-    print("Run A: per-fold baseline metrics match artifacts/T1.1/"
+    print("Run A: per-fold model AND baseline metrics match artifacts/T1.1/"
           "smoke_test_results.json EXACTLY on all folds: OK")
 
     # -- Run B: persistence AS the model (canonical reference) ----------------
@@ -300,11 +313,15 @@ def main() -> None:
     log_run(
         run_id=RUN_ID,
         task="T1", sub="T1.2",
-        description="Harness validation: persistence baseline reproduced through "
-                    "the harness on all 5 expanding folds; per-fold baseline "
-                    "metrics match the T1.1 smoke run exactly; persistence == "
-                    "prediction.py global shift(1) on every scored row. Run B "
-                    "(model==baseline==persistence) is the canonical reference.",
+        description="CORRECTED T1.2 reference (critic fix: _anchored_mda now "
+                    "scores unanchored within-window directions for CMAs with "
+                    "no train history, instead of dropping them): persistence "
+                    "baseline reproduced through the harness on all 5 expanding "
+                    "folds; per-fold model AND baseline blocks match the T1.1 "
+                    "smoke run exactly (Run A eval sets unchanged); persistence "
+                    "== prediction.py global shift(1) on every scored row. Run B "
+                    "(model==baseline==persistence) is the canonical reference; "
+                    "only fold-5 MDA changed vs the original row.",
         config={"model": "persistence", "validation_run": "A: smoke repro; "
                 "B: persistence-as-model canonical reference"},
         results=results_b,

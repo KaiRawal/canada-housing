@@ -217,11 +217,17 @@ def _anchored_mda(train_df: pd.DataFrame, val_eval_df: pd.DataFrame,
     """
     MDA including the train->validation boundary direction.
 
-    For each CMA we prepend its last TRAIN observation as an anchor row with
-    true=pred=last-train-value. The anchor's own diff is NaN (first in group ->
-    dropped by evaluation.mean_directional_accuracy_grouped) and contributes no
-    scored direction, while the FIRST validation row's direction becomes
-    well-defined instead of being lost.
+    For each CMA WITH train history we prepend its last TRAIN observation as an
+    anchor row with true=pred=last-train-value. The anchor's own diff is NaN
+    (first in group -> dropped by evaluation.mean_directional_accuracy_grouped)
+    and contributes no scored direction, while the FIRST validation row's
+    direction becomes well-defined instead of being lost.
+
+    CMAs with NO train history in this fold (late starters whose entire series
+    begins inside the validation window) cannot be anchored; instead they
+    contribute UNANCHORED within-window directions, losing only their first
+    in-window direction (its diff is NaN and dropped naturally). This keeps
+    every predictable validation row represented in MDA.
     """
     train_last = (
         train_df.sort_values(ID_COLS)
@@ -231,7 +237,14 @@ def _anchored_mda(train_df: pd.DataFrame, val_eval_df: pd.DataFrame,
     frames = []
     for cma, g in val_eval_df.groupby("cma_canonical", sort=False):
         if cma not in train_last.index:
-            continue  # CMA had no train rows in this fold -> no boundary to score
+            # No train rows this fold -> unanchored contribution: the CMA's
+            # first in-window direction is lost (NaN diff), the rest scored.
+            frames.append(pd.DataFrame({
+                "cma_canonical": g["cma_canonical"].tolist(),
+                f"{target}_true": g[target].tolist(),
+                f"{target}_pred": pred.loc[g.index].tolist(),
+            }))
+            continue
         a = train_last.loc[cma]
         frames.append(pd.DataFrame({
             "cma_canonical": [cma] + g["cma_canonical"].tolist(),
