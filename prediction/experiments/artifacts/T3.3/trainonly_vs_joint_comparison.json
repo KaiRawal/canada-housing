@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-08-26T12:12:26.927011+00:00",
+  "git_sha_pre_commit": "7bd3cf5fddc5a46b390a4725fa2d72c8391c17a4",
+  "design": "identical canonical 5 folds (val 2008-09 .. 2016-17); joint-imputation references = latest-timestamp-wins rows of the named ids; train-only rows appended this stage",
+  "pairs": [
+    {
+      "comparison": "persistence",
+      "trainonly_run_id": "T3.3-trainonly-persistence",
+      "joint_reference_run_id": "T1.2-baseline-validation-mdazero",
+      "trainonly": {
+        "MDA": 0.6771279882839918,
+        "NMSE": 1.5186000041369137e-06,
+        "NRMSE": 0.0011305311297628712,
+        "NMAE": 0.0006111919043040025
+      },
+      "joint": {
+        "MDA": 0.6771279882839918,
+        "NMSE": 1.5186000041369137e-06,
+        "NRMSE": 0.0011305311297628712,
+        "NMAE": 0.0006111919043040025
+      },
+      "delta_trainonly_minus_joint": {
+        "MDA": 0.0,
+        "NMSE": 0.0,
+        "NRMSE": 0.0,
+        "NMAE": 0.0
+      }
+    },
+    {
+      "comparison": "ridge_lag1only",
+      "trainonly_run_id": "T3.3-trainonly-lag1only",
+      "joint_reference_run_id": "T3.2-temporal-lag1only",
+      "trainonly": {
+        "MDA": 0.6044005991625292,
+        "NMSE": 3.2101482974146795e-06,
+        "NRMSE": 0.00169926754877168,
+        "NMAE": 0.0012262168138854218
+      },
+      "joint": {
+        "MDA": 0.6050590971203519,
+        "NMSE": 3.1651453644492284e-06,
+        "NRMSE": 0.0016865335365764064,
+        "NMAE": 0.001217496763546245
+      },
+      "delta_trainonly_minus_joint": {
+        "MDA": -0.0006584979578226902,
+        "NMSE": 4.500293296545116e-08,
+        "NRMSE": 1.2734012195273576e-05,
+        "NMAE": 8.720050339176659e-06
+      }
+    },
+    {
+      "comparison": "ridge_add_own",
+      "trainonly_run_id": "T3.3-trainonly-add-own",
+      "joint_reference_run_id": "T3.2-temporal-add-own",
+      "trainonly": {
+        "MDA": 0.598883420933387,
+        "NMSE": 3.0954908239163945e-06,
+        "NRMSE": 0.0016044996564071508,
+        "NMAE": 0.0010941353008305722
+      },
+      "joint": {
+        "MDA": 0.598083420933387,
+        "NMSE": 3.1300541567016804e-06,
+        "NRMSE": 0.0016094052496013933,
+        "NMAE": 0.0010963416041453837
+      },
+      "delta_trainonly_minus_joint": {
+        "MDA": 0.0008000000000000229,
+        "NMSE": -3.456333278528597e-08,
+        "NRMSE": -4.905593194242568e-06,
+        "NMAE": -2.206303314811458e-06
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "generated_at": "2026-08-26T12:12:26.927256+00:00",
+  "git_sha_pre_commit": "7bd3cf5fddc5a46b390a4725fa2d72c8391c17a4",
+  "ids_align_with_canonical_train_split": true,
+  "constant_columns_dropped_trainonly": [
+    "core_housing_need_housing_standards_households_in_core_housing_need_above_standards_lag_1",
+    "core_housing_need_housing_standards_of_households_in_core_housing_need_above_standards_lag_1"
+  ],
+  "n_cols_joint": 176,
+  "n_cols_trainonly": 176,
+  "cols_only_in_joint": [],
+  "cols_only_in_trainonly": [],
+  "n_columns_with_any_change": 147,
+  "top_changed_columns": [
+    {
+      "column": "rms_vacancy_rate_bedroom_type_studio_lag_1",
+      "n_cells_changed": 469,
+      "share_changed": 0.0602,
+      "mean_abs_delta": 0.2692248459958932
+    },
+    {
+      "column": "scss_share_absorbed_at_completion_dwelling_type_row_lag_1",
+      "n_cells_changed": 448,
+      "share_changed": 0.0575,
+      "mean_abs_delta": 3.954599226349738
+    },
+    {
+      "column": "scss_length_of_construction_dwelling_type_row_lag_1",
+      "n_cells_changed": 447,
+      "share_changed": 0.0574,
+      "mean_abs_delta": 0.31439331252537095
+    },
+    {
+      "column": "scss_length_of_construction_dwelling_type_apartment_lag_1",
+      "n_cells_changed": 445,
+      "share_changed": 0.0571,
+      "mean_abs_delta": 0.4322254204556568
+    },
+    {
+      "column": "scss_share_absorbed_at_completion_dwelling_type_apartment_lag_1",
+      "n_cells_changed": 445,
+      "share_changed": 0.0571,
+      "mean_abs_delta": 1.8495748692187353
+    },
+    {
+      "column": "scss_length_of_construction_dwelling_type_semi_detached_lag_1",
+      "n_cells_changed": 441,
+      "share_changed": 0.0566,
+      "mean_abs_delta": 0.07160426037286925
+    },
+    {
+      "column": "scss_share_absorbed_at_completion_dwelling_type_semi_detached_lag_1",
+      "n_cells_changed": 441,
+      "share_changed": 0.0566,
+      "mean_abs_delta": 2.917690417114826
+    },
+    {
+      "column": "rms_average_rent_bedroom_type_1_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 35.3629363449692
+    },
+    {
+      "column": "rms_average_rent_bedroom_type_2_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 39.75320841889117
+    },
+    {
+      "column": "rms_average_rent_bedroom_type_3_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 40.60164271047228
+    },
+    {
+      "column": "rms_average_rent_bedroom_type_studio_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 30.464322381930184
+    },
+    {
+      "column": "rms_average_rent_bedroom_type_total_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 37.1452772073922
+    },
+    {
+      "column": "rms_median_rent_bedroom_type_1_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 32.24255646817249
+    },
+    {
+      "column": "rms_median_rent_bedroom_type_2_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 37.305313141683776
+    },
+    {
+      "column": "rms_median_rent_bedroom_type_3_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 35.48562628336756
+    },
+    {
+      "column": "rms_median_rent_bedroom_type_studio_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 27.791837782340863
+    },
+    {
+      "column": "rms_median_rent_bedroom_type_total_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 34.47253593429158
+    },
+    {
+      "column": "rms_rental_universe_bedroom_type_1_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 1184.5785420944558
+    },
+    {
+      "column": "rms_rental_universe_bedroom_type_2_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 914.6468172484599
+    },
+    {
+      "column": "rms_rental_universe_bedroom_type_3_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 100.75885523613962
+    },
+    {
+      "column": "rms_rental_universe_bedroom_type_studio_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 162.89771560574948
+    },
+    {
+      "column": "rms_rental_universe_bedroom_type_total_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 2362.881930184805
+    },
+    {
+      "column": "rms_vacancy_rate_bedroom_type_1_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 0.3223305954825461
+    },
+    {
+      "column": "rms_vacancy_rate_bedroom_type_2_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 0.13895020533880906
+    },
+    {
+      "column": "rms_vacancy_rate_bedroom_type_3_bedroom_lag_1",
+      "n_cells_changed": 435,
+      "share_changed": 0.0558,
+      "mean_abs_delta": 0.13895020533880903
+    }
+  ],
+  "note": "per-column diffs computed on aligned (cma, date) pairs; 'changed' = |delta| > 1e-12"
+}

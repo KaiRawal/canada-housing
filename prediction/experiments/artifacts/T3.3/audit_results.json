@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-08-26T12:06:58.744746+00:00",
+  "git_sha_pre_commit": "7bd3cf5fddc5a46b390a4725fa2d72c8391c17a4",
+  "A_synthetic_causality": {
+    "status": "PASS",
+    "checks": {
+      "own_lag3_equals_y_t_minus_3": true,
+      "own_d1_equals_y_t_minus_1_minus_y_t_minus_2": true,
+      "own_d12_equals_y_t_minus_1_minus_y_t_minus_13": true,
+      "own_dlog1": true,
+      "own_mom_sign": true,
+      "family_roll12_mean_window_ends_t_minus_1": true,
+      "family_diff12_group_aware": true
+    },
+    "detail": "hand-computed expectations matched exactly on a 2-CMA x 30-month synthetic panel"
+  },
+  "B_group_isolation": {
+    "status": "PASS",
+    "own_block_isolated": true,
+    "family_block_isolated": true,
+    "detail": "perturbing CMA B's whole target series leaves CMA A's OWN and SCSS-family features bit-identical (group-aware shifts verified)"
+  },
+  "C_same_month_exclusion": {
+    "status": "PASS",
+    "row_t_features_unchanged": true,
+    "row_t_plus_1_responds_through_legitimate_lag": true,
+    "detail": "a single-cell truth perturbation at month t moves NO feature at month t; the first response is at t+1 via the lag-1 terms"
+  },
+  "D_real_panel_no_lookahead": {
+    "status": "PASS",
+    "rows_before_cutoff_bit_identical_own": true,
+    "rows_before_cutoff_bit_identical_family": true,
+    "rows_from_cutoff_on_respond": true,
+    "n_perturbed_rows": 872,
+    "cutoff": "2014-01-01",
+    "detail": "adding +25.0 to EVERY truth on/after 2014-01 leaves all 6920 earlier rows' engineered features bit-identical (no lookahead anywhere)"
+  },
+  "E_train_only_fitting": {
+    "status": "PASS",
+    "n_fold_violations": 0,
+    "violations": [],
+    "detail": "each fold's StandardScaler+Ridge pipeline received only rows with max(train date) < min(val date)"
+  },
+  "F_spatial_fill_incidence": {
+    "k=3": {
+      "n_raw_nan_cells_total": 3,
+      "share_of_cells": 0.00019,
+      "nan_cells_inside_validation_windows": {
+        "fold1_val_2008-2009": 0,
+        "fold2_val_2010-2011": 0,
+        "fold3_val_2012-2013": 0,
+        "fold4_val_2014-2015": 0,
+        "fold5_val_2016-2017": 0
+      },
+      "by_month_min_max": {
+        "earliest_filled_month": "1981-01-01"
+      }
+    },
+    "k=5": {
+      "n_raw_nan_cells_total": 3,
+      "share_of_cells": 0.00019,
+      "nan_cells_inside_validation_windows": {
+        "fold1_val_2008-2009": 0,
+        "fold2_val_2010-2011": 0,
+        "fold3_val_2012-2013": 0,
+        "fold4_val_2014-2015": 0,
+        "fold5_val_2016-2017": 0
+      },
+      "by_month_min_max": {
+        "earliest_filled_month": "1981-01-01"
+      }
+    }
+  },
+  "G_base_feature_pipeline_notes": {
+    "base_176_lag1_columns": "produced upstream by prepare_data_for_feature_selection via group-aware shift(1); NaN handling there is ffill().bfill().fillna(0) WITHIN each CMA (bfill touches only each column's leading cold-start rows)",
+    "scaler_and_ridge": "StandardScaler+Ridge inside sklearn Pipeline fitted per fold on the train window ONLY (verified in check E)",
+    "upstream_joint_imputation": "quantified separately by t33_trainonly_imputation.py (see artifacts/T3.3/ trainonly_vs_joint_comparison.json)",
+    "covariate_timing_convention": "SCSS/RMS/Census covariate t-1 used AS IF available at t; real publication lags exist (standing decision caveat added to KNOWLEDGE.md this sub-stage)"
+  },
+  "overall_verdict": "PASS \u2014 temporal/family builders certified causal after the T3.3 shift+fill fixes"
+}

@@ -158,11 +158,16 @@ def _backward_panels(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
     Wide (date x CMA) panels of the backward-shifted own-history features:
       lvl1(c, t) = y_{c, t-1},   dlt1(c, t) = y_{c, t-1} - y_{c, t-2}
-    Pure shift(1)/diff(1).shift(1) per CMA — no future information.
+    Pure group-aware shift(1)/diff(1)+group-aware shift(1) per CMA — no
+    future information and no cross-CMA contamination. (T3.3 critic fix #1:
+    dlt1's final `.shift(1)` was previously a BARE Series shift, which pulled
+    each CMA's first row delta from the PREVIOUS CMA's last row in the sorted
+    panel.)
     """
     srt = df.sort_values(harness.ID_COLS)
     lvl1 = srt.groupby("cma_canonical")[TARGET].shift(1)
-    dlt1 = srt.groupby("cma_canonical")[TARGET].diff(1).shift(1)
+    dlt1 = (srt.groupby("cma_canonical")[TARGET].diff(1)
+            .groupby(srt["cma_canonical"]).shift(1))
     base = srt[["cma_canonical", "date"]]
     wide_lvl = base.assign(_v=lvl1.to_numpy()).pivot(
         index="date", columns="cma_canonical", values="_v")
@@ -187,10 +192,12 @@ def build_spatial_features_strict(df: pd.DataFrame, knn: pd.DataFrame,
     across all CMAs in the same calendar month (falling back to the overall
     column median if no CMA has a value that month). This replaces the earlier
     NaN->0.0 fill (T3.2 critic fix #5): 0.0 is far outside the features'
-    support (~90-130 for levels), and the affected cells are ~1.8% of the
-    early-1980s rows only, so the fill choice cannot drive any validation-
-    window result — but the features are now clean if they ever advance past
-    ablation status.
+    support (~90-130 for levels). CAVEAT CORRECTED IN T3.3: the T3.2 claim
+    that affected cells were "~1.8%, early-1980s only" was unverified — the
+    same-month neighbour-median fill is contemporaneous-across-section (not
+    strictly causal at row level) and its actual incidence is quantified in
+    artifacts/T3.3/audit_results.json; treated as a caveated feature family,
+    not a certified-causal one.
     """
     wide_lvl, wide_dlt = _backward_panels(df)
     panels = {"lvl": wide_lvl, "dlt": wide_dlt}
@@ -213,6 +220,11 @@ def build_spatial_features_strict(df: pd.DataFrame, knn: pd.DataFrame,
                     / (obs * w).sum(axis=1)
     # T3.2 critic fix #5: neighbour-median (cross-sectional, same month)
     # imputation instead of the old 0.0 fill.
+    # T3.3 CAVEAT (leakage audit): this fill uses OTHER CMAs' CONTEMPORANEOUS
+    # (month-t) feature values — backward-looking in content but NOT strictly
+    # causal at row level; it is the same as-if-available-at-t convention the
+    # upstream covariates already carry (see KNOWLEDGE.md standing decision).
+    # Incidence is quantified per fold window in artifacts/T3.3/audit_results.json.
     month_key = pd.to_datetime(df["date"]).dt.to_period("M")
     for col in feats.columns:
         nan_mask = feats[col].isna()

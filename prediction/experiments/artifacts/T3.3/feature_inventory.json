@@ -1,0 +1,122 @@
+{
+  "generated_at": "2026-08-26T12:14:57.606672+00:00",
+  "git_sha_pre_commit": "7bd3cf5fddc5a46b390a4725fa2d72c8391c17a4",
+  "certification_basis": {
+    "audit_checks": {
+      "A_synthetic_causality": "PASS",
+      "B_group_isolation": "PASS",
+      "C_same_month_exclusion": "PASS",
+      "D_real_panel_no_lookahead": "PASS",
+      "E_train_only_fitting": "PASS"
+    },
+    "shift_fixes": "all bare Series .shift(1) replaced by group-aware groupby(cma).shift(1) in temporal_features.py (own d1/d12/dlog1 + family rolling specs) and spatial_features.py (_backward_panels dlt1)",
+    "fill_fixes": "_fill_causal now strictly causal (ffill -> per-CMA strictly-past median -> panel strictly-earlier-months median -> counted own-CMA cold-start backfill); same-month cross-sectional term removed",
+    "imputation_sensitivity": "see artifacts/T3.3/trainonly_vs_joint_comparison.json \u2014 joint imputation optimism quantified as NEGLIGIBLE for the ridge vehicles (|\u0394NRMSE| <= 0.8% relative, |\u0394MDA| <= 0.001)"
+  },
+  "families": [
+    {
+      "family": "base_lag1",
+      "status": "CERTIFIED-CAUSAL-WITH-CAVEATS",
+      "n_columns": 176,
+      "source": "X_train_full_total.csv",
+      "role": "default T4+ feature set",
+      "caveats": [
+        "upstream imputation fitted jointly on train+test rows; optimism quantified as negligible (T3.3 hard gate)",
+        "SCSS/RMS/Census covariate t-1 used AS IF available at t; real publication lags exist (KNOWLEDGE.md standing decision caveat)"
+      ]
+    },
+    {
+      "family": "temporal_own",
+      "features": [
+        "tot_lag3",
+        "tot_lag6",
+        "tot_lag12",
+        "tot_lag24",
+        "tot_d1",
+        "tot_d12",
+        "tot_dlog1",
+        "tot_mom_sign"
+      ],
+      "n_features": 8,
+      "status": "CERTIFIED-CAUSAL",
+      "role": "point-error lever only: NRMSE ratio vs lag1-only 0.954 with late starters, 0.781 without them (gain concentrated in full-history CMAs; late-starter cold-start fills dilute it)",
+      "directional_contribution": "none (paired \u0394MDA -0.0072, 2/5 folds positive)"
+    },
+    {
+      "family": "temporal_scss",
+      "features": [
+        "scss_starts_dwelling_type_all_lag_1_d12",
+        "scss_starts_dwelling_type_all_lag_1_roll12_mean",
+        "scss_starts_dwelling_type_all_lag_1_roll12_std",
+        "scss_starts_dwelling_type_all_lag_1_roll36_mean",
+        "scss_starts_dwelling_type_all_lag_1_roll36_std",
+        "scss_completions_dwelling_type_all_lag_1_d12",
+        "scss_completions_dwelling_type_all_lag_1_roll12_mean",
+        "scss_completions_dwelling_type_all_lag_1_roll12_std",
+        "scss_completions_dwelling_type_all_lag_1_roll36_mean",
+        "scss_completions_dwelling_type_all_lag_1_roll36_std"
+      ],
+      "status": "CERTIFIED-CAUSAL-CONSTRUCTION / NO-SIGNAL",
+      "role": "T6 ablation only (no incremental metric improvement)"
+    },
+    {
+      "family": "temporal_rms",
+      "features": [
+        "rms_average_rent_bedroom_type_total_lag_1_d12",
+        "rms_average_rent_bedroom_type_total_lag_1_roll12_mean",
+        "rms_average_rent_bedroom_type_total_lag_1_roll12_std",
+        "rms_average_rent_bedroom_type_total_lag_1_roll36_mean",
+        "rms_average_rent_bedroom_type_total_lag_1_roll36_std",
+        "rms_vacancy_rate_bedroom_type_total_lag_1_d12",
+        "rms_vacancy_rate_bedroom_type_total_lag_1_roll12_mean",
+        "rms_vacancy_rate_bedroom_type_total_lag_1_roll12_std",
+        "rms_vacancy_rate_bedroom_type_total_lag_1_roll36_mean",
+        "rms_vacancy_rate_bedroom_type_total_lag_1_roll36_std"
+      ],
+      "status": "CERTIFIED-CAUSAL-CONSTRUCTION / NO-SIGNAL",
+      "role": "T6 ablation only"
+    },
+    {
+      "family": "temporal_census",
+      "features": [
+        "census_dwelling_value_average_total_lag_1_d12",
+        "census_dwelling_value_average_total_lag_1_roll12_mean",
+        "census_dwelling_value_average_total_lag_1_roll36_mean",
+        "census_income_average_and_median_median_household_income_before_taxes_lag_1_d12",
+        "census_income_average_and_median_median_household_income_before_taxes_lag_1_roll12_mean",
+        "census_income_average_and_median_median_household_income_before_taxes_lag_1_roll36_mean"
+      ],
+      "status": "CERTIFIED-CAUSAL-CONSTRUCTION / NO-SIGNAL",
+      "role": "T6 ablation only"
+    },
+    {
+      "family": "spatial_knn_k5",
+      "features": [
+        "nbr5_lvl_mean",
+        "nbr5_lvl_wmean",
+        "nbr5_dlt_mean",
+        "nbr5_dlt_wmean"
+      ],
+      "status": "CAVEATED-MARGINAL-KEEP",
+      "evidence": {
+        "mean_paired_delta_MDA": 0.010038293214176486,
+        "full_mask_NRMSE_ratio_vs_temporal": 0.999
+      },
+      "caveat": "same-month neighbour-median fill is contemporaneous-across-section (not strictly causal at row level); measured incidence: 3 raw-NaN cells total, ZERO inside any validation window"
+    },
+    {
+      "family": "spatial_knn_k3",
+      "features": [
+        "nbr3_lvl_mean",
+        "nbr3_lvl_wmean",
+        "nbr3_dlt_mean",
+        "nbr3_dlt_wmean"
+      ],
+      "status": "DROP",
+      "evidence": {
+        "mean_paired_delta_MDA": -0.0008953776989976791
+      }
+    }
+  ],
+  "verdict": "CLEAN FOUNDATION FOR T4+: base lag-1 set + OWN block certified causal after shift/fill fixes; SCSS/RMS/Census and spatial families are ablation-tier; all caveats recorded."
+}

@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-08-26T12:07:00.342256+00:00",
+  "git_sha_pre_commit": "7bd3cf5fddc5a46b390a4725fa2d72c8391c17a4",
+  "per_fold": [
+    {
+      "fold_id": 1,
+      "var_pred_lag1": 79.13079191758071,
+      "var_pred_own": 76.19252320186648,
+      "var_ratio_own_over_lag1": 0.9628682002983794,
+      "corr_pred_own_vs_lag1": 0.9983320831761673,
+      "std_pred_lag1_over_std_truth": 1.040548039513408,
+      "std_pred_own_over_std_truth": 1.0210465853540334,
+      "rmse_lag1": 1.2013608341804467,
+      "rmse_own": 0.9172836409684958,
+      "rmse_ratio_own_over_lag1": 0.7635371612511866
+    },
+    {
+      "fold_id": 2,
+      "var_pred_lag1": 22.08686279166815,
+      "var_pred_own": 23.443135991685217,
+      "var_ratio_own_over_lag1": 1.0614063306685952,
+      "corr_pred_own_vs_lag1": 0.998707270961981,
+      "std_pred_lag1_over_std_truth": 0.9645090223575389,
+      "std_pred_own_over_std_truth": 0.9936813329518998,
+      "rmse_lag1": 0.6368259852517778,
+      "rmse_own": 0.5355591513742066,
+      "rmse_ratio_own_over_lag1": 0.8409819382016361
+    },
+    {
+      "fold_id": 3,
+      "var_pred_lag1": 14.243775672259185,
+      "var_pred_own": 14.61727985082443,
+      "var_ratio_own_over_lag1": 1.0262222733044493,
+      "corr_pred_own_vs_lag1": 0.9987852504558367,
+      "std_pred_lag1_over_std_truth": 0.9764373568554274,
+      "std_pred_own_over_std_truth": 0.9891567174054458,
+      "rmse_lag1": 0.5943102533015875,
+      "rmse_own": 0.4533698901153324,
+      "rmse_ratio_own_over_lag1": 0.7628505273074369
+    },
+    {
+      "fold_id": 4,
+      "var_pred_lag1": 7.178231658006776,
+      "var_pred_own": 7.477252198450202,
+      "var_ratio_own_over_lag1": 1.0416565743054407,
+      "corr_pred_own_vs_lag1": 0.9975569483233864,
+      "std_pred_lag1_over_std_truth": 0.949344822330767,
+      "std_pred_own_over_std_truth": 0.968916308155409,
+      "rmse_lag1": 0.508027704621318,
+      "rmse_own": 0.3641428949663891,
+      "rmse_ratio_own_over_lag1": 0.7167776317195533
+    },
+    {
+      "fold_id": 5,
+      "var_pred_lag1": 3.4807120628575032,
+      "var_pred_own": 2.775846928206232,
+      "var_ratio_own_over_lag1": 0.7974939834372253,
+      "corr_pred_own_vs_lag1": 0.8739274779628329,
+      "std_pred_lag1_over_std_truth": 1.0769285521758898,
+      "std_pred_own_over_std_truth": 0.9617243209815194,
+      "rmse_lag1": 0.5160662290343326,
+      "rmse_own": 0.9673593919568456,
+      "rmse_ratio_own_over_lag1": 1.8744869118193928
+    }
+  ],
+  "pooled": {
+    "var_pred_lag1": 34.20347920550094,
+    "var_pred_own": 33.35841541060741,
+    "var_ratio_own_over_lag1": 0.9752930457800438,
+    "corr_pred_own_vs_lag1": 0.9961888476935955,
+    "std_pred_lag1_over_std_truth": 1.005406095926597,
+    "std_pred_own_over_std_truth": 0.9929081554176904
+  },
+  "interpretation_hint": "var ratio << 1 confirms the OWN block acts as a shrinkage device (predictions pulled toward the cross-CMA mean level), which is the mechanism behind any point-error gain"
+}

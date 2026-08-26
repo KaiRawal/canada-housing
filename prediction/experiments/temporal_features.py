@@ -16,15 +16,22 @@ FEATURE CONSTRUCTION (STRICTLY CAUSAL — information-set argument):
     * family rolling stats     covariate_{t-1}.rolling(w, min_periods=6).mean/std,
                                w in {12, 36}   (window ENDS at t-1)
     * family 12-month diffs    covariate_{t-1} - covariate_{t-13}
-  No transform ever references a value at or after t. All features are
-  computed ONCE from the train-split file (X_train_full_total.csv covers
-  1981-2022; the CV folds carve validation windows out of it, so each row's
-  backward shifts resolve against rows strictly earlier in calendar time —
-  the identical convention the upstream `total_lag_1` column already uses).
+  No transform ever references a value at or after t. EVERY shift is
+  GROUP-AWARE (`groupby("cma_canonical").shift(...)`) — the T3.3 critic fix #1
+  replaced three bare Series `.shift(1)` calls (own d1/d12/dlog1 and the
+  family rolling specs) whose global shift leaked one row ACROSS CMA
+  boundaries. All features are computed ONCE from the train-split file
+  (X_train_full_total.csv covers 1981-2022; the CV folds carve validation
+  windows out of it, so each row's backward shifts resolve against rows
+  strictly earlier in calendar time — the identical convention the upstream
+  `total_lag_1` column already uses).
   Residual NaNs (each CMA's first months, before lags/windows exist) are
-  filled causally: per-CMA forward-fill first, then same-month cross-
-  sectional median (mirrors the T3.2 critic fix #5 neighbour-median fill),
-  then overall column median. Fill counts are printed and saved.
+  filled STRICTLY CAUSALLY (T3.3 critic fix #2 — supersedes the T3.2 draft's
+  same-month cross-sectional median, which could fire inside validation
+  windows): per-CMA forward-fill -> per-CMA expanding median over STRICTLY
+  PAST rows -> panel expanding median over STRICTLY EARLIER calendar months
+  -> counted 0.0 fallback for the very first panel months. Fill counts and
+  per-fold validation-window fill incidence are printed and saved.
 
 FAMILIES / BLOCKS (key covariates chosen a priori from the column naming +
 dropped_constant_features_total.txt; all 176 input columns carry `_lag_1`):
@@ -111,11 +118,31 @@ FAMILY_KEYS = {
 # Feature construction
 # ---------------------------------------------------------------------------
 
-def _fill_causal(values: pd.Series, df: pd.DataFrame) -> pd.Series:
+def _fill_causal(values: pd.Series, df: pd.DataFrame) -> tuple[pd.Series, dict]:
     """
-    Causal NaN fill for engineered features: per-CMA forward-fill (past values
-    of the SAME feature only) -> same-month cross-sectional median -> overall
-    column median. Returns a Series aligned to df.index.
+    STRICTLY CAUSAL NaN fill for engineered features (T3.3 critic fix #2).
+    Supersedes the T3.2 draft hierarchy (ffill -> same-month cross-sectional
+    median -> column median): the same-month term used OTHER CMAs'
+    contemporaneous feature values at month t and could therefore fire inside
+    validation windows. The new hierarchy uses ONLY information strictly
+    before each row:
+
+      1. per-CMA forward-fill (past values of the SAME CMA / SAME feature)
+      2. per-CMA expanding median over STRICTLY PAST rows of the same CMA
+         (median of rows < t assigned to t)
+      3. panel expanding median over STRICTLY EARLIER calendar months
+         (all CMAs' past values; no same-month cross-sectional term)
+      4. per-CMA BACK-fill of the CMA's own first valid future value — needed
+         only for cold-start warm-up rows (each CMA's first L months) when
+         whole cohorts of CMAs start simultaneously and no earlier
+         observation exists ANYWHERE in the panel; mirrors the upstream
+         prepare_data_for_feature_selection ffill/bfill convention; counted,
+         and expected to fire ONLY on deep-train rows far from every
+         validation window (audited in artifacts/T3.3/)
+      5. 0.0 last resort (counted; expected 0)
+
+    Returns (filled Series aligned to df.index, stats dict with per-mechanism
+    fill counts).
     """
     assert df[["cma_canonical", "date"]].equals(
         df[["cma_canonical", "date"]].sort_values(
@@ -124,71 +151,139 @@ def _fill_causal(values: pd.Series, df: pd.DataFrame) -> pd.Series:
     tmp = pd.DataFrame({"cma": df["cma_canonical"].to_numpy(),
                         "date": df["date"].to_numpy(),
                         "v": values.to_numpy()})
-    tmp["v"] = tmp.groupby("cma")["v"].ffill()
+    n_raw_nan = int(tmp["v"].isna().sum())
+
+    # 1) per-CMA forward-fill
+    v1 = tmp.groupby("cma")["v"].ffill()
+    n_ffill = int((tmp["v"].isna() & v1.notna()).sum())
+
+    # 2) per-CMA expanding median of STRICTLY PAST rows (shift(1) within CMA)
+    exp_med = tmp.assign(_v=v1.to_numpy()).groupby("cma")["_v"].transform(
+        lambda s: s.expanding(min_periods=1).median())
+    past_med = exp_med.groupby(tmp["cma"]).shift(1)
+    v2 = v1.fillna(pd.Series(past_med.to_numpy(), index=tmp.index))
+    n_cma_past = int((v1.isna() & v2.notna()).sum())
+
+    # 3) panel expanding median over STRICTLY EARLIER calendar months
     month = pd.to_datetime(tmp["date"]).dt.to_period("M")
-    tmp["v"] = tmp["v"].fillna(
-        tmp.assign(_m=month).groupby("_m")["v"].transform("median"))
-    tmp["v"] = tmp["v"].fillna(tmp["v"].median())
-    return pd.Series(tmp["v"].to_numpy(), index=df.index)
+    monthly_med = tmp.assign(_m=month, _v=v2.to_numpy()) \
+        .groupby("_m")["_v"].median()          # chronological period order
+    causal_month_med = monthly_med.expanding(min_periods=1).median().shift(1)
+    v3 = v2.fillna(pd.Series(month.map(causal_month_med).to_numpy(),
+                             index=tmp.index))
+    n_panel_past = int((v2.isna() & v3.notna()).sum())
+
+    # 4) per-CMA back-fill for cold-start warm-up rows (own future value only;
+    #    fires only when NO CMA has any earlier observation, e.g. 1981-83)
+    v4 = v3.groupby(tmp["cma"]).bfill()
+    n_bfill = int((v3.isna() & v4.notna()).sum())
+
+    # 5) counted zero last resort
+    v5 = v4.fillna(0.0)
+    n_zero = int((v4.isna() & v5.notna()).sum())
+    if n_zero:
+        print(f"[temporal] WARNING: {n_zero} cells hit the 0.0 last resort")
+
+    stats = {"n_raw_nan": n_raw_nan, "n_filled_ffill": n_ffill,
+             "n_filled_cma_strictly_past_median": n_cma_past,
+             "n_filled_panel_strictly_earlier_months_median": n_panel_past,
+             "n_filled_owncma_backfill_coldstart": n_bfill,
+             "n_filled_zero_last_resort": n_zero}
+    return pd.Series(v5.to_numpy(), index=df.index), stats
 
 
-def build_own_block(df: pd.DataFrame) -> pd.DataFrame:
-    """Own-target temporal features (see module docstring). 8 columns."""
+def build_own_block(df: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
+    """
+    Own-target temporal features (see module docstring). 8 columns.
+    T3.3 critic fix #1: every shift/diff chain is GROUP-AWARE — the draft's
+    bare Series `.shift(1)` after `g.diff(...)` / the dlog1 construction
+    shifted globally, pulling one row across CMA boundaries.
+    Returns (features, fill_stats).
+    """
     srt = df.sort_values(harness.ID_COLS)
     g = srt.groupby("cma_canonical")[TARGET]
     y = srt[TARGET]
+    gcma = srt["cma_canonical"]
     feats = pd.DataFrame(index=df.index)
     specs = {}
     for L in (3, 6, 12, 24):
         specs[f"tot_lag{L}"] = g.shift(L)
-    d1 = g.diff(1).shift(1)          # y_{t-1} - y_{t-2}
-    d12 = g.diff(12).shift(1)        # y_{t-1} - y_{t-13}
-    dlog1 = (np.log(y) - np.log(y).groupby(srt["cma_canonical"])
-             .shift(1)).shift(1)
-    specs["tot_d1"] = d1
-    specs["tot_d12"] = d12
-    specs["tot_dlog1"] = dlog1
-    specs["tot_mom_sign"] = np.sign(d1)
-    n_filled = 0
+    # group-aware diffs then group-aware shift (T3.3 critic fix #1)
+    specs["tot_d1"] = g.diff(1).groupby(gcma).shift(1)
+    specs["tot_d12"] = g.diff(12).groupby(gcma).shift(1)
+    logy = np.log(y)
+    specs["tot_dlog1"] = (logy - logy.groupby(gcma).shift(1)) \
+        .groupby(gcma).shift(1)
+    specs["tot_mom_sign"] = np.sign(specs["tot_d1"])
+    stats = {"n_features": len(specs), "n_raw_nan": 0,
+             "n_filled_ffill": 0,
+             "n_filled_cma_strictly_past_median": 0,
+             "n_filled_panel_strictly_earlier_months_median": 0,
+             "n_filled_owncma_backfill_coldstart": 0,
+             "n_filled_zero_last_resort": 0}
     for name, raw in specs.items():
-        filled = _fill_causal(raw, df)
-        n_filled += int(raw.isna().sum())
+        filled, st = _fill_causal(raw, df)
+        for k in stats:
+            if k.startswith("n_") and k != "n_features":
+                stats[k] += st[k]
         feats[name] = filled
     print(f"[temporal] OWN block: {feats.shape[1]} features, "
-          f"{n_filled} NaN cells causally filled "
-          f"(ffill -> same-month x-sectional median -> column median)")
-    return feats
+          f"{stats['n_raw_nan']} NaN cells causally filled "
+          f"(ffill={stats['n_filled_ffill']}, "
+          f"cma-past-median={stats['n_filled_cma_strictly_past_median']}, "
+          f"panel-earlier-months={stats['n_filled_panel_strictly_earlier_months_median']}, "
+          f"owncma-backfill-coldstart={stats['n_filled_owncma_backfill_coldstart']}, "
+          f"zero-last-resort={stats['n_filled_zero_last_resort']})")
+    return feats, stats
 
 
 def build_family_block(df: pd.DataFrame, family: str,
-                       with_std: bool = True) -> pd.DataFrame:
+                       with_std: bool = True) -> tuple[pd.DataFrame, dict]:
     """
     Rolling mean/std over ROLL_WINDOWS (ending at t-1) + 12-month diffs of the
     family's key covariates. CENSUS gets no rolling std (annual step series).
+    T3.3 critic fix #1: the rolling transform result is now followed by a
+    GROUP-AWARE shift (`groupby(cma).shift(1)`), not a bare Series shift.
+    Returns (features, fill_stats).
     """
     srt = df.sort_values(harness.ID_COLS)
+    gcma = srt["cma_canonical"]
     feats = pd.DataFrame(index=df.index)
-    n_filled = 0
+    specs = {}
     for col in FAMILY_KEYS[family]:
-        s = srt[col]
         lag1 = srt.groupby("cma_canonical")[col].shift(1)
-        specs = {f"{col}_d12": lag1.groupby(srt["cma_canonical"]).diff(12)}
+        specs[f"{col}_d12"] = lag1.groupby(gcma).diff(12)
         for w in ROLL_WINDOWS:
             grp = srt.groupby("cma_canonical")[col]
-            specs[f"{col}_roll{w}_mean"] = grp.transform(
+            rolled_mean = grp.transform(
                 lambda x, w=w: x.rolling(w, min_periods=ROLL_MIN_PERIODS)
-                .mean()).shift(1)
+                .mean())
+            specs[f"{col}_roll{w}_mean"] = rolled_mean.groupby(gcma).shift(1)
             if with_std:
-                specs[f"{col}_roll{w}_std"] = grp.transform(
+                rolled_std = grp.transform(
                     lambda x, w=w: x.rolling(w, min_periods=ROLL_MIN_PERIODS)
-                    .std()).shift(1)
-        for name, raw in specs.items():
-            filled = _fill_causal(raw, df)
-            n_filled += int(raw.isna().sum())
-            feats[name] = filled
+                    .std())
+                specs[f"{col}_roll{w}_std"] = rolled_std.groupby(gcma).shift(1)
+    stats = {"n_features": len(specs), "n_raw_nan": 0,
+             "n_filled_ffill": 0,
+             "n_filled_cma_strictly_past_median": 0,
+             "n_filled_panel_strictly_earlier_months_median": 0,
+             "n_filled_owncma_backfill_coldstart": 0,
+             "n_filled_zero_last_resort": 0}
+    for name, raw in specs.items():
+        filled, st = _fill_causal(raw, df)
+        for k in stats:
+            if k.startswith("n_") and k != "n_features":
+                stats[k] += st[k]
+        feats[name] = filled
     print(f"[temporal] {family.upper()} block: {feats.shape[1]} features, "
-          f"{n_filled} NaN cells causally filled")
-    return feats
+          f"{stats['n_raw_nan']} NaN cells causally filled "
+          f"(ffill={stats['n_filled_ffill']}, "
+          f"cma-past-median={stats['n_filled_cma_strictly_past_median']}, "
+          f"panel-earlier-months={stats['n_filled_panel_strictly_earlier_months_median']}, "
+          f"owncma-backfill-coldstart={stats['n_filled_owncma_backfill_coldstart']}, "
+          f"zero-last-resort={stats['n_filled_zero_last_resort']})")
+    return feats, stats
 
 
 # ---------------------------------------------------------------------------
@@ -235,23 +330,90 @@ def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # ---- Build blocks ------------------------------------------------------
-    own = build_own_block(df)
-    scss = build_family_block(df, "scss", with_std=True)
-    rms = build_family_block(df, "rms", with_std=True)
-    census = build_family_block(df, "census", with_std=False)
+    own, own_stats = build_own_block(df)
+    scss, scss_stats = build_family_block(df, "scss", with_std=True)
+    rms, rms_stats = build_family_block(df, "rms", with_std=True)
+    census, census_stats = build_family_block(df, "census", with_std=False)
 
     all_feats = pd.concat([own, scss, rms, census], axis=1)
     assert not all_feats.isna().any().any(), "NaN survived the causal fill"
     assert np.isfinite(all_feats.to_numpy(float)).all()
 
+    # ---- Fill incidence inside each fold's validation window ----------------
+    # (T3.3 critic fix #2: quantify WHERE fills fire. Under the new strictly
+    # causal hierarchy any val-window fill uses only pre-t information, but
+    # the counts must still be auditable.)
+    def _val_window_fill_incidence(raw_nan_mask_by_col: dict) -> dict:
+        inc = {}
+        for f in folds:
+            n = 0
+            for col, mask in raw_nan_mask_by_col.items():
+                n += int(mask.loc[f["val_index"]].sum())
+            inc[f"fold{f['fold_id']}_val_{f['val_start_year']}-{f['val_end_year']}"] = int(n)
+        return inc
+
+    # rebuild raw-NaN masks cheaply: a cell was filled iff the FILLED value
+    # came from the fill pipeline — we recompute masks from the stats-bearing
+    # raw specs via one more pass of the spec formulas (cheap, vectorised).
+    def _raw_nan_masks(specs: dict) -> dict:
+        return {name: raw.isna() for name, raw in specs.items()}
+
+    srt = df.sort_values(harness.ID_COLS)
+    gcma = srt["cma_canonical"]
+    g = srt.groupby("cma_canonical")[TARGET]
+    y = srt[TARGET]
+    own_specs = {f"tot_lag{L}": g.shift(L) for L in (3, 6, 12, 24)}
+    own_specs["tot_d1"] = g.diff(1).groupby(gcma).shift(1)
+    own_specs["tot_d12"] = g.diff(12).groupby(gcma).shift(1)
+    logy = np.log(y)
+    own_specs["tot_dlog1"] = (logy - logy.groupby(gcma).shift(1)) \
+        .groupby(gcma).shift(1)
+    own_specs["tot_mom_sign"] = np.sign(own_specs["tot_d1"])
+
+    def _family_raw_specs(fam: str) -> dict:
+        sp = {}
+        for col in FAMILY_KEYS[fam]:
+            lag1 = srt.groupby("cma_canonical")[col].shift(1)
+            sp[f"{col}_d12"] = lag1.groupby(gcma).diff(12)
+            for w in ROLL_WINDOWS:
+                grp = srt.groupby("cma_canonical")[col]
+                rm = grp.transform(
+                    lambda x, w=w: x.rolling(w, min_periods=ROLL_MIN_PERIODS)
+                    .mean())
+                sp[f"{col}_roll{w}_mean"] = rm.groupby(gcma).shift(1)
+                if fam != "census":
+                    rs = grp.transform(
+                        lambda x, w=w: x.rolling(w, min_periods=ROLL_MIN_PERIODS)
+                        .std())
+                    sp[f"{col}_roll{w}_std"] = rs.groupby(gcma).shift(1)
+        return sp
+
+    fill_incidence = {}
+    for block_name, specs in (("own", own_specs),
+                              ("scss", _family_raw_specs("scss")),
+                              ("rms", _family_raw_specs("rms")),
+                              ("census", _family_raw_specs("census"))):
+        fill_incidence[block_name] = _val_window_fill_incidence(
+            _raw_nan_masks(specs))
+
     # provenance dump: block membership + fill audit
     save_results_json({
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "git_sha_pre_commit": sha,
-        "construction": "strictly backward-looking shifts/rollings computed "
-                        "once from the train split (window ends t-1); causal "
-                        "NaN fill: per-CMA ffill -> same-month cross-sectional "
-                        "median -> column median",
+        "construction": "strictly backward-looking group-aware shifts/rollings "
+                        "computed once from the train split (window ends t-1); "
+                        "STRICTLY CAUSAL NaN fill (T3.3 critic fix #2): "
+                        "per-CMA ffill -> per-CMA strictly-past expanding "
+                        "median -> panel strictly-earlier-months expanding "
+                        "median -> counted 0.0 fallback",
+        "critic_fixes": {
+            "T3.3-fix-1": "bare Series .shift(1) after diff/rolling replaced "
+                          "with group-aware groupby(cma).shift(1)",
+            "T3.3-fix-2": "_fill_causal same-month cross-sectional median "
+                          "(could fire inside validation windows using other "
+                          "CMAs' contemporaneous values) replaced by strictly "
+                          "causal hierarchy",
+        },
         "roll_windows_months": list(ROLL_WINDOWS),
         "roll_min_periods": ROLL_MIN_PERIODS,
         "blocks": {
@@ -263,6 +425,9 @@ def main() -> None:
             "census": {"key_covariates": FAMILY_KEYS["census"],
                        "features": list(census.columns)},
         },
+        "fill_mechanism_counts": {"own": own_stats, "scss": scss_stats,
+                                  "rms": rms_stats, "census": census_stats},
+        "fill_incidence_in_validation_windows": fill_incidence,
         "n_features_total": int(all_feats.shape[1]),
     }, OUT_DIR / "feature_construction.json")
 

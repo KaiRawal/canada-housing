@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-08-26T12:07:01.452745+00:00",
+  "git_sha_pre_commit": "7bd3cf5fddc5a46b390a4725fa2d72c8391c17a4",
+  "excluded_late_starter_cmas": [
+    "Guelph, Ontario",
+    "Kelowna, British Columbia",
+    "Oshawa, Ontario",
+    "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+    "Sherbrooke, Quebec",
+    "Trois-Rivi\u00e8res, Quebec"
+  ],
+  "n_cmas_remaining": 18,
+  "folds_identical_to_canonical_windows": true,
+  "paired_per_fold": [
+    {
+      "fold_id": 1,
+      "n_eval_rows": 432,
+      "model": {
+        "MDA": 0.6487455197132617,
+        "NMSE": 1.3507291757888675e-05,
+        "NRMSE": 0.0036752267627846685,
+        "NMAE": 0.002498666478171946
+      },
+      "baseline": {
+        "MDA": 0.6845878136200717,
+        "NMSE": 2.2223523881883184e-05,
+        "NRMSE": 0.004714183267744603,
+        "NMAE": 0.003216710874573278
+      },
+      "delta_MDA_own_minus_lag1only": -0.03584229390681004
+    },
+    {
+      "fold_id": 2,
+      "n_eval_rows": 432,
+      "model": {
+        "MDA": 0.6007751937984496,
+        "NMSE": 5.92813153219427e-06,
+        "NRMSE": 0.0024347754582700783,
+        "NMAE": 0.0016199801659100464
+      },
+      "baseline": {
+        "MDA": 0.5968992248062015,
+        "NMSE": 7.634162623120748e-06,
+        "NRMSE": 0.002762998846022334,
+        "NMAE": 0.0019369611894690913
+      },
+      "delta_MDA_own_minus_lag1only": 0.003875968992248069
+    },
+    {
+      "fold_id": 3,
+      "n_eval_rows": 432,
+      "model": {
+        "MDA": 0.5486381322957199,
+        "NMSE": 3.8009920100993207e-06,
+        "NRMSE": 0.0019496132975796306,
+        "NMAE": 0.001463005506957475
+      },
+      "baseline": {
+        "MDA": 0.556420233463035,
+        "NMSE": 6.1867520703628475e-06,
+        "NRMSE": 0.0024873182487094104,
+        "NMAE": 0.0018797691755592775
+      },
+      "delta_MDA_own_minus_lag1only": -0.0077821011673151474
+    },
+    {
+      "fold_id": 4,
+      "n_eval_rows": 432,
+      "model": {
+        "MDA": 0.5673469387755102,
+        "NMSE": 2.885724541806897e-06,
+        "NRMSE": 0.00169874204687083,
+        "NMAE": 0.0012904204894147538
+      },
+      "baseline": {
+        "MDA": 0.5469387755102041,
+        "NMSE": 5.081796206398644e-06,
+        "NRMSE": 0.0022542839675601307,
+        "NMAE": 0.0017268336624236221
+      },
+      "delta_MDA_own_minus_lag1only": 0.020408163265306145
+    },
+    {
+      "fold_id": 5,
+      "n_eval_rows": 245,
+      "model": {
+        "MDA": 0.609271523178808,
+        "NMSE": 7.301620045711957e-06,
+        "NRMSE": 0.002702151003499241,
+        "NMAE": 0.0020835630041038476
+      },
+      "baseline": {
+        "MDA": 0.609271523178808,
+        "NMSE": 9.14131702535711e-06,
+        "NRMSE": 0.003023461100354544,
+        "NMAE": 0.0023312175197265166
+      },
+      "delta_MDA_own_minus_lag1only": 0.0
+    }
+  ],
+  "mean_paired_delta_MDA": -0.003868052563314195,
+  "full_mask_NRMSE_lag1only": 0.0017502459537574121,
+  "full_mask_NRMSE_own": 0.001367662176074685,
+  "full_mask_NRMSE_ratio_own_over_lag1only": 0.7814,
+  "verdict_NRMSE_gain_survives_without_late_starters": true
+}

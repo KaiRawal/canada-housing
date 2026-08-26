@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T10:39:47.007976+00:00",
-  "git_sha_pre_commit": "b66cd157c6fa266c4600f7a5f5662720fdb43bc5",
+  "generated_at": "2026-08-26T12:04:14.638299+00:00",
+  "git_sha_pre_commit": "7bd3cf5fddc5a46b390a4725fa2d72c8391c17a4",
   "decision_rule": "KEEP iff paired \u0394MDA(intersection) > 0 on a majority of folds AND mean paired \u0394MDA > 0 AND full-mask aggregate NRMSE <= 1.10 x temporal-only",
   "per_k": {
     "3": {
@@ -11,16 +11,16 @@
             "std": 0.049114269668460046
           },
           "NMSE": {
-            "mean": 9.776402071403785e-06,
-            "std": 7.197788900992258e-06
+            "mean": 9.776059339377695e-06,
+            "std": 7.208476800426722e-06
           },
           "NRMSE": {
-            "mean": 0.002966937555197273,
-            "std": 0.00098675408028739
+            "mean": 0.0029664388355735093,
+            "std": 0.0009880789311482014
           },
           "NMAE": {
-            "mean": 0.0021552397770076576,
-            "std": 0.0006012958752219414
+            "mean": 0.0021547731094701933,
+            "std": 0.0006022478328907737
           }
         },
         "baseline": {
@@ -49,7 +49,7 @@
           "spatial_MDA": 0.6702508960573477,
           "temporal_MDA": 0.6845878136200717,
           "delta_MDA_spatial_minus_temporal": -0.014336917562724039,
-          "spatial_NRMSE": 0.004904838813571314,
+          "spatial_NRMSE": 0.00490699013321464,
           "temporal_NRMSE": 0.004714183267744603,
           "spatial_vs_persistence_delta_MDA": -0.020408163265306145
         },
@@ -59,9 +59,9 @@
           "spatial_MDA": 0.6046511627906976,
           "temporal_MDA": 0.5968992248062015,
           "delta_MDA_spatial_minus_temporal": 0.007751937984496138,
-          "spatial_NRMSE": 0.0027332151103544584,
+          "spatial_NRMSE": 0.0027327178542246077,
           "temporal_NRMSE": 0.002762998846022334,
-          "spatial_vs_persistence_delta_MDA": -0.0357142857142857
+          "spatial_vs_persistence_delta_MDA": -0.04166666666666663
         },
         {
           "fold_id": 3,
@@ -69,7 +69,7 @@
           "spatial_MDA": 0.5447470817120622,
           "temporal_MDA": 0.556420233463035,
           "delta_MDA_spatial_minus_temporal": -0.011673151750972832,
-          "spatial_NRMSE": 0.002533632193200479,
+          "spatial_NRMSE": 0.0025326535476490547,
           "temporal_NRMSE": 0.0024873182487094104,
           "spatial_vs_persistence_delta_MDA": -0.036809815950920255
         },
@@ -79,7 +79,7 @@
           "spatial_MDA": 0.5551020408163265,
           "temporal_MDA": 0.5469387755102041,
           "delta_MDA_spatial_minus_temporal": 0.008163265306122436,
-          "spatial_NRMSE": 0.0021539939214724013,
+          "spatial_NRMSE": 0.0021529367507467957,
           "temporal_NRMSE": 0.0022542839675601307,
           "spatial_vs_persistence_delta_MDA": -0.006666666666666599
         },
@@ -89,7 +89,7 @@
           "spatial_MDA": 0.6460674157303371,
           "temporal_MDA": 0.6404494382022472,
           "delta_MDA_spatial_minus_temporal": 0.005617977528089901,
-          "spatial_NRMSE": 0.0025090077373877114,
+          "spatial_NRMSE": 0.0025068958920324504,
           "temporal_NRMSE": 0.002673974701336899,
           "spatial_vs_persistence_delta_MDA": 0.0
         }
@@ -103,20 +103,20 @@
       "agg": {
         "model": {
           "MDA": {
-            "mean": 0.6150943740162464,
-            "std": 0.05552288769956511
+            "mean": 0.6150973903345284,
+            "std": 0.054566875486424866
           },
           "NMSE": {
-            "mean": 9.6260449132533e-06,
-            "std": 6.724190754416082e-06
+            "mean": 9.62760732049052e-06,
+            "std": 6.725473269690259e-06
           },
           "NRMSE": {
-            "mean": 0.002959029975019517,
-            "std": 0.0009328378852669386
+            "mean": 0.002959245494146885,
+            "std": 0.0009329916536935777
           },
           "NMAE": {
-            "mean": 0.002150902294295472,
-            "std": 0.0005685527579143193
+            "mean": 0.002151253812315973,
+            "std": 0.0005690786140077723
           }
         },
         "baseline": {
@@ -145,27 +145,27 @@
           "spatial_MDA": 0.6774193548387096,
           "temporal_MDA": 0.6845878136200717,
           "delta_MDA_spatial_minus_temporal": -0.007168458781362075,
-          "spatial_NRMSE": 0.004791211137364197,
+          "spatial_NRMSE": 0.004791576696958221,
           "temporal_NRMSE": 0.004714183267744603,
           "spatial_vs_persistence_delta_MDA": -0.0357142857142857
         },
         {
           "fold_id": 2,
           "n_directions_intersection": 258,
-          "spatial_MDA": 0.6201550387596899,
+          "spatial_MDA": 0.6162790697674418,
           "temporal_MDA": 0.5968992248062015,
-          "delta_MDA_spatial_minus_temporal": 0.023255813953488413,
-          "spatial_NRMSE": 0.0027932352511218336,
+          "delta_MDA_spatial_minus_temporal": 0.019379844961240345,
+          "spatial_NRMSE": 0.002794447746824514,
           "temporal_NRMSE": 0.002762998846022334,
-          "spatial_vs_persistence_delta_MDA": -0.023809523809523836
+          "spatial_vs_persistence_delta_MDA": -0.029761904761904767
         },
         {
           "fold_id": 3,
           "n_directions_intersection": 257,
-          "spatial_MDA": 0.5486381322957199,
+          "spatial_MDA": 0.5525291828793775,
           "temporal_MDA": 0.556420233463035,
-          "delta_MDA_spatial_minus_temporal": -0.0077821011673151474,
-          "spatial_NRMSE": 0.002414969715572103,
+          "delta_MDA_spatial_minus_temporal": -0.0038910505836575737,
+          "spatial_NRMSE": 0.0024145885558342238,
           "temporal_NRMSE": 0.0024873182487094104,
           "spatial_vs_persistence_delta_MDA": -0.036809815950920255
         },
@@ -175,7 +175,7 @@
           "spatial_MDA": 0.5551020408163265,
           "temporal_MDA": 0.5469387755102041,
           "delta_MDA_spatial_minus_temporal": 0.008163265306122436,
-          "spatial_NRMSE": 0.0022551305781561668,
+          "spatial_NRMSE": 0.0022551640125761745,
           "temporal_NRMSE": 0.0022542839675601307,
           "spatial_vs_persistence_delta_MDA": -0.013333333333333308
         },
@@ -185,14 +185,14 @@
           "spatial_MDA": 0.6741573033707865,
           "temporal_MDA": 0.6404494382022472,
           "delta_MDA_spatial_minus_temporal": 0.0337078651685393,
-          "spatial_NRMSE": 0.002540603192883284,
+          "spatial_NRMSE": 0.002540450458541292,
           "temporal_NRMSE": 0.002673974701336899,
           "spatial_vs_persistence_delta_MDA": 0.00909090909090915
         }
       ],
       "folds_with_positive_delta_MDA": 3,
-      "mean_paired_delta_MDA": 0.010035276895894585,
-      "aggregate_full_mask_NRMSE_ratio_vs_temporal": 0.9986,
+      "mean_paired_delta_MDA": 0.010038293214176486,
+      "aggregate_full_mask_NRMSE_ratio_vs_temporal": 0.999,
       "verdict_keep_for_T6": true
     }
   }

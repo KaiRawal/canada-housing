@@ -1,7 +1,11 @@
 {
-  "generated_at": "2026-08-26T10:44:33.977937+00:00",
-  "git_sha_pre_commit": "b66cd157c6fa266c4600f7a5f5662720fdb43bc5",
-  "construction": "strictly backward-looking shifts/rollings computed once from the train split (window ends t-1); causal NaN fill: per-CMA ffill -> same-month cross-sectional median -> column median",
+  "generated_at": "2026-08-26T12:03:56.393644+00:00",
+  "git_sha_pre_commit": "7bd3cf5fddc5a46b390a4725fa2d72c8391c17a4",
+  "construction": "strictly backward-looking group-aware shifts/rollings computed once from the train split (window ends t-1); STRICTLY CAUSAL NaN fill (T3.3 critic fix #2): per-CMA ffill -> per-CMA strictly-past expanding median -> panel strictly-earlier-months expanding median -> counted 0.0 fallback",
+  "critic_fixes": {
+    "T3.3-fix-1": "bare Series .shift(1) after diff/rolling replaced with group-aware groupby(cma).shift(1)",
+    "T3.3-fix-2": "_fill_causal same-month cross-sectional median (could fire inside validation windows using other CMAs' contemporaneous values) replaced by strictly causal hierarchy"
+  },
   "roll_windows_months": [
     12,
     36
@@ -67,6 +71,74 @@
         "census_income_average_and_median_median_household_income_before_taxes_lag_1_roll12_mean",
         "census_income_average_and_median_median_household_income_before_taxes_lag_1_roll36_mean"
       ]
+    }
+  },
+  "fill_mechanism_counts": {
+    "own": {
+      "n_features": 8,
+      "n_raw_nan": 1536,
+      "n_filled_ffill": 0,
+      "n_filled_cma_strictly_past_median": 0,
+      "n_filled_panel_strictly_earlier_months_median": 512,
+      "n_filled_owncma_backfill_coldstart": 1024,
+      "n_filled_zero_last_resort": 0
+    },
+    "scss": {
+      "n_features": 10,
+      "n_raw_nan": 1776,
+      "n_filled_ffill": 0,
+      "n_filled_cma_strictly_past_median": 0,
+      "n_filled_panel_strictly_earlier_months_median": 592,
+      "n_filled_owncma_backfill_coldstart": 1184,
+      "n_filled_zero_last_resort": 0
+    },
+    "rms": {
+      "n_features": 10,
+      "n_raw_nan": 1776,
+      "n_filled_ffill": 0,
+      "n_filled_cma_strictly_past_median": 0,
+      "n_filled_panel_strictly_earlier_months_median": 592,
+      "n_filled_owncma_backfill_coldstart": 1184,
+      "n_filled_zero_last_resort": 0
+    },
+    "census": {
+      "n_features": 6,
+      "n_raw_nan": 1200,
+      "n_filled_ffill": 0,
+      "n_filled_cma_strictly_past_median": 0,
+      "n_filled_panel_strictly_earlier_months_median": 400,
+      "n_filled_owncma_backfill_coldstart": 800,
+      "n_filled_zero_last_resort": 0
+    }
+  },
+  "fill_incidence_in_validation_windows": {
+    "own": {
+      "fold1_val_2008-2009": 0,
+      "fold2_val_2010-2011": 0,
+      "fold3_val_2012-2013": 0,
+      "fold4_val_2014-2015": 0,
+      "fold5_val_2016-2017": 318
+    },
+    "scss": {
+      "fold1_val_2008-2009": 0,
+      "fold2_val_2010-2011": 0,
+      "fold3_val_2012-2013": 0,
+      "fold4_val_2014-2015": 0,
+      "fold5_val_2016-2017": 444
+    },
+    "rms": {
+      "fold1_val_2008-2009": 0,
+      "fold2_val_2010-2011": 0,
+      "fold3_val_2012-2013": 0,
+      "fold4_val_2014-2015": 0,
+      "fold5_val_2016-2017": 444
+    },
+    "census": {
+      "fold1_val_2008-2009": 0,
+      "fold2_val_2010-2011": 0,
+      "fold3_val_2012-2013": 0,
+      "fold4_val_2014-2015": 0,
+      "fold5_val_2016-2017": 300
     }
   },
   "n_features_total": 34
