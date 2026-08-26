@@ -405,7 +405,11 @@
       "folds_with_positive_delta_MDA": "2/5",
       "mean_paired_delta_MDA": 0.0024015644187390882,
       "aggregate_full_mask_NRMSE_ratio_vs_lag1only": 1.0069,
-      "verdict_keep_for_T6": true
+      "verdict_keep_for_T6": true,
+      "verdict_note": "letter-pass/noise-level/pending-researcher: the keep rule's LETTER is satisfied (mean paired delta-MDA +0.0024 > 0, NRMSE ratio 1.0069 <= 1.10) but the edge is noise-level (positive on only 2/5 folds, |delta| far below the +/-0.02 cross-fold spread) and contradicts the OWN-only increment (-0.0072); whether ANY temporal block enters T6 remains PENDING RESEARCHER DECISION. Programmatic consumers must NOT read verdict_keep_for_T6=true as an endorsement.",
+      "verdict_keep_for_T6_interpretation": "letter-pass-noise-level-pending-researcher"
     }
-  }
+  },
+  "annotated_at": "2026-08-26T12:43:10.648135+00:00",
+  "annotation_note": "T4.1 critic fix #4: ALL-blocks verdict annotated so downstream tooling does not inherit the bare boolean."
 }

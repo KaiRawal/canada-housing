@@ -4,7 +4,8 @@
   "construction": "strictly backward-looking group-aware shifts/rollings computed once from the train split (window ends t-1); STRICTLY CAUSAL NaN fill (T3.3 critic fix #2): per-CMA ffill -> per-CMA strictly-past expanding median -> panel strictly-earlier-months expanding median -> counted 0.0 fallback",
   "critic_fixes": {
     "T3.3-fix-1": "bare Series .shift(1) after diff/rolling replaced with group-aware groupby(cma).shift(1)",
-    "T3.3-fix-2": "_fill_causal same-month cross-sectional median (could fire inside validation windows using other CMAs' contemporaneous values) replaced by strictly causal hierarchy"
+    "T3.3-fix-2": "_fill_causal same-month cross-sectional median (could fire inside validation windows using other CMAs' contemporaneous values) replaced by strictly causal hierarchy",
+    "T4.1-fix-3": "per-(fold x mechanism) fill counts added and DIRECTLY ASSERTED (no longer inferred): own-CMA cold-start backfill fires ONLY on deep-train warm-up rows, ZERO cells inside any validation window"
   },
   "roll_windows_months": [
     12,
@@ -141,5 +142,206 @@
       "fold5_val_2016-2017": 300
     }
   },
-  "n_features_total": 34
+  "n_features_total": 34,
+  "fill_mechanism_counts_per_fold_in_validation_windows": {
+    "own": {
+      "fold1_val_2008-2009": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold2_val_2010-2011": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold3_val_2012-2013": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold4_val_2014-2015": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold5_val_2016-2017": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 318,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      }
+    },
+    "scss": {
+      "fold1_val_2008-2009": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold2_val_2010-2011": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold3_val_2012-2013": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold4_val_2014-2015": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold5_val_2016-2017": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 444,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      }
+    },
+    "rms": {
+      "fold1_val_2008-2009": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold2_val_2010-2011": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold3_val_2012-2013": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold4_val_2014-2015": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold5_val_2016-2017": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 444,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      }
+    },
+    "census": {
+      "fold1_val_2008-2009": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold2_val_2010-2011": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold3_val_2012-2013": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold4_val_2014-2015": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 0,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      },
+      "fold5_val_2016-2017": {
+        "ffill": 0,
+        "cma_strictly_past_median": 0,
+        "panel_strictly_earlier_months_median": 300,
+        "owncma_backfill_coldstart": 0,
+        "zero_last_resort": 0
+      }
+    }
+  },
+  "fill_mechanism_totals_direct_count": {
+    "own": {
+      "ffill": 0,
+      "cma_strictly_past_median": 0,
+      "panel_strictly_earlier_months_median": 512,
+      "owncma_backfill_coldstart": 1024,
+      "zero_last_resort": 0
+    },
+    "scss": {
+      "ffill": 0,
+      "cma_strictly_past_median": 0,
+      "panel_strictly_earlier_months_median": 592,
+      "owncma_backfill_coldstart": 1184,
+      "zero_last_resort": 0
+    },
+    "rms": {
+      "ffill": 0,
+      "cma_strictly_past_median": 0,
+      "panel_strictly_earlier_months_median": 592,
+      "owncma_backfill_coldstart": 1184,
+      "zero_last_resort": 0
+    },
+    "census": {
+      "ffill": 0,
+      "cma_strictly_past_median": 0,
+      "panel_strictly_earlier_months_median": 400,
+      "owncma_backfill_coldstart": 800,
+      "zero_last_resort": 0
+    }
+  },
+  "fill_assertions_t41": {
+    "bfill_totals_match_plan_figure_or_recorded_verbatim": {
+      "own": 1024,
+      "scss": 1184,
+      "rms": 1184,
+      "census": 800
+    },
+    "bfill_inside_any_validation_window": {
+      "own": 0,
+      "scss": 0,
+      "rms": 0,
+      "census": 0
+    },
+    "zero_last_resort_total_anywhere": {
+      "own": 0,
+      "scss": 0,
+      "rms": 0,
+      "census": 0
+    }
+  },
+  "updated_at": "2026-08-26T12:43:10.647196+00:00"
 }

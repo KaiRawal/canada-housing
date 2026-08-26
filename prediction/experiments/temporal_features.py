@@ -118,7 +118,8 @@ FAMILY_KEYS = {
 # Feature construction
 # ---------------------------------------------------------------------------
 
-def _fill_causal(values: pd.Series, df: pd.DataFrame) -> tuple[pd.Series, dict]:
+def _fill_causal(values: pd.Series, df: pd.DataFrame,
+                 return_masks: bool = False) -> tuple[pd.Series, dict]:
     """
     STRICTLY CAUSAL NaN fill for engineered features (T3.3 critic fix #2).
     Supersedes the T3.2 draft hierarchy (ffill -> same-month cross-sectional
@@ -142,7 +143,10 @@ def _fill_causal(values: pd.Series, df: pd.DataFrame) -> tuple[pd.Series, dict]:
       5. 0.0 last resort (counted; expected 0)
 
     Returns (filled Series aligned to df.index, stats dict with per-mechanism
-    fill counts).
+    fill counts). With return_masks=True the stats dict additionally carries
+    per-mechanism boolean masks (aligned to df.index) marking exactly WHICH
+    cells each mechanism filled — used by the T4.1 critic fix #3 to assert
+    per-(fold x mechanism) fill counts directly instead of inferring them.
     """
     assert df[["cma_canonical", "date"]].equals(
         df[["cma_canonical", "date"]].sort_values(
@@ -189,7 +193,75 @@ def _fill_causal(values: pd.Series, df: pd.DataFrame) -> tuple[pd.Series, dict]:
              "n_filled_panel_strictly_earlier_months_median": n_panel_past,
              "n_filled_owncma_backfill_coldstart": n_bfill,
              "n_filled_zero_last_resort": n_zero}
+    if return_masks:
+        raw_na = tmp["v"].isna().to_numpy()
+        stats["fill_masks"] = {
+            "ffill": pd.Series((tmp["v"].isna() & v1.notna()).to_numpy(),
+                               index=df.index),
+            "cma_strictly_past_median":
+                pd.Series((v1.isna() & v2.notna()).to_numpy(), index=df.index),
+            "panel_strictly_earlier_months_median":
+                pd.Series((v2.isna() & v3.notna()).to_numpy(), index=df.index),
+            "owncma_backfill_coldstart":
+                pd.Series((v3.isna() & v4.notna()).to_numpy(), index=df.index),
+            "zero_last_resort":
+                pd.Series((v4.isna() & v5.notna()).to_numpy(), index=df.index),
+        }
+        assert all(int(m.sum()) == stats[f"n_filled_{k}"]
+                   for k, m in stats["fill_masks"].items()), \
+            "mechanism mask counts disagree with fill counts"
+        assert not any((m & ~pd.Series(raw_na, index=df.index)).any()
+                       for m in stats["fill_masks"].values()), \
+            "a fill mask fired outside the raw-NaN cell set"
     return pd.Series(v5.to_numpy(), index=df.index), stats
+
+
+def raw_specs_by_block(df: pd.DataFrame) -> dict[str, dict[str, pd.Series]]:
+    """
+    Rebuild each block's RAW (pre-fill) engineered specs exactly as
+    build_own_block / build_family_block construct them internally. Audit-only
+    helper (T4.1 critic fix #3): lets external scripts recompute WHERE fills
+    fire and by WHICH mechanism without changing any modelling behaviour.
+    The formulas here MUST stay in lockstep with build_own_block/
+    build_family_block — asserted at runtime by t41_critic_fixes.py, which
+    checks that refilling these specs reproduces the builders' output
+    bit-for-bit.
+    """
+    srt = df.sort_values(harness.ID_COLS)
+    gcma = srt["cma_canonical"]
+    g = srt.groupby("cma_canonical")[TARGET]
+    y = srt[TARGET]
+
+    own = {f"tot_lag{L}": g.shift(L) for L in (3, 6, 12, 24)}
+    own["tot_d1"] = g.diff(1).groupby(gcma).shift(1)
+    own["tot_d12"] = g.diff(12).groupby(gcma).shift(1)
+    logy = np.log(y)
+    own["tot_dlog1"] = (logy - logy.groupby(gcma).shift(1)) \
+        .groupby(gcma).shift(1)
+    own["tot_mom_sign"] = np.sign(own["tot_d1"])
+
+    def _family(fam: str, with_std: bool) -> dict:
+        sp = {}
+        for col in FAMILY_KEYS[fam]:
+            lag1 = srt.groupby("cma_canonical")[col].shift(1)
+            sp[f"{col}_d12"] = lag1.groupby(gcma).diff(12)
+            for w in ROLL_WINDOWS:
+                grp = srt.groupby("cma_canonical")[col]
+                rm = grp.transform(
+                    lambda x, w=w: x.rolling(w, min_periods=ROLL_MIN_PERIODS)
+                    .mean())
+                sp[f"{col}_roll{w}_mean"] = rm.groupby(gcma).shift(1)
+                if with_std:
+                    rs = grp.transform(
+                        lambda x, w=w: x.rolling(w, min_periods=ROLL_MIN_PERIODS)
+                        .std())
+                    sp[f"{col}_roll{w}_std"] = rs.groupby(gcma).shift(1)
+        return sp
+
+    return {"own": own,
+            "scss": _family("scss", True),
+            "rms": _family("rms", True),
+            "census": _family("census", False)}
 
 
 def build_own_block(df: pd.DataFrame) -> tuple[pd.DataFrame, dict]:

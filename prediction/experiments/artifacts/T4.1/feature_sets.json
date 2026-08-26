@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-08-26T13:21:46.985687+00:00",
+  "git_sha_pre_commit": "3d176ffe1812270cf309539b3871ea8f0f1eefac",
+  "source_inventory": "artifacts/T3.3/feature_inventory.json",
+  "sets": {
+    "A_base_lag1": {
+      "n_engineered_extra": 0,
+      "engineered_columns": []
+    },
+    "B_base_lag1_own": {
+      "n_engineered_extra": 8,
+      "engineered_columns": [
+        "tot_lag3",
+        "tot_lag6",
+        "tot_lag12",
+        "tot_lag24",
+        "tot_d1",
+        "tot_d12",
+        "tot_dlog1",
+        "tot_mom_sign"
+      ]
+    },
+    "C_base_lag1_own_nbr5": {
+      "n_engineered_extra": 12,
+      "engineered_columns": [
+        "tot_lag3",
+        "tot_lag6",
+        "tot_lag12",
+        "tot_lag24",
+        "tot_d1",
+        "tot_d12",
+        "tot_dlog1",
+        "tot_mom_sign",
+        "nbr5_lvl_mean",
+        "nbr5_lvl_wmean",
+        "nbr5_dlt_mean",
+        "nbr5_dlt_wmean"
+      ]
+    }
+  },
+  "note": "base lag-1 = the 176 columns of X_train_full_total.csv (plus 24 CMA dummies inside the pipeline); reused VERBATIM by name in the T4.4 leaderboard."
+}

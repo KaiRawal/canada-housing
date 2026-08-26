@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-08-26T13:31:32.911292+00:00",
+  "git_sha_pre_commit": "3d176ffe1812270cf309539b3871ea8f0f1eefac",
+  "purpose": "Immutability evidence for the held-out test split (AGENTS.md research rule 2): hashed by STREAMING raw bytes only \u2014 content never parsed or loaded by any experiment code before stage T8.",
+  "files": {
+    "prediction/X_test_full_total.csv": {
+      "sha256": "d42b3feb2bd8038adf41b63e1b2f620ad5538c7ad995bbdc1c0185682e17f154",
+      "bytes": 3110639,
+      "mtime_utc": "2026-08-26T01:20:33.118531+00:00"
+    },
+    "prediction/y_test_full_total.csv": {
+      "sha256": "b6fc35243a54a13924e6b3530bdd1c46cdbba64a2b8294baddf4aedca4075321",
+      "bytes": 105857,
+      "mtime_utc": "2026-08-26T01:20:33.122014+00:00"
+    },
+    "prediction/X_train_full_total.csv": {
+      "sha256": "6f8b36dcb77520bdf09d042fbf614bcdd3b831868c351e6eb2102236ef0d9ca7",
+      "bytes": 10485091,
+      "mtime_utc": "2026-08-26T01:20:32.888887+00:00"
+    },
+    "prediction/y_train_full_total.csv": {
+      "sha256": "18a96b30d2632ced9304fcbfbfd70479e2ae609f96f771872ec28cc19cb9a4bb",
+      "bytes": 337510,
+      "mtime_utc": "2026-08-26T01:20:32.895824+00:00"
+    }
+  },
+  "mtime_story": {
+    "mtime_span_seconds_across_all_four_files": 0.233,
+    "all_written_in_one_imputation_session": true,
+    "all_predate_first_research_commit": true,
+    "first_research_commit_utc": "2026-08-26T02:32:22+01:00",
+    "interpretation": "all four pipeline outputs were written within 0.23s of each other by imputation/data_imputation.py in ONE session (train and test seconds apart), BEFORE the first research commit exp(T1.1); combined with unchanged sha256 vs any future claim, this certifies neither split was rewritten during T1-T4+ research work."
+  },
+  "loaded_in_experiment_code": false,
+  "hash_verified_against_mtime_story": true
+}

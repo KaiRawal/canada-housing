@@ -31,7 +31,7 @@ Conventions: each sub-stage = one approved plan -> one experimenter run -> one c
 
 ## T4. Model benchmark
 **Mini-goal**: rank model families fairly on identical folds.
-- [ ] T4.1 — Linear family: Ridge/ElasticNet (with standardization inside fold pipeline)
+- [x] T4.1 — Linear family: Ridge/ElasticNet (with standardization inside fold pipeline) — verdict: ElasticNet's sparsity decisively beats plain Ridge; winner B-enet (base lag-1 + OWN) reaches persistence-class point errors (NRMSE 0.00107 < 0.00113) but NO linear combo beats persistence MDA 0.6771 (best directional A-enet 0.6490, excluded from the pre-stated decision rule by a hair on the 10%-NRMSE gate, flagged to researcher); all five T3.3 critic minor fixes folded in first (spy-in-evaluate check E, test-file sha256+mtimes, per-(fold×mechanism) fill counts directly asserted [own-block bfill = 1024 cells, 0 in val windows], ALL-blocks verdict annotated, registry-hygiene standing decision)
 - [ ] T4.2 — Tree ensembles: RandomForest, LightGBM/XGBoost/CatBoost
 - [ ] T4.3 — Recursive forecasting GBM via skforecast; SARIMAX/VAR comparison where feasible
 - [ ] T4.4 — Leaderboard with per-fold variance; shortlist top 2 families

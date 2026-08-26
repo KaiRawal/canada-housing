@@ -1,0 +1,454 @@
+{
+  "generated_at": "2026-08-26T13:33:28.008554+00:00",
+  "git_sha_pre_commit": "3d176ffe1812270cf309539b3871ea8f0f1eefac",
+  "references": {
+    "ridge_a1_lag1only": {
+      "MDA": 0.6051,
+      "NRMSE": 0.00169
+    },
+    "persistence": {
+      "MDA": 0.6771,
+      "NRMSE": 0.00113
+    }
+  },
+  "per_combo": {
+    "A-ridge_cv": {
+      "mean_delta_MDA_vs_ridge_a1": -0.009753925887142346,
+      "folds_positive_vs_ridge_a1": "2/5",
+      "mean_delta_MDA_vs_persistence": -0.02697797936798809,
+      "folds_positive_vs_persistence": "0/5",
+      "detail": [
+        {
+          "combo_id": "A-ridge_cv",
+          "fold_id": 1,
+          "val_window": "2008-2009",
+          "model_MDA": 0.6938775510204082,
+          "ridge_a1_MDA": 0.6887755102040817,
+          "persistence_MDA_paired": 0.7040816326530612,
+          "delta_MDA_vs_ridge_a1": 0.005102040816326481,
+          "delta_MDA_vs_persistence": -0.010204081632653073,
+          "model_NRMSE": 0.007119268537374095,
+          "ridge_a1_NRMSE": 0.007415219159871951,
+          "delta_NRMSE_vs_ridge_a1": -0.00029595062249785677
+        },
+        {
+          "combo_id": "A-ridge_cv",
+          "fold_id": 2,
+          "val_window": "2010-2011",
+          "model_MDA": 0.6190476190476191,
+          "ridge_a1_MDA": 0.6309523809523809,
+          "persistence_MDA_paired": 0.6607142857142857,
+          "delta_MDA_vs_ridge_a1": -0.011904761904761862,
+          "delta_MDA_vs_persistence": -0.04166666666666663,
+          "model_NRMSE": 0.0033129673947931183,
+          "ridge_a1_NRMSE": 0.0038287796911438687,
+          "delta_NRMSE_vs_ridge_a1": -0.0005158122963507504
+        },
+        {
+          "combo_id": "A-ridge_cv",
+          "fold_id": 3,
+          "val_window": "2012-2013",
+          "model_MDA": 0.5705521472392638,
+          "ridge_a1_MDA": 0.5828220858895705,
+          "persistence_MDA_paired": 0.6196319018404908,
+          "delta_MDA_vs_ridge_a1": -0.012269938650306678,
+          "delta_MDA_vs_persistence": -0.04907975460122693,
+          "model_NRMSE": 0.003596086679114976,
+          "ridge_a1_NRMSE": 0.003906498133152554,
+          "delta_NRMSE_vs_ridge_a1": -0.0003104114540375775
+        },
+        {
+          "combo_id": "A-ridge_cv",
+          "fold_id": 4,
+          "val_window": "2014-2015",
+          "model_MDA": 0.64,
+          "ridge_a1_MDA": 0.6333333333333333,
+          "persistence_MDA_paired": 0.6466666666666666,
+          "delta_MDA_vs_ridge_a1": 0.00666666666666671,
+          "delta_MDA_vs_persistence": -0.006666666666666599,
+          "model_NRMSE": 0.0033193733340425315,
+          "ridge_a1_NRMSE": 0.00379274654122877,
+          "delta_NRMSE_vs_ridge_a1": -0.0004733732071862387
+        },
+        {
+          "combo_id": "A-ridge_cv",
+          "fold_id": 5,
+          "val_window": "2016-2017",
+          "model_MDA": 0.7272727272727273,
+          "ridge_a1_MDA": 0.7636363636363637,
+          "persistence_MDA_paired": 0.7545454545454545,
+          "delta_MDA_vs_ridge_a1": -0.036363636363636376,
+          "delta_MDA_vs_persistence": -0.027272727272727226,
+          "model_NRMSE": 0.004722214694906061,
+          "ridge_a1_NRMSE": 0.004263048787698289,
+          "delta_NRMSE_vs_ridge_a1": 0.00045916590720777254
+        }
+      ]
+    },
+    "A-enet": {
+      "mean_delta_MDA_vs_ridge_a1": 0.015498017611952774,
+      "folds_positive_vs_ridge_a1": "4/5",
+      "mean_delta_MDA_vs_persistence": -0.0017260358688929722,
+      "folds_positive_vs_persistence": "1/5",
+      "detail": [
+        {
+          "combo_id": "A-enet",
+          "fold_id": 1,
+          "val_window": "2008-2009",
+          "model_MDA": 0.6989795918367347,
+          "ridge_a1_MDA": 0.6887755102040817,
+          "persistence_MDA_paired": 0.7040816326530612,
+          "delta_MDA_vs_ridge_a1": 0.010204081632653073,
+          "delta_MDA_vs_persistence": -0.005102040816326481,
+          "model_NRMSE": 0.006745750668842883,
+          "ridge_a1_NRMSE": 0.007415219159871951,
+          "delta_NRMSE_vs_ridge_a1": -0.0006694684910290684
+        },
+        {
+          "combo_id": "A-enet",
+          "fold_id": 2,
+          "val_window": "2010-2011",
+          "model_MDA": 0.6547619047619048,
+          "ridge_a1_MDA": 0.6309523809523809,
+          "persistence_MDA_paired": 0.6607142857142857,
+          "delta_MDA_vs_ridge_a1": 0.023809523809523836,
+          "delta_MDA_vs_persistence": -0.005952380952380931,
+          "model_NRMSE": 0.0031947667703842806,
+          "ridge_a1_NRMSE": 0.0038287796911438687,
+          "delta_NRMSE_vs_ridge_a1": -0.0006340129207595881
+        },
+        {
+          "combo_id": "A-enet",
+          "fold_id": 3,
+          "val_window": "2012-2013",
+          "model_MDA": 0.6196319018404908,
+          "ridge_a1_MDA": 0.5828220858895705,
+          "persistence_MDA_paired": 0.6196319018404908,
+          "delta_MDA_vs_ridge_a1": 0.036809815950920255,
+          "delta_MDA_vs_persistence": 0.0,
+          "model_NRMSE": 0.0019702461037262304,
+          "ridge_a1_NRMSE": 0.003906498133152554,
+          "delta_NRMSE_vs_ridge_a1": -0.0019362520294263232
+        },
+        {
+          "combo_id": "A-enet",
+          "fold_id": 4,
+          "val_window": "2014-2015",
+          "model_MDA": 0.64,
+          "ridge_a1_MDA": 0.6333333333333333,
+          "persistence_MDA_paired": 0.6466666666666666,
+          "delta_MDA_vs_ridge_a1": 0.00666666666666671,
+          "delta_MDA_vs_persistence": -0.006666666666666599,
+          "model_NRMSE": 0.002075554994377598,
+          "ridge_a1_NRMSE": 0.00379274654122877,
+          "delta_NRMSE_vs_ridge_a1": -0.0017171915468511723
+        },
+        {
+          "combo_id": "A-enet",
+          "fold_id": 5,
+          "val_window": "2016-2017",
+          "model_MDA": 0.7636363636363637,
+          "ridge_a1_MDA": 0.7636363636363637,
+          "persistence_MDA_paired": 0.7545454545454545,
+          "delta_MDA_vs_ridge_a1": 0.0,
+          "delta_MDA_vs_persistence": 0.00909090909090915,
+          "model_NRMSE": 0.004192926756665779,
+          "ridge_a1_NRMSE": 0.004263048787698289,
+          "delta_NRMSE_vs_ridge_a1": -7.012203103250961e-05
+        }
+      ]
+    },
+    "B-ridge_cv": {
+      "mean_delta_MDA_vs_ridge_a1": -0.003660512727120979,
+      "folds_positive_vs_ridge_a1": "1/5",
+      "mean_delta_MDA_vs_persistence": -0.020884566207966727,
+      "folds_positive_vs_persistence": "1/5",
+      "detail": [
+        {
+          "combo_id": "B-ridge_cv",
+          "fold_id": 1,
+          "val_window": "2008-2009",
+          "model_MDA": 0.673469387755102,
+          "ridge_a1_MDA": 0.6887755102040817,
+          "persistence_MDA_paired": 0.7040816326530612,
+          "delta_MDA_vs_ridge_a1": -0.015306122448979664,
+          "delta_MDA_vs_persistence": -0.030612244897959218,
+          "model_NRMSE": 0.005807774073695577,
+          "ridge_a1_NRMSE": 0.007415219159871951,
+          "delta_NRMSE_vs_ridge_a1": -0.001607445086176374
+        },
+        {
+          "combo_id": "B-ridge_cv",
+          "fold_id": 2,
+          "val_window": "2010-2011",
+          "model_MDA": 0.625,
+          "ridge_a1_MDA": 0.6309523809523809,
+          "persistence_MDA_paired": 0.6607142857142857,
+          "delta_MDA_vs_ridge_a1": -0.005952380952380931,
+          "delta_MDA_vs_persistence": -0.0357142857142857,
+          "model_NRMSE": 0.0032526175994297335,
+          "ridge_a1_NRMSE": 0.0038287796911438687,
+          "delta_NRMSE_vs_ridge_a1": -0.0005761620917141353
+        },
+        {
+          "combo_id": "B-ridge_cv",
+          "fold_id": 3,
+          "val_window": "2012-2013",
+          "model_MDA": 0.5766871165644172,
+          "ridge_a1_MDA": 0.5828220858895705,
+          "persistence_MDA_paired": 0.6196319018404908,
+          "delta_MDA_vs_ridge_a1": -0.006134969325153339,
+          "delta_MDA_vs_persistence": -0.042944785276073594,
+          "model_NRMSE": 0.002943591861816204,
+          "ridge_a1_NRMSE": 0.003906498133152554,
+          "delta_NRMSE_vs_ridge_a1": -0.0009629062713363496
+        },
+        {
+          "combo_id": "B-ridge_cv",
+          "fold_id": 4,
+          "val_window": "2014-2015",
+          "model_MDA": 0.6333333333333333,
+          "ridge_a1_MDA": 0.6333333333333333,
+          "persistence_MDA_paired": 0.6466666666666666,
+          "delta_MDA_vs_ridge_a1": 0.0,
+          "delta_MDA_vs_persistence": -0.013333333333333308,
+          "model_NRMSE": 0.0028182346157989585,
+          "ridge_a1_NRMSE": 0.00379274654122877,
+          "delta_NRMSE_vs_ridge_a1": -0.0009745119254298117
+        },
+        {
+          "combo_id": "B-ridge_cv",
+          "fold_id": 5,
+          "val_window": "2016-2017",
+          "model_MDA": 0.7727272727272727,
+          "ridge_a1_MDA": 0.7636363636363637,
+          "persistence_MDA_paired": 0.7545454545454545,
+          "delta_MDA_vs_ridge_a1": 0.009090909090909038,
+          "delta_MDA_vs_persistence": 0.018181818181818188,
+          "model_NRMSE": 0.009127716364308886,
+          "ridge_a1_NRMSE": 0.004263048787698289,
+          "delta_NRMSE_vs_ridge_a1": 0.004864667576610597
+        }
+      ]
+    },
+    "B-enet": {
+      "mean_delta_MDA_vs_ridge_a1": 0.006902470302119723,
+      "folds_positive_vs_ridge_a1": "3/5",
+      "mean_delta_MDA_vs_persistence": -0.010321583178726024,
+      "folds_positive_vs_persistence": "0/5",
+      "detail": [
+        {
+          "combo_id": "B-enet",
+          "fold_id": 1,
+          "val_window": "2008-2009",
+          "model_MDA": 0.673469387755102,
+          "ridge_a1_MDA": 0.6887755102040817,
+          "persistence_MDA_paired": 0.7040816326530612,
+          "delta_MDA_vs_ridge_a1": -0.015306122448979664,
+          "delta_MDA_vs_persistence": -0.030612244897959218,
+          "model_NRMSE": 0.0052543494079287465,
+          "ridge_a1_NRMSE": 0.007415219159871951,
+          "delta_NRMSE_vs_ridge_a1": -0.002160869751943205
+        },
+        {
+          "combo_id": "B-enet",
+          "fold_id": 2,
+          "val_window": "2010-2011",
+          "model_MDA": 0.6488095238095238,
+          "ridge_a1_MDA": 0.6309523809523809,
+          "persistence_MDA_paired": 0.6607142857142857,
+          "delta_MDA_vs_ridge_a1": 0.017857142857142905,
+          "delta_MDA_vs_persistence": -0.011904761904761862,
+          "model_NRMSE": 0.0030254646475132026,
+          "ridge_a1_NRMSE": 0.0038287796911438687,
+          "delta_NRMSE_vs_ridge_a1": -0.0008033150436306661
+        },
+        {
+          "combo_id": "B-enet",
+          "fold_id": 3,
+          "val_window": "2012-2013",
+          "model_MDA": 0.6196319018404908,
+          "ridge_a1_MDA": 0.5828220858895705,
+          "persistence_MDA_paired": 0.6196319018404908,
+          "delta_MDA_vs_ridge_a1": 0.036809815950920255,
+          "delta_MDA_vs_persistence": 0.0,
+          "model_NRMSE": 0.0019525027328997505,
+          "ridge_a1_NRMSE": 0.003906498133152554,
+          "delta_NRMSE_vs_ridge_a1": -0.001953995400252803
+        },
+        {
+          "combo_id": "B-enet",
+          "fold_id": 4,
+          "val_window": "2014-2015",
+          "model_MDA": 0.6466666666666666,
+          "ridge_a1_MDA": 0.6333333333333333,
+          "persistence_MDA_paired": 0.6466666666666666,
+          "delta_MDA_vs_ridge_a1": 0.013333333333333308,
+          "delta_MDA_vs_persistence": 0.0,
+          "model_NRMSE": 0.0020406988909941427,
+          "ridge_a1_NRMSE": 0.00379274654122877,
+          "delta_NRMSE_vs_ridge_a1": -0.0017520476502346275
+        },
+        {
+          "combo_id": "B-enet",
+          "fold_id": 5,
+          "val_window": "2016-2017",
+          "model_MDA": 0.7454545454545455,
+          "ridge_a1_MDA": 0.7636363636363637,
+          "persistence_MDA_paired": 0.7545454545454545,
+          "delta_MDA_vs_ridge_a1": -0.018181818181818188,
+          "delta_MDA_vs_persistence": -0.009090909090909038,
+          "model_NRMSE": 0.004115670310265437,
+          "ridge_a1_NRMSE": 0.004263048787698289,
+          "delta_NRMSE_vs_ridge_a1": -0.00014737847743285203
+        }
+      ]
+    },
+    "C-ridge_cv": {
+      "mean_delta_MDA_vs_ridge_a1": -0.009865152084258111,
+      "folds_positive_vs_ridge_a1": "1/5",
+      "mean_delta_MDA_vs_persistence": -0.027089205565103858,
+      "folds_positive_vs_persistence": "0/5",
+      "detail": [
+        {
+          "combo_id": "C-ridge_cv",
+          "fold_id": 1,
+          "val_window": "2008-2009",
+          "model_MDA": 0.6581632653061225,
+          "ridge_a1_MDA": 0.6887755102040817,
+          "persistence_MDA_paired": 0.7040816326530612,
+          "delta_MDA_vs_ridge_a1": -0.030612244897959218,
+          "delta_MDA_vs_persistence": -0.04591836734693877,
+          "model_NRMSE": 0.005934976520196971,
+          "ridge_a1_NRMSE": 0.007415219159871951,
+          "delta_NRMSE_vs_ridge_a1": -0.0014802426396749802
+        },
+        {
+          "combo_id": "C-ridge_cv",
+          "fold_id": 2,
+          "val_window": "2010-2011",
+          "model_MDA": 0.6309523809523809,
+          "ridge_a1_MDA": 0.6309523809523809,
+          "persistence_MDA_paired": 0.6607142857142857,
+          "delta_MDA_vs_ridge_a1": 0.0,
+          "delta_MDA_vs_persistence": -0.029761904761904767,
+          "model_NRMSE": 0.0033099254729558538,
+          "ridge_a1_NRMSE": 0.0038287796911438687,
+          "delta_NRMSE_vs_ridge_a1": -0.000518854218188015
+        },
+        {
+          "combo_id": "C-ridge_cv",
+          "fold_id": 3,
+          "val_window": "2012-2013",
+          "model_MDA": 0.588957055214724,
+          "ridge_a1_MDA": 0.5828220858895705,
+          "persistence_MDA_paired": 0.6196319018404908,
+          "delta_MDA_vs_ridge_a1": 0.00613496932515345,
+          "delta_MDA_vs_persistence": -0.030674846625766805,
+          "model_NRMSE": 0.002969833018675379,
+          "ridge_a1_NRMSE": 0.003906498133152554,
+          "delta_NRMSE_vs_ridge_a1": -0.0009366651144771749
+        },
+        {
+          "combo_id": "C-ridge_cv",
+          "fold_id": 4,
+          "val_window": "2014-2015",
+          "model_MDA": 0.6266666666666667,
+          "ridge_a1_MDA": 0.6333333333333333,
+          "persistence_MDA_paired": 0.6466666666666666,
+          "delta_MDA_vs_ridge_a1": -0.006666666666666599,
+          "delta_MDA_vs_persistence": -0.019999999999999907,
+          "model_NRMSE": 0.002880187531880164,
+          "ridge_a1_NRMSE": 0.00379274654122877,
+          "delta_NRMSE_vs_ridge_a1": -0.0009125590093486064
+        },
+        {
+          "combo_id": "C-ridge_cv",
+          "fold_id": 5,
+          "val_window": "2016-2017",
+          "model_MDA": 0.7454545454545455,
+          "ridge_a1_MDA": 0.7636363636363637,
+          "persistence_MDA_paired": 0.7545454545454545,
+          "delta_MDA_vs_ridge_a1": -0.018181818181818188,
+          "delta_MDA_vs_persistence": -0.009090909090909038,
+          "model_NRMSE": 0.008719743276933494,
+          "ridge_a1_NRMSE": 0.004263048787698289,
+          "delta_NRMSE_vs_ridge_a1": 0.004456694489235205
+        }
+      ]
+    },
+    "C-enet": {
+      "mean_delta_MDA_vs_ridge_a1": 0.0067596131592625895,
+      "folds_positive_vs_ridge_a1": "3/5",
+      "mean_delta_MDA_vs_persistence": -0.010464440321583158,
+      "folds_positive_vs_persistence": "0/5",
+      "detail": [
+        {
+          "combo_id": "C-enet",
+          "fold_id": 1,
+          "val_window": "2008-2009",
+          "model_MDA": 0.673469387755102,
+          "ridge_a1_MDA": 0.6887755102040817,
+          "persistence_MDA_paired": 0.7040816326530612,
+          "delta_MDA_vs_ridge_a1": -0.015306122448979664,
+          "delta_MDA_vs_persistence": -0.030612244897959218,
+          "model_NRMSE": 0.005194651250986623,
+          "ridge_a1_NRMSE": 0.007415219159871951,
+          "delta_NRMSE_vs_ridge_a1": -0.0022205679088853287
+        },
+        {
+          "combo_id": "C-enet",
+          "fold_id": 2,
+          "val_window": "2010-2011",
+          "model_MDA": 0.6547619047619048,
+          "ridge_a1_MDA": 0.6309523809523809,
+          "persistence_MDA_paired": 0.6607142857142857,
+          "delta_MDA_vs_ridge_a1": 0.023809523809523836,
+          "delta_MDA_vs_persistence": -0.005952380952380931,
+          "model_NRMSE": 0.003076672242297904,
+          "ridge_a1_NRMSE": 0.0038287796911438687,
+          "delta_NRMSE_vs_ridge_a1": -0.0007521074488459649
+        },
+        {
+          "combo_id": "C-enet",
+          "fold_id": 3,
+          "val_window": "2012-2013",
+          "model_MDA": 0.6196319018404908,
+          "ridge_a1_MDA": 0.5828220858895705,
+          "persistence_MDA_paired": 0.6196319018404908,
+          "delta_MDA_vs_ridge_a1": 0.036809815950920255,
+          "delta_MDA_vs_persistence": 0.0,
+          "model_NRMSE": 0.00195255989228005,
+          "ridge_a1_NRMSE": 0.003906498133152554,
+          "delta_NRMSE_vs_ridge_a1": -0.001953938240872504
+        },
+        {
+          "combo_id": "C-enet",
+          "fold_id": 4,
+          "val_window": "2014-2015",
+          "model_MDA": 0.64,
+          "ridge_a1_MDA": 0.6333333333333333,
+          "persistence_MDA_paired": 0.6466666666666666,
+          "delta_MDA_vs_ridge_a1": 0.00666666666666671,
+          "delta_MDA_vs_persistence": -0.006666666666666599,
+          "model_NRMSE": 0.0020225023757154893,
+          "ridge_a1_NRMSE": 0.00379274654122877,
+          "delta_NRMSE_vs_ridge_a1": -0.0017702441655132808
+        },
+        {
+          "combo_id": "C-enet",
+          "fold_id": 5,
+          "val_window": "2016-2017",
+          "model_MDA": 0.7454545454545455,
+          "ridge_a1_MDA": 0.7636363636363637,
+          "persistence_MDA_paired": 0.7545454545454545,
+          "delta_MDA_vs_ridge_a1": -0.018181818181818188,
+          "delta_MDA_vs_persistence": -0.009090909090909038,
+          "model_NRMSE": 0.004101669651016893,
+          "ridge_a1_NRMSE": 0.004263048787698289,
+          "delta_NRMSE_vs_ridge_a1": -0.00016137913668139593
+        }
+      ]
+    }
+  }
+}
