@@ -1,0 +1,2341 @@
+{
+  "folds": [
+    {
+      "fold_id": 1,
+      "val_start_year": 2008,
+      "val_end_year": 2009
+    },
+    {
+      "fold_id": 2,
+      "val_start_year": 2010,
+      "val_end_year": 2011
+    },
+    {
+      "fold_id": 3,
+      "val_start_year": 2012,
+      "val_end_year": 2013
+    },
+    {
+      "fold_id": 4,
+      "val_start_year": 2014,
+      "val_end_year": 2015
+    },
+    {
+      "fold_id": 5,
+      "val_start_year": 2016,
+      "val_end_year": 2017
+    }
+  ],
+  "per_cell": [
+    {
+      "fold_id": 1,
+      "cma": "Charlottetown, Prince Edward Island",
+      "n_train_rows_held_out_cma": 156,
+      "n_pool_train_rows": 5468,
+      "cma_first_obs": "1995-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.7272727272727273,
+        "NMSE": 0.0006269827408061511,
+        "NRMSE": 0.0250396234158214,
+        "NMAE": 0.016451408705720174,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      },
+      "baseline": {
+        "MDA": 0.5,
+        "NMSE": 0.0003754340277777806,
+        "NRMSE": 0.019376120039310774,
+        "NMAE": 0.010590277777777816,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 22
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Edmonton, Alberta",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.8260869565217391,
+        "NMSE": 0.00139463185471505,
+        "NRMSE": 0.03734477011195878,
+        "NMAE": 0.030396383929805985,
+        "n_mda_directions": 23,
+        "n_zero_directions_dropped": 1
+      },
+      "baseline": {
+        "MDA": 0.8571428571428571,
+        "NMSE": 0.002573784722222216,
+        "NRMSE": 0.05073248192452461,
+        "NMAE": 0.03611111111111106,
+        "n_mda_directions": 21,
+        "n_zero_directions_dropped": 3
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Greater Sudbury, Ontario",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5833333333333334,
+        "NMSE": 0.0011507306850624755,
+        "NRMSE": 0.03392242156837385,
+        "NMAE": 0.028067068036908244,
+        "n_mda_directions": 12,
+        "n_zero_directions_dropped": 12
+      },
+      "baseline": {
+        "MDA": 0.375,
+        "NMSE": 0.0003985821759259262,
+        "NRMSE": 0.019964522932590354,
+        "NMAE": 0.009201388888888884,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 16
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Halifax, Nova Scotia",
+      "n_train_rows_held_out_cma": 284,
+      "n_pool_train_rows": 5340,
+      "cma_first_obs": "1984-05-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5454545454545454,
+        "NMSE": 0.0002641221096146148,
+        "NRMSE": 0.01625183403848977,
+        "NMAE": 0.014634740648622148,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.00016854745370370385,
+        "NRMSE": 0.012982582705444392,
+        "NMAE": 0.006423611111111116,
+        "n_mda_directions": 3,
+        "n_zero_directions_dropped": 21
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Hamilton, Ontario",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5714285714285714,
+        "NMSE": 0.0038166030793712782,
+        "NRMSE": 0.06177866200696871,
+        "NMAE": 0.05840432344088697,
+        "n_mda_directions": 21,
+        "n_zero_directions_dropped": 3
+      },
+      "baseline": {
+        "MDA": 0.5263157894736842,
+        "NMSE": 0.00032190393518518424,
+        "NRMSE": 0.017941681503838604,
+        "NMAE": 0.013368055555555487,
+        "n_mda_directions": 19,
+        "n_zero_directions_dropped": 5
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5,
+        "NMSE": 0.00037649606480626396,
+        "NRMSE": 0.019403506508006846,
+        "NMAE": 0.017625417856213608,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      },
+      "baseline": {
+        "MDA": 0.375,
+        "NMSE": 0.00017361111111111423,
+        "NRMSE": 0.013176156917368365,
+        "NMAE": 0.007638888888888973,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 16
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "London, Ontario",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.7142857142857143,
+        "NMSE": 0.0008824347104163142,
+        "NRMSE": 0.029705802638816448,
+        "NMAE": 0.024479213916085502,
+        "n_mda_directions": 7,
+        "n_zero_directions_dropped": 17
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.00013165509259259242,
+        "NRMSE": 0.011474105306846038,
+        "NMAE": 0.005902777777777763,
+        "n_mda_directions": 3,
+        "n_zero_directions_dropped": 21
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Montr\u00e9al, Quebec",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.631578947368421,
+        "NMSE": 0.03467741032625042,
+        "NRMSE": 0.18621871636935539,
+        "NMAE": 0.18560505703993924,
+        "n_mda_directions": 19,
+        "n_zero_directions_dropped": 5
+      },
+      "baseline": {
+        "MDA": 0.7857142857142857,
+        "NMSE": 0.00031539351851851986,
+        "NRMSE": 0.017759322017422845,
+        "NMAE": 0.010763888888888894,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 0.012367071423893157,
+        "NRMSE": 0.11120733529715186,
+        "NMAE": 0.11004209244372237,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 15
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.000350839120370371,
+        "NRMSE": 0.01873069994341832,
+        "NMAE": 0.009895833333333338,
+        "n_mda_directions": 3,
+        "n_zero_directions_dropped": 21
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Qu\u00e9bec, Quebec",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6428571428571429,
+        "NMSE": 0.00396240147064029,
+        "NRMSE": 0.0629476089350524,
+        "NMAE": 0.057805449876976,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.0009360532407407388,
+        "NRMSE": 0.030594987183209257,
+        "NMAE": 0.018402777777777768,
+        "n_mda_directions": 6,
+        "n_zero_directions_dropped": 18
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Regina, Saskatchewan",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 1.0,
+        "NMSE": 0.008075894709355505,
+        "NRMSE": 0.08986598193618932,
+        "NMAE": 0.08369210021201462,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 15
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.004316406250000003,
+        "NRMSE": 0.06569936263008952,
+        "NMAE": 0.028645833333333332,
+        "n_mda_directions": 5,
+        "n_zero_directions_dropped": 19
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Saskatoon, Saskatchewan",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6086956521739131,
+        "NMSE": 0.005535743573828117,
+        "NRMSE": 0.07440257773644753,
+        "NMAE": 0.05234541396613793,
+        "n_mda_directions": 23,
+        "n_zero_directions_dropped": 1
+      },
+      "baseline": {
+        "MDA": 0.6190476190476191,
+        "NMSE": 0.0054774305555555635,
+        "NRMSE": 0.0740096652847151,
+        "NMAE": 0.05104166666666673,
+        "n_mda_directions": 21,
+        "n_zero_directions_dropped": 3
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "St. Catharines-Niagara, Ontario",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5882352941176471,
+        "NMSE": 0.0017626542086191617,
+        "NRMSE": 0.041983975617122804,
+        "NMAE": 0.03723099294336363,
+        "n_mda_directions": 17,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 0.6363636363636364,
+        "NMSE": 0.0006032986111111126,
+        "NRMSE": 0.024562137755315853,
+        "NMAE": 0.015277777777777822,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "St. John's, Newfoundland and Labrador",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.8421052631578947,
+        "NMSE": 0.0020058123096299923,
+        "NRMSE": 0.044786296002571946,
+        "NMAE": 0.042228451176313846,
+        "n_mda_directions": 19,
+        "n_zero_directions_dropped": 5
+      },
+      "baseline": {
+        "MDA": 0.8571428571428571,
+        "NMSE": 0.0029853877314814843,
+        "NRMSE": 0.0546387017733903,
+        "NMAE": 0.03628472222222221,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Vancouver, British Columbia",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6956521739130435,
+        "NMSE": 0.004468910570194507,
+        "NRMSE": 0.0668499107717767,
+        "NMAE": 0.05463530574283556,
+        "n_mda_directions": 23,
+        "n_zero_directions_dropped": 1
+      },
+      "baseline": {
+        "MDA": 0.7142857142857143,
+        "NMSE": 0.0014453125000000009,
+        "NRMSE": 0.03801726581436388,
+        "NMAE": 0.027083333333333296,
+        "n_mda_directions": 21,
+        "n_zero_directions_dropped": 3
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Victoria, British Columbia",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6842105263157895,
+        "NMSE": 0.015695636815771664,
+        "NRMSE": 0.12528222865104077,
+        "NMAE": 0.12006848421493681,
+        "n_mda_directions": 19,
+        "n_zero_directions_dropped": 5
+      },
+      "baseline": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 0.0017766203703703705,
+        "NRMSE": 0.042149974737482,
+        "NMAE": 0.025694444444444412,
+        "n_mda_directions": 15,
+        "n_zero_directions_dropped": 9
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Windsor, Ontario",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.42857142857142855,
+        "NMSE": 0.009715972942219877,
+        "NRMSE": 0.09856963499080168,
+        "NMAE": 0.09742919060370918,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      },
+      "baseline": {
+        "MDA": 0.46153846153846156,
+        "NMSE": 0.00013020833333333168,
+        "NRMSE": 0.011410886614690889,
+        "NMAE": 0.007986111111111027,
+        "n_mda_directions": 13,
+        "n_zero_directions_dropped": 11
+      }
+    },
+    {
+      "fold_id": 1,
+      "cma": "Winnipeg, Manitoba",
+      "n_train_rows_held_out_cma": 324,
+      "n_pool_train_rows": 5300,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.8571428571428571,
+        "NMSE": 0.0002006687777108375,
+        "NRMSE": 0.014165760752985965,
+        "NMAE": 0.01204149744885615,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.00028718171296296223,
+        "NRMSE": 0.016946436585989464,
+        "NMAE": 0.00954861111111111,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 15
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Charlottetown, Prince Edward Island",
+      "n_train_rows_held_out_cma": 180,
+      "n_pool_train_rows": 5876,
+      "cma_first_obs": "1995-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5,
+        "NMSE": 0.004136839334223232,
+        "NRMSE": 0.06431826594540023,
+        "NMAE": 0.060924529865929215,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      },
+      "baseline": {
+        "MDA": 0.625,
+        "NMSE": 0.0003370949074074098,
+        "NRMSE": 0.018360144536669905,
+        "NMAE": 0.010763888888888918,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 16
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Edmonton, Alberta",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.35294117647058826,
+        "NMSE": 0.012010322363034363,
+        "NRMSE": 0.10959161629903248,
+        "NMAE": 0.10854753053080658,
+        "n_mda_directions": 17,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 0.45454545454545453,
+        "NMSE": 0.00017578124999999915,
+        "NRMSE": 0.013258252147247733,
+        "NMAE": 0.008854166666666658,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Greater Sudbury, Ontario",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.4,
+        "NMSE": 0.0031409324811435425,
+        "NRMSE": 0.056044022706650376,
+        "NMAE": 0.0535071732676612,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 14
+      },
+      "baseline": {
+        "MDA": 0.5,
+        "NMSE": 0.0003645833333333334,
+        "NRMSE": 0.019094065395649337,
+        "NMAE": 0.008333333333333304,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 22
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Halifax, Nova Scotia",
+      "n_train_rows_held_out_cma": 308,
+      "n_pool_train_rows": 5748,
+      "cma_first_obs": "1984-05-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.625,
+        "NMSE": 0.0007107162293941844,
+        "NRMSE": 0.026659261606319564,
+        "NMAE": 0.024431711670779857,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 16
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.00013310185185185134,
+        "NRMSE": 0.011536977587386192,
+        "NMAE": 0.004513888888888903,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 22
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Hamilton, Ontario",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.4,
+        "NMSE": 0.0028886433550037957,
+        "NRMSE": 0.05374610083535173,
+        "NMAE": 0.05203834230521894,
+        "n_mda_directions": 20,
+        "n_zero_directions_dropped": 4
+      },
+      "baseline": {
+        "MDA": 0.3333333333333333,
+        "NMSE": 0.00014612268518518652,
+        "NRMSE": 0.012088121656617561,
+        "NMAE": 0.008680555555555556,
+        "n_mda_directions": 15,
+        "n_zero_directions_dropped": 9
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6,
+        "NMSE": 0.00030126687501037504,
+        "NRMSE": 0.017357041078777658,
+        "NMAE": 0.01365171742588108,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 14
+      },
+      "baseline": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 0.0003515624999999969,
+        "NRMSE": 0.018749999999999916,
+        "NMAE": 0.009722222222222188,
+        "n_mda_directions": 3,
+        "n_zero_directions_dropped": 21
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "London, Ontario",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.45454545454545453,
+        "NMSE": 0.0012880190489807982,
+        "NRMSE": 0.035888982278420745,
+        "NMAE": 0.027383805812308395,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      },
+      "baseline": {
+        "MDA": 0.6,
+        "NMSE": 0.0005982349537037063,
+        "NRMSE": 0.024458842035217167,
+        "NMAE": 0.011631944444444474,
+        "n_mda_directions": 5,
+        "n_zero_directions_dropped": 19
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Montr\u00e9al, Quebec",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.7894736842105263,
+        "NMSE": 0.0028467498590682315,
+        "NRMSE": 0.05335494221783238,
+        "NMAE": 0.050825198749902385,
+        "n_mda_directions": 19,
+        "n_zero_directions_dropped": 5
+      },
+      "baseline": {
+        "MDA": 0.7333333333333333,
+        "NMSE": 0.00030671296296296257,
+        "NRMSE": 0.01751322251794234,
+        "NMAE": 0.01111111111111112,
+        "n_mda_directions": 15,
+        "n_zero_directions_dropped": 9
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.631578947368421,
+        "NMSE": 0.0017818400814147404,
+        "NRMSE": 0.04221184764275002,
+        "NMAE": 0.037537361069974295,
+        "n_mda_directions": 19,
+        "n_zero_directions_dropped": 5
+      },
+      "baseline": {
+        "MDA": 0.7857142857142857,
+        "NMSE": 0.0005034722222222252,
+        "NRMSE": 0.022438186696393834,
+        "NMAE": 0.01423611111111109,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Qu\u00e9bec, Quebec",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.625,
+        "NMSE": 0.00020967589202987682,
+        "NRMSE": 0.014480189640673798,
+        "NMAE": 0.011868414804539595,
+        "n_mda_directions": 16,
+        "n_zero_directions_dropped": 8
+      },
+      "baseline": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 0.00016854745370370344,
+        "NRMSE": 0.012982582705444378,
+        "NMAE": 0.009201388888888908,
+        "n_mda_directions": 12,
+        "n_zero_directions_dropped": 12
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Regina, Saskatchewan",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5833333333333334,
+        "NMSE": 0.0027666713086970125,
+        "NRMSE": 0.05259915692002118,
+        "NMAE": 0.04903252699770803,
+        "n_mda_directions": 12,
+        "n_zero_directions_dropped": 12
+      },
+      "baseline": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 0.001324508101851852,
+        "NRMSE": 0.036393792078483,
+        "NMAE": 0.018576388888888917,
+        "n_mda_directions": 6,
+        "n_zero_directions_dropped": 18
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Saskatoon, Saskatchewan",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6,
+        "NMSE": 0.0021372760230237496,
+        "NRMSE": 0.04623068270125102,
+        "NMAE": 0.04377115854165726,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 14
+      },
+      "baseline": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 0.0002669270833333324,
+        "NRMSE": 0.016337903272248017,
+        "NMAE": 0.008854166666666682,
+        "n_mda_directions": 6,
+        "n_zero_directions_dropped": 18
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "St. Catharines-Niagara, Ontario",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.42857142857142855,
+        "NMSE": 0.0029216453728784907,
+        "NRMSE": 0.054052246695937535,
+        "NMAE": 0.05305024532314535,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      },
+      "baseline": {
+        "MDA": 0.3,
+        "NMSE": 0.00010561342592592419,
+        "NRMSE": 0.010276839296492098,
+        "NMAE": 0.005555555555555438,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 14
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "St. John's, Newfoundland and Labrador",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.4444444444444444,
+        "NMSE": 0.015096461486109733,
+        "NRMSE": 0.12286765842201818,
+        "NMAE": 0.11814572583118088,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 15
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.0014293981481481467,
+        "NRMSE": 0.03780738219115609,
+        "NMAE": 0.013194444444444434,
+        "n_mda_directions": 3,
+        "n_zero_directions_dropped": 21
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Vancouver, British Columbia",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6190476190476191,
+        "NMSE": 0.007503838408957166,
+        "NRMSE": 0.08662469860817507,
+        "NMAE": 0.08561573072134664,
+        "n_mda_directions": 21,
+        "n_zero_directions_dropped": 3
+      },
+      "baseline": {
+        "MDA": 0.6470588235294118,
+        "NMSE": 0.00017144097222222224,
+        "NRMSE": 0.013093546968725557,
+        "NMAE": 0.00989583333333329,
+        "n_mda_directions": 17,
+        "n_zero_directions_dropped": 7
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Victoria, British Columbia",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6,
+        "NMSE": 0.0023517032136373575,
+        "NRMSE": 0.04849436269956908,
+        "NMAE": 0.047133584610463714,
+        "n_mda_directions": 15,
+        "n_zero_directions_dropped": 9
+      },
+      "baseline": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 0.0001164641203703705,
+        "NRMSE": 0.010791854352722265,
+        "NMAE": 0.006770833333333368,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 15
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Windsor, Ontario",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.75,
+        "NMSE": 0.004901568494969082,
+        "NRMSE": 0.07001120263907114,
+        "NMAE": 0.066571867761284,
+        "n_mda_directions": 12,
+        "n_zero_directions_dropped": 12
+      },
+      "baseline": {
+        "MDA": 0.7272727272727273,
+        "NMSE": 0.000687210648148148,
+        "NRMSE": 0.026214702900245652,
+        "NMAE": 0.01388888888888884,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      }
+    },
+    {
+      "fold_id": 2,
+      "cma": "Winnipeg, Manitoba",
+      "n_train_rows_held_out_cma": 348,
+      "n_pool_train_rows": 5708,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.9047619047619048,
+        "NMSE": 0.0003654970511738729,
+        "NRMSE": 0.019117977172647554,
+        "NMAE": 0.016967307684870276,
+        "n_mda_directions": 21,
+        "n_zero_directions_dropped": 3
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.0004600694444444438,
+        "NRMSE": 0.02144922946038957,
+        "NMAE": 0.014930555555555546,
+        "n_mda_directions": 19,
+        "n_zero_directions_dropped": 5
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Charlottetown, Prince Edward Island",
+      "n_train_rows_held_out_cma": 204,
+      "n_pool_train_rows": 6284,
+      "cma_first_obs": "1995-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5,
+        "NMSE": 0.005437012314593087,
+        "NRMSE": 0.07373609912785654,
+        "NMAE": 0.07130256595217412,
+        "n_mda_directions": 16,
+        "n_zero_directions_dropped": 8
+      },
+      "baseline": {
+        "MDA": 0.45454545454545453,
+        "NMSE": 0.00016276041666666563,
+        "NRMSE": 0.01275775907699568,
+        "NMAE": 0.007812500000000024,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Edmonton, Alberta",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.2222222222222222,
+        "NMSE": 0.002740253098718132,
+        "NRMSE": 0.05234742685861581,
+        "NMAE": 0.051644072470311726,
+        "n_mda_directions": 18,
+        "n_zero_directions_dropped": 6
+      },
+      "baseline": {
+        "MDA": 0.21428571428571427,
+        "NMSE": 6.221064814814723e-05,
+        "NRMSE": 0.007887372702500322,
+        "NMAE": 0.005902777777777763,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Greater Sudbury, Ontario",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.2222222222222222,
+        "NMSE": 0.002573548935458486,
+        "NRMSE": 0.05073015804685105,
+        "NMAE": 0.04180359191084307,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 15
+      },
+      "baseline": {
+        "MDA": 0.0,
+        "NMSE": 0.00020399305555555438,
+        "NRMSE": 0.014282613750835468,
+        "NMAE": 0.005555555555555486,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 22
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Halifax, Nova Scotia",
+      "n_train_rows_held_out_cma": 332,
+      "n_pool_train_rows": 6156,
+      "cma_first_obs": "1984-05-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.4375,
+        "NMSE": 0.0002987506863670009,
+        "NRMSE": 0.017284405872548845,
+        "NMAE": 0.012153004469555103,
+        "n_mda_directions": 16,
+        "n_zero_directions_dropped": 8
+      },
+      "baseline": {
+        "MDA": 0.36363636363636365,
+        "NMSE": 0.0002387152777777788,
+        "NRMSE": 0.015450413514782664,
+        "NMAE": 0.009375000000000109,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Hamilton, Ontario",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.7368421052631579,
+        "NMSE": 0.0007806503050470342,
+        "NRMSE": 0.027940119989846756,
+        "NMAE": 0.024835903609675098,
+        "n_mda_directions": 19,
+        "n_zero_directions_dropped": 5
+      },
+      "baseline": {
+        "MDA": 0.7333333333333333,
+        "NMSE": 0.00016710069444444332,
+        "NRMSE": 0.012926743381240433,
+        "NMAE": 0.00920138888888886,
+        "n_mda_directions": 15,
+        "n_zero_directions_dropped": 9
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6,
+        "NMSE": 0.00030917250804356086,
+        "NRMSE": 0.017583301966455585,
+        "NMAE": 0.009006678194318428,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 14
+      },
+      "baseline": {
+        "MDA": 0.5,
+        "NMSE": 0.00023509837962963086,
+        "NRMSE": 0.015332918170708108,
+        "NMAE": 0.006076388888888913,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 22
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "London, Ontario",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 0.00012604488969257462,
+        "NRMSE": 0.011226971528091385,
+        "NMAE": 0.008373604587285755,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 15
+      },
+      "baseline": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 9.76562499999996e-05,
+        "NRMSE": 0.009882117688026165,
+        "NMAE": 0.005729166666666637,
+        "n_mda_directions": 3,
+        "n_zero_directions_dropped": 21
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Montr\u00e9al, Quebec",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.7142857142857143,
+        "NMSE": 0.0014886195850728084,
+        "NRMSE": 0.038582633205534435,
+        "NMAE": 0.031333593531971994,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      },
+      "baseline": {
+        "MDA": 0.625,
+        "NMSE": 3.110532407407445e-05,
+        "NRMSE": 0.005577214723683718,
+        "NMAE": 0.003645833333333348,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 16
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.42857142857142855,
+        "NMSE": 0.0021381909957904834,
+        "NRMSE": 0.046240577373022534,
+        "NMAE": 0.0451702766402253,
+        "n_mda_directions": 21,
+        "n_zero_directions_dropped": 3
+      },
+      "baseline": {
+        "MDA": 0.5882352941176471,
+        "NMSE": 0.0001077835648148151,
+        "NRMSE": 0.010381886380365328,
+        "NMAE": 0.008506944444444454,
+        "n_mda_directions": 17,
+        "n_zero_directions_dropped": 7
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Qu\u00e9bec, Quebec",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.8333333333333334,
+        "NMSE": 0.0001338337848007762,
+        "NRMSE": 0.011568655271930968,
+        "NMAE": 0.009220545837549807,
+        "n_mda_directions": 12,
+        "n_zero_directions_dropped": 12
+      },
+      "baseline": {
+        "MDA": 0.875,
+        "NMSE": 9.403935185185165e-05,
+        "NRMSE": 0.009697388919283977,
+        "NMAE": 0.005208333333333333,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 16
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Regina, Saskatchewan",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5384615384615384,
+        "NMSE": 0.0006215772887231604,
+        "NRMSE": 0.024931451797341454,
+        "NMAE": 0.019203377749277373,
+        "n_mda_directions": 13,
+        "n_zero_directions_dropped": 11
+      },
+      "baseline": {
+        "MDA": 0.8571428571428571,
+        "NMSE": 0.0006054687500000005,
+        "NRMSE": 0.02460627460628692,
+        "NMAE": 0.011631944444444474,
+        "n_mda_directions": 7,
+        "n_zero_directions_dropped": 17
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Saskatoon, Saskatchewan",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5454545454545454,
+        "NMSE": 0.001014332012043575,
+        "NRMSE": 0.03184857943525229,
+        "NMAE": 0.028613828311874697,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      },
+      "baseline": {
+        "MDA": 0.4,
+        "NMSE": 0.00016420717592592637,
+        "NRMSE": 0.012814334782809694,
+        "NMAE": 0.007465277777777773,
+        "n_mda_directions": 5,
+        "n_zero_directions_dropped": 19
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "St. Catharines-Niagara, Ontario",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.75,
+        "NMSE": 0.00016103787293844603,
+        "NRMSE": 0.012690069855538465,
+        "NMAE": 0.010538961629096634,
+        "n_mda_directions": 16,
+        "n_zero_directions_dropped": 8
+      },
+      "baseline": {
+        "MDA": 0.9,
+        "NMSE": 0.00021701388888888888,
+        "NRMSE": 0.014731391274719742,
+        "NMAE": 0.009722222222222212,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 14
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "St. John's, Newfoundland and Labrador",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.45454545454545453,
+        "NMSE": 0.0033338303723875144,
+        "NRMSE": 0.05773933124298821,
+        "NMAE": 0.05651012882381826,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.0001439525462962968,
+        "NRMSE": 0.011998022599424325,
+        "NMAE": 0.006770833333333343,
+        "n_mda_directions": 4,
+        "n_zero_directions_dropped": 20
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Vancouver, British Columbia",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.4117647058823529,
+        "NMSE": 0.0015030516036026963,
+        "NRMSE": 0.03876920947869193,
+        "NMAE": 0.037842784014209756,
+        "n_mda_directions": 17,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 0.5,
+        "NMSE": 6.221064814814848e-05,
+        "NRMSE": 0.0078873727025004,
+        "NMAE": 0.005902777777777812,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 14
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Victoria, British Columbia",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.47058823529411764,
+        "NMSE": 0.0004141533316856111,
+        "NRMSE": 0.02035075752117378,
+        "NMAE": 0.014727919393485278,
+        "n_mda_directions": 17,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 0.6363636363636364,
+        "NMSE": 0.00021122685185185068,
+        "NRMSE": 0.014533645511427981,
+        "NMAE": 0.009722222222222188,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Windsor, Ontario",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.14285714285714285,
+        "NMSE": 0.00344147551668754,
+        "NRMSE": 0.058664090521268114,
+        "NMAE": 0.05719365634607181,
+        "n_mda_directions": 7,
+        "n_zero_directions_dropped": 17
+      },
+      "baseline": {
+        "MDA": 0.16666666666666666,
+        "NMSE": 0.00017071759259259294,
+        "NRMSE": 0.013065894251546388,
+        "NMAE": 0.007986111111111102,
+        "n_mda_directions": 6,
+        "n_zero_directions_dropped": 18
+      }
+    },
+    {
+      "fold_id": 3,
+      "cma": "Winnipeg, Manitoba",
+      "n_train_rows_held_out_cma": 372,
+      "n_pool_train_rows": 6116,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.8571428571428571,
+        "NMSE": 0.0003986835321307988,
+        "NRMSE": 0.019967061179121948,
+        "NMAE": 0.01765913634003797,
+        "n_mda_directions": 21,
+        "n_zero_directions_dropped": 3
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.00025101273148148156,
+        "NRMSE": 0.015843381314652547,
+        "NMAE": 0.01232638888888888,
+        "n_mda_directions": 19,
+        "n_zero_directions_dropped": 5
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Charlottetown, Prince Edward Island",
+      "n_train_rows_held_out_cma": 228,
+      "n_pool_train_rows": 6692,
+      "cma_first_obs": "1995-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.625,
+        "NMSE": 0.0013761658366411426,
+        "NRMSE": 0.037096709242750124,
+        "NMAE": 0.03283481308740558,
+        "n_mda_directions": 16,
+        "n_zero_directions_dropped": 8
+      },
+      "baseline": {
+        "MDA": 0.7777777777777778,
+        "NMSE": 0.00021918402777777773,
+        "NRMSE": 0.01480486500369989,
+        "NMAE": 0.009201388888888884,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 15
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Edmonton, Alberta",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.35714285714285715,
+        "NMSE": 0.00025903313153127,
+        "NRMSE": 0.01609450625310606,
+        "NMAE": 0.01292626277326255,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      },
+      "baseline": {
+        "MDA": 0.25,
+        "NMSE": 4.1232638888888524e-05,
+        "NRMSE": 0.006421264586425988,
+        "NMAE": 0.0043402777777777285,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 16
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Greater Sudbury, Ontario",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6,
+        "NMSE": 0.001820541600083365,
+        "NRMSE": 0.0426678051941199,
+        "NMAE": 0.04194871609987157,
+        "n_mda_directions": 5,
+        "n_zero_directions_dropped": 19
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 2.3148148148148188e-05,
+        "NRMSE": 0.0048112522432468855,
+        "NMAE": 0.001736111111111111,
+        "n_mda_directions": 1,
+        "n_zero_directions_dropped": 23
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Halifax, Nova Scotia",
+      "n_train_rows_held_out_cma": 356,
+      "n_pool_train_rows": 6564,
+      "cma_first_obs": "1984-05-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5384615384615384,
+        "NMSE": 0.0028366811685935373,
+        "NRMSE": 0.05326050289467363,
+        "NMAE": 0.052750695054247815,
+        "n_mda_directions": 13,
+        "n_zero_directions_dropped": 11
+      },
+      "baseline": {
+        "MDA": 0.42857142857142855,
+        "NMSE": 3.906249999999864e-05,
+        "NRMSE": 0.006249999999999891,
+        "NMAE": 0.0038194444444443754,
+        "n_mda_directions": 7,
+        "n_zero_directions_dropped": 17
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Hamilton, Ontario",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 0.00036040128538587926,
+        "NRMSE": 0.018984237814194154,
+        "NMAE": 0.017153435897374614,
+        "n_mda_directions": 21,
+        "n_zero_directions_dropped": 3
+      },
+      "baseline": {
+        "MDA": 0.8421052631578947,
+        "NMSE": 0.00017722800925925884,
+        "NRMSE": 0.013312701050472773,
+        "NMAE": 0.010590277777777742,
+        "n_mda_directions": 19,
+        "n_zero_directions_dropped": 5
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5714285714285714,
+        "NMSE": 0.0002770185117276258,
+        "NRMSE": 0.016643873098759972,
+        "NMAE": 0.014205050661908887,
+        "n_mda_directions": 14,
+        "n_zero_directions_dropped": 10
+      },
+      "baseline": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 9.403935185185104e-05,
+        "NRMSE": 0.009697388919283945,
+        "NMAE": 0.006597222222222217,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 15
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "London, Ontario",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.75,
+        "NMSE": 0.0009665433079266336,
+        "NRMSE": 0.03108927963022999,
+        "NMAE": 0.029554649816079817,
+        "n_mda_directions": 16,
+        "n_zero_directions_dropped": 8
+      },
+      "baseline": {
+        "MDA": 0.9090909090909091,
+        "NMSE": 0.00010271990740740622,
+        "NRMSE": 0.010135082999532181,
+        "NMAE": 0.007291666666666647,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Montr\u00e9al, Quebec",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.5,
+        "NMSE": 0.03765670670711645,
+        "NRMSE": 0.1940533604633438,
+        "NMAE": 0.19373481651930144,
+        "n_mda_directions": 16,
+        "n_zero_directions_dropped": 8
+      },
+      "baseline": {
+        "MDA": 0.5555555555555556,
+        "NMSE": 4.3402777777778186e-05,
+        "NRMSE": 0.006588078458684154,
+        "NMAE": 0.004513888888888928,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 15
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6875,
+        "NMSE": 0.00034889718677069367,
+        "NRMSE": 0.018678789756584702,
+        "NMAE": 0.017615402228938117,
+        "n_mda_directions": 16,
+        "n_zero_directions_dropped": 8
+      },
+      "baseline": {
+        "MDA": 0.7,
+        "NMSE": 3.399884259259181e-05,
+        "NRMSE": 0.005830852647134192,
+        "NMAE": 0.0043402777777777285,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 14
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Qu\u00e9bec, Quebec",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.4,
+        "NMSE": 8.902058915898017e-05,
+        "NRMSE": 0.00943507229219682,
+        "NMAE": 0.00724573432156286,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 14
+      },
+      "baseline": {
+        "MDA": 0.3333333333333333,
+        "NMSE": 5.859375000000033e-05,
+        "NRMSE": 0.007654655446197453,
+        "NMAE": 0.003993055555555575,
+        "n_mda_directions": 3,
+        "n_zero_directions_dropped": 21
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Regina, Saskatchewan",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.4117647058823529,
+        "NMSE": 0.00028000770107588856,
+        "NRMSE": 0.016733430642754895,
+        "NMAE": 0.01258598937882116,
+        "n_mda_directions": 17,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 0.3333333333333333,
+        "NMSE": 0.00019820601851852087,
+        "NRMSE": 0.014078565925495426,
+        "NMAE": 0.008333333333333403,
+        "n_mda_directions": 12,
+        "n_zero_directions_dropped": 12
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Saskatoon, Saskatchewan",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.47058823529411764,
+        "NMSE": 0.0005551972381587742,
+        "NRMSE": 0.023562623753707355,
+        "NMAE": 0.015876271766235416,
+        "n_mda_directions": 17,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 0.36363636363636365,
+        "NMSE": 0.0002683738425925929,
+        "NRMSE": 0.016382119600118688,
+        "NMAE": 0.00954861111111111,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 13
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "St. Catharines-Niagara, Ontario",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.4375,
+        "NMSE": 0.0003084669343511437,
+        "NRMSE": 0.01756322676364294,
+        "NMAE": 0.013331582220179605,
+        "n_mda_directions": 16,
+        "n_zero_directions_dropped": 8
+      },
+      "baseline": {
+        "MDA": 0.4444444444444444,
+        "NMSE": 0.0002293113425925953,
+        "NRMSE": 0.015143029505108789,
+        "NMAE": 0.00885416666666678,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 15
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "St. John's, Newfoundland and Labrador",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.2857142857142857,
+        "NMSE": 0.0022010727345016905,
+        "NRMSE": 0.04691559159279238,
+        "NMAE": 0.04640722731466999,
+        "n_mda_directions": 7,
+        "n_zero_directions_dropped": 17
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 2.097800925925996e-05,
+        "NRMSE": 0.004580175679955951,
+        "NMAE": 0.002256944444444489,
+        "n_mda_directions": 1,
+        "n_zero_directions_dropped": 23
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Vancouver, British Columbia",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.7647058823529411,
+        "NMSE": 0.011895169096261772,
+        "NRMSE": 0.10906497648769642,
+        "NMAE": 0.10735215506912286,
+        "n_mda_directions": 17,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 0.8333333333333334,
+        "NMSE": 0.00010489004629629568,
+        "NRMSE": 0.010241584169272627,
+        "NMAE": 0.007465277777777748,
+        "n_mda_directions": 12,
+        "n_zero_directions_dropped": 12
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Victoria, British Columbia",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.75,
+        "NMSE": 0.00021715729957428603,
+        "NRMSE": 0.014736257990897351,
+        "NMAE": 0.012713295640350201,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 16
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 5.4253472222221406e-05,
+        "NRMSE": 0.007365695637359814,
+        "NMAE": 0.0036458333333333234,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 22
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Windsor, Ontario",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 0.0021938763353757536,
+        "NRMSE": 0.046838833625270325,
+        "NMAE": 0.04641935115019347,
+        "n_mda_directions": 3,
+        "n_zero_directions_dropped": 21
+      },
+      "baseline": {
+        "MDA": 0.5,
+        "NMSE": 3.5445601851851725e-05,
+        "NRMSE": 0.005953620902597992,
+        "NMAE": 0.0026041666666666917,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 22
+      }
+    },
+    {
+      "fold_id": 4,
+      "cma": "Winnipeg, Manitoba",
+      "n_train_rows_held_out_cma": 396,
+      "n_pool_train_rows": 6524,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.631578947368421,
+        "NMSE": 0.0015740852987929043,
+        "NRMSE": 0.039674743840293465,
+        "NMAE": 0.03815590851601579,
+        "n_mda_directions": 19,
+        "n_zero_directions_dropped": 5
+      },
+      "baseline": {
+        "MDA": 0.8666666666666667,
+        "NMSE": 6.944444444444394e-05,
+        "NRMSE": 0.008333333333333302,
+        "NMAE": 0.006249999999999965,
+        "n_mda_directions": 15,
+        "n_zero_directions_dropped": 9
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Charlottetown, Prince Edward Island",
+      "n_train_rows_held_out_cma": 252,
+      "n_pool_train_rows": 7100,
+      "cma_first_obs": "1995-01-01",
+      "n_eval_rows": 24,
+      "model": {
+        "MDA": 0.3333333333333333,
+        "NMSE": 0.0014498847149579442,
+        "NRMSE": 0.038077351732466166,
+        "NMAE": 0.036777938876459304,
+        "n_mda_directions": 6,
+        "n_zero_directions_dropped": 18
+      },
+      "baseline": {
+        "MDA": 0.3333333333333333,
+        "NMSE": 0.00014612268518518566,
+        "NRMSE": 0.012088121656617526,
+        "NMAE": 0.004513888888888903,
+        "n_mda_directions": 3,
+        "n_zero_directions_dropped": 21
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Edmonton, Alberta",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.2857142857142857,
+        "NMSE": 0.00018499131377129399,
+        "NRMSE": 0.013601151192869447,
+        "NMAE": 0.012152946041122254,
+        "n_mda_directions": 7,
+        "n_zero_directions_dropped": 6
+      },
+      "baseline": {
+        "MDA": 0.25,
+        "NMSE": 0.0001502048247610349,
+        "NRMSE": 0.012255807797164368,
+        "NMAE": 0.007692307692307675,
+        "n_mda_directions": 4,
+        "n_zero_directions_dropped": 9
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Greater Sudbury, Ontario",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.3333333333333333,
+        "NMSE": 0.0007678190643396299,
+        "NRMSE": 0.027709548252175274,
+        "NMAE": 0.021225228045357866,
+        "n_mda_directions": 6,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 0.6666666666666666,
+        "NMSE": 0.0004915794264906676,
+        "NRMSE": 0.022171590526858184,
+        "NMAE": 0.01301775147928996,
+        "n_mda_directions": 3,
+        "n_zero_directions_dropped": 10
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Guelph, Ontario",
+      "n_train_rows_held_out_cma": 0,
+      "n_pool_train_rows": 7352,
+      "cma_first_obs": "2016-12-01",
+      "n_eval_rows": 12,
+      "model": {
+        "MDA": 0.6,
+        "NMSE": 0.0025838104092715396,
+        "NRMSE": 0.050831195237487185,
+        "NMAE": 0.04583524786700977,
+        "n_mda_directions": 5,
+        "n_zero_directions_dropped": 6
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.0033796296296296287,
+        "NRMSE": 0.05813458204571207,
+        "NMAE": 0.03194444444444441,
+        "n_mda_directions": 3,
+        "n_zero_directions_dropped": 8
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Halifax, Nova Scotia",
+      "n_train_rows_held_out_cma": 380,
+      "n_pool_train_rows": 6972,
+      "cma_first_obs": "1984-05-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.4,
+        "NMSE": 0.000900087742576973,
+        "NRMSE": 0.030001462340642215,
+        "NMAE": 0.02766443904209803,
+        "n_mda_directions": 5,
+        "n_zero_directions_dropped": 8
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.00019572143832498836,
+        "NRMSE": 0.013990047831404593,
+        "NMAE": 0.007692307692307675,
+        "n_mda_directions": 1,
+        "n_zero_directions_dropped": 12
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Hamilton, Ontario",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.875,
+        "NMSE": 0.0013179383066321212,
+        "NRMSE": 0.036303420040433125,
+        "NMAE": 0.0308490861886957,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 5
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.0008056440600819289,
+        "NRMSE": 0.028383869716476804,
+        "NMAE": 0.019526627218934892,
+        "n_mda_directions": 4,
+        "n_zero_directions_dropped": 9
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Kelowna, British Columbia",
+      "n_train_rows_held_out_cma": 0,
+      "n_pool_train_rows": 7352,
+      "cma_first_obs": "2016-12-01",
+      "n_eval_rows": 12,
+      "model": {
+        "MDA": 1.0,
+        "NMSE": 0.010616229276161597,
+        "NRMSE": 0.10303508759719476,
+        "NMAE": 0.09841740584139085,
+        "n_mda_directions": 5,
+        "n_zero_directions_dropped": 6
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.0016203703703703786,
+        "NRMSE": 0.040253824294970764,
+        "NMAE": 0.023611111111111152,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 9
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Kitchener-Cambridge-Waterloo, Ontario",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 1.0,
+        "NMSE": 0.0021160130860870736,
+        "NRMSE": 0.046000142239856975,
+        "NMAE": 0.04083785399214502,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 2
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.001547564861174326,
+        "NRMSE": 0.039339100919750646,
+        "NMAE": 0.02958579881656805,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 4
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "London, Ontario",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.4,
+        "NMSE": 0.0014664920239243675,
+        "NRMSE": 0.03829480413743315,
+        "NMAE": 0.0351906089045996,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 3
+      },
+      "baseline": {
+        "MDA": 0.42857142857142855,
+        "NMSE": 0.0016477014110150231,
+        "NRMSE": 0.04059188848791127,
+        "NMAE": 0.02721893491124257,
+        "n_mda_directions": 7,
+        "n_zero_directions_dropped": 6
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Montr\u00e9al, Quebec",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.0,
+        "NMSE": 0.6968857936226248,
+        "NRMSE": 0.8347968576981017,
+        "NMAE": 0.8346579370024099,
+        "n_mda_directions": 6,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 0.5,
+        "NMSE": 0.0001638598088302225,
+        "NRMSE": 0.012800773759043729,
+        "NMAE": 0.007100591715976264,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 11
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Oshawa, Ontario",
+      "n_train_rows_held_out_cma": 0,
+      "n_pool_train_rows": 7352,
+      "cma_first_obs": "2016-12-01",
+      "n_eval_rows": 12,
+      "model": {
+        "MDA": 1.0,
+        "NMSE": 0.002327959451658784,
+        "NRMSE": 0.04824893212972473,
+        "NMAE": 0.04729961989706578,
+        "n_mda_directions": 4,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.003136574074074071,
+        "NRMSE": 0.05600512542682206,
+        "NMAE": 0.03194444444444441,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 9
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.875,
+        "NMSE": 0.0008752978124098896,
+        "NRMSE": 0.02958543243574259,
+        "NMAE": 0.02775574146982906,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 5
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.00014110150204824838,
+        "NRMSE": 0.011878615325375614,
+        "NMAE": 0.008875739644970414,
+        "n_mda_directions": 5,
+        "n_zero_directions_dropped": 8
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Ottawa-Gatineau, Quebec part, Ontario/Quebec",
+      "n_train_rows_held_out_cma": 0,
+      "n_pool_train_rows": 7352,
+      "cma_first_obs": "2016-12-01",
+      "n_eval_rows": 12,
+      "model": {
+        "MDA": 1.0,
+        "NMSE": 0.00019098079549981047,
+        "NRMSE": 0.013819580149187256,
+        "NMAE": 0.008253997542329078,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 3
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.0002604166666666699,
+        "NRMSE": 0.016137430609197673,
+        "NMAE": 0.011805555555555576,
+        "n_mda_directions": 6,
+        "n_zero_directions_dropped": 5
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Qu\u00e9bec, Quebec",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.6,
+        "NMSE": 0.0004274083546394052,
+        "NRMSE": 0.020673856791595644,
+        "NMAE": 0.019694580455314362,
+        "n_mda_directions": 5,
+        "n_zero_directions_dropped": 8
+      },
+      "baseline": {
+        "MDA": 0.0,
+        "NMSE": 5.006827492034283e-05,
+        "NRMSE": 0.007075893930829011,
+        "NMAE": 0.004142011834319375,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 11
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Regina, Saskatchewan",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.3,
+        "NMSE": 0.0004792528118377303,
+        "NRMSE": 0.021891843500210992,
+        "NMAE": 0.019523634868743776,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 3
+      },
+      "baseline": {
+        "MDA": 0.42857142857142855,
+        "NMSE": 0.0003368229403732355,
+        "NRMSE": 0.018352736590853028,
+        "NMAE": 0.014201183431952612,
+        "n_mda_directions": 7,
+        "n_zero_directions_dropped": 6
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Saskatoon, Saskatchewan",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.7,
+        "NMSE": 0.0025985372702402166,
+        "NRMSE": 0.05097584987266241,
+        "NMAE": 0.04814886804849694,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 3
+      },
+      "baseline": {
+        "MDA": 0.8333333333333334,
+        "NMSE": 0.0002867546654528913,
+        "NRMSE": 0.016933831977815634,
+        "NMAE": 0.013609467455621369,
+        "n_mda_directions": 6,
+        "n_zero_directions_dropped": 7
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Sherbrooke, Quebec",
+      "n_train_rows_held_out_cma": 0,
+      "n_pool_train_rows": 7352,
+      "cma_first_obs": "2016-12-01",
+      "n_eval_rows": 12,
+      "model": {
+        "MDA": 0.25,
+        "NMSE": 0.000491341808436966,
+        "NRMSE": 0.022166231263725595,
+        "NMAE": 0.020293138858011674,
+        "n_mda_directions": 4,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 0.0,
+        "NMSE": 8.68055555555539e-05,
+        "NRMSE": 0.009316949906249036,
+        "NMAE": 0.004861111111111032,
+        "n_mda_directions": 1,
+        "n_zero_directions_dropped": 10
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "St. Catharines-Niagara, Ontario",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.75,
+        "NMSE": 0.0008660229762600406,
+        "NRMSE": 0.029428268319084634,
+        "NMAE": 0.025654673966260724,
+        "n_mda_directions": 12,
+        "n_zero_directions_dropped": 1
+      },
+      "baseline": {
+        "MDA": 0.8,
+        "NMSE": 0.0022803823395539406,
+        "NRMSE": 0.04775334898783477,
+        "NMAE": 0.038461538461538464,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 3
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "St. John's, Newfoundland and Labrador",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.3333333333333333,
+        "NMSE": 0.012027565694679047,
+        "NRMSE": 0.10967025893412966,
+        "NMAE": 0.10866771660567137,
+        "n_mda_directions": 6,
+        "n_zero_directions_dropped": 7
+      },
+      "baseline": {
+        "MDA": 0.5,
+        "NMSE": 0.00015930814747382925,
+        "NRMSE": 0.01262173314065185,
+        "NMAE": 0.007692307692307675,
+        "n_mda_directions": 2,
+        "n_zero_directions_dropped": 11
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Trois-Rivi\u00e8res, Quebec",
+      "n_train_rows_held_out_cma": 0,
+      "n_pool_train_rows": 7352,
+      "cma_first_obs": "2016-12-01",
+      "n_eval_rows": 12,
+      "model": {
+        "MDA": 1.0,
+        "NMSE": 0.0003448592423294224,
+        "NRMSE": 0.018570386165328454,
+        "NMAE": 0.01808652311097456,
+        "n_mda_directions": 1,
+        "n_zero_directions_dropped": 10
+      },
+      "baseline": {
+        "MDA": NaN,
+        "NMSE": 5.208333333333234e-05,
+        "NRMSE": 0.007216878364870254,
+        "NMAE": 0.0020833333333333134,
+        "n_mda_directions": 0,
+        "n_zero_directions_dropped": 11
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Vancouver, British Columbia",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.6363636363636364,
+        "NMSE": 0.001579747903827914,
+        "NRMSE": 0.039746042618453395,
+        "NMAE": 0.033850080650063626,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 2
+      },
+      "baseline": {
+        "MDA": 0.875,
+        "NMSE": 0.0012972234865726,
+        "NRMSE": 0.03601698886043363,
+        "NMAE": 0.027810650887573896,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 5
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Victoria, British Columbia",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.8888888888888888,
+        "NMSE": 0.0009854190795897581,
+        "NRMSE": 0.031391385435972044,
+        "NMAE": 0.026278279386285647,
+        "n_mda_directions": 9,
+        "n_zero_directions_dropped": 4
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.0016568047337278088,
+        "NRMSE": 0.0407038663240706,
+        "NMAE": 0.03076923076923079,
+        "n_mda_directions": 5,
+        "n_zero_directions_dropped": 8
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Windsor, Ontario",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.6,
+        "NMSE": 0.0025274176842074304,
+        "NRMSE": 0.05027342920676319,
+        "NMAE": 0.0429085420922984,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 3
+      },
+      "baseline": {
+        "MDA": 0.6,
+        "NMSE": 0.002758306781975416,
+        "NRMSE": 0.05251958474679152,
+        "NMAE": 0.039053254437869785,
+        "n_mda_directions": 10,
+        "n_zero_directions_dropped": 3
+      }
+    },
+    {
+      "fold_id": 5,
+      "cma": "Winnipeg, Manitoba",
+      "n_train_rows_held_out_cma": 420,
+      "n_pool_train_rows": 6932,
+      "cma_first_obs": "1981-01-01",
+      "n_eval_rows": 13,
+      "model": {
+        "MDA": 0.7272727272727273,
+        "NMSE": 0.0012378484320107468,
+        "NRMSE": 0.035183070247076884,
+        "NMAE": 0.03237007994215858,
+        "n_mda_directions": 11,
+        "n_zero_directions_dropped": 2
+      },
+      "baseline": {
+        "MDA": 1.0,
+        "NMSE": 0.00034592626308602723,
+        "NRMSE": 0.018599093071599678,
+        "NMAE": 0.01538461538461535,
+        "n_mda_directions": 8,
+        "n_zero_directions_dropped": 5
+      }
+    }
+  ],
+  "config": {
+    "n_folds": 5,
+    "target": "total",
+    "anchor_year": 2017,
+    "mode": "loco"
+  }
+}

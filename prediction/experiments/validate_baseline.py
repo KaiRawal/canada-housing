@@ -23,6 +23,10 @@ late-starter CMAs instead of silently dropping them. This script regenerates
 the canonical reference numbers and appends a CORRECTED run row to runs.jsonl
 (never edits old rows). Folds 1-4 are unchanged; only fold-5 MDA can move.
 
+Second correction (2026-08-26, T2.3 critic fix #2): MDA switches to the
+symmetric zero-direction-drop protocol (`harness.mda_zero_drop`). Point
+metrics are unaffected; only MDA values move.
+
 Cross-checks / sanity checks (all asserted, all reported):
   1. Persistence definition matches prediction/prediction.py exactly:
      y_hat_t = y_{t-1} within CMA, computed by a GLOBAL shift(1) over the whole
@@ -73,7 +77,7 @@ from harness import (  # noqa: E402
     save_results_json,
 )
 
-RUN_ID = "T1.2-baseline-validation-mdafix"
+RUN_ID = "T1.2-baseline-validation-mdazero"
 SMOKE_JSON = ARTIFACTS_DIR / "T1.1" / "smoke_test_results.json"
 OUT_JSON = ARTIFACTS_DIR / "T1.2" / "baseline_validation_results.json"
 
@@ -205,8 +209,13 @@ def main() -> None:
         for block in ("model", "baseline"):  # model = frozen last-value block
             for metric in harness.METRIC_NAMES:
                 a, s = pf_a[block][metric], pf_s[block][metric]
-                assert a == s, (f"{block} {metric} differs from smoke test in fold "
-                                f"{pf_a['fold_id']}: {a} vs {s}")
+                # Under the symmetric zero-direction-drop MDA the frozen
+                # last-value smoke model predicts a CONSTANT => every
+                # predicted direction is 0 => zero scored directions => MDA
+                # is legitimately NaN. NaN == NaN must count as a match.
+                equal = (a == s) or (np.isnan(a) and np.isnan(s))
+                assert equal, (f"{block} {metric} differs from smoke test in fold "
+                               f"{pf_a['fold_id']}: {a} vs {s}")
         repro_report.append({
             "fold_id": pf_a["fold_id"],
             "matches_smoke_exactly": True,
@@ -313,17 +322,24 @@ def main() -> None:
     log_run(
         run_id=RUN_ID,
         task="T1", sub="T1.2",
-        description="CORRECTED T1.2 reference (critic fix: _anchored_mda now "
-                    "scores unanchored within-window directions for CMAs with "
-                    "no train history, instead of dropping them): persistence "
+        description="CORRECTED T1.2 reference (T2.3 critic fix #2: MDA now uses "
+                    "the symmetric zero-direction-drop protocol in "
+                    "harness.mda_zero_drop — directions where the predicted or "
+                    "true direction is exactly 0 are dropped, SAME rule for "
+                    "model and baseline, removing the systematic anti-persistence "
+                    "bias of the train->val boundary anchor where persistence's "
+                    "first predicted direction is forced to 0): persistence "
                     "baseline reproduced through the harness on all 5 expanding "
-                    "folds; per-fold model AND baseline blocks match the T1.1 "
-                    "smoke run exactly (Run A eval sets unchanged); persistence "
-                    "== prediction.py global shift(1) on every scored row. Run B "
-                    "(model==baseline==persistence) is the canonical reference; "
-                    "only fold-5 MDA changed vs the original row.",
+                    "folds; per-fold model AND baseline blocks match the "
+                    "regenerated T1.1 smoke run exactly (Run A eval sets "
+                    "unchanged); persistence == prediction.py global shift(1) on "
+                    "every scored row. Run B (model==baseline==persistence) is "
+                    "the canonical reference. Point metrics are UNCHANGED vs the "
+                    "-mdafix row; only MDA and the reported direction counts "
+                    "moved. Supersedes T1.2-baseline-validation-mdafix in prose.",
         config={"model": "persistence", "validation_run": "A: smoke repro; "
-                "B: persistence-as-model canonical reference"},
+                "B: persistence-as-model canonical reference",
+                "mda_protocol": "boundary-anchored, symmetric zero-direction drop"},
         results=results_b,
     )
 

@@ -93,12 +93,18 @@ def prepare_transforms(df: pd.DataFrame) -> pd.DataFrame:
 # ---------------------------------------------------------------------------
 
 def evaluate_target_form(df_t: pd.DataFrame, folds: list[dict],
-                         form: str) -> dict:
+                         form: str, return_preds: bool = False) -> dict:
     """
     Mirrors harness.evaluate() exactly (same folds, same _score_fold path,
     same persistence baseline), except the ridge test vehicle is trained on
     the TRANSFORMED target and its validation predictions are inverted to
     LEVEL space before scoring.
+
+    Per-fold entries record `n_train_rows_used` = rows whose transform is
+    defined and therefore actually fed to the ridge fit (T2.3 critic fix #5),
+    which is < the fold's nominal train size for dlog/yoy. With
+    return_preds=True the RAW (un-inverted) validation predictions are also
+    returned under "raw_val_preds" — used by the T2.3 direct-sign diagnostic.
     """
     transform_col = {"level": TARGET, "dlog": "_dlog", "yoy": "_yoy"}[form]
 
@@ -138,10 +144,19 @@ def evaluate_target_form(df_t: pd.DataFrame, folds: list[dict],
         scores = harness._score_fold(val_df, train_df, pred_levels,
                                      baseline_pred, TARGET)
         n_nan_pred = int(len(val_df) - pred_levels.notna().sum())
-        per_fold.append({"fold_id": f["fold_id"], "n_nan_inverted_preds": n_nan_pred,
-                         **scores})
+        entry = {"fold_id": f["fold_id"],
+                 "n_train_rows_used": int(fit_mask.sum()),  # critic fix #5
+                 "n_nan_inverted_preds": n_nan_pred,
+                 **scores}
+        if return_preds:
+            entry["raw_val_preds"] = {
+                "index": [int(i) for i in val_df.index],
+                "raw": [None if not np.isfinite(v) else float(v)
+                        for v in raw],
+            }
+        per_fold.append(entry)
 
-    return {
+    out = {
         "folds": [
             {k: fl[k] for k in ("fold_id", "val_start_year", "val_end_year",
                                 "n_train_rows", "n_val_rows",
@@ -154,6 +169,7 @@ def evaluate_target_form(df_t: pd.DataFrame, folds: list[dict],
                    "anchor_year": folds[0]["anchor_year"],
                    "target_form": form},
     }
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -221,18 +237,35 @@ def main() -> None:
         print(f"  persistence: {fmt(agg['baseline'])}")
 
     # -- Sanity check 1: level variant reproduces T2.1-ridge-lags --------------
+    # T2.3 critic fix #3: the guard covers the FULL per_fold dicts — every
+    # metric, both blocks, every fold — not just the aggregate mean MDA.
     t21_path = ARTIFACTS_DIR / "T2.1" / "T2.1-ridge-lags_results.json"
     if t21_path.exists():
         import json
         t21 = json.loads(t21_path.read_text())
-        mda_here = runs["T2.2-level"]["agg"]["model"]["MDA"]["mean"]
-        mda_ref = t21["agg"]["model"]["MDA"]["mean"]
-        assert abs(mda_here - mda_ref) < 1e-9, \
-            f"T2.2-level MDA {mda_here} != T2.1-ridge-lags {mda_ref}"
-        print(f"\n[sanity] T2.2-level reproduces T2.1-ridge-lags "
-              f"(MDA {mda_here:.6f} — exact match)")
+        pf_here = runs["T2.2-level"]["per_fold"]
+        pf_ref = t21["per_fold"]
+        assert len(pf_here) == len(pf_ref), \
+            f"fold count mismatch: {len(pf_here)} vs {len(pf_ref)}"
+        for a, b in zip(pf_here, pf_ref):
+            assert a["fold_id"] == b["fold_id"]
+            assert a["n_eval_rows"] == b["n_eval_rows"], \
+                f"fold {a['fold_id']} eval-row count mismatch"
+            for block in ("model", "baseline"):
+                for m in harness.METRIC_NAMES:
+                    assert abs(a[block][m] - b[block][m]) < 1e-12, \
+                        (f"fold {a['fold_id']} {block} {m}: "
+                         f"{a[block][m]} != {b[block][m]}")
+        print(f"\n[sanity] T2.2-level reproduces T2.1-ridge-lags on ALL folds, "
+              f"BOTH blocks, ALL metrics (full per-fold dict equality)")
 
     # -- Head-to-head table ----------------------------------------------------
+    # T2.3 critic fix #4: cells formatted via fmt() so sub-1e-3 means
+    # (NMSE!) render in scientific notation instead of being unreadable.
+    def fmt_cell(mean: float, std: float) -> str:
+        return (f"{mean:.4f}±{std:.4f}" if abs(mean) > 1e-3
+                else f"{mean:.3e}±{std:.3e}")
+
     rows = []
     for run_id, _, desc in specs:
         res = runs[run_id]
@@ -240,10 +273,11 @@ def main() -> None:
         agg_b = res["agg"]["baseline"]
         row = {
             "predictor": run_id,
-            **{m: f"{agg_m[m]['mean']:.4f}±{agg_m[m]['std']:.4f}"
+            **{m: fmt_cell(agg_m[m]["mean"], agg_m[m]["std"])
                for m in harness.METRIC_NAMES},
-            **{f"{m}_vs_persist_delta":
-               f"{agg_m[m]['mean'] - agg_b[m]['mean']:+.4f}"
+            **{f"{m}_vs_persist_delta": fmt_cell(agg_m[m]["mean"]
+                                                 - agg_b[m]["mean"],
+                                                 agg_m[m]["std"])
                for m in harness.METRIC_NAMES},
         }
         rows.append(row)

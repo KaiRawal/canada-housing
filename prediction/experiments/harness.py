@@ -8,7 +8,11 @@ apples-to-apples:
               windows anchored at the last year where >=50% of CMAs are still
               active), grouped by CMA.
               Random shuffles / KFold across time are banned.
-  * Metrics : MDA / NMSE / NRMSE / NMAE reused from evaluation/evaluation.py.
+  * Metrics : NMSE/NRMSE/NMAE reused from evaluation/evaluation.py.
+              MDA uses the CANONICAL harness scorer `mda_zero_drop`
+              (boundary-anchored, symmetric zero-direction drop — T2.3 critic
+              fix #2; supersedes the plain grouped-MDA call which carried a
+              systematic anti-persistence boundary bias).
               Persistence baseline computed on the IDENTICAL folds and scored
               on the IDENTICAL row sets.
   * Logging : one JSON line per run appended to prediction/experiments/runs.jsonl.
@@ -37,8 +41,13 @@ if str(ROOT) not in sys.path:
 
 from evaluation.evaluation import (  # noqa: E402  (needs ROOT on sys.path)
     calculate_all_metrics,
-    mean_directional_accuracy_grouped,
 )
+# NOTE: MDA no longer delegates to evaluation.mean_directional_accuracy_grouped.
+# Since the T2.3 critic fix, the canonical MDA scorer is harness.mda_zero_drop
+# (boundary-anchored, symmetric zero-direction drop); evaluation.py's grouped
+# MDA remains for the upstream persistence pipeline and is superseded here
+# because of its systematic zero-direction bias at the train->val anchor
+# (documented in mda_zero_drop's docstring and analyses/T2.3.md).
 PREDICTION_DIR = ROOT / "prediction"
 EXPERIMENTS_DIR = ROOT / "prediction" / "experiments"
 RUNS_JSONL = EXPERIMENTS_DIR / "runs.jsonl"
@@ -212,16 +221,15 @@ def last_value_model_fn(train_features: pd.DataFrame, train_target: pd.Series):
 # Metrics (wrapping evaluation/evaluation.py — never reimplemented here)
 # ---------------------------------------------------------------------------
 
-def _anchored_mda(train_df: pd.DataFrame, val_eval_df: pd.DataFrame,
-                  pred: pd.Series, target: str = TARGET) -> float:
+def _anchored_frame(train_df: pd.DataFrame, val_eval_df: pd.DataFrame,
+                    pred: pd.Series, target: str = TARGET) -> pd.DataFrame:
     """
-    MDA including the train->validation boundary direction.
+    Build the boundary-anchored true/pred frame used for MDA scoring.
 
     For each CMA WITH train history we prepend its last TRAIN observation as an
     anchor row with true=pred=last-train-value. The anchor's own diff is NaN
-    (first in group -> dropped by evaluation.mean_directional_accuracy_grouped)
-    and contributes no scored direction, while the FIRST validation row's
-    direction becomes well-defined instead of being lost.
+    (first in group -> dropped) and contributes no scored direction, while the
+    FIRST validation row's direction becomes well-defined instead of being lost.
 
     CMAs with NO train history in this fold (late starters whose entire series
     begins inside the validation window) cannot be anchored; instead they
@@ -252,11 +260,65 @@ def _anchored_mda(train_df: pd.DataFrame, val_eval_df: pd.DataFrame,
             f"{target}_pred": [a[target]] + pred.loc[g.index].tolist(),
         }))
     if not frames:
-        return float("nan")
-    anchored = pd.concat(frames, ignore_index=True)
-    return mean_directional_accuracy_grouped(
-        anchored, f"{target}_true", f"{target}_pred"
-    )
+        return pd.DataFrame(columns=["cma_canonical",
+                                     f"{target}_true", f"{target}_pred"])
+    return pd.concat(frames, ignore_index=True)
+
+
+def mda_zero_drop(anchored: pd.DataFrame, target: str = TARGET) -> dict:
+    """
+    Canonical MDA scorer (T2.3 critic fix #2, SUPERSEDES the plain
+    evaluation.mean_directional_accuracy_grouped call):
+
+    Directions where the PREDICTED direction is 0 (pred_t == pred_{t-1} exactly,
+    which happens systematically at the train->val boundary anchor for
+    persistence-style predictors: pred_1 == last-train-value => first predicted
+    direction forced to 0 => an automatic miss under the old rule) are DROPPED,
+    and the SAME rule is applied to model and baseline alike (symmetric
+    zero-drop). Directions where the TRUE direction is 0 (actual value unchanged
+    month-over-month — direction genuinely undefined) are dropped too. This
+    removes the systematic anti-persistence bias of the boundary anchor while
+    treating every predictor identically.
+
+    NOTE: because each predictor's own zero directions are dropped, model and
+    baseline can be scored on marginally different direction SETS; the RULE is
+    identical, and the dropped-direction counts are reported alongside so the
+    sensitivity is auditable.
+
+    Mirrors evaluation.mean_directional_accuracy_grouped in all other respects
+    (within-CMA diffs, NaN-diff drop, pooled accuracy over directions).
+    """
+    tc, pc = f"{target}_true", f"{target}_pred"
+    g = anchored.groupby("cma_canonical", sort=False)
+    tdir = np.sign(g[tc].diff())
+    pdir = np.sign(g[pc].diff())
+    candidate = tdir.notna() & pdir.notna()
+    scored = candidate & (tdir != 0) & (pdir != 0)
+    n_candidate = int(candidate.sum())
+    n_scored = int(scored.sum())
+    n_zero_dropped = n_candidate - n_scored
+    if n_scored == 0:
+        return {"MDA": float("nan"), "n_mda_directions": 0,
+                "n_zero_directions_dropped": n_zero_dropped}
+    correct = int((tdir[scored] == pdir[scored]).sum())
+    return {"MDA": correct / n_scored, "n_mda_directions": n_scored,
+            "n_zero_directions_dropped": n_zero_dropped}
+
+
+def _anchored_mda_detail(train_df: pd.DataFrame, val_eval_df: pd.DataFrame,
+                         pred: pd.Series, target: str = TARGET) -> dict:
+    """Boundary-anchored MDA under the symmetric zero-drop rule (+counts)."""
+    anchored = _anchored_frame(train_df, val_eval_df, pred, target)
+    if anchored.empty:
+        return {"MDA": float("nan"), "n_mda_directions": 0,
+                "n_zero_directions_dropped": 0}
+    return mda_zero_drop(anchored, target)
+
+
+def _anchored_mda(train_df: pd.DataFrame, val_eval_df: pd.DataFrame,
+                  pred: pd.Series, target: str = TARGET) -> float:
+    """Backward-compatible scalar wrapper around _anchored_mda_detail."""
+    return _anchored_mda_detail(train_df, val_eval_df, pred, target)["MDA"]
 
 
 def _score_fold(val_df: pd.DataFrame, train_df: pd.DataFrame,
@@ -271,8 +333,10 @@ def _score_fold(val_df: pd.DataFrame, train_df: pd.DataFrame,
     late-starting CMA's very first validation month).
 
     NMSE/NRMSE/NMAE come from evaluation.calculate_all_metrics on the
-    unanchored validation rows (its grouped-MDA output is discarded in favour
-    of the boundary-anchored MDA from _anchored_mda).
+    unanchored validation rows (grouped-MDA output discarded in favour of the
+    boundary-anchored, symmetric-zero-drop MDA from _anchored_mda_detail).
+    Per-fold MDA direction counts are reported so the zero-drop sensitivity is
+    auditable for model and baseline separately.
     """
     true = val_df[target]
 
@@ -293,12 +357,19 @@ def _score_fold(val_df: pd.DataFrame, train_df: pd.DataFrame,
         m = calculate_all_metrics(frame, target)
         return {k: m[k] for k in ("NMSE", "NRMSE", "NMAE")}
 
+    mda_model = _anchored_mda_detail(train_df, val_eval, model_pred, target)
+    mda_base = _anchored_mda_detail(train_df, val_eval, baseline_pred, target)
+
     return {
         "n_eval_rows": int(common_mask.sum()),
-        "model": {"MDA": _anchored_mda(train_df, val_eval, model_pred, target),
-                  **point_metrics(model_pred)},
-        "baseline": {"MDA": _anchored_mda(train_df, val_eval, baseline_pred, target),
-                     **point_metrics(baseline_pred)},
+        "model": {"MDA": mda_model["MDA"], **point_metrics(model_pred),
+                  "n_mda_directions": mda_model["n_mda_directions"],
+                  "n_zero_directions_dropped":
+                      mda_model["n_zero_directions_dropped"]},
+        "baseline": {"MDA": mda_base["MDA"], **point_metrics(baseline_pred),
+                     "n_mda_directions": mda_base["n_mda_directions"],
+                     "n_zero_directions_dropped":
+                         mda_base["n_zero_directions_dropped"]},
     }
 
 
@@ -473,8 +544,11 @@ if __name__ == "__main__":
         task="T1", sub="T1.1",
         description="Harness smoke test: frozen last-value predictor vs persistence "
                     "on the shared expanding-window folds (infrastructure check, "
-                    "not a formal model result)",
-        config={"model": "last_value_frozen", "val_window_years": 2},
+                    "not a formal model result). Regenerated under the symmetric "
+                    "zero-direction-drop MDA protocol (T2.3 critic fix #2); "
+                    "supersedes the pre-fix row of the same id in prose only.",
+        config={"model": "last_value_frozen", "val_window_years": 2,
+                "mda_protocol": "boundary-anchored, symmetric zero-direction drop"},
         results=res,
     )
     print("\n=== smoke test complete ===")

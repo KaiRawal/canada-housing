@@ -10,6 +10,8 @@ The researcher agent reads this file FIRST every session. One entry per sub-stag
 
 - [T2.2] (2026-08-26) TARGET FORMULATION DECIDED: model the LEVEL. On identical folds with ridge-on-lags as test vehicle and all predictions inverted to level space before scoring, reformulating the target does NOT buy directional skill: Δlog MDA 0.3715±0.0404 ≈ level 0.3710±0.0425 (delta +0.0005) and YoY% 0.3325±0.0424 is strictly worse; point errors also worsen under transforms (NRMSE 0.00197 Δlog / 0.02015 YoY vs 0.00169 level vs persistence 0.00113). No target form improved MDA over persistence → primary decision criterion fails for both alternatives, so keep LEVEL (simplest inversion-free path, best point-error class). Implication for later stages: directional skill must come from features/model class or forecast-horizon design, not target algebra; any future Δlog-style residual modeling must beat this head-to-head evidence.
 
+- [T2.3] (2026-08-26) CANONICAL MDA REFERENCE CORRECTED + SPATIAL POOLING VERDICTED NEGATIVE. (1) MDA protocol fix: ~40% of monthly NHPI directions are exactly 0 (flat index runs), and the old scorer counted predicted-zero directions as automatic misses — a systematic anti-persistence bias concentrated at the train→val anchor; harness.mda_zero_drop now drops zero directions SYMMETRICALLY for model and baseline. NEW CANONICAL persistence reference = **MDA 0.6771±0.0474** (NMSE 1.52e-06 / NRMSE 0.00113 / NMAE 0.00061 bit-identical); every headline model MDA shifted up (drift 0.6852, arima 0.6682, ridge 0.6051, drift-rec 0.6758, arima-rec 0.5460, dlog 0.6059, yoy 0.5416 — corrected `-mdazero` rows appended); rankings unchanged, "persistence is the bar" stands (drift's nominal MDA edge comes with 40× worse point errors). Direct-sign diagnostic: raw Δlog/YoY heads DO have above-chance direction signal (0.608/0.581) but below momentum sign(y_{t−1}−y_{t−2}) (~0.678) — earlier "REFUTED" softened accordingly; LEVEL target unchanged. (2) LOCO probe: pooled ridge trained WITHOUT a held-out CMA loses to persistence on 13/18 full-history CMAs (mean ΔMDA −0.087; NRMSE 2.8× worse), beats self-fit ridge only marginally (+0.019 MDA, halved NRMSE — self-fit overfits short histories, NRMSE up to 0.53); no history-depth structure (corr −0.10). SPATIAL POOLING DOES NOT HELP at this scale → T3 recommendation: temporal features first (T3.2), kNN spatial-lag/region/centroid features demoted to cheap-ablation status (T3.1), with the caveat that LOCO tests out-of-CMA transfer of lag models, not neighbour-lag features per se.
+
 ## Standing decisions
 
 - Target formulation (level vs Δlog vs YoY): **LEVEL — decided empirically in T2.2** (Δlog and YoY% give no directional gain and worse point errors; see T2.2 learning below)
@@ -19,5 +21,5 @@ The researcher agent reads this file FIRST every session. One entry per sub-stag
 
 ## Open questions
 
-- Does spatial pooling help at this scale? (probe scheduled in T2.3)
-- Do spatial-lag features from the CMA shapefile add value over temporal features alone? (T3/T6)
+- Does spatial pooling help at this scale? **ANSWERED in T2.3: NO** (see T2.3 learning)
+- Do spatial-lag features from the CMA shapefile add value over temporal features alone? (T3/T6 — deprioritised to ablation status by the T2.3 verdict)

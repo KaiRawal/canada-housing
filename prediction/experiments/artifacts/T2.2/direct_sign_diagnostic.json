@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-26T09:04:59.287088+00:00",
+  "diagnostics": {
+    "dlog": {
+      "signal_MDA_mean": 0.6075843390380573,
+      "signal_MDA_std": 0.08478309868100624,
+      "momentum_ref_MDA_mean": 0.6781625132559339,
+      "momentum_ref_MDA_std": 0.04931471447777471,
+      "n_directions_per_fold": [
+        281,
+        261,
+        263,
+        250,
+        181
+      ]
+    },
+    "yoy": {
+      "signal_MDA_mean": 0.5807902867250958,
+      "signal_MDA_std": 0.08390377513390788,
+      "momentum_ref_MDA_mean": 0.6771821210990712,
+      "momentum_ref_MDA_std": 0.047905405978909806,
+      "n_directions_per_fold": [
+        281,
+        261,
+        263,
+        250,
+        154
+      ]
+    }
+  }
+}

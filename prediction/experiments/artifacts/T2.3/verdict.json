@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-08-26T09:11:59.443975+00:00",
+  "git_sha_pre_commit": "87890bae2b20693722b29925165d9637ff684ee5",
+  "decision_rule": "PROMISING iff LOCO beats BOTH persistence and self-fit on >50% of evaluable held-out CMAs (aggregate MDA) without a hopeless NRMSE class",
+  "n_evaluable_cmas": 18,
+  "beats_persistence": 5,
+  "beats_self_fit": 9,
+  "beats_both": 3,
+  "persistence_beats_loco_count": 13,
+  "hist_len_vs_benefit_corr": -0.10390053196777768,
+  "verdict": "NOT PROMISING -> temporal-only path"
+}

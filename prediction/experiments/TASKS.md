@@ -17,7 +17,7 @@ Conventions: each sub-stage = one approved plan -> one experimenter run -> one c
 **Mini-goal**: establish what "beating persistence" means and predict the right quantity.
 - [x] T2.1 — Baseline suite under the harness: persistence, drift (random walk with drift), per-CMA ARIMA/SARIMAX, ridge-on-lags
 - [x] T2.2 — Target formulation study: level vs Δlog vs YoY % change, compared head-to-head on identical folds; decide empirically and record rationale
-- [ ] T2.3 — Spatial sanity check: leave-one-CMA-out probe to see whether spatial pooling helps at all
+- [x] T2.3 — Spatial sanity check: leave-one-CMA-out probe to see whether spatial pooling helps at all (verdict: NO — persistence beats pooled-LOCO on 13/18 CMAs; spatial features demoted to ablation status; canonical MDA reference corrected to 0.6771±0.0474 under the symmetric zero-drop protocol)
 
 *Learning target: which target form + which simple baseline is the bar to beat.*
 
