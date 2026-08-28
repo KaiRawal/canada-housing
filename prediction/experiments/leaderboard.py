@@ -162,12 +162,15 @@ def build_leaderboard():
     shortlist = shortlist_candidates["model_id"].tolist()
     # B-enet should be among them (it is not top MDA but is eligible). Sorting by MDA puts A-enet first but A-enet is ineligible under codified gate. So shortlist_candidates currently sorted by MDA would have B-enet as maybe 2nd? Let's check:
     # Among eligible + A/B, only B-enet (0.598) and maybe? Actually no other A/B combo passes 0.00118. So shortlist_candidates will contain only B-enet (and C-enet excluded). So length 1 -> shortlist is ["T4.1-B-enet", "none"]
+    # T4.4 critic fix #2: sentinel "none" string removed — pruned A/B scope
+    # single-eligible case is represented as single-element list (or null runner-up).
+    # Previously top2 was ["T4.1-B-enet","none"] which used a string sentinel.
     if len(shortlist) >= 2:
         top2 = shortlist[:2]
     elif len(shortlist)==1:
-        top2 = [shortlist[0], "none"]
+        top2 = [shortlist[0]]
     else:
-        top2 = ["none","none"]
+        top2 = []
 
     return df_overall, eligible, shortlist_candidates, top2, latest
 
@@ -182,13 +185,25 @@ def main():
     out.to_csv(ART_T44 / "leaderboard.csv", index=False)
 
     # Load paired deltas for per-fold variance enrichment
+    # T4.4 critic fix #1: T4.1 paired_deltas.json keys are "A-enet" etc (no prefix)
+    # while leaderboard rid is "T4.1-A-enet". Normalize via prefix stripping.
     per_fold_info = {}
-    # Try to load paired_deltas for T4.1/T4.2 and per_fold JSONs for T4.3
     for f in [ART_T41/"paired_deltas.json", ART_T42/"paired_deltas.json"]:
         if f.exists():
             d=json.load(open(f))
             for combo, vals in d.get("per_combo",{}).items():
                 per_fold_info[combo] = vals
+                # Also store normalized key for T4.1-style combos
+                # e.g. "A-enet" -> "T4.1-A-enet" so rid lookup succeeds
+                if not combo.startswith("T4."):
+                    per_fold_info[f"T4.1-{combo}"] = vals
+                    # also support generic split fallback
+                    # (rid.split("-",1)[1] == combo)
+                # For robustness, also store suffix after first hyphen
+                # so lookup via rid.split("-",1)[1] works for any prefix
+                suffix = combo.split("-",1)[-1] if "-" in combo else combo
+                # not needed but keeps mapping exhaustive
+                _ = suffix
 
     # Build leaderboard.json with full detail
     leaderboard_json = {
@@ -235,10 +250,21 @@ def main():
             "NRMSE_ratio_vs_codified_best": row["NRMSE_ratio_vs_codified_best"],
             "gate_eligible_codified": bool(row["gate_eligible_codified"]),
         }
-        # add paired folds-positive if available
-        if rid in per_fold_info:
-            variance[rid]["paired_folds_positive_vs_persistence"] = per_fold_info[rid].get("folds_positive_vs_persistence")
-            variance[rid]["paired_mean_delta_MDA_vs_persistence"] = per_fold_info[rid].get("mean_delta_MDA_vs_persistence")
+        # add paired folds-positive if available (T4.4 fix #1: normalize T4.1 keys)
+        # Try direct rid, then suffix after first hyphen (e.g. "T4.1-A-enet" -> "A-enet")
+        pinfo = per_fold_info.get(rid)
+        if pinfo is None and "-" in rid:
+            suffix = rid.split("-", 1)[1]
+            pinfo = per_fold_info.get(suffix)
+        if pinfo is not None:
+            variance[rid]["paired_folds_positive_vs_persistence"] = pinfo.get("folds_positive_vs_persistence")
+            variance[rid]["paired_mean_delta_MDA_vs_persistence"] = pinfo.get("mean_delta_MDA_vs_persistence")
+            # also store full detail for auditability
+            variance[rid]["paired_detail_available"] = True
+        else:
+            # mark missing for debugging — should not happen for T4.1/4.2 after fix
+            if rid.startswith("T4.1-") or rid.startswith("T4.2-"):
+                variance[rid]["paired_detail_available"] = False
         # for T4.3, infer from per_fold JSONs if not in paired
         if rid.startswith("T4.3-"):
             # load corresponding result JSON
@@ -325,10 +351,14 @@ def main():
         "shortlist_for_T5": {
             "scope": "pruned A/B only (B = A + OWN-subset tot_d12/lag12/24/dlog1); C/k5 excluded per T4.1, SCSS/RMS dropped",
             "top2": top2,
-            "rationale": "Only B-enet passes codified gate in A/B pruned scope; no second eligible exists, so shortlist is single + none. If gate relaxed to persistence-relative, A-enet would be runner-up (MDA 0.649). Among T4.2/4.3 A/B combos none pass gate; best ineligible runner-up by MDA is RF-A 0.6151 (1.26×), then recursive-LGBM-B 0.5942 (1.30×).",
+            # T4.4 critic fix #2: "none" string sentinel removed; pruned A/B single-eligible case now [] / single-element list + explicit runner_up null
+            "shortlist_pruned_AB": top2,
+            "frontrunner": top2[0] if len(top2) >= 1 else None,
+            "runner_up": top2[1] if len(top2) >= 2 else None,
+            "rationale": "Only B-enet passes codified gate in A/B pruned scope; no second eligible exists, so shortlist is single (pruned-scope single-eligible case). If gate relaxed to persistence-relative, A-enet would be runner-up (MDA 0.649, 1.052× vs pers). Among T4.2/4.3 A/B combos none pass gate; best ineligible runner-up by MDA is RF-A 0.6151 (1.26×), then recursive-LGBM-B 0.5942 (1.30×).",
             "margins": {
                 "B_enet": {"MDA": B_ENET_MDA, "NRMSE": B_ENET_NRMSE, "vs_persistence_MDA": B_ENET_MDA - PERSIST_MDA, "vs_persistence_NRMSE_ratio": B_ENET_NRMSE/PERSIST_NRMSE},
-                "second_eligible": None if top2[1]=="none" else top2[1]
+                "second_eligible": top2[1] if len(top2) >= 2 else None
             }
         },
         "per_fold_variance_note": "All deltas are on identical 5-fold expanding CV (2008-09…2016-17) grouped by CMA; classical SARIMAX/VAR scored on 245 rows in fold5 (6 late-starters excluded) vs 317 for direct/recursive — their baseline is own-baseline 0.67205±0.0395 on 245 denominator vs global 0.67712±0.0474 on 317 denominator; Δ vs global pers is agg-only, not paired common-mask. Recursive-LGBM-B 4/5 wins vs direct (+0.0371/+0.0188/+0.0231/+0.0283/-0.0225) but still -0.0829 vs persistence and -0.0039 vs B-enet.",

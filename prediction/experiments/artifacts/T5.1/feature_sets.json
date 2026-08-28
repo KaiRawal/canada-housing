@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-08-28T09:20:00.667124+00:00",
+  "git_sha_pre_commit": "3293721ffb4b02e19eab0230c0eba436846ee0dd",
+  "feature_sets": {
+    "A_base_lag1": {
+      "n_engineered_extra": 0,
+      "engineered_columns": []
+    },
+    "B_base_lag1_OWN-subset": {
+      "n_engineered_extra": 4,
+      "engineered_columns": [
+        "tot_d12",
+        "tot_lag12",
+        "tot_lag24",
+        "tot_dlog1"
+      ]
+    }
+  },
+  "source": "tf.build_own_block pruned to tot_d12/lag12/24/dlog1 (4 cols) per 2026-08-28 amendment",
+  "search_space": {
+    "alpha": "loguniform 0.0001..1.0",
+    "l1_ratio": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      0.9,
+      0.95
+    ],
+    "selection": "cyclic (fixed)"
+  },
+  "cv": "outer 5 expanding folds 2008-09\u20262016-17 (same as T1\u2013T4); inner 4\u00d712m would be nested alternative (caveated)",
+  "trials": {
+    "B": 70,
+    "A": 30,
+    "total": 100,
+    "seed": 0
+  }
+}

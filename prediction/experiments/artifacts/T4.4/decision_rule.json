@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T09:05:13.434487+00:00",
+  "generated_at": "2026-08-28T09:18:40.180412+00:00",
   "gate": {
     "rule": "winner = best mean MDA subject to mean NRMSE \u22641.10\u00d7 global-best NRMSE",
     "global_best_id": "T4.1-B-enet",
@@ -31,10 +31,14 @@
   "shortlist_for_T5": {
     "scope": "pruned A/B only (B = A + OWN-subset tot_d12/lag12/24/dlog1); C/k5 excluded per T4.1, SCSS/RMS dropped",
     "top2": [
-      "T4.1-B-enet",
-      "none"
+      "T4.1-B-enet"
     ],
-    "rationale": "Only B-enet passes codified gate in A/B pruned scope; no second eligible exists, so shortlist is single + none. If gate relaxed to persistence-relative, A-enet would be runner-up (MDA 0.649). Among T4.2/4.3 A/B combos none pass gate; best ineligible runner-up by MDA is RF-A 0.6151 (1.26\u00d7), then recursive-LGBM-B 0.5942 (1.30\u00d7).",
+    "shortlist_pruned_AB": [
+      "T4.1-B-enet"
+    ],
+    "frontrunner": "T4.1-B-enet",
+    "runner_up": null,
+    "rationale": "Only B-enet passes codified gate in A/B pruned scope; no second eligible exists, so shortlist is single (pruned-scope single-eligible case). If gate relaxed to persistence-relative, A-enet would be runner-up (MDA 0.649, 1.052\u00d7 vs pers). Among T4.2/4.3 A/B combos none pass gate; best ineligible runner-up by MDA is RF-A 0.6151 (1.26\u00d7), then recursive-LGBM-B 0.5942 (1.30\u00d7).",
     "margins": {
       "B_enet": {
         "MDA": 0.5980835984449133,

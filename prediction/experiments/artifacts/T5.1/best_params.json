@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-08-28T09:20:42.218518+00:00",
+  "git_sha_pre_commit": "3293721ffb4b02e19eab0230c0eba436846ee0dd",
+  "global_best_NRMSE": 0.0010565543313447647,
+  "global_best_id": "T5.1-trial-B_base_lag1_OWN-subset-014",
+  "gate_threshold": 0.0011622097644792412,
+  "gate_rule": "winner = best mean MDA subject to mean NRMSE \u22641.10\u00d7 global-best NRMSE (global-best = min across T4 + T5 trials)",
+  "winner_B": {
+    "run_id": "T5.1-trial-B_base_lag1_OWN-subset-059",
+    "feature_set": "B_base_lag1_OWN-subset",
+    "params": {
+      "alpha": 0.00018941292197043673,
+      "l1_ratio": 0.7
+    },
+    "MDA_mean": 0.6168879206275829,
+    "MDA_std": 0.03371960513335219,
+    "NRMSE_mean": 0.0011481218375643883,
+    "NRMSE_std": 0.00048210215738310545,
+    "NMSE_mean": 1.5506062440456727e-06,
+    "NMAE_mean": 0.000754703431469419,
+    "delta_MDA_vs_persistence": -0.06024006765640888,
+    "NRMSE_ratio_vs_codified_best": 1.0678196461599927,
+    "NRMSE_ratio_vs_global_best": 1.0866661595178717,
+    "vs_B_enet_T41": {
+      "B_enet_T41_MDA": 0.5980835984449133,
+      "B_enet_T41_NRMSE": 0.0010752020172069055,
+      "delta_MDA": 0.018804322182669586,
+      "NRMSE_ratio": 1.0678196461599927
+    },
+    "headroom_to_00090": {
+      "persistence_NRMSE": 0.0011305311297628712,
+      "goal_NRMSE": 0.0009,
+      "best_NRMSE": 0.0011481218375643883,
+      "gap_persistence_to_goal": 0.0002305311297628712,
+      "closed_fraction": -0.07630512989552103,
+      "remaining_to_goal": 0.0002481218375643883
+    }
+  },
+  "unconstrained_best": {
+    "run_id": "T5.1-trial-A_base_lag1-011",
+    "feature_set": "A_base_lag1",
+    "params": {
+      "alpha": 0.002995398957131153,
+      "l1_ratio": 0.95
+    },
+    "MDA_mean": 0.6633795639009104,
+    "NRMSE_mean": 0.0011004808615822069
+  },
+  "gated_best_all": {
+    "run_id": "T5.1-trial-A_base_lag1-011",
+    "MDA_mean": 0.6633795639009104,
+    "NRMSE_mean": 0.0011004808615822069
+  },
+  "B_gated_best": {
+    "run_id": "T5.1-trial-B_base_lag1_OWN-subset-059",
+    "params": {
+      "alpha": 0.00018941292197043673,
+      "l1_ratio": 0.7
+    },
+    "MDA_mean": 0.6168879206275829,
+    "NRMSE_mean": 0.0011481218375643883
+  },
+  "B_nrmse_best": {
+    "run_id": "T5.1-trial-B_base_lag1_OWN-subset-014",
+    "params": {
+      "alpha": 0.0012663296267935314,
+      "l1_ratio": 0.95
+    },
+    "MDA_mean": 0.598067491941681,
+    "NRMSE_mean": 0.0010565543313447647
+  },
+  "A_gated_best": {
+    "run_id": "T5.1-trial-A_base_lag1-011",
+    "params": {
+      "alpha": 0.002995398957131153,
+      "l1_ratio": 0.95
+    },
+    "MDA_mean": 0.6633795639009104,
+    "NRMSE_mean": 0.0011004808615822069
+  },
+  "persistence": {
+    "MDA_mean": 0.6771279882839918,
+    "NRMSE_mean": 0.0011305311297628712
+  },
+  "t41_B_enet": {
+    "MDA_mean": 0.5980835984449133,
+    "NRMSE_mean": 0.0010752020172069055
+  }
+}

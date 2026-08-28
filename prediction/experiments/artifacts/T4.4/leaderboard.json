@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T09:05:13.060787+00:00",
+  "generated_at": "2026-08-28T09:18:39.772701+00:00",
   "canonical_persistence": {
     "MDA_mean": 0.6771279882839918,
     "NRMSE_mean": 0.0011305311297628712
@@ -30,8 +30,7 @@
     "T4.1-C-enet"
   ],
   "shortlist_for_T5_pruned_AB_scope": [
-    "T4.1-B-enet",
-    "none"
+    "T4.1-B-enet"
   ],
   "rows": [
     {

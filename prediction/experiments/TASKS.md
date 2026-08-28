@@ -40,7 +40,7 @@ Conventions: each sub-stage = one approved plan -> one experimenter run -> one c
 
 ## T5. Hyperparameter tuning
 **Mini-goal**: squeeze validated performance out of the shortlist (pruned scope per 2026-08-28 amendment: shortlist families only on feature sets A/B only [B = A + OWN subset tot_d12/lag12/24/dlog1], C/k5 and SCSS/RMS already proven C≈B).
-- [ ] T5.1 — Optuna search under the same CV folds; every trial logged to runs.jsonl (search OWN-subset + pruned A/B only)
+- [x] T5.1 — Optuna search under the same CV folds; every trial logged to runs.jsonl (search OWN-subset + pruned A/B only)
 - [ ] T5.2 — Overfitting guardrails: tuning curves, chosen-vs-default deltas
 
 *Learning target: best hyperparameters + evidence they generalize across folds.*

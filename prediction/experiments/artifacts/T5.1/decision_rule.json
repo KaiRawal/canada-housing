@@ -1,0 +1,505 @@
+{
+  "generated_at": "2026-08-28T09:20:42.366130+00:00",
+  "git_sha_pre_commit": "3293721ffb4b02e19eab0230c0eba436846ee0dd",
+  "search": {
+    "scope": "pruned A/B only (A_base_lag1 176 cols; B_base_lag1_OWN-subset 176+4 tot_d12/lag12/24/dlog1)",
+    "model_family": "ElasticNet",
+    "search_space": {
+      "alpha": "loguniform 0.0001..1.0",
+      "l1_ratio": [
+        0.1,
+        0.3,
+        0.5,
+        0.7,
+        0.9,
+        0.95
+      ],
+      "selection": "cyclic (fixed)"
+    },
+    "n_trials": {
+      "B": 70,
+      "A": 30,
+      "total": 100
+    },
+    "sampler": "TPESampler seed 0/1",
+    "cv": "outer 5 expanding folds 2008-09\u20262016-17 (direct outer Optuna)",
+    "cv_caveat": "Direct outer CV tuning is optimistic vs nested inner 4\u00d712m; inner would be strictly leakage-free. We document outer explicitly and note headroom is conditional upper bound.",
+    "objective": "minimize mean NRMSE (outer CV) \u2014 aligns with primary -20% NRMSE goal; winner selection then uses MDA gated by NRMSE"
+  },
+  "gate": {
+    "rule": "winner = best mean MDA subject to mean NRMSE \u22641.10\u00d7 global-best NRMSE (global-best = min across T4 + T5 trials)",
+    "global_best_NRMSE": 0.0010565543313447647,
+    "global_best_id": "T5.1-trial-B_base_lag1_OWN-subset-014",
+    "gate_threshold": 0.0011622097644792412,
+    "note": "Codified T4.1 B-enet 0.0010752 vs actual-min C-enet 0.0010728; T5 best may update global-best if lower."
+  },
+  "eligible": [
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-002",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6106125721619449,
+      "NRMSE_mean": 0.0010814649337832273,
+      "NRMSE_ratio_vs_codified_best": 1.005824874280455
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-009",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6066360456434781,
+      "NRMSE_mean": 0.0010840359084847348,
+      "NRMSE_ratio_vs_codified_best": 1.0082160293009657
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-011",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6109698841426586,
+      "NRMSE_mean": 0.0010863737240426746,
+      "NRMSE_ratio_vs_codified_best": 1.0103903328462778
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-012",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6012213975168377,
+      "NRMSE_mean": 0.0010756887111481332,
+      "NRMSE_ratio_vs_codified_best": 1.0004526534859859
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-014",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.598067491941681,
+      "NRMSE_mean": 0.0010565543313447647,
+      "NRMSE_ratio_vs_codified_best": 0.982656574705298
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-015",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5964728339058062,
+      "NRMSE_mean": 0.0010659471730233238,
+      "NRMSE_ratio_vs_codified_best": 0.9913924601744857
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-018",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5932874581153487,
+      "NRMSE_mean": 0.0010680028728614888,
+      "NRMSE_ratio_vs_codified_best": 0.9933043798000694
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-020",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.602179907766898,
+      "NRMSE_mean": 0.0010751533878149483,
+      "NRMSE_ratio_vs_codified_best": 0.9999547718557266
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-021",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5971267051092628,
+      "NRMSE_mean": 0.001061958336545985,
+      "NRMSE_ratio_vs_codified_best": 0.9876826117799481
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-022",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5971267051092628,
+      "NRMSE_mean": 0.0010629403134778874,
+      "NRMSE_ratio_vs_codified_best": 0.9885959070641712
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-023",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5986426396484532,
+      "NRMSE_mean": 0.0010620698669281995,
+      "NRMSE_ratio_vs_codified_best": 0.987786341479511
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-025",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6042633364157626,
+      "NRMSE_mean": 0.0010839933558810222,
+      "NRMSE_ratio_vs_codified_best": 1.0081764529208699
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-031",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5972035493715578,
+      "NRMSE_mean": 0.0010629904402495965,
+      "NRMSE_ratio_vs_codified_best": 0.9886425278581308
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-032",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6018284230373243,
+      "NRMSE_mean": 0.0010789031569077663,
+      "NRMSE_ratio_vs_codified_best": 1.0034422737696078
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-033",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6061562911809801,
+      "NRMSE_mean": 0.001084490462371886,
+      "NRMSE_ratio_vs_codified_best": 1.008638790679643
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-034",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.592625963048928,
+      "NRMSE_mean": 0.0010657960651560005,
+      "NRMSE_ratio_vs_codified_best": 0.9912519211270276
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-035",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5919127965679287,
+      "NRMSE_mean": 0.001112201942010834,
+      "NRMSE_ratio_vs_codified_best": 1.0344120678828754
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-037",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6085054340586538,
+      "NRMSE_mean": 0.001084709347495974,
+      "NRMSE_ratio_vs_codified_best": 1.008842366491988
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-040",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6026316358887298,
+      "NRMSE_mean": 0.0010789687240472918,
+      "NRMSE_ratio_vs_codified_best": 1.0035032549977643
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-041",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5956915839058061,
+      "NRMSE_mean": 0.0010679908356790132,
+      "NRMSE_ratio_vs_codified_best": 0.9932931845248718
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-042",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5971267051092628,
+      "NRMSE_mean": 0.0010625440216184166,
+      "NRMSE_ratio_vs_codified_best": 0.9882273327375528
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-043",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5932874581153487,
+      "NRMSE_mean": 0.0010680854638361052,
+      "NRMSE_ratio_vs_codified_best": 0.9933811941784789
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-046",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5971267051092628,
+      "NRMSE_mean": 0.0010627710021208284,
+      "NRMSE_ratio_vs_codified_best": 0.9884384377194811
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-048",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6135625421596155,
+      "NRMSE_mean": 0.00109492241598649,
+      "NRMSE_ratio_vs_codified_best": 1.0183411102881046
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-050",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6021915622691779,
+      "NRMSE_mean": 0.0010741398519120572,
+      "NRMSE_ratio_vs_codified_best": 0.999012124905041
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-051",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5971267051092628,
+      "NRMSE_mean": 0.0010621618109538861,
+      "NRMSE_ratio_vs_codified_best": 0.987871854735825
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-052",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5904141544552693,
+      "NRMSE_mean": 0.001078338782614817,
+      "NRMSE_ratio_vs_codified_best": 1.002917373068235
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-053",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5981304669938851,
+      "NRMSE_mean": 0.0010720150292521141,
+      "NRMSE_ratio_vs_codified_best": 0.9970359170613627
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-054",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5971267051092628,
+      "NRMSE_mean": 0.0010621346988992635,
+      "NRMSE_ratio_vs_codified_best": 0.987846638958521
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-055",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5846453258844904,
+      "NRMSE_mean": 0.001088126946370268,
+      "NRMSE_ratio_vs_codified_best": 1.0120209309102097
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-056",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5919340961925836,
+      "NRMSE_mean": 0.0010626418317584655,
+      "NRMSE_ratio_vs_codified_best": 0.9883183018191612
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-057",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5906782286666943,
+      "NRMSE_mean": 0.0011114603808168612,
+      "NRMSE_ratio_vs_codified_best": 1.033722373125885
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-059",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6168879206275829,
+      "NRMSE_mean": 0.0011481218375643883,
+      "NRMSE_ratio_vs_codified_best": 1.0678196461599927
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-061",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5919340961925836,
+      "NRMSE_mean": 0.0010623619524016753,
+      "NRMSE_ratio_vs_codified_best": 0.988057997846223
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-062",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5888605320954541,
+      "NRMSE_mean": 0.0010578567637519946,
+      "NRMSE_ratio_vs_codified_best": 0.9838679120971431
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-063",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5943708855329677,
+      "NRMSE_mean": 0.0010602993240005905,
+      "NRMSE_ratio_vs_codified_best": 0.9861396342567992
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-064",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5981735598281623,
+      "NRMSE_mean": 0.0010697176657505714,
+      "NRMSE_ratio_vs_codified_best": 0.9948992362657754
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-065",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5923862986617842,
+      "NRMSE_mean": 0.0010595142303931574,
+      "NRMSE_ratio_vs_codified_best": 0.9854094518400357
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-066",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5950826293052096,
+      "NRMSE_mean": 0.0010598879985113732,
+      "NRMSE_ratio_vs_codified_best": 0.9857570777858898
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-067",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5900874480870716,
+      "NRMSE_mean": 0.0010590185460634383,
+      "NRMSE_ratio_vs_codified_best": 0.984948436773298
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-068",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.6033891451005396,
+      "NRMSE_mean": 0.0010759706565462313,
+      "NRMSE_ratio_vs_codified_best": 1.000714878996714
+    },
+    {
+      "run_id": "T5.1-trial-B_base_lag1_OWN-subset-069",
+      "feature_set": "B_base_lag1_OWN-subset",
+      "MDA_mean": 0.5970126764237309,
+      "NRMSE_mean": 0.001061474040403018,
+      "NRMSE_ratio_vs_codified_best": 0.9872321883848867
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-001",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6490623431258411,
+      "NRMSE_mean": 0.0010944793561393487,
+      "NRMSE_ratio_vs_codified_best": 1.0179290390307494
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-004",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6242408673402265,
+      "NRMSE_mean": 0.0011190792411511768,
+      "NRMSE_ratio_vs_codified_best": 1.040808353446223
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-005",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6308356745067619,
+      "NRMSE_mean": 0.0010919414720776586,
+      "NRMSE_ratio_vs_codified_best": 1.01556866021721
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-006",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6302030089001587,
+      "NRMSE_mean": 0.0010976980391966492,
+      "NRMSE_ratio_vs_codified_best": 1.0209226002460285
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-009",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6580746494498018,
+      "NRMSE_mean": 0.001131177128781768,
+      "NRMSE_ratio_vs_codified_best": 1.0520600879453994
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-011",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6633795639009104,
+      "NRMSE_mean": 0.0011004808615822069,
+      "NRMSE_ratio_vs_codified_best": 1.0235107858530337
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-013",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6335949030898579,
+      "NRMSE_mean": 0.0010971556535131544,
+      "NRMSE_ratio_vs_codified_best": 1.0204181502219265
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-016",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6280380504586132,
+      "NRMSE_mean": 0.0011042564621057832,
+      "NRMSE_ratio_vs_codified_best": 1.027022312490032
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-019",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.628659497211601,
+      "NRMSE_mean": 0.0011078950211228663,
+      "NRMSE_ratio_vs_codified_best": 1.0304063826078829
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-021",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.634967230607535,
+      "NRMSE_mean": 0.0010982295702498966,
+      "NRMSE_ratio_vs_codified_best": 1.0214169548368321
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-022",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6326985816043631,
+      "NRMSE_mean": 0.0010924383020036955,
+      "NRMSE_ratio_vs_codified_best": 1.0160307407547144
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-024",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6409221559474412,
+      "NRMSE_mean": 0.0010937237521105488,
+      "NRMSE_ratio_vs_codified_best": 1.0172262836259904
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-025",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6242348347036628,
+      "NRMSE_mean": 0.001118191326911629,
+      "NRMSE_ratio_vs_codified_best": 1.039982541900729
+    },
+    {
+      "run_id": "T5.1-trial-A_base_lag1-026",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6302775807854837,
+      "NRMSE_mean": 0.001091447843510968,
+      "NRMSE_ratio_vs_codified_best": 1.0151095571288686
+    }
+  ],
+  "winner": {
+    "run_id": "T5.1-trial-B_base_lag1_OWN-subset-059",
+    "feature_set": "B_base_lag1_OWN-subset",
+    "params": {
+      "alpha": 0.00018941292197043673,
+      "l1_ratio": 0.7
+    },
+    "MDA_mean": 0.6168879206275829,
+    "MDA_std": 0.03371960513335219,
+    "NRMSE_mean": 0.0011481218375643883,
+    "NRMSE_std": 0.00048210215738310545,
+    "NMSE_mean": 1.5506062440456727e-06,
+    "NMAE_mean": 0.000754703431469419,
+    "delta_MDA_vs_persistence": -0.06024006765640888,
+    "NRMSE_ratio_vs_codified_best": 1.0678196461599927,
+    "NRMSE_ratio_vs_global_best": 1.0866661595178717,
+    "vs_B_enet_T41": {
+      "B_enet_T41_MDA": 0.5980835984449133,
+      "B_enet_T41_NRMSE": 0.0010752020172069055,
+      "delta_MDA": 0.018804322182669586,
+      "NRMSE_ratio": 1.0678196461599927
+    },
+    "headroom_to_00090": {
+      "persistence_NRMSE": 0.0011305311297628712,
+      "goal_NRMSE": 0.0009,
+      "best_NRMSE": 0.0011481218375643883,
+      "gap_persistence_to_goal": 0.0002305311297628712,
+      "closed_fraction": -0.07630512989552103,
+      "remaining_to_goal": 0.0002481218375643883
+    }
+  },
+  "unconstrained_best": {
+    "run_id": "T5.1-trial-A_base_lag1-011",
+    "feature_set": "A_base_lag1",
+    "params": {
+      "alpha": 0.002995398957131153,
+      "l1_ratio": 0.95
+    },
+    "MDA_mean": 0.6633795639009104,
+    "NRMSE_mean": 0.0011004808615822069
+  },
+  "gated_best": {
+    "run_id": "T5.1-trial-A_base_lag1-011",
+    "MDA_mean": 0.6633795639009104,
+    "NRMSE_mean": 0.0011004808615822069
+  },
+  "headroom": {
+    "persistence_NRMSE": 0.0011305311297628712,
+    "goal_NRMSE": 0.0009,
+    "best_NRMSE": 0.0011481218375643883,
+    "gap_persistence_to_goal": 0.0002305311297628712,
+    "closed_fraction": -0.07630512989552103,
+    "remaining_to_goal": 0.0002481218375643883
+  },
+  "per_fold_variance_note": "All T5 trials scored on identical 5-fold expanding CV as T1\u2013T4; per-trial per-fold metrics in trial_table.csv and per-trial runs.jsonl entries.",
+  "caveats": [
+    "Outer CV Optuna: reported outer metrics are optimistic relative to nested inner CV; ranking vs T4 remains apples-to-apples (same outer folds).",
+    "No test-split file read; LEVEL target only.",
+    "Pruned OWN-subset (4 cols) vs T4.1 OWN full (8 cols): B in T5 is A+ tot_d12/lag12/24/dlog1 only.",
+    "Bounded search: 100 trials, 6 l1_ratio values, loguniform alpha 1e-4..1.0 with TPESampler.",
+    "Upstream imputation panels canonical with \u2264~1% optimism caveat."
+  ],
+  "versions": {
+    "sklearn": "1.9.0",
+    "optuna": "4.9.0",
+    "lightgbm": "4.7.0"
+  },
+  "artifacts_generated": [
+    "optuna_study.json",
+    "trial_table.csv",
+    "best_params.json",
+    "tuning_curves.png",
+    "decision_rule.json",
+    "feature_sets.json"
+  ]
+}

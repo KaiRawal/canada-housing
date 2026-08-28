@@ -33,7 +33,10 @@
     "NRMSE_std": 0.0006638957225627428,
     "delta_MDA_vs_persistence": -0.02809605526339709,
     "NRMSE_ratio_vs_codified_best": 1.1064539314210005,
-    "gate_eligible_codified": false
+    "gate_eligible_codified": false,
+    "paired_folds_positive_vs_persistence": "1/5",
+    "paired_mean_delta_MDA_vs_persistence": -0.0017260358688929722,
+    "paired_detail_available": true
   },
   "T4.3-VAR-1-A": {
     "MDA_mean": 0.6323905321848977,
@@ -89,7 +92,8 @@
     "NRMSE_ratio_vs_codified_best": 1.2593541091724296,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "1/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.018786723446020902
+    "paired_mean_delta_MDA_vs_persistence": -0.018786723446020902,
+    "paired_detail_available": true
   },
   "T4.2-RF-C": {
     "MDA_mean": 0.6069556312473562,
@@ -100,7 +104,8 @@
     "NRMSE_ratio_vs_codified_best": 1.229235462680458,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "1/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.03195712333059282
+    "paired_mean_delta_MDA_vs_persistence": -0.03195712333059282,
+    "paired_detail_available": true
   },
   "T4.3-recursive-Ridge-A": {
     "MDA_mean": 0.6060651469584373,
@@ -145,7 +150,10 @@
     "NRMSE_std": 0.0012923776780992362,
     "delta_MDA_vs_persistence": -0.0725229869942915,
     "NRMSE_ratio_vs_codified_best": 1.7844302116183461,
-    "gate_eligible_codified": false
+    "gate_eligible_codified": false,
+    "paired_folds_positive_vs_persistence": "1/5",
+    "paired_mean_delta_MDA_vs_persistence": -0.020884566207966727,
+    "paired_detail_available": true
   },
   "T4.3-direct-Ridge-B": {
     "MDA_mean": 0.6040771688946347,
@@ -172,7 +180,10 @@
     "NRMSE_std": 0.0012336187226994722,
     "delta_MDA_vs_persistence": -0.07424829177284764,
     "NRMSE_ratio_vs_codified_best": 1.778249280658847,
-    "gate_eligible_codified": false
+    "gate_eligible_codified": false,
+    "paired_folds_positive_vs_persistence": "0/5",
+    "paired_mean_delta_MDA_vs_persistence": -0.027089205565103858,
+    "paired_detail_available": true
   },
   "T4.1-A-ridge_cv": {
     "MDA_mean": 0.6027893280036987,
@@ -181,7 +192,10 @@
     "NRMSE_std": 0.0005964813411560931,
     "delta_MDA_vs_persistence": -0.07433866028029312,
     "NRMSE_ratio_vs_codified_best": 1.4529344705122753,
-    "gate_eligible_codified": false
+    "gate_eligible_codified": false,
+    "paired_folds_positive_vs_persistence": "0/5",
+    "paired_mean_delta_MDA_vs_persistence": -0.02697797936798809,
+    "paired_detail_available": true
   },
   "T4.2-LGBM-A-deep": {
     "MDA_mean": 0.5987860987192002,
@@ -192,7 +206,8 @@
     "NRMSE_ratio_vs_codified_best": 1.3101961372326316,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.0460122511006902
+    "paired_mean_delta_MDA_vs_persistence": -0.0460122511006902,
+    "paired_detail_available": true
   },
   "T4.1-B-enet": {
     "MDA_mean": 0.5980835984449133,
@@ -201,7 +216,10 @@
     "NRMSE_std": 0.00046178303286501226,
     "delta_MDA_vs_persistence": -0.07904438983907847,
     "NRMSE_ratio_vs_codified_best": 1.0,
-    "gate_eligible_codified": true
+    "gate_eligible_codified": true,
+    "paired_folds_positive_vs_persistence": "0/5",
+    "paired_mean_delta_MDA_vs_persistence": -0.010321583178726024,
+    "paired_detail_available": true
   },
   "T4.2-LGBM-C": {
     "MDA_mean": 0.5964451504345658,
@@ -212,7 +230,8 @@
     "NRMSE_ratio_vs_codified_best": 1.2517031186659546,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.04602565335898667
+    "paired_mean_delta_MDA_vs_persistence": -0.04602565335898667,
+    "paired_detail_available": true
   },
   "T4.1-C-enet": {
     "MDA_mean": 0.5959721170179748,
@@ -221,7 +240,10 @@
     "NRMSE_std": 0.0004565973489839617,
     "delta_MDA_vs_persistence": -0.08115587126601698,
     "NRMSE_ratio_vs_codified_best": 0.9977637482239482,
-    "gate_eligible_codified": true
+    "gate_eligible_codified": true,
+    "paired_folds_positive_vs_persistence": "0/5",
+    "paired_mean_delta_MDA_vs_persistence": -0.010464440321583158,
+    "paired_detail_available": true
   },
   "T4.3-recursive-LGBM-B": {
     "MDA_mean": 0.5942220579011966,
@@ -259,7 +281,8 @@
     "NRMSE_ratio_vs_codified_best": 1.2324258801063581,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.050614130537881594
+    "paired_mean_delta_MDA_vs_persistence": -0.050614130537881594,
+    "paired_detail_available": true
   },
   "T4.2-XGB-C": {
     "MDA_mean": 0.5890414589549577,
@@ -270,7 +293,8 @@
     "NRMSE_ratio_vs_codified_best": 1.287092300504183,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.0489863495380737
+    "paired_mean_delta_MDA_vs_persistence": -0.0489863495380737,
+    "paired_detail_available": true
   },
   "T4.2-LGBM-B": {
     "MDA_mean": 0.5870723859360932,
@@ -281,7 +305,8 @@
     "NRMSE_ratio_vs_codified_best": 1.2430982888914341,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.05619913419913418
+    "paired_mean_delta_MDA_vs_persistence": -0.05619913419913418,
+    "paired_detail_available": true
   },
   "T4.2-XGB-B": {
     "MDA_mean": 0.5861786712375491,
@@ -292,7 +317,8 @@
     "NRMSE_ratio_vs_codified_best": 1.2683699340654475,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.06731084988716514
+    "paired_mean_delta_MDA_vs_persistence": -0.06731084988716514,
+    "paired_detail_available": true
   },
   "T4.2-RF-B": {
     "MDA_mean": 0.5824892253524918,
@@ -303,7 +329,8 @@
     "NRMSE_ratio_vs_codified_best": 1.1863722719151601,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.03237833202953737
+    "paired_mean_delta_MDA_vs_persistence": -0.03237833202953737,
+    "paired_detail_available": true
   },
   "T4.2-LGBM-A": {
     "MDA_mean": 0.5812825243768114,
@@ -314,7 +341,8 @@
     "NRMSE_ratio_vs_codified_best": 1.3147600402751034,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.0501485186598265
+    "paired_mean_delta_MDA_vs_persistence": -0.0501485186598265,
+    "paired_detail_available": true
   },
   "T4.3-direct-LGBM-A": {
     "MDA_mean": 0.5812825243768114,
@@ -361,7 +389,8 @@
     "NRMSE_ratio_vs_codified_best": 1.2404170869209636,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.04919252124409801
+    "paired_mean_delta_MDA_vs_persistence": -0.04919252124409801,
+    "paired_detail_available": true
   },
   "T4.2-XGB-A": {
     "MDA_mean": 0.5781402187875994,
@@ -372,7 +401,8 @@
     "NRMSE_ratio_vs_codified_best": 1.3492073837708531,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.07091041931438488
+    "paired_mean_delta_MDA_vs_persistence": -0.07091041931438488,
+    "paired_detail_available": true
   },
   "T4.3-direct-LGBM-B": {
     "MDA_mean": 0.5772462622340827,
@@ -401,7 +431,8 @@
     "NRMSE_ratio_vs_codified_best": 2.1672141513184515,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.0841415070074141
+    "paired_mean_delta_MDA_vs_persistence": -0.0841415070074141,
+    "paired_detail_available": true
   },
   "T4.2-CAT-B": {
     "MDA_mean": 0.5441626517307048,
@@ -412,7 +443,8 @@
     "NRMSE_ratio_vs_codified_best": 5.089451539464379,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.1073951809375816
+    "paired_mean_delta_MDA_vs_persistence": -0.1073951809375816,
+    "paired_detail_available": true
   },
   "T4.2-CAT-C": {
     "MDA_mean": 0.5415554529840432,
@@ -423,6 +455,7 @@
     "NRMSE_ratio_vs_codified_best": 5.6947046086968225,
     "gate_eligible_codified": false,
     "paired_folds_positive_vs_persistence": "0/5",
-    "paired_mean_delta_MDA_vs_persistence": -0.09528988584994443
+    "paired_mean_delta_MDA_vs_persistence": -0.09528988584994443,
+    "paired_detail_available": true
   }
 }
