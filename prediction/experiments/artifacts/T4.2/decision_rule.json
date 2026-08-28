@@ -120,7 +120,26 @@
     "no tree combo beats persistence MDA 0.6771 (see per-fold signs in paired_deltas.json)",
     "joint-imputation panels canonical (<=~1% optimism caveat, T3.3 hard gate)",
     "publication-lag caveat on SCSS/RMS/Census does not bind here (A/B/C contain no SCSS/RMS/Census blocks beyond OWN)",
-    "all trees trained on LEVEL target; expanding time-ordered inner CV only"
+    "all trees trained on LEVEL target; expanding time-ordered inner CV only",
+    "bounded-search caveat: 'no tree beats linear ceiling' is conditional on modest breadth (RF 2 combos 30 trees, GBMs 4 combos each, LGBM-deep 4 combos) — wider search not explored; see T4.3 for recursive/classical extension",
+    "tree pipelines contain only ('model',...) with no StandardScaler — no-op scaler for trees (scale-invariant, no y-standardization), intentionally omitted"
   ],
-  "skipped": []
+  "versions": {
+    "sklearn": "1.9.0",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10"
+  },
+  "skipped": [
+    "T4.1-A-ridge_cv duplicate 2026-08-26T12:52:14 superseded by 2026-08-28T03:07:41 (latest wins)",
+    "T4.1-A-enet duplicate 2026-08-26T12:59:00 superseded by 2026-08-28T03:08:48",
+    "T4.1-B-ridge_cv duplicate 2026-08-26T12:59:02 superseded by 2026-08-28T03:08:52",
+    "T4.1-B-enet duplicate 2026-08-26T13:05:01 superseded by 2026-08-28T03:10:02",
+    "T4.1-C-ridge_cv duplicate 2026-08-26T13:05:03 superseded by 2026-08-28T03:10:07",
+    "T4.1-C-enet duplicate 2026-08-26T13:11:15 superseded by 2026-08-28T03:11:20",
+    "T4.2-RF-A: 4 logs (0.5997/0.5997/0.6071/0.6150) — latest 2026-08-28T04:15:10 is authoritative; earlier 3 are superseded retries",
+    "T4.2-rf-A (lowercase, 1 log) — differing-ID draft pair with T4.2-RF-A per KNOWLEDGE trap (a); dedupe by latest timestamp wins",
+    "T4.2-RF-B: 2 logs — latest wins",
+    "registry integrity: 26 lines added between 0d9c7fc..80aebf5, not 21, due to these superseded retries and differing-ID pair"
+  ]
 }

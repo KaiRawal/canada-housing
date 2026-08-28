@@ -22,8 +22,10 @@ Depth winner: most promising GBM family by breadth mean MDA gets an expanded
 grid ( ~12-16 combos) still within same sub-stage, bounded compute.
 
 Discipline: inner expanding CV train-only (4 blocks of 12 months, no shuffle)
-like T4.1; scaler in-pipeline where appropriate (trees don't need it but pipeline
-structure kept); TransformedTargetRegressor not used for trees; late-starter
+like T4.1; NO-OP SCALER FOR TREES: tree pipelines contain only ("model",...) with
+no StandardScaler (trees are scale-invariant; no y-standardization needed either),
+so scaler is intentionally omitted for trees (consistent with no
+TransformedTargetRegressor for trees); late-starter
 handling dummy reindex fill 0 unchanged; persistence scored alongside via harness
 on identical masks; paired intersection-mask deltas vs ridge a1 (0.6051/0.00169),
 vs B-enet (0.5981/0.00107), vs persistence (0.6771±0.0474/0.00113).
