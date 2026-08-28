@@ -1,5 +1,6 @@
 {
   "generated_at": "2026-08-28T04:56:24.973495+00:00",
+  "updated_at": "2026-08-28T05:30:00+00:00",
   "git_sha_pre_commit": "e973710e84911500670ed78eefa8c160b5b8cb19",
   "versions": {
     "sklearn": "1.9.0",
@@ -18,20 +19,87 @@
     "MDA": 0.5981,
     "NRMSE": 0.00107
   },
-  "reference_persistence": {
-    "MDA": 0.6771,
-    "NRMSE": 0.00113
+  "reference_persistence_direct": {
+    "MDA": 0.6771279882839918,
+    "MDA_std": 0.04737734633800933,
+    "NRMSE": 0.0011305311297628712,
+    "n_eval_fold5": 317,
+    "n_val_rows_fold5": 323
+  },
+  "reference_persistence_classical": {
+    "MDA": 0.6720522307082342,
+    "MDA_std": 0.039519129850718815,
+    "NRMSE": 0.0011861865897260218,
+    "n_eval_fold5": 245,
+    "note": "Classical models exclude 6 late-starter CMAs (<10 train obs) → 245 eval rows in fold5 vs 317 for direct/recursive; baseline 0.67205±0.0395 on 245 denominator vs global 0.67712±0.0474 on 317 denominator. SARIMAX paired ΔMDA vs own baseline = -0.0039 (4/5 folds above); vs global persistence agg-only = -0.0089 (3/5 wins but fold5 mismatched)."
   },
   "reference_A_enet": {
     "MDA": 0.649,
     "NRMSE": 0.00119
   },
-  "note": "Recursive vs direct deltas computed from agg means; per-fold paired intersection scores are in paired_deltas.json if available.",
+  "note": "Recursive vs direct deltas are paired on identical 317-row masks (A: 0, B: per-fold deltas reported); classical deltas vs global persistence are agg-only, not paired common-mask.",
+  "win_counts_corrected": {
+    "recursive_LGBM_B_vs_direct": {
+      "folds_positive": "4/5",
+      "per_fold_deltas_MDA": [
+        0.037124,
+        0.018753,
+        0.023132,
+        0.02834,
+        -0.022472
+      ],
+      "mean_delta_MDA": 0.0169757956671139,
+      "note": "Corrected from 2/5 → 4/5; still -0.0829 vs persistence and -0.0039 vs B-enet."
+    },
+    "SARIMAX_vs_own_baseline": {
+      "folds_positive": "4/5",
+      "per_fold_comparison": [
+        "0.7568>0.7041 win",
+        "0.7483>0.6607 win",
+        "0.6667>0.6196 win",
+        "0.4309<0.6467 lose",
+        "0.7381>0.7292 win"
+      ],
+      "mean_delta_MDA_vs_own_baseline": -0.0039007624436984,
+      "note": "Corrected from 2/5 → 4/5 vs own baseline (245-row)."
+    },
+    "SARIMAX_vs_global_persistence_agg_only": {
+      "folds_positive": "3/5",
+      "per_fold_vs_global": [
+        "0.7568>0.7041 win",
+        "0.7483>0.6607 win",
+        "0.6667>0.6196 win",
+        "0.4309<0.6467 lose",
+        "0.7381<0.7545 lose (fold5 denominator mismatched 245 vs 317 → agg-only)"
+      ],
+      "mean_delta_MDA_vs_global_agg_only": -0.008976520019456,
+      "note": "3/5 vs global 0.677 is agg-only, not paired common-mask; the paired measure is 4/5 vs own baseline. Clarify 'agg-delta only' vs per-fold paired."
+    }
+  },
+  "n_iter_correction": {
+    "previous_doc": "588–3467",
+    "corrected_range": "62–3467",
+    "chosen_per_fold": [3467, 588, 62, 148, 137],
+    "proof_run": "T4.1-B-enet-niter-proof 2026-08-28T04:53:52",
+    "note": "62 is fold 3 (alpha 0.003, l1_ratio 0.95); Ridge n_iter_ is None as expected (closed-form)."
+  },
+  "fold5_row_counts_corrected": {
+    "n_val_rows_pre_mask": 323,
+    "n_eval_rows_direct_recursive_persistence": 317,
+    "n_eval_rows_classical": 245,
+    "excluded_for_classical": "6 late-starter CMAs (<10 train obs for SARIMAX)",
+    "note": "323 is folds[].n_val_rows (24 CMAs ×24 months with NaN gaps); 317 is per_fold[].n_eval_rows after common-mask (rows where model+baseline both present); 245 is classical n_eval_rows after CMA exclusion. Document why — not a bug."
+  },
   "caveats": [
-    "Recursive LGBM uses manual iteration feeding OWN-subset predictions; covariate lags use observed val values \u2014 isolates target-memory recursion effect.",
-    "For A (no OWN) recursive is no-op; B recursion shows true multi-step degradation.",
-    "Classical SARIMAX per-CMA (1,1,0) is a small-order baseline; VAR may gracefully fail on short panel (documented).",
-    "Bounded search caveat: LightGBM grid is modest (4 combos) \u2014 'no recursion benefit' is conditional on this breadth.",
-    "No tree beats linear ceiling (T4.2) conditional on modest breadth (RF 2 combos 30 trees, GBMs 4 combos each)."
-  ]
+    "Partial recursion: 176 lag-1 covariate columns use observed val row lag-1 values; only OWN-subset (tot_d12/tot_lag12/tot_lag24/tot_dlog1) recomputed from predicted history — isolates target-memory recursion effect; future covariate forecasts beyond horizon not needed because they are lag-1.",
+    "Ridge-OWN harm: recursive-Ridge-B NRMSE 0.00373→0.00750 (2× worse, fold5 0.01347→0.03198); LGBM-B tie (0.00139→0.00140, +0.00001) shows GBM-safe but no gain — recursion does not help point errors.",
+    "Classical denominators: SARIMAX/VAR n_eval_rows fold5 =245 vs direct/recursive 317; 323 is n_val_rows pre-common-mask (24 CMAs × partial histories). Reported baselines differ accordingly (0.67205±0.0395 vs 0.67712±0.0474); SARIMAX delta vs own baseline -0.0039 (4/5), vs global persistence -0.0089 agg-only (3/5, not paired). Do NOT claim identical masks for classical vs global persistence.",
+    "Win counts corrected: recursive-LGBM-B 2/5 → 4/5 (deltas +0.0371/+0.0188/+0.0231/+0.0283/-0.0224); SARIMAX 2/5 → 4/5 vs own baseline and 3/5 vs global 0.677 — state both and clarify agg-delta only vs per-fold paired.",
+    "n_iter_ range corrected: 588–3467 → 62–3467 (proof chosen_per_fold [3467,588,62,148,137]); fold5 row-count note 323 → 317/245 (323 n_val_rows, 317 direct eval rows after common mask, 245 classical) — documented why.",
+    "Classical SARIMAX per-CMA (1,1,0) is a small-order baseline; VAR may gracefully fail on short panel (documented) — here VAR succeeded (197 months ×18 CMAs) but is worse on both metrics.",
+    "Bounded-search caveat: LightGBM recursion grid is modest (4 combos) — 'no recursion benefit' is conditional on this breadth; 'no tree beats linear ceiling' (T4.2) conditional on modest breadth (RF 2 combos 30 trees, GBMs 4 combos each, LGBM-deep 4 combos) — wider search not explored.",
+    "Versions caveat: sklearn 1.9.0, lightgbm 4.7.0, xgboost 3.4.1, catboost 1.2.10, statsmodels 0.14.6, skforecast not_installed_fallback_manual_recursion — bounded-search/versions caveats from T4.3 fixes carried forward.",
+    "Joint-imputation panels stay canonical with ≤~1% optimism caveat (T3.3 hard gate); LEVEL target only; test split never accessed."
+  ],
+  "versions_note": "Bounded-search/versions caveats from T4.3 fixes remain and T4.4's own decision_rule.json carries them forward."
 }

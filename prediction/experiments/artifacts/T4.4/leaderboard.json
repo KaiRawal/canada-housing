@@ -1,0 +1,3325 @@
+{
+  "generated_at": "2026-08-28T09:05:13.060787+00:00",
+  "canonical_persistence": {
+    "MDA_mean": 0.6771279882839918,
+    "NRMSE_mean": 0.0011305311297628712
+  },
+  "codified_gate": {
+    "global_best_id": "T4.1-B-enet",
+    "global_best_NRMSE": 0.0010752020172069055,
+    "actual_min_NRMSE": 0.0010727975947863121,
+    "actual_min_id": "T4.1-C-enet",
+    "threshold_codified": 0.001182722218927596,
+    "threshold_actual_min": 0.0011800773542649434,
+    "threshold_persistence": 0.0012435842427391585,
+    "ratio_note": "Codified threshold uses B-enet 0.0010752; actual min C-enet 0.0010728 gives threshold 0.0011801 \u2014 both yield same eligible set (B-enet, C-enet)."
+  },
+  "adjudication_A_enet": {
+    "model_id": "T4.1-A-enet",
+    "MDA": 0.6490319330205947,
+    "NRMSE": 0.0011896614990103708,
+    "ratio_vs_codified": 1.1064525372547445,
+    "ratio_vs_actual_min": 1.1089323892797927,
+    "ratio_vs_persistence": 1.0523018505908202,
+    "eligible_codified": false,
+    "eligible_persistence": true,
+    "decision": "Directional best (MDA 0.649, \u0394 vs persistence -0.0017, 1/5 folds) but INELIGIBLE under codified global-best gate (1.106\u00d7 codified, 1.109\u00d7 actual_min); WOULD be eligible under persistence-relative 10% gate (1.052\u00d7 vs 0.0011305, threshold 0.0012436). Flagged for researcher adjudication; not shortlisted for T5 under strict rule."
+  },
+  "eligible_combos_codified": [
+    "T4.1-B-enet",
+    "T4.1-C-enet"
+  ],
+  "shortlist_for_T5_pruned_AB_scope": [
+    "T4.1-B-enet",
+    "none"
+  ],
+  "rows": [
+    {
+      "model_id": "T4.3-SARIMAX-110-A",
+      "task": "T4",
+      "sub": "T4.3",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:56:24.623659+00:00",
+      "feature_set": "per-CMA target series (no X)",
+      "MDA_mean": 0.6681514682645358,
+      "MDA_std": 0.12285527583203051,
+      "NRMSE_mean": 0.007847897051067712,
+      "NRMSE_std": 0.0043031952958345505,
+      "NMSE_mean": 8.01069778782499e-05,
+      "NMAE_mean": 0.005557769459086807,
+      "config": {
+        "git_sha_pre_commit": "e973710e84911500670ed78eefa8c160b5b8cb19",
+        "model": "SARIMAX-110-A",
+        "feature_set": "per-CMA target series (no X)",
+        "versions": {
+          "sklearn": "1.9.0",
+          "lightgbm": "4.7.0",
+          "xgboost": "3.4.1",
+          "catboost": "1.2.10",
+          "statsmodels": "0.14.6",
+          "skforecast": "not_installed_fallback_manual_recursion"
+        },
+        "phase": "classical",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.008976520019456036,
+      "NRMSE_ratio_vs_codified_best": 7.298997700408433,
+      "NRMSE_ratio_vs_actual_min": 7.315356679776035,
+      "NRMSE_ratio_vs_persistence": 6.9417788192296905,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 1,
+      "rank_overall_NRMSE": 30,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.1-A-enet",
+      "task": "T4",
+      "sub": "T4.1",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T03:08:48.214461+00:00",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6490319330205947,
+      "MDA_std": 0.03273311505239289,
+      "NRMSE_mean": 0.0011896614990103708,
+      "NRMSE_std": 0.0006638957225627428,
+      "NMSE_mean": 1.8560520126647094e-06,
+      "NMAE_mean": 0.0008039993597937405,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "elasticnet_grid",
+        "feature_set": "A_base_lag1",
+        "n_base_features": 176,
+        "n_engineered_extra": 0,
+        "ridge_alphas": null,
+        "enet_alphas": [
+          0.0001,
+          0.0003,
+          0.001,
+          0.003,
+          0.01,
+          0.03,
+          0.1,
+          0.3,
+          1.0
+        ],
+        "enet_l1_ratios": [
+          0.05,
+          0.5,
+          0.95
+        ],
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline (X-scaler + y-standardizer + model) on full outer train window; no statistic crosses the inner boundary",
+          "target_handling": "TransformedTargetRegressor(StandardScaler) inside the fold pipeline (train-only); needed for ElasticNet convergence, equivalent model class up to alpha rescaling",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.0003,
+                "regressor__model__l1_ratio": 0.05
+              },
+              "best_inner_cv_nmse": 0.570681690455532,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.0001,
+                "regressor__model__l1_ratio": 0.5
+              },
+              "best_inner_cv_nmse": 0.8729623783712294,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.003,
+                "regressor__model__l1_ratio": 0.95
+              },
+              "best_inner_cv_nmse": 0.46246981425441563,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.001,
+                "regressor__model__l1_ratio": 0.95
+              },
+              "best_inner_cv_nmse": 0.15359536279226355,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.001,
+                "regressor__model__l1_ratio": 0.95
+              },
+              "best_inner_cv_nmse": 0.0738826974787429,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.02809605526339709,
+      "NRMSE_ratio_vs_codified_best": 1.1064539314210005,
+      "NRMSE_ratio_vs_actual_min": 1.1089337865707432,
+      "NRMSE_ratio_vs_persistence": 1.0523031765254462,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": true,
+      "rank_overall_MDA": 2,
+      "rank_overall_NRMSE": 3,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.3-VAR-1-A",
+      "task": "T4",
+      "sub": "T4.3",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:56:24.947949+00:00",
+      "feature_set": "wide panel VAR",
+      "MDA_mean": 0.6323905321848977,
+      "MDA_std": 0.06174504253234874,
+      "NRMSE_mean": 0.011787127913412597,
+      "NRMSE_std": 0.008414552675313004,
+      "NMSE_mean": 0.00020974108117276764,
+      "NMAE_mean": 0.007175569306564667,
+      "config": {
+        "git_sha_pre_commit": "e973710e84911500670ed78eefa8c160b5b8cb19",
+        "model": "VAR-1-A",
+        "feature_set": "wide panel VAR",
+        "versions": {
+          "sklearn": "1.9.0",
+          "lightgbm": "4.7.0",
+          "xgboost": "3.4.1",
+          "catboost": "1.2.10",
+          "statsmodels": "0.14.6",
+          "skforecast": "not_installed_fallback_manual_recursion"
+        },
+        "phase": "classical",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.044737456099094075,
+      "NRMSE_ratio_vs_codified_best": 10.962710006843627,
+      "NRMSE_ratio_vs_actual_min": 10.987280332000042,
+      "NRMSE_ratio_vs_persistence": 10.42618606697274,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 3,
+      "rank_overall_NRMSE": 31,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.3-recursive-Ridge-B",
+      "task": "T4",
+      "sub": "T4.3",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:56:22.862251+00:00",
+      "feature_set": "B_base_lag1_own_sub",
+      "MDA_mean": 0.615846987906337,
+      "MDA_std": 0.04982771188714502,
+      "NRMSE_mean": 0.007497926986685968,
+      "NRMSE_std": 0.012249857953650497,
+      "NMSE_mean": 0.00020627792898228803,
+      "NMAE_mean": 0.003998485071635424,
+      "config": {
+        "git_sha_pre_commit": "e973710e84911500670ed78eefa8c160b5b8cb19",
+        "model": "recursive-Ridge",
+        "feature_set": "B_base_lag1_own_sub",
+        "n_base_features": 176,
+        "n_engineered_extra": 4,
+        "versions": {
+          "sklearn": "1.9.0",
+          "lightgbm": "4.7.0",
+          "xgboost": "3.4.1",
+          "catboost": "1.2.10",
+          "statsmodels": "0.14.6",
+          "skforecast": "not_installed_fallback_manual_recursion"
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered blocks WITHIN train ONLY",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "alpha": 1.0
+              },
+              "best_inner_cv_nmse": 0.5302536492723603
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.830674724214227
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.5287236288343282
+            },
+            {
+              "best_params": {
+                "alpha": 1.0
+              },
+              "best_inner_cv_nmse": 0.20976714554825288
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.12250915853458764
+            }
+          ]
+        },
+        "recursive_note": "manual iteration feeding OWN predictions as lags",
+        "skforecast": "not_installed_fallback_manual_recursion",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.061281000377654826,
+      "NRMSE_ratio_vs_codified_best": 6.973505319645537,
+      "NRMSE_ratio_vs_actual_min": 6.989134784720935,
+      "NRMSE_ratio_vs_persistence": 6.632216300190388,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 4,
+      "rank_overall_NRMSE": 29,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-RF-A",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:15:10.618287+00:00",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6150868535682206,
+      "MDA_std": 0.05613239430796699,
+      "NRMSE_mean": 0.0013540600785600018,
+      "NRMSE_std": 0.0005389220821170318,
+      "NMSE_mean": 2.1239157069432755e-06,
+      "NMAE_mean": 0.0009001186106042237,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "RF",
+        "model_kind": "rf",
+        "feature_set": "A_base_lag1",
+        "n_base_features": 176,
+        "n_engineered_extra": 0,
+        "param_grid": {
+          "model__n_estimators": [
+            30
+          ],
+          "model__max_depth": [
+            8,
+            null
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": 8.0
+              },
+              "best_inner_cv_nmse": 0.7571275951641626,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": 8.0
+              },
+              "best_inner_cv_nmse": 1.0720668816139716,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": 8.0
+              },
+              "best_inner_cv_nmse": 0.6204823995787517,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": 8.0
+              },
+              "best_inner_cv_nmse": 0.2405069148216634,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": 8.0
+              },
+              "best_inner_cv_nmse": 0.13589228855220337,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.06204113471577122,
+      "NRMSE_ratio_vs_codified_best": 1.2593541091724296,
+      "NRMSE_ratio_vs_actual_min": 1.2621766539565311,
+      "NRMSE_ratio_vs_persistence": 1.197720295277509,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 5,
+      "rank_overall_NRMSE": 10,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-RF-C",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:20:07.622338+00:00",
+      "feature_set": "C_base_lag1_own_nbr5",
+      "MDA_mean": 0.6069556312473562,
+      "MDA_std": 0.06486662977339647,
+      "NRMSE_mean": 0.0013216764490962924,
+      "NRMSE_std": 0.0005256252073333871,
+      "NMSE_mean": 2.0231104946800505e-06,
+      "NMAE_mean": 0.0009100333839784315,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "RF",
+        "model_kind": "rf",
+        "feature_set": "C_base_lag1_own_nbr5",
+        "n_base_features": 176,
+        "n_engineered_extra": 12,
+        "param_grid": {
+          "model__n_estimators": [
+            30
+          ],
+          "model__max_depth": [
+            8,
+            null
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": null
+              },
+              "best_inner_cv_nmse": 0.7192554398148121,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": null
+              },
+              "best_inner_cv_nmse": 1.0051720293209865,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": 8.0
+              },
+              "best_inner_cv_nmse": 0.5865600581093228,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": 8.0
+              },
+              "best_inner_cv_nmse": 0.21843927012500275,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": 8.0
+              },
+              "best_inner_cv_nmse": 0.12243092377252579,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.0701723570366356,
+      "NRMSE_ratio_vs_codified_best": 1.229235462680458,
+      "NRMSE_ratio_vs_actual_min": 1.2319905036322847,
+      "NRMSE_ratio_vs_persistence": 1.1690756798298105,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 6,
+      "rank_overall_NRMSE": 5,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.3-recursive-Ridge-A",
+      "task": "T4",
+      "sub": "T4.3",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:55:09.619905+00:00",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6060651469584373,
+      "MDA_std": 0.050647565527700514,
+      "NRMSE_mean": 0.0015854794614698037,
+      "NRMSE_std": 0.000656922843334987,
+      "NMSE_mean": 2.9452927448379023e-06,
+      "NMAE_mean": 0.0011465218230794316,
+      "config": {
+        "git_sha_pre_commit": "e973710e84911500670ed78eefa8c160b5b8cb19",
+        "model": "recursive-Ridge",
+        "feature_set": "A_base_lag1",
+        "n_base_features": 176,
+        "n_engineered_extra": 0,
+        "versions": {
+          "sklearn": "1.9.0",
+          "lightgbm": "4.7.0",
+          "xgboost": "3.4.1",
+          "catboost": "1.2.10",
+          "statsmodels": "0.14.6",
+          "skforecast": "not_installed_fallback_manual_recursion"
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered blocks WITHIN train ONLY",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "alpha": 1.0
+              },
+              "best_inner_cv_nmse": 0.5839415328628516
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.9202031767510671
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.5683268502851009
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.23258522406012225
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.17298959410925996
+            }
+          ]
+        },
+        "recursive_note": "manual iteration feeding OWN predictions as lags",
+        "skforecast": "not_installed_fallback_manual_recursion",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.07106284132555452,
+      "NRMSE_ratio_vs_codified_best": 1.4745875064375957,
+      "NRMSE_ratio_vs_actual_min": 1.477892446044877,
+      "NRMSE_ratio_vs_persistence": 1.4024199951065106,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 7,
+      "rank_overall_NRMSE": 21,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.3-direct-Ridge-A",
+      "task": "T4",
+      "sub": "T4.3",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:55:07.796792+00:00",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6060651469584373,
+      "MDA_std": 0.050647565527700514,
+      "NRMSE_mean": 0.001585479461469804,
+      "NRMSE_std": 0.0006569228433349877,
+      "NMSE_mean": 2.9452927448379057e-06,
+      "NMAE_mean": 0.001146521823079432,
+      "config": {
+        "git_sha_pre_commit": "e973710e84911500670ed78eefa8c160b5b8cb19",
+        "model": "direct-Ridge",
+        "feature_set": "A_base_lag1",
+        "n_base_features": 176,
+        "n_engineered_extra": 0,
+        "versions": {
+          "sklearn": "1.9.0",
+          "lightgbm": "4.7.0",
+          "xgboost": "3.4.1",
+          "catboost": "1.2.10",
+          "statsmodels": "0.14.6",
+          "skforecast": "not_installed_fallback_manual_recursion"
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered blocks WITHIN train ONLY",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "alpha": 1.0
+              },
+              "best_inner_cv_nmse": 0.5839415328628516
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.9202031767510671
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.5683268502851009
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.23258522406012225
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.17298959410925996
+            }
+          ]
+        },
+        "recursive_note": "one-shot direct",
+        "skforecast": "not_installed_fallback_manual_recursion",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.07106284132555452,
+      "NRMSE_ratio_vs_codified_best": 1.4745875064375962,
+      "NRMSE_ratio_vs_actual_min": 1.4778924460448775,
+      "NRMSE_ratio_vs_persistence": 1.402419995106511,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 8,
+      "rank_overall_NRMSE": 22,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.1-B-ridge_cv",
+      "task": "T4",
+      "sub": "T4.1",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T03:08:52.964932+00:00",
+      "feature_set": "B_base_lag1_own",
+      "MDA_mean": 0.6046050012897003,
+      "MDA_std": 0.03350736798742568,
+      "NRMSE_mean": 0.001918622963096991,
+      "NRMSE_std": 0.0012923776780992362,
+      "NMSE_mean": 5.351354137372251e-06,
+      "NMAE_mean": 0.0012214652360906454,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "ridge_alpha_grid",
+        "feature_set": "B_base_lag1_own",
+        "n_base_features": 176,
+        "n_engineered_extra": 8,
+        "ridge_alphas": [
+          0.001,
+          0.0017782794100389228,
+          0.0031622776601683794,
+          0.005623413251903491,
+          0.01,
+          0.01778279410038923,
+          0.03162277660168379,
+          0.05623413251903491,
+          0.1,
+          0.1778279410038923,
+          0.31622776601683794,
+          0.5623413251903491,
+          1.0,
+          1.7782794100389228,
+          3.1622776601683795,
+          5.623413251903491,
+          10.0,
+          17.78279410038923,
+          31.622776601683793,
+          56.23413251903491,
+          100.0,
+          177.82794100389228,
+          316.22776601683796,
+          562.341325190349,
+          1000.0
+        ],
+        "enet_alphas": null,
+        "enet_l1_ratios": null,
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline (X-scaler + y-standardizer + model) on full outer train window; no statistic crosses the inner boundary",
+          "target_handling": "TransformedTargetRegressor(StandardScaler) inside the fold pipeline (train-only); needed for ElasticNet convergence, equivalent model class up to alpha rescaling",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.31622776601683794
+              },
+              "best_inner_cv_nmse": 0.5345636663988829,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 1.0
+              },
+              "best_inner_cv_nmse": 0.8480234259999728,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 1.7782794100389228
+              },
+              "best_inner_cv_nmse": 0.544560807384777,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 1.7782794100389228
+              },
+              "best_inner_cv_nmse": 0.21349681328573683,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 1.7782794100389228
+              },
+              "best_inner_cv_nmse": 0.12607646872778933,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.0725229869942915,
+      "NRMSE_ratio_vs_codified_best": 1.7844302116183461,
+      "NRMSE_ratio_vs_actual_min": 1.78842959046637,
+      "NRMSE_ratio_vs_persistence": 1.6970987464090637,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 9,
+      "rank_overall_NRMSE": 24,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.3-direct-Ridge-B",
+      "task": "T4",
+      "sub": "T4.3",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:56:20.989090+00:00",
+      "feature_set": "B_base_lag1_own_sub",
+      "MDA_mean": 0.6040771688946347,
+      "MDA_std": 0.03065878474507196,
+      "NRMSE_mean": 0.0037288313116554716,
+      "NRMSE_std": 0.004891293223103821,
+      "NMSE_mean": 3.782893234516362e-05,
+      "NMAE_mean": 0.00215616339188092,
+      "config": {
+        "git_sha_pre_commit": "e973710e84911500670ed78eefa8c160b5b8cb19",
+        "model": "direct-Ridge",
+        "feature_set": "B_base_lag1_own_sub",
+        "n_base_features": 176,
+        "n_engineered_extra": 4,
+        "versions": {
+          "sklearn": "1.9.0",
+          "lightgbm": "4.7.0",
+          "xgboost": "3.4.1",
+          "catboost": "1.2.10",
+          "statsmodels": "0.14.6",
+          "skforecast": "not_installed_fallback_manual_recursion"
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered blocks WITHIN train ONLY",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "alpha": 1.0
+              },
+              "best_inner_cv_nmse": 0.5302536492723603
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.830674724214227
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.5287236288343282
+            },
+            {
+              "best_params": {
+                "alpha": 1.0
+              },
+              "best_inner_cv_nmse": 0.20976714554825288
+            },
+            {
+              "best_params": {
+                "alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.12250915853458764
+            }
+          ]
+        },
+        "recursive_note": "one-shot direct",
+        "skforecast": "not_installed_fallback_manual_recursion",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.07305081938935709,
+      "NRMSE_ratio_vs_codified_best": 3.4680285676379246,
+      "NRMSE_ratio_vs_actual_min": 3.475801334545505,
+      "NRMSE_ratio_vs_persistence": 3.298300430203628,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 10,
+      "rank_overall_NRMSE": 26,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.1-C-ridge_cv",
+      "task": "T4",
+      "sub": "T4.1",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T03:10:07.929854+00:00",
+      "feature_set": "C_base_lag1_own_nbr5",
+      "MDA_mean": 0.6028796965111441,
+      "MDA_std": 0.02978481623755283,
+      "NRMSE_mean": 0.001911977213661121,
+      "NRMSE_std": 0.0012336187226994722,
+      "NMSE_mean": 5.177472018554021e-06,
+      "NMAE_mean": 0.0012258257252553994,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "ridge_alpha_grid",
+        "feature_set": "C_base_lag1_own_nbr5",
+        "n_base_features": 176,
+        "n_engineered_extra": 12,
+        "ridge_alphas": [
+          0.001,
+          0.0017782794100389228,
+          0.0031622776601683794,
+          0.005623413251903491,
+          0.01,
+          0.01778279410038923,
+          0.03162277660168379,
+          0.05623413251903491,
+          0.1,
+          0.1778279410038923,
+          0.31622776601683794,
+          0.5623413251903491,
+          1.0,
+          1.7782794100389228,
+          3.1622776601683795,
+          5.623413251903491,
+          10.0,
+          17.78279410038923,
+          31.622776601683793,
+          56.23413251903491,
+          100.0,
+          177.82794100389228,
+          316.22776601683796,
+          562.341325190349,
+          1000.0
+        ],
+        "enet_alphas": null,
+        "enet_l1_ratios": null,
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline (X-scaler + y-standardizer + model) on full outer train window; no statistic crosses the inner boundary",
+          "target_handling": "TransformedTargetRegressor(StandardScaler) inside the fold pipeline (train-only); needed for ElasticNet convergence, equivalent model class up to alpha rescaling",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.31622776601683794
+              },
+              "best_inner_cv_nmse": 0.536306245303533,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 1.0
+              },
+              "best_inner_cv_nmse": 0.8516535088676843,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 1.7782794100389228
+              },
+              "best_inner_cv_nmse": 0.545514969313029,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 1.7782794100389228
+              },
+              "best_inner_cv_nmse": 0.2170238960962328,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 1.7782794100389228
+              },
+              "best_inner_cv_nmse": 0.1288706555609493,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.07424829177284764,
+      "NRMSE_ratio_vs_codified_best": 1.778249280658847,
+      "NRMSE_ratio_vs_actual_min": 1.7822348064100226,
+      "NRMSE_ratio_vs_persistence": 1.6912203152355105,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 11,
+      "rank_overall_NRMSE": 23,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.1-A-ridge_cv",
+      "task": "T4",
+      "sub": "T4.1",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T03:07:41.491175+00:00",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.6027893280036987,
+      "MDA_std": 0.054715113072311555,
+      "NRMSE_mean": 0.0015621980735642455,
+      "NRMSE_std": 0.0005964813411560931,
+      "NMSE_mean": 2.796252811395212e-06,
+      "NMAE_mean": 0.001134956213344287,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "ridge_alpha_grid",
+        "feature_set": "A_base_lag1",
+        "n_base_features": 176,
+        "n_engineered_extra": 0,
+        "ridge_alphas": [
+          0.001,
+          0.0017782794100389228,
+          0.0031622776601683794,
+          0.005623413251903491,
+          0.01,
+          0.01778279410038923,
+          0.03162277660168379,
+          0.05623413251903491,
+          0.1,
+          0.1778279410038923,
+          0.31622776601683794,
+          0.5623413251903491,
+          1.0,
+          1.7782794100389228,
+          3.1622776601683795,
+          5.623413251903491,
+          10.0,
+          17.78279410038923,
+          31.622776601683793,
+          56.23413251903491,
+          100.0,
+          177.82794100389228,
+          316.22776601683796,
+          562.341325190349,
+          1000.0
+        ],
+        "enet_alphas": null,
+        "enet_l1_ratios": null,
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline (X-scaler + y-standardizer + model) on full outer train window; no statistic crosses the inner boundary",
+          "target_handling": "TransformedTargetRegressor(StandardScaler) inside the fold pipeline (train-only); needed for ElasticNet convergence, equivalent model class up to alpha rescaling",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "regressor__model__alpha": 3.1622776601683795
+              },
+              "best_inner_cv_nmse": 0.5818159547847935,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 5.623413251903491
+              },
+              "best_inner_cv_nmse": 0.9198311270259031,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.5683268502850287,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.2325852240607091,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 10.0
+              },
+              "best_inner_cv_nmse": 0.17298959411010914,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.07433866028029312,
+      "NRMSE_ratio_vs_codified_best": 1.4529344705122753,
+      "NRMSE_ratio_vs_actual_min": 1.4561908799538423,
+      "NRMSE_ratio_vs_persistence": 1.3818266763622125,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 12,
+      "rank_overall_NRMSE": 20,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-LGBM-A-deep",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:27:12.323440+00:00",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.5987860987192002,
+      "MDA_std": 0.05055805870414525,
+      "NRMSE_mean": 0.001408725529689221,
+      "NRMSE_std": 0.0006494490756087043,
+      "NMSE_mean": 2.406291719807177e-06,
+      "NMAE_mean": 0.000977233958272876,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "LGBM",
+        "model_kind": "lgbm",
+        "feature_set": "A_base_lag1",
+        "n_base_features": 176,
+        "n_engineered_extra": 0,
+        "param_grid": {
+          "model__n_estimators": [
+            200
+          ],
+          "model__learning_rate": [
+            0.03,
+            0.05
+          ],
+          "model__num_leaves": [
+            31,
+            63
+          ],
+          "model__reg_lambda": [
+            0.0
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.6939023177647368,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.03,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 1.0643138371731806,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.03,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.615446201027075,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.03,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.22063042933931398,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.03,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.12127279762532053,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "phase": "depth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.0783418895647916,
+      "NRMSE_ratio_vs_codified_best": 1.3101961372326316,
+      "NRMSE_ratio_vs_actual_min": 1.313132632414059,
+      "NRMSE_ratio_vs_persistence": 1.2460740731524138,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 13,
+      "rank_overall_NRMSE": 15,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.1-B-enet",
+      "task": "T4",
+      "sub": "T4.1",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T03:10:02.027097+00:00",
+      "feature_set": "B_base_lag1_own",
+      "MDA_mean": 0.5980835984449133,
+      "MDA_std": 0.044037134993716504,
+      "NRMSE_mean": 0.0010752020172069055,
+      "NRMSE_std": 0.00046178303286501226,
+      "NMSE_mean": 1.3693029472478083e-06,
+      "NMAE_mean": 0.000677010113922128,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "elasticnet_grid",
+        "feature_set": "B_base_lag1_own",
+        "n_base_features": 176,
+        "n_engineered_extra": 8,
+        "ridge_alphas": null,
+        "enet_alphas": [
+          0.0001,
+          0.0003,
+          0.001,
+          0.003,
+          0.01,
+          0.03,
+          0.1,
+          0.3,
+          1.0
+        ],
+        "enet_l1_ratios": [
+          0.05,
+          0.5,
+          0.95
+        ],
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline (X-scaler + y-standardizer + model) on full outer train window; no statistic crosses the inner boundary",
+          "target_handling": "TransformedTargetRegressor(StandardScaler) inside the fold pipeline (train-only); needed for ElasticNet convergence, equivalent model class up to alpha rescaling",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.0001,
+                "regressor__model__l1_ratio": 0.5
+              },
+              "best_inner_cv_nmse": 0.5264691728918622,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.0003,
+                "regressor__model__l1_ratio": 0.95
+              },
+              "best_inner_cv_nmse": 0.734917521860307,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.003,
+                "regressor__model__l1_ratio": 0.95
+              },
+              "best_inner_cv_nmse": 0.41343357855901747,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.001,
+                "regressor__model__l1_ratio": 0.95
+              },
+              "best_inner_cv_nmse": 0.1632207739728198,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.001,
+                "regressor__model__l1_ratio": 0.95
+              },
+              "best_inner_cv_nmse": 0.0728628898896145,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.07904438983907847,
+      "NRMSE_ratio_vs_codified_best": 1.0,
+      "NRMSE_ratio_vs_actual_min": 1.002241263806219,
+      "NRMSE_ratio_vs_persistence": 0.9510591870499214,
+      "gate_eligible_codified": true,
+      "gate_eligible_actual_min": true,
+      "gate_eligible_persistence": true,
+      "rank_overall_MDA": 14,
+      "rank_overall_NRMSE": 2,
+      "rank_eligible_MDA": 1.0
+    },
+    {
+      "model_id": "T4.2-LGBM-C",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:21:53.218480+00:00",
+      "feature_set": "C_base_lag1_own_nbr5",
+      "MDA_mean": 0.5964451504345658,
+      "MDA_std": 0.049911022377209555,
+      "NRMSE_mean": 0.001345833718133809,
+      "NRMSE_std": 0.0004931595853981804,
+      "NMSE_mean": 2.054474773535978e-06,
+      "NMAE_mean": 0.0009219437386675232,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "LGBM",
+        "model_kind": "lgbm",
+        "feature_set": "C_base_lag1_own_nbr5",
+        "n_base_features": 176,
+        "n_engineered_extra": 12,
+        "param_grid": {
+          "model__n_estimators": [
+            100
+          ],
+          "model__learning_rate": [
+            0.05,
+            0.1
+          ],
+          "model__num_leaves": [
+            31
+          ],
+          "model__reg_lambda": [
+            0.0,
+            1.0
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.6181971867544561,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.8841051094783463,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.5410747264119562,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.21609861471959058,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.11005944342936144,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.08068283784942598,
+      "NRMSE_ratio_vs_codified_best": 1.2517031186659546,
+      "NRMSE_ratio_vs_actual_min": 1.254508515561952,
+      "NRMSE_ratio_vs_persistence": 1.1904437504662941,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 15,
+      "rank_overall_NRMSE": 9,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.1-C-enet",
+      "task": "T4",
+      "sub": "T4.1",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T03:11:20.771407+00:00",
+      "feature_set": "C_base_lag1_own_nbr5",
+      "MDA_mean": 0.5959721170179748,
+      "MDA_std": 0.04644169457264489,
+      "NRMSE_mean": 0.0010727975947863121,
+      "NRMSE_std": 0.0004565973489839617,
+      "NMSE_mean": 1.359375818478478e-06,
+      "NMAE_mean": 0.0006826520195935401,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "elasticnet_grid",
+        "feature_set": "C_base_lag1_own_nbr5",
+        "n_base_features": 176,
+        "n_engineered_extra": 12,
+        "ridge_alphas": null,
+        "enet_alphas": [
+          0.0001,
+          0.0003,
+          0.001,
+          0.003,
+          0.01,
+          0.03,
+          0.1,
+          0.3,
+          1.0
+        ],
+        "enet_l1_ratios": [
+          0.05,
+          0.5,
+          0.95
+        ],
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline (X-scaler + y-standardizer + model) on full outer train window; no statistic crosses the inner boundary",
+          "target_handling": "TransformedTargetRegressor(StandardScaler) inside the fold pipeline (train-only); needed for ElasticNet convergence, equivalent model class up to alpha rescaling",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.0001,
+                "regressor__model__l1_ratio": 0.5
+              },
+              "best_inner_cv_nmse": 0.5230833615465431,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.0001,
+                "regressor__model__l1_ratio": 0.95
+              },
+              "best_inner_cv_nmse": 0.7288870543512715,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.003,
+                "regressor__model__l1_ratio": 0.95
+              },
+              "best_inner_cv_nmse": 0.4133799204000477,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.001,
+                "regressor__model__l1_ratio": 0.95
+              },
+              "best_inner_cv_nmse": 0.16253102629801616,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            },
+            {
+              "best_params": {
+                "regressor__model__alpha": 0.001,
+                "regressor__model__l1_ratio": 0.95
+              },
+              "best_inner_cv_nmse": 0.07245613986820217,
+              "n_inner_splits": 4,
+              "n_convergence_warnings": 0,
+              "n_user_warnings": 0,
+              "n_iter_": null
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.08115587126601698,
+      "NRMSE_ratio_vs_codified_best": 0.9977637482239482,
+      "NRMSE_ratio_vs_actual_min": 1.0,
+      "NRMSE_ratio_vs_persistence": 0.9489323792537507,
+      "gate_eligible_codified": true,
+      "gate_eligible_actual_min": true,
+      "gate_eligible_persistence": true,
+      "rank_overall_MDA": 16,
+      "rank_overall_NRMSE": 1,
+      "rank_eligible_MDA": 2.0
+    },
+    {
+      "model_id": "T4.3-recursive-LGBM-B",
+      "task": "T4",
+      "sub": "T4.3",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:56:20.106647+00:00",
+      "feature_set": "B_base_lag1_own_sub",
+      "MDA_mean": 0.5942220579011966,
+      "MDA_std": 0.038419572957384386,
+      "NRMSE_mean": 0.001398553353940367,
+      "NRMSE_std": 0.0005688983988830783,
+      "NMSE_mean": 2.2795968720695793e-06,
+      "NMAE_mean": 0.000969839478276714,
+      "config": {
+        "git_sha_pre_commit": "e973710e84911500670ed78eefa8c160b5b8cb19",
+        "model": "recursive-LGBM",
+        "feature_set": "B_base_lag1_own_sub",
+        "n_base_features": 176,
+        "n_engineered_extra": 4,
+        "versions": {
+          "sklearn": "1.9.0",
+          "lightgbm": "4.7.0",
+          "xgboost": "3.4.1",
+          "catboost": "1.2.10",
+          "statsmodels": "0.14.6",
+          "skforecast": "not_installed_fallback_manual_recursion"
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered blocks WITHIN train ONLY",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.629647487953194
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.9446091217760848
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.5365238764647691
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.2197827716587022
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.11525301815540998
+            }
+          ]
+        },
+        "recursive_note": "manual iteration feeding OWN predictions as lags",
+        "skforecast": "not_installed_fallback_manual_recursion",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.08290593038279515,
+      "NRMSE_ratio_vs_codified_best": 1.3007354260489985,
+      "NRMSE_ratio_vs_actual_min": 1.3036507172808691,
+      "NRMSE_ratio_vs_persistence": 1.2370763768651938,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 17,
+      "rank_overall_NRMSE": 14,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-LGBM-C-deep",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:30:11.710358+00:00",
+      "feature_set": "C_base_lag1_own_nbr5",
+      "MDA_mean": 0.5896228011867037,
+      "MDA_std": 0.036351683112905986,
+      "NRMSE_mean": 0.0013251067923483522,
+      "NRMSE_std": 0.0005640429613769264,
+      "NMSE_mean": 2.074052473406592e-06,
+      "NMAE_mean": 0.0009143946872582152,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "LGBM",
+        "model_kind": "lgbm",
+        "feature_set": "C_base_lag1_own_nbr5",
+        "n_base_features": 176,
+        "n_engineered_extra": 12,
+        "param_grid": {
+          "model__n_estimators": [
+            200
+          ],
+          "model__learning_rate": [
+            0.03,
+            0.05
+          ],
+          "model__num_leaves": [
+            31,
+            63
+          ],
+          "model__reg_lambda": [
+            0.0
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.6159414069452163,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.9163254913454167,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.03,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.546959650754478,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.03,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.2100176070410891,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.11053828370269887,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "phase": "depth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.08750518709728805,
+      "NRMSE_ratio_vs_codified_best": 1.2324258801063581,
+      "NRMSE_ratio_vs_actual_min": 1.2351880716252883,
+      "NRMSE_ratio_vs_persistence": 1.172109955633237,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 18,
+      "rank_overall_NRMSE": 6,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-XGB-C",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:24:13.569200+00:00",
+      "feature_set": "C_base_lag1_own_nbr5",
+      "MDA_mean": 0.5890414589549577,
+      "MDA_std": 0.02992860389386187,
+      "NRMSE_mean": 0.0013838842378335742,
+      "NRMSE_std": 0.00041108960761422164,
+      "NMSE_mean": 2.0841302492126265e-06,
+      "NMAE_mean": 0.0009481911657495234,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "XGB",
+        "model_kind": "xgb",
+        "feature_set": "C_base_lag1_own_nbr5",
+        "n_base_features": 176,
+        "n_engineered_extra": 12,
+        "param_grid": {
+          "model__n_estimators": [
+            100
+          ],
+          "model__learning_rate": [
+            0.05,
+            0.1
+          ],
+          "model__max_depth": [
+            3,
+            6
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 0.6844608070383211,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 0.9559897635994772,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.05,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 0.5485597982822676,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 6.0
+              },
+              "best_inner_cv_nmse": 0.22007434203397488,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 0.12964860348722945,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.08808652932903405,
+      "NRMSE_ratio_vs_codified_best": 1.287092300504183,
+      "NRMSE_ratio_vs_actual_min": 1.2899770138925661,
+      "NRMSE_ratio_vs_persistence": 1.2241009569757215,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 19,
+      "rank_overall_NRMSE": 12,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-LGBM-B",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:21:16.239166+00:00",
+      "feature_set": "B_base_lag1_own",
+      "MDA_mean": 0.5870723859360932,
+      "MDA_std": 0.023822006020708136,
+      "NRMSE_mean": 0.0013365817878025225,
+      "NRMSE_std": 0.0005005580915756172,
+      "NMSE_mean": 2.0370092785272112e-06,
+      "NMAE_mean": 0.0009297742057417004,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "LGBM",
+        "model_kind": "lgbm",
+        "feature_set": "B_base_lag1_own",
+        "n_base_features": 176,
+        "n_engineered_extra": 8,
+        "param_grid": {
+          "model__n_estimators": [
+            100
+          ],
+          "model__learning_rate": [
+            0.05,
+            0.1
+          ],
+          "model__num_leaves": [
+            31
+          ],
+          "model__reg_lambda": [
+            0.0,
+            1.0
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.627024143371516,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.9157709194178302,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.5356379647501366,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.21938441923413074,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.11261498197490144,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.09005560234789856,
+      "NRMSE_ratio_vs_codified_best": 1.2430982888914341,
+      "NRMSE_ratio_vs_actual_min": 1.2458844000938993,
+      "NRMSE_ratio_vs_persistence": 1.1822600480562357,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 20,
+      "rank_overall_NRMSE": 8,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-XGB-B",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:23:25.000384+00:00",
+      "feature_set": "B_base_lag1_own",
+      "MDA_mean": 0.5861786712375491,
+      "MDA_std": 0.038035206125670885,
+      "NRMSE_mean": 0.001363753911671759,
+      "NRMSE_std": 0.0004716671370682662,
+      "NMSE_mean": 2.082294619790199e-06,
+      "NMAE_mean": 0.0009306527605708083,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "XGB",
+        "model_kind": "xgb",
+        "feature_set": "B_base_lag1_own",
+        "n_base_features": 176,
+        "n_engineered_extra": 8,
+        "param_grid": {
+          "model__n_estimators": [
+            100
+          ],
+          "model__learning_rate": [
+            0.05,
+            0.1
+          ],
+          "model__max_depth": [
+            3,
+            6
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 0.6912707474654219,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 0.9987072861548792,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.05,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 0.5480044043242567,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 6.0
+              },
+              "best_inner_cv_nmse": 0.21501549921582724,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 0.13022914322433482,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.09094931704644271,
+      "NRMSE_ratio_vs_codified_best": 1.2683699340654475,
+      "NRMSE_ratio_vs_actual_min": 1.2712126856915649,
+      "NRMSE_ratio_vs_persistence": 1.2062948783708471,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 21,
+      "rank_overall_NRMSE": 11,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-RF-B",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:17:35.411156+00:00",
+      "feature_set": "B_base_lag1_own",
+      "MDA_mean": 0.5824892253524918,
+      "MDA_std": 0.047928407393309204,
+      "NRMSE_mean": 0.0012755898599215196,
+      "NRMSE_std": 0.0005018534399700329,
+      "NMSE_mean": 1.8789863659443576e-06,
+      "NMAE_mean": 0.0008594542681872902,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "RF",
+        "model_kind": "rf",
+        "feature_set": "B_base_lag1_own",
+        "n_base_features": 176,
+        "n_engineered_extra": 8,
+        "param_grid": {
+          "model__n_estimators": [
+            30
+          ],
+          "model__max_depth": [
+            8,
+            null
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": 8.0
+              },
+              "best_inner_cv_nmse": 0.707383117156316,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": 8.0
+              },
+              "best_inner_cv_nmse": 0.9910267233782164,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": 8.0
+              },
+              "best_inner_cv_nmse": 0.5599986879577129,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": null
+              },
+              "best_inner_cv_nmse": 0.22145423206732973,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            },
+            {
+              "best_params": {
+                "n_estimators": 30.0,
+                "max_depth": null
+              },
+              "best_inner_cv_nmse": 0.12682185928212092,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 2
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.09463876293149998,
+      "NRMSE_ratio_vs_codified_best": 1.1863722719151601,
+      "NRMSE_ratio_vs_actual_min": 1.1890312451489053,
+      "NRMSE_ratio_vs_persistence": 1.1283102484662004,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 22,
+      "rank_overall_NRMSE": 4,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-LGBM-A",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:20:40.892289+00:00",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.5812825243768114,
+      "MDA_std": 0.03248531148800828,
+      "NRMSE_mean": 0.0014136326474468235,
+      "NRMSE_std": 0.0005460723879560003,
+      "NMSE_mean": 2.2965523148154837e-06,
+      "NMAE_mean": 0.0010008833833687215,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "LGBM",
+        "model_kind": "lgbm",
+        "feature_set": "A_base_lag1",
+        "n_base_features": 176,
+        "n_engineered_extra": 0,
+        "param_grid": {
+          "model__n_estimators": [
+            100
+          ],
+          "model__learning_rate": [
+            0.05,
+            0.1
+          ],
+          "model__num_leaves": [
+            31
+          ],
+          "model__reg_lambda": [
+            0.0,
+            1.0
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.6904122713480357,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 1.0053135347688065,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.5674028362217612,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.23518796367994182,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.127670299327706,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.0958454639071804,
+      "NRMSE_ratio_vs_codified_best": 1.3147600402751034,
+      "NRMSE_ratio_vs_actual_min": 1.317706764367235,
+      "NRMSE_ratio_vs_persistence": 1.250414615069762,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 23,
+      "rank_overall_NRMSE": 16,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.3-direct-LGBM-A",
+      "task": "T4",
+      "sub": "T4.3",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:54:32.288492+00:00",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.5812825243768114,
+      "MDA_std": 0.03248531148800828,
+      "NRMSE_mean": 0.0014136326474468235,
+      "NRMSE_std": 0.0005460723879560003,
+      "NMSE_mean": 2.2965523148154837e-06,
+      "NMAE_mean": 0.0010008833833687215,
+      "config": {
+        "git_sha_pre_commit": "e973710e84911500670ed78eefa8c160b5b8cb19",
+        "model": "direct-LGBM",
+        "feature_set": "A_base_lag1",
+        "n_base_features": 176,
+        "n_engineered_extra": 0,
+        "versions": {
+          "sklearn": "1.9.0",
+          "lightgbm": "4.7.0",
+          "xgboost": "3.4.1",
+          "catboost": "1.2.10",
+          "statsmodels": "0.14.6",
+          "skforecast": "not_installed_fallback_manual_recursion"
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered blocks WITHIN train ONLY",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.6904122713480357,
+              "n_inner_splits": 4,
+              "n_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 1.0053135347688065,
+              "n_inner_splits": 4,
+              "n_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.5674028362217612,
+              "n_inner_splits": 4,
+              "n_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.23518796367994182,
+              "n_inner_splits": 4,
+              "n_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.127670299327706,
+              "n_inner_splits": 4,
+              "n_candidates": 4
+            }
+          ]
+        },
+        "recursive_note": "one-shot direct",
+        "skforecast": "not_installed_fallback_manual_recursion",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.0958454639071804,
+      "NRMSE_ratio_vs_codified_best": 1.3147600402751034,
+      "NRMSE_ratio_vs_actual_min": 1.317706764367235,
+      "NRMSE_ratio_vs_persistence": 1.250414615069762,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 24,
+      "rank_overall_NRMSE": 16,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.3-recursive-LGBM-A",
+      "task": "T4",
+      "sub": "T4.3",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:55:06.859105+00:00",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.5812825243768114,
+      "MDA_std": 0.03248531148800828,
+      "NRMSE_mean": 0.0014136326474468235,
+      "NRMSE_std": 0.0005460723879560003,
+      "NMSE_mean": 2.2965523148154837e-06,
+      "NMAE_mean": 0.0010008833833687215,
+      "config": {
+        "git_sha_pre_commit": "e973710e84911500670ed78eefa8c160b5b8cb19",
+        "model": "recursive-LGBM",
+        "feature_set": "A_base_lag1",
+        "n_base_features": 176,
+        "n_engineered_extra": 0,
+        "versions": {
+          "sklearn": "1.9.0",
+          "lightgbm": "4.7.0",
+          "xgboost": "3.4.1",
+          "catboost": "1.2.10",
+          "statsmodels": "0.14.6",
+          "skforecast": "not_installed_fallback_manual_recursion"
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered blocks WITHIN train ONLY",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.6904122713480357
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 1.0053135347688065
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.5674028362217612
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.23518796367994182
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.127670299327706
+            }
+          ]
+        },
+        "recursive_note": "manual iteration feeding OWN predictions as lags",
+        "skforecast": "not_installed_fallback_manual_recursion",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.0958454639071804,
+      "NRMSE_ratio_vs_codified_best": 1.3147600402751034,
+      "NRMSE_ratio_vs_actual_min": 1.317706764367235,
+      "NRMSE_ratio_vs_persistence": 1.250414615069762,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 25,
+      "rank_overall_NRMSE": 16,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-LGBM-B-deep",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:28:40.685724+00:00",
+      "feature_set": "B_base_lag1_own",
+      "MDA_mean": 0.5781569979545069,
+      "MDA_std": 0.04773428142041806,
+      "NRMSE_mean": 0.0013336989540353335,
+      "NRMSE_std": 0.0005845999044177555,
+      "NMSE_mean": 2.120509948240192e-06,
+      "NMAE_mean": 0.0009165124087504112,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "LGBM",
+        "model_kind": "lgbm",
+        "feature_set": "B_base_lag1_own",
+        "n_base_features": 176,
+        "n_engineered_extra": 8,
+        "param_grid": {
+          "model__n_estimators": [
+            200
+          ],
+          "model__learning_rate": [
+            0.03,
+            0.05
+          ],
+          "model__num_leaves": [
+            31,
+            63
+          ],
+          "model__reg_lambda": [
+            0.0
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.6440126391267419,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.03,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.954942432407796,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.03,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.5470682684809953,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.03,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.20938804857012444,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 200.0,
+                "learning_rate": 0.03,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.11069971448060617,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "phase": "depth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.09897099032948486,
+      "NRMSE_ratio_vs_codified_best": 1.2404170869209636,
+      "NRMSE_ratio_vs_actual_min": 1.2431971888424953,
+      "NRMSE_ratio_vs_persistence": 1.1797100662898834,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 26,
+      "rank_overall_NRMSE": 7,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-XGB-A",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:22:37.991891+00:00",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.5781402187875994,
+      "MDA_std": 0.05535563225072672,
+      "NRMSE_mean": 0.0014506705006608728,
+      "NRMSE_std": 0.00048562544568134085,
+      "NMSE_mean": 2.3402769749808684e-06,
+      "NMAE_mean": 0.00100618243448652,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "XGB",
+        "model_kind": "xgb",
+        "feature_set": "A_base_lag1",
+        "n_base_features": 176,
+        "n_engineered_extra": 0,
+        "param_grid": {
+          "model__n_estimators": [
+            100
+          ],
+          "model__learning_rate": [
+            0.05,
+            0.1
+          ],
+          "model__max_depth": [
+            3,
+            6
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 0.8343695315764488,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 1.0798303717222848,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.05,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 0.5506572592154543,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 3.0
+              },
+              "best_inner_cv_nmse": 0.2318079479581419,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "max_depth": 6.0
+              },
+              "best_inner_cv_nmse": 0.137834883933279,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.09898776949639243,
+      "NRMSE_ratio_vs_codified_best": 1.3492073837708531,
+      "NRMSE_ratio_vs_actual_min": 1.3522313134471822,
+      "NRMSE_ratio_vs_persistence": 1.283176077570859,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 27,
+      "rank_overall_NRMSE": 19,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.3-direct-LGBM-B",
+      "task": "T4",
+      "sub": "T4.3",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:55:44.230360+00:00",
+      "feature_set": "B_base_lag1_own_sub",
+      "MDA_mean": 0.5772462622340827,
+      "MDA_std": 0.05586244414188036,
+      "NRMSE_mean": 0.0013876587821998565,
+      "NRMSE_std": 0.0005582554479181385,
+      "NMSE_mean": 2.23724604094667e-06,
+      "NMAE_mean": 0.0009630087906052593,
+      "config": {
+        "git_sha_pre_commit": "e973710e84911500670ed78eefa8c160b5b8cb19",
+        "model": "direct-LGBM",
+        "feature_set": "B_base_lag1_own_sub",
+        "n_base_features": 176,
+        "n_engineered_extra": 4,
+        "versions": {
+          "sklearn": "1.9.0",
+          "lightgbm": "4.7.0",
+          "xgboost": "3.4.1",
+          "catboost": "1.2.10",
+          "statsmodels": "0.14.6",
+          "skforecast": "not_installed_fallback_manual_recursion"
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered blocks WITHIN train ONLY",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.629647487953194,
+              "n_inner_splits": 4,
+              "n_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.9446091217760848,
+              "n_inner_splits": 4,
+              "n_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.05,
+                "num_leaves": 31.0,
+                "reg_lambda": 0.0
+              },
+              "best_inner_cv_nmse": 0.5365238764647691,
+              "n_inner_splits": 4,
+              "n_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.2197827716587022,
+              "n_inner_splits": 4,
+              "n_candidates": 4
+            },
+            {
+              "best_params": {
+                "n_estimators": 100.0,
+                "learning_rate": 0.1,
+                "num_leaves": 31.0,
+                "reg_lambda": 1.0
+              },
+              "best_inner_cv_nmse": 0.11525301815540998,
+              "n_inner_splits": 4,
+              "n_candidates": 4
+            }
+          ]
+        },
+        "recursive_note": "one-shot direct",
+        "skforecast": "not_installed_fallback_manual_recursion",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.09988172604990908,
+      "NRMSE_ratio_vs_codified_best": 1.2906028448538742,
+      "NRMSE_ratio_vs_actual_min": 1.2934954262982485,
+      "NRMSE_ratio_vs_persistence": 1.2274396924310416,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 28,
+      "rank_overall_NRMSE": 13,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-CAT-A",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:24:43.583285+00:00",
+      "feature_set": "A_base_lag1",
+      "MDA_mean": 0.5644155290362363,
+      "MDA_std": 0.0283309540372712,
+      "NRMSE_mean": 0.002330193027216951,
+      "NRMSE_std": 0.001003042592583708,
+      "NMSE_mean": 6.4358939866275435e-06,
+      "NMAE_mean": 0.0017663103264933477,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "CAT",
+        "model_kind": "catboost",
+        "feature_set": "A_base_lag1",
+        "n_base_features": 176,
+        "n_engineered_extra": 0,
+        "param_grid": {
+          "model__iterations": [
+            200
+          ],
+          "model__learning_rate": [
+            0.05,
+            0.1
+          ],
+          "model__depth": [
+            4,
+            6
+          ],
+          "model__l2_leaf_reg": [
+            1
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.1,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 3.691904489910374,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.1,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 4.088458799316779,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.05,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 1.3700514847028176,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.1,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 0.550497528474166,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.1,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 0.3256745858208315,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.11271245924775553,
+      "NRMSE_ratio_vs_codified_best": 2.1672141513184515,
+      "NRMSE_ratio_vs_actual_min": 2.1720714499561273,
+      "NRMSE_ratio_vs_persistence": 2.061148928916012,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 29,
+      "rank_overall_NRMSE": 25,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-CAT-B",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:25:14.567266+00:00",
+      "feature_set": "B_base_lag1_own",
+      "MDA_mean": 0.5441626517307048,
+      "MDA_std": 0.030698508272095963,
+      "NRMSE_mean": 0.005472188561708891,
+      "NRMSE_std": 0.00602496219541025,
+      "NMSE_mean": 6.624501711102034e-05,
+      "NMAE_mean": 0.0030073978163174383,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "CAT",
+        "model_kind": "catboost",
+        "feature_set": "B_base_lag1_own",
+        "n_base_features": 176,
+        "n_engineered_extra": 8,
+        "param_grid": {
+          "model__iterations": [
+            200
+          ],
+          "model__learning_rate": [
+            0.05,
+            0.1
+          ],
+          "model__depth": [
+            4,
+            6
+          ],
+          "model__l2_leaf_reg": [
+            1
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.1,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 3.0439004908447753,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.1,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 3.351123683588023,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.1,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 1.5218248898104898,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.05,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 0.8207577816767528,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.05,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 0.47456917183928693,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.13296533655328702,
+      "NRMSE_ratio_vs_codified_best": 5.089451539464379,
+      "NRMSE_ratio_vs_actual_min": 5.100858342993287,
+      "NRMSE_ratio_vs_persistence": 4.840369643652964,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 30,
+      "rank_overall_NRMSE": 27,
+      "rank_eligible_MDA": NaN
+    },
+    {
+      "model_id": "T4.2-CAT-C",
+      "task": "T4",
+      "sub": "T4.2",
+      "date": "2026-08-28",
+      "timestamp": "2026-08-28T04:25:48.779756+00:00",
+      "feature_set": "C_base_lag1_own_nbr5",
+      "MDA_mean": 0.5415554529840432,
+      "MDA_std": 0.028991404818993233,
+      "NRMSE_mean": 0.006122957882668285,
+      "NRMSE_std": 0.006964881202732945,
+      "NMSE_mean": 8.600018340111239e-05,
+      "NMAE_mean": 0.0034074223293455554,
+      "config": {
+        "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+        "model": "CAT",
+        "model_kind": "catboost",
+        "feature_set": "C_base_lag1_own_nbr5",
+        "n_base_features": 176,
+        "n_engineered_extra": 12,
+        "param_grid": {
+          "model__iterations": [
+            200
+          ],
+          "model__learning_rate": [
+            0.05,
+            0.1
+          ],
+          "model__depth": [
+            4,
+            6
+          ],
+          "model__l2_leaf_reg": [
+            1
+          ]
+        },
+        "inner_cv": {
+          "scheme": "expanding time-ordered calendar-cutoff blocks WITHIN the fold train window ONLY",
+          "n_blocks": 4,
+          "block_months": 12,
+          "min_history_months": 24,
+          "scoring": "neg_mean_squared_error",
+          "refit": "winning pipeline on full outer train window",
+          "chosen_per_fold": [
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.1,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 2.6059911519044174,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.1,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 3.293111639874594,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.05,
+                "depth": 6.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 1.6874005441833826,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.05,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 0.6536211659133553,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            },
+            {
+              "best_params": {
+                "iterations": 200.0,
+                "learning_rate": 0.05,
+                "depth": 4.0,
+                "l2_leaf_reg": 1.0
+              },
+              "best_inner_cv_nmse": 0.42860632070554067,
+              "n_inner_splits": 4,
+              "n_warnings": 0,
+              "n_inner_candidates": 4
+            }
+          ]
+        },
+        "late_starter_handling": "unchanged: dummy reindex fill 0",
+        "phase": "breadth",
+        "n_folds": 5,
+        "target": "total",
+        "anchor_year": 2017
+      },
+      "delta_MDA_vs_persistence": -0.13557253529994862,
+      "NRMSE_ratio_vs_codified_best": 5.6947046086968225,
+      "NRMSE_ratio_vs_actual_min": 5.707467944023403,
+      "NRMSE_ratio_vs_persistence": 5.416001135636641,
+      "gate_eligible_codified": false,
+      "gate_eligible_actual_min": false,
+      "gate_eligible_persistence": false,
+      "rank_overall_MDA": 31,
+      "rank_overall_NRMSE": 28,
+      "rank_eligible_MDA": NaN
+    }
+  ]
+}

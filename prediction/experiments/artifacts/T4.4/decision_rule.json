@@ -1,0 +1,77 @@
+{
+  "generated_at": "2026-08-28T09:05:13.434487+00:00",
+  "gate": {
+    "rule": "winner = best mean MDA subject to mean NRMSE \u22641.10\u00d7 global-best NRMSE",
+    "global_best_id": "T4.1-B-enet",
+    "global_best_NRMSE": 0.0010752020172069055,
+    "threshold": 0.001182722218927596,
+    "actual_min_id": "T4.1-C-enet",
+    "actual_min_NRMSE": 0.0010727975947863121,
+    "actual_min_threshold": 0.0011800773542649434,
+    "note": "Both codified (B-enet) and actual-min (C-enet) thresholds give same eligible set: {B-enet, C-enet}. A-enet 0.649/1.109\u00d7 excluded under global gate but 1.052\u00d7 vs persistence \u2014 would be eligible under persistence-relative gate (0.0012436). Adjudicated as directional best but ineligible strict."
+  },
+  "eligible_combos": [
+    "T4.1-B-enet",
+    "T4.1-C-enet"
+  ],
+  "eligible_detail": [
+    {
+      "model_id": "T4.1-B-enet",
+      "MDA_mean": 0.5980835984449133,
+      "NRMSE_mean": 0.0010752020172069055,
+      "NRMSE_ratio_vs_codified_best": 1.0
+    },
+    {
+      "model_id": "T4.1-C-enet",
+      "MDA_mean": 0.5959721170179748,
+      "NRMSE_mean": 0.0010727975947863121,
+      "NRMSE_ratio_vs_codified_best": 0.9977637482239482
+    }
+  ],
+  "shortlist_for_T5": {
+    "scope": "pruned A/B only (B = A + OWN-subset tot_d12/lag12/24/dlog1); C/k5 excluded per T4.1, SCSS/RMS dropped",
+    "top2": [
+      "T4.1-B-enet",
+      "none"
+    ],
+    "rationale": "Only B-enet passes codified gate in A/B pruned scope; no second eligible exists, so shortlist is single + none. If gate relaxed to persistence-relative, A-enet would be runner-up (MDA 0.649). Among T4.2/4.3 A/B combos none pass gate; best ineligible runner-up by MDA is RF-A 0.6151 (1.26\u00d7), then recursive-LGBM-B 0.5942 (1.30\u00d7).",
+    "margins": {
+      "B_enet": {
+        "MDA": 0.5980835984449133,
+        "NRMSE": 0.0010752020172069055,
+        "vs_persistence_MDA": -0.07904438983907847,
+        "vs_persistence_NRMSE_ratio": 0.9510591870499214
+      },
+      "second_eligible": null
+    }
+  },
+  "per_fold_variance_note": "All deltas are on identical 5-fold expanding CV (2008-09\u20262016-17) grouped by CMA; classical SARIMAX/VAR scored on 245 rows in fold5 (6 late-starters excluded) vs 317 for direct/recursive \u2014 their baseline is own-baseline 0.67205\u00b10.0395 on 245 denominator vs global 0.67712\u00b10.0474 on 317 denominator; \u0394 vs global pers is agg-only, not paired common-mask. Recursive-LGBM-B 4/5 wins vs direct (+0.0371/+0.0188/+0.0231/+0.0283/-0.0225) but still -0.0829 vs persistence and -0.0039 vs B-enet.",
+  "caveats": [
+    "No model beats persistence MDA 0.6771\u00b10.0474 on paired 5-fold CV; multi-metric bar (direction + point-error class) unmet.",
+    "Partial recursion: 176 lag-1 covariate columns use observed val row lag-1 values; only OWN-subset (tot_d12/lag12/24/dlog1) recomputed from predicted history \u2014 isolates target-memory recursion effect; future covariate forecasts beyond horizon not needed.",
+    "Recursive-Ridge-B harm: NRMSE 0.00373\u21920.00750 (2\u00d7 worse, fold5 0.01347\u21920.03198); LGBM-B tie (0.00139\u21920.00140) shows GBM-safe but no gain.",
+    "Classical denominators: SARIMAX/VAR n_eval_rows fold5 =245 vs direct/recursive 317; 323 is n_val_rows pre-common-mask (24 CMAs \u00d7 partial histories). Reported baselines differ accordingly.",
+    "n_iter_ range for T4.1 B-enet proof is 62\u20133467 (chosen_per_fold [3467,588,62,148,137]), not 588\u20133467; Ridge n_iter_ is None as expected (closed-form).",
+    "Bounded-search caveat: 'no tree/recursion beats linear ceiling' conditional on modest breadth (RF 2 combos 30 trees, GBMs 4 combos each, LGBM-deep 4 combos, LightGBM recursion 4 combos) and small para grid \u2014 wider search not explored.",
+    "Versions caveat: sklearn 1.9.0, lightgbm 4.7.0, xgboost 3.4.1, catboost 1.2.10, statsmodels 0.14.6, skforecast not_installed_fallback_manual_recursion.",
+    "Bounded-search/versions caveats from T4.3 fixes carried forward.",
+    "Upstream imputation panels stay canonical with \u2264~1% optimism caveat (T3.3 hard gate); A/B only pruned scope.",
+    "BC: All T4.1\u2013T4.3 used LEVEL target only, same harness folds, same harness.evaluate path; test split never accessed."
+  ],
+  "versions": {
+    "sklearn": "1.9.0",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "statsmodels": "0.14.6",
+    "skforecast": "not_installed_fallback_manual_recursion"
+  },
+  "artifacts_generated": [
+    "leaderboard.csv",
+    "leaderboard.json",
+    "per_fold_variance.json",
+    "per_fold_variance.png",
+    "t4_leaderboard.png",
+    "decision_rule.json"
+  ]
+}
