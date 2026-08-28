@@ -34,27 +34,27 @@ Conventions: each sub-stage = one approved plan -> one experimenter run -> one c
 - [x] T4.1 — Linear family: Ridge/ElasticNet (with standardization inside fold pipeline) — verdict: ElasticNet's sparsity decisively beats plain Ridge; winner B-enet (base lag-1 + OWN) reaches persistence-class point errors (NRMSE 0.00107 < 0.00113) but NO linear combo beats persistence MDA 0.6771 (best directional A-enet 0.6490, excluded from the pre-stated decision rule by a hair on the 10%-NRMSE gate, flagged to researcher); all five T3.3 critic minor fixes folded in first (spy-in-evaluate check E, test-file sha256+mtimes, per-(fold×mechanism) fill counts directly asserted [own-block bfill = 1024 cells, 0 in val windows], ALL-blocks verdict annotated, registry-hygiene standing decision)
 - [x] T4.2 — Tree ensembles: RandomForest, LightGBM/XGBoost/CatBoost — verdict: NO tree beats persistence (best RF-A 0.6151 vs 0.6771, ΔMDA −0.0188 1/5 folds) or B-enet point errors (best NRMSE 0.00128 vs 0.00107); depth adds <0.02 MDA; linear B-enet remains frontrunner; all libraries exercised (RF/LGBM/XGB/CatBoost), no heavy deps skipped
 - [ ] T4.3 — Recursive forecasting GBM via skforecast; SARIMAX/VAR comparison where feasible
-- [ ] T4.4 — Leaderboard with per-fold variance; shortlist top 2 families
+- [ ] T4.4 — Leaderboard with per-fold variance; shortlist top 2 families. **Gate codified (roadmap amendment 2026-08-28):** winner = best mean MDA subject to mean NRMSE ≤1.10× global-best NRMSE across all T4 combos (current global-best = B-enet 0.00107, thresh 0.00118). A-enet 0.6490/1.109× excluded under this gate but 1.052× vs persistence — adjudicated as directional best but ineligible; T5 inherits global-best gate unless explicitly changed.
 
 *Learning target: winning model family (with uncertainty, not just mean CV score).*
 
 ## T5. Hyperparameter tuning
-**Mini-goal**: squeeze validated performance out of the shortlist.
-- [ ] T5.1 — Optuna search under the same CV folds; every trial logged to runs.jsonl
+**Mini-goal**: squeeze validated performance out of the shortlist (pruned scope per 2026-08-28 amendment: shortlist families only on feature sets A/B only [B = A + OWN subset tot_d12/lag12/24/dlog1], C/k5 and SCSS/RMS already proven C≈B).
+- [ ] T5.1 — Optuna search under the same CV folds; every trial logged to runs.jsonl (search OWN-subset + pruned A/B only)
 - [ ] T5.2 — Overfitting guardrails: tuning curves, chosen-vs-default deltas
 
 *Learning target: best hyperparameters + evidence they generalize across folds.*
 
 ## T6. Feature ablations
-**Mini-goal**: prove which features earn their place.
-- [ ] T6.1 — Leave-one-family-out ablations (spatial, SCSS, RMS, Census, core-need, temporal) on tuned model
-- [ ] T6.2 — Forward selection starting from lag-only, using the 15% FS downsample set first, confirming on full train folds
+**Mini-goal**: prove which features earn their place (pruned scope per 2026-08-28 amendment: drop SCSS/RMS/k3 outright; C/k5 already C≈B; test only OWN subset + optional k5 marginal).
+- [ ] T6.1 — Leave-one-family-out ablations (OWN-subset, k5 marginal only — SCSS/RMS/k3 dropped per T3.3/T4.1) on tuned model
+- [ ] T6.2 — Forward selection from lag-only over OWN subset (tot_d12/lag12/24/dlog1) + optional k5, using the 15% FS downsample set first, confirming on full train folds
 
 *Learning target: minimal sufficient feature set + quantified contribution of each family.*
 
-## T7. Deep-learning probe (optional — may be skipped)
-**Mini-goal**: test whether complexity beats gradient boosting here.
-- [ ] T7.1 — ST-GNN (PyTorch Geometric) or HousingNet Transformer revival, same folds, clearly framed as exploratory
+## T7. Deep-learning probe (optional — 1-day timebox, may be skipped with reason)
+**Mini-goal**: test whether complexity beats gradient boosting here (downgraded per 2026-08-28 amendment: ~1k rows, CAT already blow-up 0.0061, linear beats trees — deep likely overfits; keep as timeboxed exploratory).
+- [ ] T7.1 — ST-GNN (PyTorch Geometric) or HousingNet Transformer revival, same folds, clearly framed as exploratory (1-day budget; skip with documented reason if not promising)
 
 *Learning target: is deep learning worth it at ~1k rows? (A negative result is a valid learning.)*
 
