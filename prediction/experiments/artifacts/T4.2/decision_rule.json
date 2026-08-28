@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-08-28T04:30:14.638272+00:00",
+  "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
+  "decision_rule": "winner = best mean MDA subject to mean NRMSE not >10% worse than best mean NRMSE across all T4.2 combos; ties within 1e-4 MDA broken by breadth>depth simplicity",
+  "best_nrmse_among_combos": 0.0012755898599215196,
+  "eligibility_threshold_nrmse": 0.0014031488459136717,
+  "eligible_combos": [
+    "RF-A",
+    "RF-B",
+    "RF-C",
+    "LGBM-B",
+    "LGBM-C",
+    "XGB-B",
+    "XGB-C",
+    "LGBM-B-deep",
+    "LGBM-C-deep"
+  ],
+  "tied_on_MDA_within_1e-4": [
+    "RF-A"
+  ],
+  "winner_for_T4_leaderboard": "RF-A",
+  "winner_metrics": {
+    "MDA": {
+      "mean": 0.6150868535682206,
+      "std": 0.05613239430796699
+    },
+    "NMSE": {
+      "mean": 2.1239157069432755e-06,
+      "std": 1.7150299839874442e-06
+    },
+    "NRMSE": {
+      "mean": 0.0013540600785600018,
+      "std": 0.0005389220821170318
+    },
+    "NMAE": {
+      "mean": 0.0009001186106042237,
+      "std": 0.0003049405802356023
+    }
+  },
+  "all_combos_ranked_by_MDA": [
+    {
+      "combo": "RF-A",
+      "_MDA_mean": 0.6150868535682206,
+      "_NRMSE_mean": 0.0013540600785600018
+    },
+    {
+      "combo": "RF-C",
+      "_MDA_mean": 0.6069556312473562,
+      "_NRMSE_mean": 0.0013216764490962924
+    },
+    {
+      "combo": "LGBM-A-deep",
+      "_MDA_mean": 0.5987860987192002,
+      "_NRMSE_mean": 0.001408725529689221
+    },
+    {
+      "combo": "LGBM-C",
+      "_MDA_mean": 0.5964451504345658,
+      "_NRMSE_mean": 0.001345833718133809
+    },
+    {
+      "combo": "LGBM-C-deep",
+      "_MDA_mean": 0.5896228011867037,
+      "_NRMSE_mean": 0.0013251067923483522
+    },
+    {
+      "combo": "XGB-C",
+      "_MDA_mean": 0.5890414589549577,
+      "_NRMSE_mean": 0.0013838842378335742
+    },
+    {
+      "combo": "LGBM-B",
+      "_MDA_mean": 0.5870723859360932,
+      "_NRMSE_mean": 0.0013365817878025225
+    },
+    {
+      "combo": "XGB-B",
+      "_MDA_mean": 0.5861786712375491,
+      "_NRMSE_mean": 0.001363753911671759
+    },
+    {
+      "combo": "RF-B",
+      "_MDA_mean": 0.5824892253524918,
+      "_NRMSE_mean": 0.0012755898599215196
+    },
+    {
+      "combo": "LGBM-A",
+      "_MDA_mean": 0.5812825243768114,
+      "_NRMSE_mean": 0.0014136326474468235
+    },
+    {
+      "combo": "LGBM-B-deep",
+      "_MDA_mean": 0.5781569979545069,
+      "_NRMSE_mean": 0.0013336989540353335
+    },
+    {
+      "combo": "XGB-A",
+      "_MDA_mean": 0.5781402187875994,
+      "_NRMSE_mean": 0.0014506705006608728
+    },
+    {
+      "combo": "CAT-A",
+      "_MDA_mean": 0.5644155290362363,
+      "_NRMSE_mean": 0.002330193027216951
+    },
+    {
+      "combo": "CAT-B",
+      "_MDA_mean": 0.5441626517307048,
+      "_NRMSE_mean": 0.005472188561708891
+    },
+    {
+      "combo": "CAT-C",
+      "_MDA_mean": 0.5415554529840432,
+      "_NRMSE_mean": 0.006122957882668285
+    }
+  ],
+  "gate_scope_note": "global-best NRMSE threshold; A-enet comparison not applicable here",
+  "breadth_vs_depth_note": "depth winner family was LGBM; deep combos suffixed -deep",
+  "caveats": [
+    "no tree combo beats persistence MDA 0.6771 (see per-fold signs in paired_deltas.json)",
+    "joint-imputation panels canonical (<=~1% optimism caveat, T3.3 hard gate)",
+    "publication-lag caveat on SCSS/RMS/Census does not bind here (A/B/C contain no SCSS/RMS/Census blocks beyond OWN)",
+    "all trees trained on LEVEL target; expanding time-ordered inner CV only"
+  ],
+  "skipped": []
+}

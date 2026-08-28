@@ -29,8 +29,9 @@
     "all_written_in_one_imputation_session": true,
     "all_predate_first_research_commit": true,
     "first_research_commit_utc": "2026-08-26T02:32:22+01:00",
-    "interpretation": "all four pipeline outputs were written within 0.23s of each other by imputation/data_imputation.py in ONE session (train and test seconds apart), BEFORE the first research commit exp(T1.1); combined with unchanged sha256 vs any future claim, this certifies neither split was rewritten during T1-T4+ research work."
+    "interpretation": "all four pipeline outputs were written within 0.23s of each other by imputation/data_imputation.py in ONE session (train and test seconds apart), BEFORE the first research commit exp(T1.1); combined with unchanged sha256 vs any future claim, this is consistent with neither split having been rewritten during T1-T4+ research work — first baseline prospectively only (hashes are valid prospectively only from this commit forward; they do not retroactively prove pre-commit immutability beyond the mtime evidence)."
   },
   "loaded_in_experiment_code": false,
-  "hash_verified_against_mtime_story": true
+  "hashes_valid_prospectively_only": true,
+  "note": "hash_verified_against_mtime_story field removed (was tautological — hashes were computed from the same files whose mtimes are reported); prospective validity only."
 }

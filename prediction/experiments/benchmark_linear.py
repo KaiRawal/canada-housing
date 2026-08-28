@@ -182,11 +182,27 @@ def make_tuned_linear_fn(blocks: tuple[pd.DataFrame, ...], kind: str,
         gs = GridSearchCV(est, grid, cv=splits,
                           scoring="neg_mean_squared_error",
                           refit=True, n_jobs=-1)
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore", UserWarning)
-            from sklearn.exceptions import ConvergenceWarning
-            warnings.simplefilter("ignore", ConvergenceWarning)
+        from sklearn.exceptions import ConvergenceWarning
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always", ConvergenceWarning)
+            warnings.simplefilter("always", UserWarning)
             gs.fit(X_tr.to_numpy(float), train_target.to_numpy())
+            n_conv_warnings = sum(
+                1 for wi in w if issubclass(wi.category, ConvergenceWarning))
+            n_user_warnings = sum(
+                1 for wi in w if issubclass(wi.category, UserWarning))
+        # n_iter_ is available on the fitted ElasticNet after refit on full
+        # outer train window (coordinate-descent iteration count; evidence that
+        # target standardization fixed convergence).
+        try:
+            # fitted pipeline lives on regressor_ (with trailing underscore)
+            fitted_model = gs.best_estimator_.regressor_.named_steps["model"]
+            n_iter_val = getattr(fitted_model, "n_iter_", None)
+            if n_iter_val is not None:
+                n_iter_val = int(np.asarray(n_iter_val).max()) \
+                    if np.asarray(n_iter_val).size > 1 else int(n_iter_val)
+        except Exception:
+            n_iter_val = None
         chosen_log.append({
             "best_params": {k: (float(v) if isinstance(v, (int, float,
                                                             np.floating))
@@ -194,6 +210,9 @@ def make_tuned_linear_fn(blocks: tuple[pd.DataFrame, ...], kind: str,
                             for k, v in gs.best_params_.items()},
             "best_inner_cv_nmse": float(-gs.best_score_),
             "n_inner_splits": len(splits),
+            "n_convergence_warnings": int(n_conv_warnings),
+            "n_user_warnings": int(n_user_warnings),
+            "n_iter_": n_iter_val,
         })
 
         def predict_fn(val_features: pd.DataFrame) -> pd.Series:
@@ -354,66 +373,77 @@ def main() -> None:
         for combo_id, set_name, kind in combos:
             detail = []
             run_id = f"T4.1-{combo_id}"
-        for fi, f in enumerate(folds):
-            train_df = df.loc[f["train_index"]]
-            val_df = df.loc[f["val_index"]]
-            m_pred = preds_by_combo[run_id][fi]  # stashed CV predictions
-            r_pred = ref_preds[f["fold_id"]]
-            b_pred = harness.persistence_predict(train_df, val_df, TARGET)
+            for fi, f in enumerate(folds):
+                train_df = df.loc[f["train_index"]]
+                val_df = df.loc[f["val_index"]]
+                m_pred = preds_by_combo[run_id][fi]  # stashed CV predictions
+                r_pred = ref_preds[f["fold_id"]]
+                b_pred = harness.persistence_predict(train_df, val_df, TARGET)
 
-            common = (val_df[TARGET].notna() & m_pred.notna()
-                      & r_pred.notna() & b_pred.notna())
-            ve = val_df.loc[val_df.index[common]]
-            paired = harness.paired_intersection_scores(
-                train_df, ve,
-                {"model": m_pred.loc[ve.index],
-                 "ridge_a1_lag1only": r_pred.loc[ve.index],
-                 "persistence": b_pred.loc[ve.index]}, TARGET)
-            pp = paired["per_predictor"]
-            detail.append({
-                "combo_id": combo_id,
-                "fold_id": f["fold_id"],
-                "val_window": f"{f['val_start_year']}-{f['val_end_year']}",
-                "n_directions_intersection":
-                    paired["counts"]["n_scored_directions_intersection"],
-                "model_MDA": pp["model"]["MDA"],
-                "ridge_a1_MDA": pp["ridge_a1_lag1only"]["MDA"],
-                "persistence_MDA_paired": pp["persistence"]["MDA"],
-                "delta_MDA_vs_ridge_a1":
-                    pp["model"]["MDA"] - pp["ridge_a1_lag1only"]["MDA"],
-                "delta_MDA_vs_persistence":
-                    pp["model"]["MDA"] - pp["persistence"]["MDA"],
-                "model_NRMSE": pp["model"]["NRMSE"],
-                "ridge_a1_NRMSE": pp["ridge_a1_lag1only"]["NRMSE"],
-                "delta_NRMSE_vs_ridge_a1":
-                    pp["model"]["NRMSE"] - pp["ridge_a1_lag1only"]["NRMSE"],
-            })
-            print(f"  {combo_id} fold {f['fold_id']}: "
-                  f"dMDA vs a1 = "
-                  f"{detail[-1]['delta_MDA_vs_ridge_a1']:+.4f}, "
-                  f"vs pers = "
-                  f"{detail[-1]['delta_MDA_vs_persistence']:+.4f}")
-        d = pd.DataFrame(detail)
-        delta_rows.extend(detail)
-        paired_summary["per_combo"][combo_id] = {
-            "mean_delta_MDA_vs_ridge_a1":
-                float(d["delta_MDA_vs_ridge_a1"].mean()),
-            "folds_positive_vs_ridge_a1":
-                f"{int((d['delta_MDA_vs_ridge_a1'] > 0).sum())}/"
-                f"{len(d)}",
-            "mean_delta_MDA_vs_persistence":
-                float(d["delta_MDA_vs_persistence"].mean()),
-            "folds_positive_vs_persistence":
-                f"{int((d['delta_MDA_vs_persistence'] > 0).sum())}/"
-                f"{len(d)}",
-            "detail": detail,
-        }
+                common = (val_df[TARGET].notna() & m_pred.notna()
+                          & r_pred.notna() & b_pred.notna())
+                ve = val_df.loc[val_df.index[common]]
+                paired = harness.paired_intersection_scores(
+                    train_df, ve,
+                    {"model": m_pred.loc[ve.index],
+                     "ridge_a1_lag1only": r_pred.loc[ve.index],
+                     "persistence": b_pred.loc[ve.index]}, TARGET)
+                pp = paired["per_predictor"]
+                detail.append({
+                    "combo_id": combo_id,
+                    "fold_id": f["fold_id"],
+                    "val_window": f"{f['val_start_year']}-{f['val_end_year']}",
+                    "n_directions_intersection":
+                        paired["counts"]["n_scored_directions_intersection"],
+                    "model_MDA": pp["model"]["MDA"],
+                    "ridge_a1_MDA": pp["ridge_a1_lag1only"]["MDA"],
+                    "persistence_MDA_paired": pp["persistence"]["MDA"],
+                    "delta_MDA_vs_ridge_a1":
+                        pp["model"]["MDA"] - pp["ridge_a1_lag1only"]["MDA"],
+                    "delta_MDA_vs_persistence":
+                        pp["model"]["MDA"] - pp["persistence"]["MDA"],
+                    "model_NRMSE": pp["model"]["NRMSE"],
+                    "ridge_a1_NRMSE": pp["ridge_a1_lag1only"]["NRMSE"],
+                    "persistence_NRMSE_paired": pp["persistence"]["NRMSE"],
+                    "delta_NRMSE_vs_ridge_a1":
+                        pp["model"]["NRMSE"] - pp["ridge_a1_lag1only"]["NRMSE"],
+                    "delta_NRMSE_vs_persistence":
+                        pp["model"]["NRMSE"] - pp["persistence"]["NRMSE"],
+                })
+                print(f"  {combo_id} fold {f['fold_id']}: "
+                      f"dMDA vs a1 = "
+                      f"{detail[-1]['delta_MDA_vs_ridge_a1']:+.4f}, "
+                      f"vs pers = "
+                      f"{detail[-1]['delta_MDA_vs_persistence']:+.4f}")
+            d = pd.DataFrame(detail)
+            delta_rows.extend(detail)
+            paired_summary["per_combo"][combo_id] = {
+                "mean_delta_MDA_vs_ridge_a1":
+                    float(d["delta_MDA_vs_ridge_a1"].mean()),
+                "folds_positive_vs_ridge_a1":
+                    f"{int((d['delta_MDA_vs_ridge_a1'] > 0).sum())}/"
+                    f"{len(d)}",
+                "mean_delta_MDA_vs_persistence":
+                    float(d["delta_MDA_vs_persistence"].mean()),
+                "folds_positive_vs_persistence":
+                    f"{int((d['delta_MDA_vs_persistence'] > 0).sum())}/"
+                    f"{len(d)}",
+                "mean_delta_NRMSE_vs_ridge_a1":
+                    float(d["delta_NRMSE_vs_ridge_a1"].mean()),
+                "mean_delta_NRMSE_vs_persistence":
+                    float(d["delta_NRMSE_vs_persistence"].mean()),
+                "folds_positive_NRMSE_vs_persistence":
+                    f"{int((d['delta_NRMSE_vs_persistence'] < 0).sum())}/"
+                    f"{len(d)}",
+                "detail": detail,
+            }
         pd.DataFrame(delta_rows)[
             ["combo_id", "fold_id", "val_window",
              "n_directions_intersection", "model_MDA", "ridge_a1_MDA",
              "persistence_MDA_paired", "delta_MDA_vs_ridge_a1",
              "delta_MDA_vs_persistence", "model_NRMSE", "ridge_a1_NRMSE",
-             "delta_NRMSE_vs_ridge_a1"]
+             "persistence_NRMSE_paired",
+             "delta_NRMSE_vs_ridge_a1", "delta_NRMSE_vs_persistence"]
         ].to_csv(OUT_DIR / "paired_delta_table.csv", index=False)
         save_results_json(paired_summary, OUT_DIR / "paired_deltas.json")
     else:
@@ -491,6 +521,13 @@ def main() -> None:
             "T3.3 hard gate)",
             "publication-lag caveat on SCSS/RMS/Census covariates does not "
             "bind here (sets A-C contain no SCSS/RMS/Census blocks)",
+            "gate-scope caveat: eligibility uses GLOBAL-best NRMSE across all "
+            "six combos (best=0.0010728 C-enet, threshold=0.0011801); "
+            "A-enet NRMSE 0.0011897 is 1.109x global-best (excluded) but only "
+            "1.052x vs persistence 0.0011305 — under a persistence-relative "
+            "10% gate (0.0012436) A-enet WOULD be eligible and would be the "
+            "directional winner (MDA 0.6490). Programmatic consumers must not "
+            "assume the global gate is the only defensible scope.",
         ],
     }
     save_results_json(decision, OUT_DIR / "decision_rule.json")

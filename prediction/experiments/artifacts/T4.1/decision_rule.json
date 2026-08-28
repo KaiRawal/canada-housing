@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T13:21:46.988701+00:00",
-  "git_sha_pre_commit": "3d176ffe1812270cf309539b3871ea8f0f1eefac",
+  "generated_at": "2026-08-28T03:11:25.714334+00:00",
+  "git_sha_pre_commit": "0d9c7fc010223eaecc3340ef91663d3a169c181f",
   "decision_rule": "winner = best mean MDA subject to mean NRMSE not >10% worse than the best mean NRMSE across the six linear combos; ties (within 1e-4 MDA) broken by the simpler model (Ridge < ElasticNet; smaller feature set first)",
   "best_nrmse_among_combos": 0.0010727975947863121,
   "eligibility_threshold_nrmse": 0.0011800773542649434,
@@ -33,6 +33,7 @@
   "caveats": [
     "no linear combo beats persistence MDA 0.6771 (standing bar)",
     "joint-imputation panels canonical (<=~1% optimism caveat, T3.3 hard gate)",
-    "publication-lag caveat on SCSS/RMS/Census covariates does not bind here (sets A-C contain no SCSS/RMS/Census blocks)"
+    "publication-lag caveat on SCSS/RMS/Census covariates does not bind here (sets A-C contain no SCSS/RMS/Census blocks)",
+    "gate-scope caveat: eligibility uses GLOBAL-best NRMSE across all six combos (best=0.0010728 C-enet, threshold=0.0011801); A-enet NRMSE 0.0011897 is 1.109x global-best (excluded) but only 1.052x vs persistence 0.0011305 \u2014 under a persistence-relative 10% gate (0.0012436) A-enet WOULD be eligible and would be the directional winner (MDA 0.6490). Programmatic consumers must not assume the global gate is the only defensible scope."
   ]
 }
