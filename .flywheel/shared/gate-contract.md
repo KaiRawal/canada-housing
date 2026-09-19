@@ -6,7 +6,17 @@ Gates in `problem.yaml: gates` are expressions over metric names produced by the
 - Compound: `"f1 >= 0.85 and accuracy > random + 0.10"` — `random` is the baseline metric if present.
 - Budgets: `gates.budgets: {samples: 200}` controls how many samples the reviewer scores.
 
-Reviewer computes each metric, `eval`s the expression in a restricted namespace (no builtins), and returns `{pass: bool, margin: float}`. A gate with no metric is skipped.
+Reviewer computes each metric, `eval`s the expression in a restricted namespace (no builtins), and returns `{pass: bool, margin: float}`. A gate with no metric is skipped. Scoring is hints-blind; diagnosis may cite `hints`, prior learnings, and baseline comparisons to nudge future *steps*.
+
+## Learnings loop (goals immutable)
+
+`problem.yaml: goal`/`gates`/thresholds are immutable mid-run. The periodic
+learnings loop (`logs/NN.md` per iteration → run-scoped `learnings.md`,
+consolidated every 3 iterations or on plateau → `plan.md` Learnings /
+Baseline diagnosis / Do-not-retry) reuses what each variant taught without
+ever rewriting the final goals. Full learning text lives in `logs/` +
+`learnings.md`; `events.jsonl`/`decisions.md` carry only phase + gate-delta
+summaries via `.flywheel/shared/observe.py append --event nudge|decision`.
 
 ## Search hints
 

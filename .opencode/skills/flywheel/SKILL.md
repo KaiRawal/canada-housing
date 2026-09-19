@@ -20,9 +20,9 @@ Lifecycle: `new` (setup interview, once) → `autonomous`/`interactive` (long ru
 
 ## Loop
 
-1. **Sandbox loop** (`sandbox-executor` + `sandbox-reviewer`, gate-driven, up to 3 nudges or until pass). Executor copies data (global cache), trains one variant, writes `metrics.json`. Parallel light variants only; heavy variants run serially, one job → one log. Reviewer scores vs `gates:` in `problem.yaml`.
-2. **Research** (`researcher`) — only on plateau. Mines `references` / docs / papers for new metric/backbone ideas. Proposes candidates, never mutates `problem.yaml`.
-3. **Plan** (`planner`) — merges logs + research into `.flywheel/runs/<ts>/plan.md` with chosen variant(s), pinned thresholds, commit split.
+1. **Sandbox loop** (`sandbox-executor` + `sandbox-reviewer`, gate-driven, up to 3 nudges or until pass). Executor copies data (global cache), trains one variant, writes `metrics.json`. Parallel light variants only; heavy variants run serially, one job → one log. Reviewer scores vs `gates:` in `problem.yaml` and returns structured learnings. The orchestrator appends them to run-scoped `learnings.md`, consolidates Confirmed/Contradicted/Open + baseline diagnosis every 3 iterations or on plateau, and injects them into each next executor prompt. `problem.yaml` goals/gates are immutable — learnings nudge future steps only.
+2. **Research** (`researcher`) — only on plateau. Mines `references` / docs / papers for new metric/backbone ideas. Reads all `logs/` + `learnings.md`; leads with why the good baseline still wins. Proposes candidates, never mutates `problem.yaml`.
+3. **Plan** (`planner`) — merges logs + `learnings.md` + research into `.flywheel/runs/<ts>/plan.md` with Learnings / Baseline diagnosis / Do-not-retry, chosen variant(s), verbatim thresholds, commit split.
 4. **Flywheel** (`flywheel-executor`) — consumes `plan.md`, fires `nohup` BG jobs (one job → one log, never two peak-RAM at once), polls via `while pgrep -f <job> >/dev/null; do sleep 10; done`, picks winners by gate margin, mints artifacts, generates tests/notebooks via builder scripts, runs `pytest/ruff/nbconvert` under `timeout`.
 
 All installs in `{constraints.venv}`. Global caches reused. Resources measured at setup (`/flywheel-new`), confirmed once at run start; limits live in `problem.yaml: constraints`.

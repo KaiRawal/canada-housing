@@ -8,7 +8,7 @@ Provenance is dual-written via `.flywheel/shared/observe.py` (schema: `.flywheel
 - Autonomous mode: every iteration appends one event. No `question` calls.
 - Interactive mode: same, plus interleaved `Q: ...` / `A: ...` blocks from the `question` tool.
 
-The orchestrator is the only writer; subagents read and return `gates` maps for the orchestrator to log.
+The orchestrator is the only writer; subagents read and return `gates` maps for the orchestrator to log. Reviewers additionally return Learning/Do-not-retry lines; the orchestrator appends full text to run-scoped `learnings.md` and logs `nudge` summaries. `problem.yaml` goals/gates are immutable — learnings nudge future steps only.
 
 ## Flywheel state
 

@@ -52,3 +52,12 @@ jq -c 'select(.gates.fidelity.pass==false)' .flywheel/runs/<ts>/events.jsonl
 `query` filters are ANDed. `--failed-only` matches any gate with `pass==false`.
 `--gate <name>` keeps events mentioning that gate. Raw `jq` works because the
 file is plain JSONL.
+
+## Learnings provenance (no schema change)
+
+Full learning text lives in `.flywheel/runs/<ts>/logs/NN.md` + run-scoped
+`.flywheel/runs/<ts>/learnings.md` (orchestrator-owned, append-only). Events carry
+only summaries: per-iteration reviewer learnings go in a `nudge` event's
+`decision`/`rationale` (+ `gate_delta`), periodic consolidations and
+research/planner/flywheel outcomes go in `decision` events. `problem.yaml`
+goals/gates are never modified by the loop.
