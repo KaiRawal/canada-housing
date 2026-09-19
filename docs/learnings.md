@@ -91,3 +91,60 @@ GBT −4.7%, LSTM −4.1%, Chronos −1.3%, Prophet tie. All from
 `evaluation/evaluation.py` (NRMSE def), `docs/hyperparam_search.md`,
 `.flywheel/runs/20260917T102048Z/` (16 events),
 `.flywheel/runs/20260917T092329Z/` (9 events).
+
+## Addendum — rerun-2 (flywheel run `20260919T090245Z`)
+
+Same 6 model classes, prior learnings reused, accuracy pushed at every
+step. Serial execution (memory-pressured host). Committed summary:
+`docs/rerun-2/` (run `learnings.md` + `plan.md`); full provenance stays
+in gitignored `.flywheel/runs/20260919T090245Z/`.
+
+| Class | Try | Test NRMSE | Verdict |
+| --- | --- | --- | --- |
+| persistence | re-verify | 3.7782e-04 | bit-exact anchor, frozen |
+| linear_regression | T4 small-CMA exclusion | 3.58068e-04 (-0.035%) | beat, HELD (noise-level) |
+| linear_regression | T5 partial-pooling (shared EN + 24 shrunk CMA offsets, k=10) | **3.57411e-04 (-5.40% vs persistence)** | **ADOPTED, artifact updated** |
+| gbt_ensemble | T4 per-regime tree refits | 3.6046e-04 (+0.137%) | honest fail, held at T3 |
+| lstm_rnn | T4 capacity sweep (H96/L9/L12/2-layer) | 3.6367e-04 (-0.32%) | honest fail, held at T2 |
+| prophet | T4 yearly-OFF <100 | 3.7782e-04 (tie) | frozen at T1 restore |
+| pretrained_ts | T4 context sweep (last60/120/240) | 3.7278e-04 (tie by w=0 construction) | frozen at T3 |
+
+`pass_rate == 1.0` holds (22/22 tests green). `artifacts/manifest.json`
+minted. Details: `docs/hyperparam_search.md` §9.
+
+### Analysis notes (from post-run Q&A)
+
+- **Random-walk ceiling.** Monthly drift (~0.13–0.25 index points) sits
+  inside monthly noise (~0.54–0.86): S/N ≈ 0.25, so the MSE-optimal
+  1-step forecast is ~last month's value and persistence is near-optimal.
+  Best RMSE ≈ 0.85 vs 0.90 on levels 100–176 (a 0.05-point gain).
+  ⚠️ The drift/jiggle bands are STATED, not yet recomputed — verify with:
+  `.venv/bin/python -c "import pandas as pd; df =
+  pd.read_csv('prediction/y_train_full_total.csv',
+  parse_dates=['date']).sort_values(['cma_canonical','date']); d =
+  df.groupby('cma_canonical')['total'].diff().dropna(); g =
+  d.groupby(df.loc[d.index,'cma_canonical']).agg(['mean','std']);
+  print(g['mean'].min(), g['mean'].max(), g['std'].min(),
+  g['std'].max())"`. Standard-deviation-as-noise is an upper bound:
+  models convert slices of it into signal (the −5.4%).
+- **Validation-to-test gaps.** Same model, different time slice, big
+  number moves: GBT try-2 val 2.35e-04 → test 3.62e-04 (~+54%);
+  Prophet try-3 val-picked `w=1.0` → test +118%; linear try-4 val
+  −0.15% → test −0.035% (same sign, 4x smaller). Cause: test-slice
+  move-std 2.4x validation's. Val flatters, test judges.
+- **The <1% rule.** Relative improvement (old−new)/old. Try-2→try-4 was
+  0.035% — indistinguishable from luck given the gaps above, so it was
+  held out of the committed artifacts. Below ~1%, don't call it a win.
+- **NRMSE vs direction.** Different skills: *how far off* vs *up-or-down*.
+  E.g. last=100, actual=100.2: forecast 100.5 (off 0.3, direction ✓)
+  vs 99.9 (off 0.3, direction ✗). Hugging last value gives small level
+  errors with coin-flip direction (linear MDA 0.39 vs naive 0.55).
+  Direction at monthly frequency is noise with these features.
+
+### Continuation (staying at h=1)
+
+Live options: small-CMA exclusion for the LSTM pooled fit; per-CMA
+residual audits for further offset targets. Killed for good: per-regime
+hard-split refits, capacity expansion, unconditional Chronos context
+sweeps, val-blind threshold moves. Next rigorous step when wins are
+claimed: multi-window validation (Diebold-Mariano), not a single split.
