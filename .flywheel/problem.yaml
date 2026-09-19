@@ -1,0 +1,51 @@
+problem: housing-baselines
+type: prediction  # ml-system | prediction | feature
+goal: "Build one tuned baseline per model class — persistence, linear regression, gradient-boosted tree ensembles, Prophet, LSTM/RNN deep learning, pretrained time-series models — for monthly total NHPI across 24 CMAs, each with its own artifact, test, and documented hyperparameter search, keeping the best-performing config per class."
+
+target:
+  scope: ["baselines/", "tests/", "artifacts/", "docs/", "prediction/"]  # prediction/ holds imputation-generated X/y CSVs; never touch data_cleaning/, imputation/, evaluation/ sources
+  delivery: branch  # branch | patch — winner lands on flywheel/<problem>-<ts>
+
+datasets:
+  - name: imputed-total
+    source: prediction/X_train_full_total.csv  # generated: .venv/bin/python imputation/data_imputation.py (from data_cleaning/data/cleaned/*); y paired as y_{train,test}_full_total.csv with cma_canonical+date
+    cache: none  # global | none
+
+blackbox:
+  train: ".venv/bin/python imputation/data_imputation.py && .venv/bin/python baselines/train.py --target total"
+  predict: ".venv/bin/python baselines/predict.py --target total"  # prints pass_rate + per-model NRMSE (tuning selection only, not gates)
+  metric: pass_rate  # primary metric printed by predict; per-class winner selected by lowest NRMSE from evaluation.py (no performance threshold gate per user)
+
+surrogate:
+  family: time-series
+  variants:
+    - { name: persistence }
+    - { name: linear_regression }
+    - { name: gbt_ensemble }
+    - { name: prophet }
+    - { name: lstm_rnn }
+    - { name: pretrained_ts }
+
+gates:
+  correctness: "pass_rate == 1.0"  # all per-model-class test suites pass; no performance threshold gate (user: n/a — tune each class to its best)
+  budgets: { samples: 200 }
+
+hints: "I want you to use specific models: persistence, linear regression, some kind of gradient boosted tree ensembles, prophet (install the library for timeseries), and then advanced lstm / rnn / other deep learning models for timeseries, and finally some pretrained timeseries models (search online for good options)"
+
+deliverables:
+  branch: "flywheel/housing-baselines-<ts>"  # winner branch, created in THIS repo
+  artifacts: ["artifacts/persistence.joblib", "artifacts/linear_regression.joblib", "artifacts/gbt_ensemble.joblib", "artifacts/prophet.joblib", "artifacts/deep_learning.joblib", "artifacts/pretrained_ts.joblib", "artifacts/metrics.json", "artifacts/manifest.json"]
+  tests: ["tests/test_baselines_persistence.py", "tests/test_baselines_linear_regression.py", "tests/test_baselines_gbt_ensemble.py", "tests/test_baselines_prophet.py", "tests/test_baselines_deep_learning.py", "tests/test_baselines_pretrained_ts.py"]
+  docs: ["docs/hyperparam_search.md"]  # hyperparameter search conducted per model class + winning config
+  notebooks: []
+
+constraints:
+  venv: .venv
+  disk_gb: 60  # measured 69G free on / minus ~9G headroom, confirmed by user
+  mem_gb: 40  # measured ~45GiB free (vm_stat) minus ~5G headroom, confirmed by user
+  timeout: "timeout 600"
+  heavy_bg: false  # confirmed by user; baselines run in minutes on CPU (12 logical cores)
+
+models:
+  orchestrator: "opencode/muse-spark-1.3-contributor-free"
+  executor: "opencode/muse-spark-1.3-contributor-free"
