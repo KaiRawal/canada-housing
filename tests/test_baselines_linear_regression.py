@@ -25,23 +25,28 @@ def test_artifact_exists_and_reloads():
     assert isinstance(obj, dict)
     assert obj.get("variant") == "linear_regression"
     assert obj.get("target") == TARGET
-    # TRY-2 grid: 3 Ridge + 9 ElasticNet (a[0.01,0.03,0.1] x l1[0.95,0.99,1.0]) = 12 configs.
-    assert "search_grid" in obj and len(obj["search_grid"]) == 12
+    # TRY-5 (H1 hierarchical partial-pooling): shared EN(0.03/1.0) on the
+    # 110-col dedup-0.99 set + shrunk per-CMA intercept offsets (k=10);
+    # 2 samples (partial-pooling + Sherbrooke ablation), val-gated, honest test.
+    assert "search_grid" in obj and len(obj["search_grid"]) == 2
     assert "best_params" in obj and "model" in obj
-    # TRY-2 features: 176 exogenous + 11 causal lag/rolling = 187 full,
-    # lag_1-anchored corr dedup (|corr vs lag_1| > 0.999 on valid train
-    # rows): drops total_lag_1 (corr=1.0), lag_2, lag_3, rollmean_3,
-    # rollmean_6 -> 182 kept / 5 dropped. lag_1 itself is kept.
+    # TRY-5 features: 176 exogenous + 11 causal lag/rolling = 187 full,
+    # greedy keep-first full corr-clustering (|corr| > 0.99 vs ANY kept col,
+    # exo+lag order): 110 kept / 77 dropped. Keep-first keeps the exogenous
+    # total_lag_1 and drops the identical lag_1 (corr=1.0).
     assert "exo_feature_cols" in obj and len(obj["exo_feature_cols"]) == 176
     assert "lag_feature_cols" in obj and len(obj["lag_feature_cols"]) == 11
-    assert obj.get("try") == 2
-    assert obj.get("dedup_thresh") == 0.999
-    assert "dropped_dup_cols" in obj and len(obj["dropped_dup_cols"]) == 5
-    assert "total_lag_1" in obj["dropped_dup_cols"]
-    assert "lag_1" in obj["feature_cols"]
-    assert "total_lag_1" not in obj["feature_cols"]
-    assert len(obj["feature_cols"]) == 187 - len(obj["dropped_dup_cols"])
-    assert len(obj["feature_cols"]) == 182
+    assert obj.get("try") == 5
+    assert obj.get("dedup_thresh") == 0.99
+    assert "dropped_dup_cols" in obj and len(obj["dropped_dup_cols"]) == 77
+    assert "lag_1" in obj["dropped_dup_cols"]
+    assert "total_lag_1" in obj["feature_cols"]
+    assert "lag_1" not in obj["feature_cols"]
+    assert len(obj["feature_cols"]) == 110
+    # Hierarchical offsets: one shrunk intercept per CMA, k recorded.
+    assert "cma_offsets" in obj and len(obj["cma_offsets"]) == 24
+    assert all(math.isfinite(v) for v in obj["cma_offsets"].values())
+    assert obj.get("offset_k") == 10
     # Winner is one of the grid entries; blend weight recorded + on grid.
     assert obj["best_params"] in obj["search_grid"]
     assert "blend_w" in obj and math.isfinite(obj["blend_w"])

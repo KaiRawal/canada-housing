@@ -79,7 +79,8 @@ def predict_persistence(target: str, out_dir: Path):
 
 
 def predict_linear_regression(target: str, out_dir: Path):
-    """Reload linear_regression artifact (TRY-1 lags+blend / TRY-2 dedup+blend).
+    """Reload linear_regression artifact (TRY-1 lags+blend / TRY-2 dedup+blend /
+    TRY-5 partial-pool).
 
     Rebuilds the causal lag features via assemble() on train+test y (same
     as training, so test rows see the train-tail history), predicts the
@@ -125,6 +126,10 @@ def predict_linear_regression(target: str, out_dir: Path):
     # TRY-2 artifacts store deduped model columns in feature_cols; TRY-1
     # artifacts store the full exo+lag list (identical fallback).
     cols = list(artifact.get("feature_cols", exo_feature_cols + lag_feature_cols))
+    # TRY-5 (H1 hierarchical) artifacts carry shrunk per-CMA intercept offsets
+    # (train-estimated, legitimate at predict time); older artifacts carry no
+    # offsets and predict exactly as before.
+    cma_offsets = dict(artifact.get("cma_offsets", {}) or {})
 
     def _model_preds(X_full: pd.DataFrame, lag: pd.DataFrame, y_df: pd.DataFrame):
         F_full = pd.concat(
@@ -134,7 +139,18 @@ def predict_linear_regression(target: str, out_dir: Path):
         out = pd.Series(np.nan, index=y_df.index, dtype=float)
         ok = F_full[cols].notna().all(axis=1).to_numpy()
         if ok.any():
-            out.loc[F_full.index[ok]] = model.predict(F_full.loc[ok, cols])
+            preds = np.asarray(
+                model.predict(F_full.loc[ok, cols]), dtype=float
+            )
+            if cma_offsets:
+                off = (
+                    y_df["cma_canonical"]
+                    .map(cma_offsets)
+                    .fillna(0.0)
+                    .to_numpy(dtype=float)
+                )
+                preds = preds + off[ok]
+            out.loc[F_full.index[ok]] = preds
         return out
 
     train_model = _model_preds(X_train, lag_parts["train"], y_train)
