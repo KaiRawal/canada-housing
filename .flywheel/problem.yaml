@@ -41,10 +41,10 @@ deliverables:
 
 constraints:
   venv: .venv
-  disk_gb: 60  # measured 69G free on / minus ~9G headroom, confirmed by user
-  mem_gb: 40  # measured ~45GiB free (vm_stat) minus ~5G headroom, confirmed by user
+  disk_gb: 60  # measured 194G free on / minus large headroom, confirmed by user
+  mem_gb: 16  # 24GB physical total, ~89M free under load at interview; 16 leaves headroom, confirmed by user
   timeout: "timeout 600"
-  heavy_bg: false  # confirmed by user; baselines run in minutes on CPU (12 logical cores)
+  heavy_bg: false  # confirmed by user; baselines run in minutes on CPU (14 logical cores)
 
 models:
   orchestrator: "opencode/muse-spark-1.3-contributor-free"

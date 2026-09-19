@@ -197,3 +197,29 @@ accuracy (MDA 0.394–0.400) — see §8 MDA gap.
   columns, not just lags); LSTM momentum inputs rejected; Chronos gated /
   direction overlays rejected; Prophet fractional blends hurt test
   monotonically. Rejected paths are recorded in `tries.jsonl`, not hidden.
+
+## 9. Rerun-2 (flywheel run `20260919T090245Z`, same 6 classes + learnings)
+
+Objective: reuse prior learnings, keep improving accuracy. Protocol:
+serial variants (memory-pressured host), artifact-best-so-far promotion
+(significance-before-celebration), researcher → planner → relentless
+executor. Provenance: `.flywheel/runs/20260919T090245Z/` (gitignored).
+
+| Class | Try | Test NRMSE | Delta vs class best | Verdict |
+| --- | --- | --- | --- | --- |
+| persistence | re-verify | 3.7782e-04 | 0.0 (bit-exact) | anchor frozen |
+| linear_regression | T4 small-CMA exclusion | 3.58068e-04 | -0.035% | beat, HELD (noise-level) |
+| linear_regression | T5 partial-pooling (shared EN + 24 shrunk CMA offsets, k=10) | **3.57411e-04** | **-0.22% vs committed, -5.40% vs persistence** | **ADOPTED, artifact updated** |
+| gbt_ensemble | T4 per-regime tree refits | 3.6046e-04 | +0.137% | honest fail, held at T3 |
+| lstm_rnn | T4 capacity sweep (H96/L9/L12/2-layer) | 3.6367e-04 | -0.32% | honest fail, held at T2 |
+| prophet | T4 yearly-OFF <100 | 3.7782e-04 | 0.0 (tie) | frozen at T1 restore |
+| pretrained_ts | T4 context sweep (last60/120/240) | 3.7278e-04 | 0.0 (tie by construction, w=0) | frozen at T3 |
+
+New learnings: (1) partial pooling is the only sign-agreeing direction —
+shared sparse vector + shrunk subgroup intercepts; (2) capacity proven
+not-the-bottleneck twice (LSTM); (3) hard regime splits starve flexible
+fits — pooled global + post-calibration wins; (4) thresholds act only via
+tuning-set membership (prophet val-blind move); (5) `w=0` selection makes
+context sweeps moot by construction. Kills: per-regime hard-split refits,
+capacity expansion, unconditional Chronos context sweeps, val-blind
+threshold moves. `pass_rate == 1.0` holds (22/22 tests green).

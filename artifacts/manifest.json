@@ -1,0 +1,74 @@
+{
+  "artifacts": {
+    "persistence": {
+      "path": "artifacts/persistence.joblib",
+      "sha256": "a58091aa6f38f17fa074c696ac31c0160cf0769ba265797221530d69618a53a4",
+      "bytes": 130,
+      "variant": "persistence",
+      "target": "total",
+      "kind": "persistence-stateless"
+    },
+    "linear_regression": {
+      "path": "artifacts/linear_regression.joblib",
+      "sha256": "f2e847e03995d603f76a68a21162de78305cc4e773b2ced745fa0824dddf31bc",
+      "bytes": 25465,
+      "variant": "linear_regression",
+      "target": "total",
+      "try": 5,
+      "kind": "linear-scaled-lag-blend-dedup-partial-pool",
+      "blend_w": 1.0,
+      "n_feature_cols": 110,
+      "model_shape": "Pipeline"
+    },
+    "gbt_ensemble": {
+      "path": "artifacts/gbt_ensemble.joblib",
+      "sha256": "191330143c6315ec860dea52fc74372eb8f0ce6af76b6ebe6a681d0f5f61a320",
+      "bytes": 366461,
+      "variant": "gbt_ensemble",
+      "target": "total",
+      "try": 3,
+      "kind": "gbt-delta-regime-calibrated-momentum",
+      "blend_w": 1.0,
+      "n_feature_cols": 112,
+      "model_shape": "HistGradientBoostingRegressor"
+    },
+    "prophet": {
+      "path": "artifacts/prophet.joblib",
+      "sha256": "4a91cca9a2b382092aeed1a834239d00c562a6b282fd63c4af2a782681367316",
+      "bytes": 948646,
+      "variant": "prophet",
+      "target": "total",
+      "try": 1,
+      "kind": "prophet-per-cma-lag-regressor",
+      "blend_w": 0.0
+    },
+    "deep_learning": {
+      "path": "artifacts/deep_learning.joblib",
+      "sha256": "4312f78458a8cb4e41eb20c7be0c7b46cd5f82c797f494f2ecd9462d8fc3202e",
+      "bytes": 214065,
+      "variant": "lstm_rnn",
+      "target": "total",
+      "try": 2,
+      "kind": "lstm-global-multivariate-delta",
+      "blend_w": 1.0,
+      "n_feature_cols": 110
+    },
+    "pretrained_ts": {
+      "path": "artifacts/pretrained_ts.joblib",
+      "sha256": "5e721e8d1815117ef9f5212b6cec8c2c70340ae3c5b86858a90cfc8f212c49e8",
+      "bytes": 144372,
+      "variant": "pretrained_ts",
+      "target": "total",
+      "try": 3,
+      "kind": "chronos-bolt-small-zero-shot-per-cma",
+      "blend_w": 0.0
+    }
+  },
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.5.3",
+    "sklearn": "1.9.1",
+    "torch": "2.14.0",
+    "prophet": "1.4.0"
+  }
+}
