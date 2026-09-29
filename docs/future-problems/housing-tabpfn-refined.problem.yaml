@@ -1,0 +1,59 @@
+# DRAFT — reference only. Do not run. To promote: copy to
+# .flywheel/problem.yaml on a fresh flywheel/<slug>-<ts> branch,
+# re-measure constraints, resolve OPEN items, then /flywheel-new.
+# Doc sources (read at promotion): https://priorlabs.ai/docs and
+# https://github.com/PriorLabs/TabPFN (regressor.py constructor docs,
+# README best-practices). Key doc findings encoded below.
+
+problem: housing-tabpfn-refined
+type: prediction
+goal: "Refine the TabPFN v3 delta-forecaster following PriorLabs documentation — doc-faithful raw features with categorical CMA handling, estimator/fit-mode search, SARIMAX-style feature sets — for the signed month-to-month change in monthly total NHPI. Must beat the pinned 0.8059 to matter."
+
+target:
+  scope: ["baselines/", "tests/", "artifacts/", "docs/", "prediction/", "evaluation/"]  # never touch data_cleaning/, imputation/ sources
+  delivery: branch
+
+datasets:
+  - name: imputed-total
+    source: prediction/X_train_full_total.csv  # y paired as y_{train,test}_full_total.csv; deltas derived downstream per-CMA, never re-imputed
+    cache: none
+  # CMA_SUBSET_16 (goals/gates/deliverables scope): Edmonton, Greater Sudbury, Hamilton, Kitchener-Cambridge-Waterloo, London, Montreal, Ottawa-Gatineau ON-part, Quebec, Regina, Saskatoon, St. Catharines-Niagara, St. John's, Vancouver, Victoria, Windsor, Winnipeg. Display-only: Halifax, Charlottetown, Guelph/Kelowna/Oshawa/Ottawa-Gatineau QC-part/Sherbrooke/Trois-Rivieres.
+
+blackbox:
+  train: ".venv/bin/python baselines/train_tabpfn_refined.py --target total"  # new module; train_deltas.py untouched
+  predict: ".venv/bin/python baselines/predict_tabpfn_refined.py --target total"  # prints delta_rmse (16) + delta_rmse_24 (display) + pass_rate + per-variant RMSEs
+  metric: delta_rmse  # chained mask n=1728/2398; test scored exactly once
+
+surrogate:
+  family: delta-regression
+  variants:
+    # tabpfn_centered is the CONTROL (pinned 0.8059 recipe): lags-1..12 mean-centered deltas + CMA dummies, n_estimators=2, model_path=HF ckpt, ignore_pretraining_limits=True.
+    - { name: tabpfn_centered }  # control: exact pinned recipe, must reproduce 0.8059 within tolerance
+    - { name: tabpfn_raw }  # DOC-FAITHFUL: raw unscaled lags + CMA passed via categorical_features_indices (docs: no scaling, no one-hot); compare vs control to settle preprocessing question
+    - { name: tabpfn_exo }  # SARIMAX-style sets on the winning preprocessing: seasonal-12/rolling/2nd-diff lags + liberal cross-CMA lags + census exo; auto_scale_n_estimators on (feature count trades row capacity per docs)
+    - { name: tabpfn_tuned }  # wrapper search on winner's features: n_estimators 2/4/8, fit_mode fit_preprocessors/low_memory/batched, inference_precision variants, memory_saving_mode as needed; quantile outputs for calibration diagnostics (not gates)
+
+gates:
+  correctness: "pass_rate == 1.0"  # all variant suites pass
+  performance: "delta_rmse < 0.8059"  # must honestly beat pinned tabpfn (docs/delta_search.md); test scored once — a fail means "no honest beat"
+  budgets: { samples: 200 }
+
+hints: "TabPFN has no time concept — chronological masks only, no random CV. Selection may use rolling-origin windows inside train freely; TEST SCORED EXACTLY ONCE, never selected on. 16-subset fit/select ONLY; 8 display frozen. Weights: tabpfn-v3-regressor-v3_default.ckpt from public HF Prior-Labs/tabpfn_3 via hf_hub_download passed as model_path= (proven path, docs/delta_search.md); never committed. License: TabPFN checkpoints are NON-COMMERCIAL research-only — this repo complies; note in docs. Tuning the wrapper too hard breaks pretraining assumptions — demand multi-window agreement; sub-1% inner deltas are noise. CPU float32, chunked predict; watch the pretraining row×feature limits (ignore_pretraining_limits only with documented justification)."
+
+deliverables:
+  branch: "flywheel/housing-tabpfn-refined-<ts>"
+  artifacts: ["artifacts/tabpfn_centered.joblib", "artifacts/tabpfn_raw.joblib", "artifacts/tabpfn_exo.joblib", "artifacts/tabpfn_tuned.joblib", "artifacts/metrics.json", "artifacts/manifest.json"]
+  tests: ["tests/test_tabpfn_centered.py", "tests/test_tabpfn_raw.py", "tests/test_tabpfn_exo.py", "tests/test_tabpfn_tuned.py"]
+  docs: ["docs/tabpfn_refined_search.md"]  # per-variant diagnosis + preprocessing verdict (raw vs centered) + license/fetch notes
+  notebooks: []
+
+constraints:
+  venv: .venv  # needs tabpfn + huggingface_hub
+  disk_gb: 60  # OPEN: re-measure at promotion
+  mem_gb: 16  # OPEN: re-measure at promotion
+  timeout: "timeout 600"
+  heavy_bg: false
+
+models:
+  orchestrator: "opencode/muse-spark-1.3-contributor-free"
+  executor: "opencode/muse-spark-1.3-contributor-free"

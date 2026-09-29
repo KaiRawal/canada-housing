@@ -1,0 +1,60 @@
+# DRAFT — reference only. Do not run. To promote: copy to
+# .flywheel/problem.yaml on a fresh flywheel/<slug>-<ts> branch,
+# re-measure constraints, resolve OPEN items, then /flywheel-new.
+# Doc sources (read at promotion): https://github.com/google-research/timesfm
+# (README: 3.0 multivariate/covariates/quantiles, XReg, LoRA finetune, MLX
+# backend) + timesfm3-usage/ examples. Key doc findings encoded below.
+
+problem: housing-timesfm-multivariate
+type: prediction
+goal: "Forecast signed month-to-month total-NHPI deltas with TimesFM 3.0 native multivariate forecasting — all 16 CMAs as joint target variates with past-only and past-future covariates — plus a 2.5+XReg fallback, for the signed monthly change in monthly total NHPI. Must beat the pinned univariate 0.8757 to matter."
+
+target:
+  scope: ["baselines/", "tests/", "artifacts/", "docs/", "prediction/", "evaluation/"]  # never touch data_cleaning/, imputation/ sources
+  delivery: branch
+
+datasets:
+  - name: imputed-total
+    source: prediction/X_train_full_total.csv  # y paired as y_{train,test}_full_total.csv; deltas derived downstream per-CMA, never re-imputed
+    cache: none
+  # CMA_SUBSET_16 (joint target variates; goals/gates/deliverables scope): Edmonton, Greater Sudbury, Hamilton, Kitchener-Cambridge-Waterloo, London, Montreal, Ottawa-Gatineau ON-part, Quebec, Regina, Saskatoon, St. Catharines-Niagara, St. John's, Vancouver, Victoria, Windsor, Winnipeg. Display-only: Halifax, Charlottetown, Guelph/Kelowna/Oshawa/Ottawa-Gatineau QC-part/Sherbrooke/Trois-Rivieres.
+
+blackbox:
+  train: ".venv/bin/python baselines/train_timesfm_multi.py --target total"  # new module; train_deltas.py untouched
+  predict: ".venv/bin/python baselines/predict_timesfm_multi.py --target total"  # prints delta_rmse (16) + delta_rmse_24 (display) + pass_rate + per-variant RMSEs
+  metric: delta_rmse  # chained mask n=1728/2398; test scored exactly once; forecasts anchored at last train target, actuals only, never recursive
+
+surrogate:
+  family: delta-regression
+  variants:
+    # timesfm25_uni is the CONTROL (pinned 0.8757 recipe): 2.5-200M per-CMA univariate rolling 1-step, ctx<=128, per-step causal demean.
+    - { name: timesfm25_uni }  # control: exact pinned recipe, must reproduce 0.8757 within tolerance
+    - { name: timesfm3_multi }  # 3.0 LEAD: all 16 CMAs as joint (16, context) target, horizon 1, per-step causal demean; context-length study (128/512/2048) on inner windows
+    - { name: timesfm3_cov }  # + past-only covariates (other-CMA lagged deltas, census exo) + past-future covariates (calendar); ablate covariates to prove contribution
+    - { name: timesfm25_xreg }  # FALLBACK: 2.5 + XReg covariates (Apache-2.0 weights, proven API in this repo); promote if 3.0 underperforms or license blocks
+    - { name: timesfm3_lora }  # OPTIONAL heavy: LoRA finetune per timesfm-forecasting/examples/finetuning (16-subset train only); budget-guarded, may be killed unfunded
+
+gates:
+  correctness: "pass_rate == 1.0"  # all variant suites pass
+  performance: "delta_rmse < 0.8757"  # must honestly beat pinned univariate timesfm (docs/delta_search.md); test scored once — a fail means "no honest beat"
+  budgets: { samples: 200 }
+
+hints: "Selection may use rolling-origin windows inside train freely; TEST SCORED EXACTLY ONCE, never selected on. 16 CMAs are the joint targets; 8 display CMAs scored with frozen configs, never fit on. Per-step causal demean (docs/delta_search.md discipline); external scale untouched. Quantile outputs are diagnostics (calibration/shrinkage check), not gates. License: TimesFM 3.0 weights are NON-COMMERCIAL (timesfm-non-commercial-license-v1.0) — research-compliant, note in docs; 2.5 weights stay Apache-2.0. Checkpoints via HF cache, never committed. Host is arm64/darwin — evaluate the MLX backend (no torch) against pytorch CPU for speed parity before committing to one. Expect near-naive on quiet CMAs (Edmonton/Sudbury/St. John's); wins must come from volatile Ontario/Quebec pockets."
+
+deliverables:
+  branch: "flywheel/housing-timesfm-multivariate-<ts>"
+  artifacts: ["artifacts/timesfm25_uni.joblib", "artifacts/timesfm3_multi.joblib", "artifacts/timesfm3_cov.joblib", "artifacts/timesfm25_xreg.joblib", "artifacts/timesfm3_lora.joblib", "artifacts/metrics.json", "artifacts/manifest.json"]
+  tests: ["tests/test_timesfm25_uni.py", "tests/test_timesfm3_multi.py", "tests/test_timesfm3_cov.py", "tests/test_timesfm25_xreg.py", "tests/test_timesfm3_lora.py"]
+  docs: ["docs/timesfm_multi_search.md"]  # per-variant diagnosis + covariate ablation + backend (MLX vs torch) + license/fetch notes
+  notebooks: []
+
+constraints:
+  venv: .venv  # needs timesfm (3.0 API: timesfm3) + torch OR mlx (arm64); heavy downloads, disk headroom required
+  disk_gb: 60  # OPEN: re-measure at promotion (3.0-330M checkpoint is larger than 2.5-200M)
+  mem_gb: 16  # OPEN: re-measure at promotion
+  timeout: "timeout 600"
+  heavy_bg: false
+
+models:
+  orchestrator: "opencode/muse-spark-1.3-contributor-free"
+  executor: "opencode/muse-spark-1.3-contributor-free"

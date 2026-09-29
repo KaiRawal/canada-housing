@@ -16,3 +16,14 @@ over `.flywheel/problem.yaml`, re-measure `constraints` (`df -h /`,
 - `housing-direction.problem.yaml` — binary up/down direction head.
   Tracked, ungated; expect ~coin flip per learnings. Open questions
   flagged inside (base rate, naive tie-break).
+- `housing-linear-sarimax.problem.yaml` — per-CMA SARIMAX-style linear
+  rounds (AR → MA/diff/seasonal → liberal cross-CMA exo → pooled
+  reconciliation), iterative diagnosis not grids. Gates `pass_rate == 1.0`
+  plus `delta_rmse < 0.8499` (pinned pooled-AR(3) from delta_search.md).
+- `housing-tabpfn-refined.problem.yaml` — doc-driven TabPFN v3 refinement
+  (raw+categorical vs centered control, exo sets, wrapper search). Gates
+  `pass_rate == 1.0` plus `delta_rmse < 0.8059` (pinned winner).
+- `housing-timesfm-multivariate.problem.yaml` — TimesFM 3.0 native
+  multivariate (16 joint variates + covariates + quantiles) with 2.5+XReg
+  fallback and optional LoRA. Gates `pass_rate == 1.0` plus
+  `delta_rmse < 0.8757` (pinned univariate). 3.0 weights non-commercial.
