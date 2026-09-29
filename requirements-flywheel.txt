@@ -1,0 +1,32 @@
+# Flywheel venv requirements — pinned from .venv (Python 3.13, macOS arm64).
+# Reproduce with: python3 -m venv .venv && .venv/bin/pip install -r requirements-flywheel.txt
+# NOTE: imputation/requirements.txt is a separate, older file — do not merge.
+
+# --- core data + modeling (installed, pinned Sep 2026) ---
+pandas==3.0.6
+numpy==2.5.3
+scikit-learn==1.9.1
+scipy==1.18.1
+joblib==1.6.0
+matplotlib==3.11.2
+
+# --- time-series + deep learning (installed, pinned Sep 2026) ---
+prophet==1.4.0  # bundles prebuilt CmdStan model; no ~/.cmdstan setup needed
+cmdstanpy==1.3.0
+torch==2.14.0  # CPU wheel
+chronos-forecasting==2.3.2
+transformers==5.17.0
+accelerate==1.15.0
+huggingface-hub  # managed via transformers/chronos; pin at install time
+safetensors==0.8.0
+tokenizers==0.23.2
+
+# --- verification ---
+pytest==9.1.1
+ruff==0.16.8
+
+# --- planned for housing-deltas run (NOT yet installed — pin on install) ---
+# tabpfn  # v3, non-commercial license; see docs/delta_search.md when created
+# timesfm  # pip install "timesfm[torch]"; Apache-2.0
+# gpflow  # spatio-temporal SGPR; CPU-only
+# geopandas  # derive prediction/cma_centroids.csv from the EPSG:3347 shapefile

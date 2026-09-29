@@ -1,0 +1,54 @@
+# DRAFT — reference only. Do not run. To promote: copy to
+# .flywheel/problem.yaml on a fresh flywheel/<slug>-<ts> branch,
+# re-measure constraints, resolve OPEN items, then /flywheel-new.
+
+problem: housing-direction
+type: prediction
+goal: "Build one tuned direction classifier per model class — majority, momentum, sparse logistic, gradient-boosted trees, TabPFN — for next-month up/down movement in monthly total NHPI across 24 CMAs. Direction is tracked, never gated: learnings say it is ~noise at this frequency."
+
+target:
+  scope: ["baselines/", "tests/", "artifacts/", "docs/", "prediction/", "evaluation/"]  # evaluation/ opened for classification metrics; imputation/, data_cleaning/ frozen
+  delivery: branch
+
+datasets:
+  - name: imputed-total
+    source: prediction/X_train_full_total.csv  # direction labels derived downstream per-CMA (up iff delta_t > 0); OPEN: measure majority-class base rate first
+    cache: none
+
+blackbox:
+  train: ".venv/bin/python baselines/train_direction.py --target total"  # new module; level/delta trainers untouched
+  predict: ".venv/bin/python baselines/predict_direction.py --target total"  # prints dir_accuracy + dir_auroc + pass_rate
+  metric: dir_accuracy  # tracked primary; models compared, never thresholded
+
+surrogate:
+  family: binary-classification
+  variants:
+    - { name: majority }  # predict majority class; the anchor (base rate OPEN — measure before promotion)
+    - { name: momentum }  # predict previous month's direction; autocorrelation baseline (persistence MDA was 0.547 on levels)
+    - { name: logistic }  # sparse (L1) logistic on dedup-0.99 set + shrunk CMA offsets
+    - { name: gbt_classifier }  # HistGB classifier, delta-style features; small-CMA exclusion per learnings
+    - { name: tabpfn_clf }  # TabPFN v3 zero-shot classifier (non-commercial license); chronological masks only
+
+gates:
+  correctness: "pass_rate == 1.0"  # suites only. No direction threshold: expected outcome is ~coin flip (MDA 0.39-0.55 historically); a threshold gate would fail permanently
+  budgets: { samples: 200 }
+
+hints: "Direction at monthly frequency is noise with these features (docs/learnings.md). Expect accuracy near the majority base rate; beating momentum (0.547-equivalent) is a genuine result. OPEN design point: naive-delta-0 has no sign — tie-break rule must be fixed at promotion (suggest: strict delta>0 is up, else down, documented in evaluation/). Use balanced accuracy / AUROC alongside raw accuracy given positive drift. Lagged-only features (settles the lookahead audit). Per-CMA offsets as in H1."
+
+deliverables:
+  branch: "flywheel/housing-direction-<ts>"
+  artifacts: ["artifacts/majority.joblib", "artifacts/momentum.joblib", "artifacts/logistic.joblib", "artifacts/gbt_classifier.joblib", "artifacts/tabpfn_clf.joblib", "artifacts/metrics.json", "artifacts/manifest.json"]
+  tests: ["tests/test_direction_majority.py", "tests/test_direction_momentum.py", "tests/test_direction_logistic.py", "tests/test_direction_gbt_classifier.py", "tests/test_direction_tabpfn_clf.py"]
+  docs: ["docs/direction_search.md"]
+  notebooks: []
+
+constraints:
+  venv: .venv  # needs tabpfn (already planned for deltas run)
+  disk_gb: 60  # OPEN: re-measure at promotion
+  mem_gb: 16  # OPEN: re-measure at promotion
+  timeout: "timeout 600"
+  heavy_bg: false
+
+models:
+  orchestrator: "opencode/muse-spark-1.3-contributor-free"
+  executor: "opencode/muse-spark-1.3-contributor-free"

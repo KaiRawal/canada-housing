@@ -1,0 +1,55 @@
+# DRAFT — reference only. Do not run. To promote: copy to
+# .flywheel/problem.yaml on a fresh flywheel/<slug>-<ts> branch,
+# re-measure constraints, resolve OPEN items, then /flywheel-new.
+
+problem: housing-baselines-rerun
+type: prediction
+goal: "Rerun the vanilla levels flywheel with rerun-2 follow-ups — LSTM small-CMA exclusion, linear round-2 per-CMA audit, conditional (gated) Chronos use — for monthly total NHPI across 24 CMAs, keeping the best config per class against rerun-2 baselines."
+
+target:
+  scope: ["baselines/", "tests/", "artifacts/", "docs/", "prediction/"]  # evaluation/ stays frozen; imputation/, data_cleaning/ frozen
+  delivery: branch
+
+datasets:
+  - name: imputed-total
+    source: prediction/X_train_full_total.csv  # y paired as y_{train,test}_full_total.csv; no re-imputation
+    cache: none
+
+blackbox:
+  train: ".venv/bin/python baselines/train.py --target total"  # imputation already materialized; no re-run
+  predict: ".venv/bin/python baselines/predict.py --target total"
+  metric: pass_rate
+
+surrogate:
+  family: time-series
+  variants:
+    - { name: persistence }  # anchor 3.7782e-04, frozen
+    - { name: linear_regression }  # incumbent try-5 partial-pooling 3.57411e-04; follow-up: round-2 per-CMA residual audit
+    - { name: gbt_ensemble }  # incumbent try-3 3.5997e-04; H2 upweighting killed at val — do not retry without new evidence
+    - { name: prophet }  # frozen at try-1 tie; no expected value
+    - { name: lstm_rnn }  # incumbent try-2 3.6252e-04; follow-up: small-CMA exclusion for pooled fit (capacity expansion killed twice)
+    - { name: pretrained_ts }  # incumbent try-3 3.7278e-04; follow-up: conditional gated use only, 0 new Chronos calls unless val proves a slice
+
+gates:
+  correctness: "pass_rate == 1.0"  # victory by comparison vs pinned baselines below; no threshold gate
+  budgets: { samples: 200 }
+
+hints: "Baselines to beat (test NRMSE): linear 3.57411e-04, gbt 3.59966e-04, lstm 3.62524e-04, pretrained 3.72777e-04, persistence/prophet 3.77818e-04. Follow-ups in priority order: (1) LSTM small-CMA exclusion, (2) linear round-2 audit for further offset targets, (3) conditional Chronos gating. Dead ends (docs/learnings.md): per-regime hard-split refits, capacity expansion, unconditional context sweeps, val-blind threshold moves, Ridge<=1e-4, level-formulation trees, challenger blends on tied classes. Sub-1% deltas are noise; require val-to-test sign agreement."
+
+deliverables:
+  branch: "flywheel/housing-baselines-rerun-<ts>"
+  artifacts: ["artifacts/persistence.joblib", "artifacts/linear_regression.joblib", "artifacts/gbt_ensemble.joblib", "artifacts/prophet.joblib", "artifacts/deep_learning.joblib", "artifacts/pretrained_ts.joblib", "artifacts/metrics.json", "artifacts/manifest.json"]
+  tests: ["tests/test_baselines_persistence.py", "tests/test_baselines_linear_regression.py", "tests/test_baselines_gbt_ensemble.py", "tests/test_baselines_prophet.py", "tests/test_baselines_deep_learning.py", "tests/test_baselines_pretrained_ts.py"]
+  docs: ["docs/hyperparam_search.md"]  # append §10 for this run
+  notebooks: []
+
+constraints:
+  venv: .venv
+  disk_gb: 60  # OPEN: re-measure at promotion (was 194G free, Sep 2026)
+  mem_gb: 16  # OPEN: re-measure at promotion (24GB box, pressured); keep serial execution if still pressured
+  timeout: "timeout 600"
+  heavy_bg: false
+
+models:
+  orchestrator: "opencode/muse-spark-1.3-contributor-free"
+  executor: "opencode/muse-spark-1.3-contributor-free"

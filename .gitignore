@@ -203,3 +203,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Flywheel scratch + environment (mirrored on main and all flywheel branches)
+.venv/
+.flywheel/runs/
+
+# Pretrained model downloads (TabPFN/TimesFM/Chronos weights, checkpoints).
+# NOTE: committed artifacts/*.joblib are keepers and are NOT ignored.
+.hf_cache/
+models/
+checkpoints/
+*.safetensors
+*.ckpt
