@@ -1,9 +1,10 @@
 # DRAFT — reference only. Do not run. To promote: copy to
 # .flywheel/problem.yaml on a fresh flywheel/<slug>-<ts> branch,
 # re-measure constraints, resolve OPEN items, then /flywheel-new.
-# Doc sources (read at promotion): https://priorlabs.ai/docs and
-# https://github.com/PriorLabs/TabPFN (regressor.py constructor docs,
-# README best-practices). Key doc findings encoded below.
+# SUPERSEDED 20260929: the executed run used 6 scope×target variants (see live
+# spec history on flywheel/housing-tabpfn-refined-20260929T064650Z and
+# docs/tabpfn_refined_search.md — winner shared_delta 0.7990). Prefer that design
+# if re-running; this file is kept for the original doc-driven angle.
 
 problem: housing-tabpfn-refined
 type: prediction
@@ -27,7 +28,6 @@ blackbox:
 surrogate:
   family: delta-regression
   variants:
-    # tabpfn_centered is the CONTROL (pinned 0.8059 recipe): lags-1..12 mean-centered deltas + CMA dummies, n_estimators=2, model_path=HF ckpt, ignore_pretraining_limits=True.
     - { name: tabpfn_centered }  # control: exact pinned recipe, must reproduce 0.8059 within tolerance
     - { name: tabpfn_raw }  # DOC-FAITHFUL: raw unscaled lags + CMA passed via categorical_features_indices (docs: no scaling, no one-hot); compare vs control to settle preprocessing question
     - { name: tabpfn_exo }  # SARIMAX-style sets on the winning preprocessing: seasonal-12/rolling/2nd-diff lags + liberal cross-CMA lags + census exo; auto_scale_n_estimators on (feature count trades row capacity per docs)

@@ -1,0 +1,55 @@
+# DRAFT — reference only. Do not run. To promote: copy to
+# .flywheel/problem.yaml on a fresh flywheel/<slug>-<ts> branch,
+# re-measure constraints, resolve OPEN items, then /flywheel-new.
+
+problem: housing-returns
+type: prediction
+goal: "Forecast monthly total NHPI in scale-free return space — log-returns r_t = ln(y_t/y_{t-1}) — so volatile high-level pockets stop dominating pooled losses, with linear, TabPFN, and TimesFM variants plus a naive anchor, all reported in return space and back-converted to implied deltas for cross-loop comparison."
+
+target:
+  scope: ["baselines/", "tests/", "artifacts/", "docs/", "prediction/", "evaluation/"]  # never touch data_cleaning/, imputation/ sources
+  delivery: branch
+
+datasets:
+  - name: imputed-total
+    source: prediction/y_train_full_total.csv  # y paired; returns derived downstream per-CMA (r_t = ln(y_t/y_{t-1}), causal); deltas never re-imputed; OPEN: confirm y CSVs ported to the run branch
+    cache: none
+  # CMA_SUBSET_16 (goals/gates/deliverables scope): Edmonton, Greater Sudbury, Hamilton, Kitchener-Cambridge-Waterloo, London, Montreal, Ottawa-Gatineau ON-part, Quebec, Regina, Saskatoon, St. Catharines-Niagara, St. John's, Vancouver, Victoria, Windsor, Winnipeg. Display-only: Halifax, Charlottetown, Guelph/Kelowna/Oshawa/Ottawa-Gatineau QC-part/Sherbrooke/Trois-Rivieres.
+
+blackbox:
+  train: ".venv/bin/python baselines/train_returns.py --target total"  # new module; all prior trainers untouched
+  predict: ".venv/bin/python baselines/predict_returns.py --target total"  # prints returns_rmse (16, in percent points) + implied delta_rmse + delta_rmse_24 + pass_rate + per-variant RMSEs
+  metric: returns_rmse  # RMSE on 100*ln(y_t/y_{t-1}); chained mask; test scored exactly once; implied deltas reported for cross-loop comparison only (not gated)
+
+surrogate:
+  family: returns-regression
+  variants:
+    - { name: naive_ret }  # predict r=0 every month (flat index); the anchor — OPEN: measure its returns_rmse at promotion and record as the floor
+    - { name: linear_ret }  # pooled sparse Lasso on lagged returns + rolling stats (sarimax R4 recipe, transposed to return space)
+    - { name: tabpfn_ret }  # shared TabPFN v3 on raw lagged returns + categorical CMA (shared_delta recipe, transposed)
+    - { name: timesfm_ret }  # TimesFM 3.0 joint 16-variate on return series (3.0-multi recipe, transposed); levels never enter
+
+gates:
+  correctness: "pass_rate == 1.0"  # all variant suites pass
+  budgets: { samples: 2500 }  # relaxed: reviewer scores ~full masks
+  # OPEN: no performance gate pinnable until the returns-naive floor is measured at promotion (return-space RMSE has no cross-loop precedent). At promotion: measure naive_ret returns_rmse, then EITHER pin `returns_rmse < <floor>` OR keep comparison-only. Record the decision in the run log.
+
+hints: "Return space is the experiment: r_t ~= delta_t/y_{t-1}, so high-level CMAs stop dominating SSE — expect flatter per-CMA errors and a different winner than delta space. Selection may use rolling-origin windows inside train freely; TEST SCORED EXACTLY ONCE, never selected on. 16-subset fit/select ONLY; 8 display frozen. Implied deltas (delta_hat = (exp(r_hat)-1)*y_{t-1}) are diagnostics for cross-loop comparison, never selection. TabPFN: raw returns + categorical CMA, HF ckpt model_path, non-commercial license noted. TimesFM 3.0: joint targets, torch-CPU backend verdict carries over, 3.0 weights non-commercial. Sub-1% inner deltas are noise — demand multi-window agreement."
+
+deliverables:
+  branch: "flywheel/housing-returns-<ts>"
+  artifacts: ["artifacts/naive_ret.joblib", "artifacts/linear_ret.joblib", "artifacts/tabpfn_ret.joblib", "artifacts/timesfm_ret.joblib", "artifacts/metrics.json", "artifacts/manifest.json"]
+  tests: ["tests/test_returns_naive_ret.py", "tests/test_returns_linear_ret.py", "tests/test_returns_tabpfn_ret.py", "tests/test_returns_timesfm_ret.py"]
+  docs: ["docs/returns_search.md"]  # scope/target verdicts in return space + implied-delta comparison table vs delta-space best (0.7990) + floor measurement
+  notebooks: []
+
+constraints:
+  venv: .venv  # needs tabpfn + huggingface_hub + timesfm3 + torch (all present in prior venvs)
+  disk_gb: 60  # OPEN: re-measure at promotion
+  mem_gb: 16  # OPEN: re-measure at promotion
+  timeout: "timeout 600"
+  heavy_bg: false
+
+models:
+  orchestrator: "opencode/muse-spark-1.3-contributor-free"
+  executor: "opencode/muse-spark-1.3-contributor-free"

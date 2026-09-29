@@ -27,3 +27,12 @@ over `.flywheel/problem.yaml`, re-measure `constraints` (`df -h /`,
   multivariate (16 joint variates + covariates + quantiles) with 2.5+XReg
   fallback and optional LoRA. Gates `pass_rate == 1.0` plus
   `delta_rmse < 0.8757` (pinned univariate). 3.0 weights non-commercial.
+- `housing-returns.problem.yaml` — scale-free log-return targets so
+  volatile pockets stop dominating pooled losses (linear / TabPFN /
+  TimesFM-3.0 + naive anchor; implied deltas for cross-loop comparison).
+  Correctness gate only; performance gate OPEN until the returns-naive
+  floor is measured at promotion.
+- `housing-timesfm-percma.problem.yaml` — per-CMA LoRA adapters on
+  TimesFM 3.0 (the per-city trained-TimesFM never tried), rank 4/8 vs
+  frozen-joint and joint-LoRA controls. Gates `pass_rate == 1.0` plus
+  `delta_rmse < 0.8217`.
