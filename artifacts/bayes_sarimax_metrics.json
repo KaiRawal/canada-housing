@@ -1,0 +1,180 @@
+{
+  "A_rmse_16": 0.8005313011569783,
+  "A_coverage_95": 0.9195601851851852,
+  "A_winkler": 5.274676041347787,
+  "A_coverage_raw": 0.8732638888888888,
+  "B_coverage_raw": 0.796875,
+  "B_winkler_raw": 7.543760790021401,
+  "q95_A_per_cma": {
+    "Edmonton, Alberta": 6.198606408600165,
+    "Greater Sudbury, Ontario": 5.93571369569905,
+    "Hamilton, Ontario": 4.696752479492224,
+    "Kitchener-Cambridge-Waterloo, Ontario": 5.95360560860684,
+    "London, Ontario": 5.492793834799882,
+    "Montr\u00e9al, Quebec": 4.327002564644551,
+    "Ottawa-Gatineau, Ontario part, Ontario/Quebec": 5.409291843489241,
+    "Qu\u00e9bec, Quebec": 5.637657249829419,
+    "Regina, Saskatchewan": 6.087529772580178,
+    "Saskatoon, Saskatchewan": 5.026460373808658,
+    "St. Catharines-Niagara, Ontario": 5.871083996457761,
+    "St. John's, Newfoundland and Labrador": 4.949736723388185,
+    "Vancouver, British Columbia": 4.8797472875908525,
+    "Victoria, British Columbia": 5.945277456094919,
+    "Windsor, Ontario": 5.522284858960786,
+    "Winnipeg, Manitoba": 4.030881887790851
+  },
+  "q95_B_per_cma": {
+    "Edmonton, Alberta": 6.875446084618538,
+    "Greater Sudbury, Ontario": 5.663132222762618,
+    "Hamilton, Ontario": 4.847436213004297,
+    "Kitchener-Cambridge-Waterloo, Ontario": 5.869879448829407,
+    "London, Ontario": 5.5693425357642745,
+    "Montr\u00e9al, Quebec": 4.762129801539296,
+    "Ottawa-Gatineau, Ontario part, Ontario/Quebec": 5.770347109755584,
+    "Qu\u00e9bec, Quebec": 5.7804250117309754,
+    "Regina, Saskatchewan": 6.719966555457599,
+    "Saskatoon, Saskatchewan": 5.1354117523305725,
+    "St. Catharines-Niagara, Ontario": 6.04210278971628,
+    "St. John's, Newfoundland and Labrador": 5.082831361053398,
+    "Vancouver, British Columbia": 5.0021117258900585,
+    "Victoria, British Columbia": 6.063733217375944,
+    "Windsor, Ontario": 5.447644486513495,
+    "Winnipeg, Manitoba": 4.189405742330808
+  },
+  "B_rmse_16": 0.8279190241253429,
+  "B_coverage_95": 0.9184027777777778,
+  "B_winkler": 5.607737956711183,
+  "naive_rmse_16": 0.9563899377152413,
+  "ndiv_B": 0,
+  "rhat_max_B": 1.0020583367776292,
+  "per_cma": {
+    "Edmonton, Alberta": {
+      "rmse_A": 0.5208196480223806,
+      "rmse_B": 0.5371140239344866,
+      "cov_A": 0.9629629629629629,
+      "cov_B": 0.9814814814814815,
+      "naive": 0.5771096564393595,
+      "n": 108.0
+    },
+    "Greater Sudbury, Ontario": {
+      "rmse_A": 0.9079007390525312,
+      "rmse_B": 0.914101356403839,
+      "cov_A": 0.9166666666666666,
+      "cov_B": 0.9166666666666666,
+      "naive": 0.9755814980099106,
+      "n": 108.0
+    },
+    "Hamilton, Ontario": {
+      "rmse_A": 0.630883952566841,
+      "rmse_B": 0.613825066748075,
+      "cov_A": 0.8888888888888888,
+      "cov_B": 0.8796296296296297,
+      "naive": 0.6492873586279607,
+      "n": 108.0
+    },
+    "Kitchener-Cambridge-Waterloo, Ontario": {
+      "rmse_A": 1.0531917223320209,
+      "rmse_B": 1.12699465497381,
+      "cov_A": 0.9074074074074074,
+      "cov_B": 0.9074074074074074,
+      "naive": 1.391242450313947,
+      "n": 108.0
+    },
+    "London, Ontario": {
+      "rmse_A": 0.8875119480286658,
+      "rmse_B": 0.9234614764658585,
+      "cov_A": 0.9166666666666666,
+      "cov_B": 0.9166666666666666,
+      "naive": 1.0697005465359264,
+      "n": 108.0
+    },
+    "Montr\u00e9al, Quebec": {
+      "rmse_A": 1.1039400149858398,
+      "rmse_B": 1.122621739120008,
+      "cov_A": 0.9166666666666666,
+      "cov_B": 0.9166666666666666,
+      "naive": 1.2698060510989098,
+      "n": 108.0
+    },
+    "Ottawa-Gatineau, Ontario part, Ontario/Quebec": {
+      "rmse_A": 1.0451567674771234,
+      "rmse_B": 1.1161796326907836,
+      "cov_A": 0.8981481481481481,
+      "cov_B": 0.8981481481481481,
+      "naive": 1.427150748610413,
+      "n": 108.0
+    },
+    "Qu\u00e9bec, Quebec": {
+      "rmse_A": 0.7494580175338952,
+      "rmse_B": 0.7766705290440221,
+      "cov_A": 0.9259259259259259,
+      "cov_B": 0.9074074074074074,
+      "naive": 0.8896004096721682,
+      "n": 108.0
+    },
+    "Regina, Saskatchewan": {
+      "rmse_A": 0.5193411678304598,
+      "rmse_B": 0.5177919096030177,
+      "cov_A": 0.9537037037037037,
+      "cov_B": 0.9537037037037037,
+      "naive": 0.5500000000000003,
+      "n": 108.0
+    },
+    "Saskatoon, Saskatchewan": {
+      "rmse_A": 0.5217945157393946,
+      "rmse_B": 0.5286583933211756,
+      "cov_A": 0.9074074074074074,
+      "cov_B": 0.9259259259259259,
+      "naive": 0.5741338081228365,
+      "n": 108.0
+    },
+    "St. Catharines-Niagara, Ontario": {
+      "rmse_A": 0.6559090878587802,
+      "rmse_B": 0.6590394120746642,
+      "cov_A": 0.9259259259259259,
+      "cov_B": 0.9259259259259259,
+      "naive": 0.7516648189186447,
+      "n": 108.0
+    },
+    "St. John's, Newfoundland and Labrador": {
+      "rmse_A": 0.4317086273945224,
+      "rmse_B": 0.42763275101932446,
+      "cov_A": 0.9351851851851852,
+      "cov_B": 0.9259259259259259,
+      "naive": 0.4375859703892273,
+      "n": 108.0
+    },
+    "Vancouver, British Columbia": {
+      "rmse_A": 0.6775573958656034,
+      "rmse_B": 0.7030025861763264,
+      "cov_A": 0.8981481481481481,
+      "cov_B": 0.8981481481481481,
+      "naive": 0.793083527430422,
+      "n": 108.0
+    },
+    "Victoria, British Columbia": {
+      "rmse_A": 0.7261746875174516,
+      "rmse_B": 0.7237393567646817,
+      "cov_A": 0.9259259259259259,
+      "cov_B": 0.9259259259259259,
+      "naive": 0.7977398629182878,
+      "n": 108.0
+    },
+    "Windsor, Ontario": {
+      "rmse_A": 1.041959257407962,
+      "rmse_B": 1.0916672931311833,
+      "cov_A": 0.9537037037037037,
+      "cov_B": 0.9444444444444444,
+      "naive": 1.2435016269777435,
+      "n": 108.0
+    },
+    "Winnipeg, Manitoba": {
+      "rmse_A": 0.8716501409436971,
+      "rmse_B": 0.9271209422072485,
+      "cov_A": 0.8796296296296297,
+      "cov_B": 0.8703703703703703,
+      "naive": 1.0990315602248961,
+      "n": 108.0
+    }
+  }
+}
