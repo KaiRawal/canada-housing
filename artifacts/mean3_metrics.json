@@ -1,0 +1,87 @@
+{
+  "delta_rmse_16": 0.7915989172464473,
+  "naive_rmse_16": 0.9563899377152413,
+  "gain_pct": 17.23052637530566,
+  "per_cma": {
+    "Edmonton, Alberta": {
+      "rmse": 0.5167815327203988,
+      "naive": 0.5771096564393595,
+      "n": 108.0
+    },
+    "Greater Sudbury, Ontario": {
+      "rmse": 0.8890498224740765,
+      "naive": 0.9755814980099106,
+      "n": 108.0
+    },
+    "Hamilton, Ontario": {
+      "rmse": 0.6278638171141032,
+      "naive": 0.6492873586279607,
+      "n": 108.0
+    },
+    "Kitchener-Cambridge-Waterloo, Ontario": {
+      "rmse": 1.0522845006623125,
+      "naive": 1.391242450313947,
+      "n": 108.0
+    },
+    "London, Ontario": {
+      "rmse": 0.8957761876570652,
+      "naive": 1.0697005465359264,
+      "n": 108.0
+    },
+    "Montr\u00e9al, Quebec": {
+      "rmse": 1.0838156521755755,
+      "naive": 1.2698060510989098,
+      "n": 108.0
+    },
+    "Ottawa-Gatineau, Ontario part, Ontario/Quebec": {
+      "rmse": 1.0250750938565454,
+      "naive": 1.427150748610413,
+      "n": 108.0
+    },
+    "Qu\u00e9bec, Quebec": {
+      "rmse": 0.7593839890338814,
+      "naive": 0.8896004096721682,
+      "n": 108.0
+    },
+    "Regina, Saskatchewan": {
+      "rmse": 0.5095097052921199,
+      "naive": 0.5500000000000003,
+      "n": 108.0
+    },
+    "Saskatoon, Saskatchewan": {
+      "rmse": 0.517451406798017,
+      "naive": 0.5741338081228365,
+      "n": 108.0
+    },
+    "St. Catharines-Niagara, Ontario": {
+      "rmse": 0.6444754756971636,
+      "naive": 0.7516648189186447,
+      "n": 108.0
+    },
+    "St. John's, Newfoundland and Labrador": {
+      "rmse": 0.42564262980698075,
+      "naive": 0.4375859703892273,
+      "n": 108.0
+    },
+    "Vancouver, British Columbia": {
+      "rmse": 0.6689881757435208,
+      "naive": 0.793083527430422,
+      "n": 108.0
+    },
+    "Victoria, British Columbia": {
+      "rmse": 0.7145902882505205,
+      "naive": 0.7977398629182878,
+      "n": 108.0
+    },
+    "Windsor, Ontario": {
+      "rmse": 1.0232577880316125,
+      "naive": 1.2435016269777435,
+      "n": 108.0
+    },
+    "Winnipeg, Manitoba": {
+      "rmse": 0.8564119729968425,
+      "naive": 1.0990315602248961,
+      "n": 108.0
+    }
+  }
+}

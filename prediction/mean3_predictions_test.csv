@@ -1,0 +1,2399 @@
+cma_canonical,date,total_true,total_pred
+"Charlottetown, Prince Edward Island",2018-12-01,100.1,
+"Charlottetown, Prince Edward Island",2019-01-01,100.1,
+"Charlottetown, Prince Edward Island",2019-02-01,100.1,
+"Charlottetown, Prince Edward Island",2019-03-01,100.1,
+"Charlottetown, Prince Edward Island",2019-04-01,100.1,
+"Charlottetown, Prince Edward Island",2019-05-01,101.1,
+"Charlottetown, Prince Edward Island",2019-06-01,101.1,
+"Charlottetown, Prince Edward Island",2019-07-01,101.1,
+"Charlottetown, Prince Edward Island",2019-08-01,101.1,
+"Charlottetown, Prince Edward Island",2019-09-01,102.0,
+"Charlottetown, Prince Edward Island",2019-10-01,102.0,
+"Charlottetown, Prince Edward Island",2019-11-01,102.0,
+"Charlottetown, Prince Edward Island",2019-12-01,102.0,
+"Charlottetown, Prince Edward Island",2020-01-01,102.0,
+"Charlottetown, Prince Edward Island",2020-02-01,102.0,
+"Charlottetown, Prince Edward Island",2020-03-01,102.0,
+"Charlottetown, Prince Edward Island",2020-04-01,102.0,
+"Charlottetown, Prince Edward Island",2020-05-01,102.6,
+"Charlottetown, Prince Edward Island",2020-06-01,102.6,
+"Charlottetown, Prince Edward Island",2020-07-01,102.6,
+"Charlottetown, Prince Edward Island",2020-08-01,102.6,
+"Charlottetown, Prince Edward Island",2020-09-01,104.7,
+"Charlottetown, Prince Edward Island",2020-10-01,104.7,
+"Charlottetown, Prince Edward Island",2020-11-01,106.5,
+"Charlottetown, Prince Edward Island",2020-12-01,106.5,
+"Charlottetown, Prince Edward Island",2021-01-01,110.0,
+"Charlottetown, Prince Edward Island",2021-02-01,110.2,
+"Charlottetown, Prince Edward Island",2021-03-01,113.9,
+"Charlottetown, Prince Edward Island",2021-04-01,115.2,
+"Charlottetown, Prince Edward Island",2021-05-01,118.9,
+"Charlottetown, Prince Edward Island",2021-06-01,118.9,
+"Charlottetown, Prince Edward Island",2021-07-01,119.7,
+"Charlottetown, Prince Edward Island",2021-08-01,119.8,
+"Charlottetown, Prince Edward Island",2021-09-01,119.7,
+"Charlottetown, Prince Edward Island",2021-10-01,119.7,
+"Charlottetown, Prince Edward Island",2021-11-01,119.7,
+"Charlottetown, Prince Edward Island",2021-12-01,119.5,
+"Charlottetown, Prince Edward Island",2022-01-01,119.5,
+"Charlottetown, Prince Edward Island",2022-02-01,119.5,
+"Charlottetown, Prince Edward Island",2022-03-01,121.3,
+"Charlottetown, Prince Edward Island",2022-04-01,121.3,
+"Charlottetown, Prince Edward Island",2022-05-01,121.3,
+"Charlottetown, Prince Edward Island",2022-06-01,122.5,
+"Charlottetown, Prince Edward Island",2022-07-01,122.8,
+"Charlottetown, Prince Edward Island",2022-08-01,122.8,
+"Charlottetown, Prince Edward Island",2022-09-01,122.6,
+"Charlottetown, Prince Edward Island",2022-10-01,122.6,
+"Charlottetown, Prince Edward Island",2022-11-01,122.6,
+"Charlottetown, Prince Edward Island",2022-12-01,122.6,
+"Charlottetown, Prince Edward Island",2023-01-01,122.6,
+"Charlottetown, Prince Edward Island",2023-02-01,122.6,
+"Charlottetown, Prince Edward Island",2023-03-01,122.6,
+"Charlottetown, Prince Edward Island",2023-04-01,122.6,
+"Charlottetown, Prince Edward Island",2023-05-01,122.6,
+"Charlottetown, Prince Edward Island",2023-06-01,122.6,
+"Charlottetown, Prince Edward Island",2023-07-01,122.6,
+"Charlottetown, Prince Edward Island",2023-08-01,122.6,
+"Charlottetown, Prince Edward Island",2023-09-01,122.6,
+"Charlottetown, Prince Edward Island",2023-10-01,122.6,
+"Charlottetown, Prince Edward Island",2023-11-01,122.6,
+"Charlottetown, Prince Edward Island",2023-12-01,122.6,
+"Charlottetown, Prince Edward Island",2024-01-01,122.6,
+"Charlottetown, Prince Edward Island",2024-02-01,122.6,
+"Charlottetown, Prince Edward Island",2024-03-01,122.6,
+"Charlottetown, Prince Edward Island",2024-04-01,122.6,
+"Charlottetown, Prince Edward Island",2024-05-01,122.6,
+"Charlottetown, Prince Edward Island",2024-06-01,122.6,
+"Charlottetown, Prince Edward Island",2024-07-01,122.6,
+"Charlottetown, Prince Edward Island",2024-08-01,122.6,
+"Charlottetown, Prince Edward Island",2024-09-01,122.6,
+"Charlottetown, Prince Edward Island",2024-10-01,122.6,
+"Charlottetown, Prince Edward Island",2024-11-01,122.6,
+"Charlottetown, Prince Edward Island",2024-12-01,122.6,
+"Charlottetown, Prince Edward Island",2025-01-01,122.6,
+"Charlottetown, Prince Edward Island",2025-02-01,122.6,
+"Charlottetown, Prince Edward Island",2025-03-01,122.0,
+"Charlottetown, Prince Edward Island",2025-04-01,122.0,
+"Charlottetown, Prince Edward Island",2025-05-01,122.0,
+"Charlottetown, Prince Edward Island",2025-06-01,123.7,
+"Charlottetown, Prince Edward Island",2025-07-01,123.7,
+"Charlottetown, Prince Edward Island",2025-08-01,123.7,
+"Charlottetown, Prince Edward Island",2025-09-01,123.7,
+"Charlottetown, Prince Edward Island",2025-10-01,123.7,
+"Charlottetown, Prince Edward Island",2025-11-01,123.7,
+"Charlottetown, Prince Edward Island",2025-12-01,123.7,
+"Charlottetown, Prince Edward Island",2026-01-01,123.7,
+"Edmonton, Alberta",2017-02-01,100.2,100.01332650720173
+"Edmonton, Alberta",2017-03-01,100.2,100.24352041777708
+"Edmonton, Alberta",2017-04-01,100.0,100.2607744923986
+"Edmonton, Alberta",2017-05-01,100.0,100.03933731700528
+"Edmonton, Alberta",2017-06-01,99.8,100.03489397633454
+"Edmonton, Alberta",2017-07-01,99.8,99.80287168009424
+"Edmonton, Alberta",2017-08-01,99.9,99.82308211931766
+"Edmonton, Alberta",2017-09-01,99.8,99.92602093683887
+"Edmonton, Alberta",2017-10-01,99.8,99.83394651456511
+"Edmonton, Alberta",2017-11-01,100.0,99.84190853430712
+"Edmonton, Alberta",2017-12-01,99.9,100.0463198585665
+"Edmonton, Alberta",2018-01-01,99.8,99.95541868563035
+"Edmonton, Alberta",2018-02-01,99.6,99.85080613694161
+"Edmonton, Alberta",2018-03-01,99.7,99.58044019036758
+"Edmonton, Alberta",2018-04-01,99.6,99.71691357647663
+"Edmonton, Alberta",2018-05-01,99.6,99.6170376285978
+"Edmonton, Alberta",2018-06-01,99.8,99.61863958440881
+"Edmonton, Alberta",2018-07-01,99.8,99.83285956971154
+"Edmonton, Alberta",2018-08-01,99.3,99.84971003852293
+"Edmonton, Alberta",2018-09-01,99.3,99.29998006405037
+"Edmonton, Alberta",2018-10-01,99.4,99.279144829375
+"Edmonton, Alberta",2018-11-01,99.3,99.38227052290863
+"Edmonton, Alberta",2018-12-01,99.4,99.31814273751533
+"Edmonton, Alberta",2019-01-01,99.3,99.41143089171335
+"Edmonton, Alberta",2019-02-01,99.2,99.28847504634143
+"Edmonton, Alberta",2019-03-01,99.0,99.23765867465187
+"Edmonton, Alberta",2019-04-01,99.0,98.98943026025319
+"Edmonton, Alberta",2019-05-01,98.7,98.98925311384421
+"Edmonton, Alberta",2019-06-01,98.6,98.66322167565785
+"Edmonton, Alberta",2019-07-01,97.8,98.5653427580041
+"Edmonton, Alberta",2019-08-01,97.9,97.64376722191867
+"Edmonton, Alberta",2019-09-01,98.1,97.80338700870124
+"Edmonton, Alberta",2019-10-01,97.8,98.0365236394159
+"Edmonton, Alberta",2019-11-01,96.8,97.75231775550928
+"Edmonton, Alberta",2019-12-01,97.2,96.62548588354457
+"Edmonton, Alberta",2020-01-01,97.6,97.0611680332818
+"Edmonton, Alberta",2020-02-01,97.5,97.58998667159294
+"Edmonton, Alberta",2020-03-01,97.8,97.55119910843516
+"Edmonton, Alberta",2020-04-01,97.5,97.81794277019482
+"Edmonton, Alberta",2020-05-01,97.6,97.47019025729995
+"Edmonton, Alberta",2020-06-01,97.4,97.66932893269717
+"Edmonton, Alberta",2020-07-01,97.2,97.40135516719988
+"Edmonton, Alberta",2020-08-01,97.2,97.20214978676425
+"Edmonton, Alberta",2020-09-01,97.5,97.21056738846971
+"Edmonton, Alberta",2020-10-01,97.8,97.54349536763067
+"Edmonton, Alberta",2020-11-01,98.4,97.92988263276466
+"Edmonton, Alberta",2020-12-01,98.2,98.59046547462711
+"Edmonton, Alberta",2021-01-01,98.3,98.3168776641782
+"Edmonton, Alberta",2021-02-01,99.1,98.40240709648963
+"Edmonton, Alberta",2021-03-01,100.1,99.2685523917801
+"Edmonton, Alberta",2021-04-01,100.5,100.45149974267214
+"Edmonton, Alberta",2021-05-01,102.7,100.87627228865075
+"Edmonton, Alberta",2021-06-01,103.3,103.26955688906693
+"Edmonton, Alberta",2021-07-01,104.3,103.79204824152771
+"Edmonton, Alberta",2021-08-01,103.8,105.09642659500506
+"Edmonton, Alberta",2021-09-01,103.5,104.06494663602598
+"Edmonton, Alberta",2021-10-01,103.3,103.6102375796377
+"Edmonton, Alberta",2021-11-01,103.0,103.3535572971287
+"Edmonton, Alberta",2021-12-01,103.3,102.97901939734649
+"Edmonton, Alberta",2022-01-01,104.5,103.42667586651369
+"Edmonton, Alberta",2022-02-01,107.3,104.86063061496354
+"Edmonton, Alberta",2022-03-01,108.9,108.2784077258825
+"Edmonton, Alberta",2022-04-01,109.4,109.95654449436117
+"Edmonton, Alberta",2022-05-01,110.7,110.26978678085342
+"Edmonton, Alberta",2022-06-01,110.8,111.30013925158747
+"Edmonton, Alberta",2022-07-01,110.5,111.20056914830747
+"Edmonton, Alberta",2022-08-01,110.6,110.78149461902981
+"Edmonton, Alberta",2022-09-01,110.8,110.72091221014684
+"Edmonton, Alberta",2022-10-01,110.1,110.99868115235049
+"Edmonton, Alberta",2022-11-01,109.7,110.166732668954
+"Edmonton, Alberta",2022-12-01,109.5,109.58681497373566
+"Edmonton, Alberta",2023-01-01,109.0,109.36470743849566
+"Edmonton, Alberta",2023-02-01,108.3,108.87245840047721
+"Edmonton, Alberta",2023-03-01,108.6,108.03251794104482
+"Edmonton, Alberta",2023-04-01,108.5,108.4189413378683
+"Edmonton, Alberta",2023-05-01,108.2,108.39219734231477
+"Edmonton, Alberta",2023-06-01,107.1,108.12697444320845
+"Edmonton, Alberta",2023-07-01,107.3,106.86639694223427
+"Edmonton, Alberta",2023-08-01,107.3,107.08275565045918
+"Edmonton, Alberta",2023-09-01,106.6,107.16248122428931
+"Edmonton, Alberta",2023-10-01,106.8,106.46108078312396
+"Edmonton, Alberta",2023-11-01,106.3,106.67838590685591
+"Edmonton, Alberta",2023-12-01,106.2,106.11323499297617
+"Edmonton, Alberta",2024-01-01,107.0,106.16880445050883
+"Edmonton, Alberta",2024-02-01,107.3,106.98669380694554
+"Edmonton, Alberta",2024-03-01,107.4,107.3544636648093
+"Edmonton, Alberta",2024-04-01,108.6,107.51577521745267
+"Edmonton, Alberta",2024-05-01,108.5,108.77614895693789
+"Edmonton, Alberta",2024-06-01,108.5,108.65781255430092
+"Edmonton, Alberta",2024-07-01,109.4,108.6746299395751
+"Edmonton, Alberta",2024-08-01,109.5,109.55550345328402
+"Edmonton, Alberta",2024-09-01,109.3,109.68006184094173
+"Edmonton, Alberta",2024-10-01,109.4,109.51487513404064
+"Edmonton, Alberta",2024-11-01,109.4,109.47468565800125
+"Edmonton, Alberta",2024-12-01,109.6,109.51418967784144
+"Edmonton, Alberta",2025-01-01,109.4,109.82606839951374
+"Edmonton, Alberta",2025-02-01,108.6,109.52079862037688
+"Edmonton, Alberta",2025-03-01,108.6,108.56228823912367
+"Edmonton, Alberta",2025-04-01,107.9,108.56782808916402
+"Edmonton, Alberta",2025-05-01,107.5,107.74829390561901
+"Edmonton, Alberta",2025-06-01,107.3,107.34632563747006
+"Edmonton, Alberta",2025-07-01,107.0,107.06375841692366
+"Edmonton, Alberta",2025-08-01,106.9,106.82593368036184
+"Edmonton, Alberta",2025-09-01,106.6,106.78991136842231
+"Edmonton, Alberta",2025-10-01,105.6,106.43039884748399
+"Edmonton, Alberta",2025-11-01,105.6,105.35975709370071
+"Edmonton, Alberta",2025-12-01,105.0,105.36386457510044
+"Edmonton, Alberta",2026-01-01,104.7,104.75496662036905
+"Greater Sudbury, Ontario",2017-02-01,99.4,99.19401544044496
+"Greater Sudbury, Ontario",2017-03-01,99.6,99.39891199927249
+"Greater Sudbury, Ontario",2017-04-01,99.6,99.63295037774598
+"Greater Sudbury, Ontario",2017-05-01,99.6,99.67837605374706
+"Greater Sudbury, Ontario",2017-06-01,99.6,99.6776344930055
+"Greater Sudbury, Ontario",2017-07-01,99.6,99.63445221541623
+"Greater Sudbury, Ontario",2017-08-01,99.6,99.69291944511222
+"Greater Sudbury, Ontario",2017-09-01,99.6,99.6693279369618
+"Greater Sudbury, Ontario",2017-10-01,99.8,99.65616101153213
+"Greater Sudbury, Ontario",2017-11-01,99.8,99.87006388237214
+"Greater Sudbury, Ontario",2017-12-01,99.8,99.86306068932859
+"Greater Sudbury, Ontario",2018-01-01,99.8,99.87015107472257
+"Greater Sudbury, Ontario",2018-02-01,99.8,99.86000825828404
+"Greater Sudbury, Ontario",2018-03-01,100.0,99.85567359080623
+"Greater Sudbury, Ontario",2018-04-01,100.0,100.06745299235075
+"Greater Sudbury, Ontario",2018-05-01,100.2,100.05888919223894
+"Greater Sudbury, Ontario",2018-06-01,100.6,100.27826159339938
+"Greater Sudbury, Ontario",2018-07-01,100.6,100.71549656683553
+"Greater Sudbury, Ontario",2018-08-01,100.9,100.70169480940238
+"Greater Sudbury, Ontario",2018-09-01,100.9,101.03659168649395
+"Greater Sudbury, Ontario",2018-10-01,100.9,101.01639320314969
+"Greater Sudbury, Ontario",2018-11-01,100.9,100.99792884455543
+"Greater Sudbury, Ontario",2018-12-01,100.7,100.96894081562762
+"Greater Sudbury, Ontario",2019-01-01,100.9,100.74706177786658
+"Greater Sudbury, Ontario",2019-02-01,101.2,100.96564236722331
+"Greater Sudbury, Ontario",2019-03-01,101.3,101.3112618954465
+"Greater Sudbury, Ontario",2019-04-01,101.3,101.4169350532386
+"Greater Sudbury, Ontario",2019-05-01,101.3,101.40369931059242
+"Greater Sudbury, Ontario",2019-06-01,101.0,101.36146501499236
+"Greater Sudbury, Ontario",2019-07-01,101.3,101.03710231705588
+"Greater Sudbury, Ontario",2019-08-01,101.7,101.35489699355422
+"Greater Sudbury, Ontario",2019-09-01,101.7,101.79038258689937
+"Greater Sudbury, Ontario",2019-10-01,101.7,101.79621789681057
+"Greater Sudbury, Ontario",2019-11-01,101.9,101.77324246716246
+"Greater Sudbury, Ontario",2019-12-01,101.6,101.95206582892615
+"Greater Sudbury, Ontario",2020-01-01,102.7,101.68136169797613
+"Greater Sudbury, Ontario",2020-02-01,102.7,102.87229681571203
+"Greater Sudbury, Ontario",2020-03-01,102.7,102.8357298926693
+"Greater Sudbury, Ontario",2020-04-01,102.8,102.85661869011015
+"Greater Sudbury, Ontario",2020-05-01,102.8,102.87852794365818
+"Greater Sudbury, Ontario",2020-06-01,102.8,102.87183420855673
+"Greater Sudbury, Ontario",2020-07-01,102.8,102.93065063334771
+"Greater Sudbury, Ontario",2020-08-01,103.5,102.89819489907032
+"Greater Sudbury, Ontario",2020-09-01,103.7,103.64391441806377
+"Greater Sudbury, Ontario",2020-10-01,104.2,103.88911389882246
+"Greater Sudbury, Ontario",2020-11-01,104.2,104.44799528075971
+"Greater Sudbury, Ontario",2020-12-01,104.7,104.36761898576124
+"Greater Sudbury, Ontario",2021-01-01,106.1,104.96198234293514
+"Greater Sudbury, Ontario",2021-02-01,108.2,106.46551011273142
+"Greater Sudbury, Ontario",2021-03-01,109.6,108.97498363761576
+"Greater Sudbury, Ontario",2021-04-01,118.0,110.55786465172318
+"Greater Sudbury, Ontario",2021-05-01,118.7,119.39418664623095
+"Greater Sudbury, Ontario",2021-06-01,118.7,120.02008322344179
+"Greater Sudbury, Ontario",2021-07-01,120.9,119.6011223591432
+"Greater Sudbury, Ontario",2021-08-01,120.9,121.37362573817332
+"Greater Sudbury, Ontario",2021-09-01,120.2,121.31755465628822
+"Greater Sudbury, Ontario",2021-10-01,120.1,120.59207036076879
+"Greater Sudbury, Ontario",2021-11-01,121.4,120.08164064680884
+"Greater Sudbury, Ontario",2021-12-01,121.4,121.98598646255967
+"Greater Sudbury, Ontario",2022-01-01,121.4,122.10402177469479
+"Greater Sudbury, Ontario",2022-02-01,121.4,121.87290366559266
+"Greater Sudbury, Ontario",2022-03-01,121.4,121.72235060153348
+"Greater Sudbury, Ontario",2022-04-01,121.4,121.85462553744972
+"Greater Sudbury, Ontario",2022-05-01,121.8,121.59586414154305
+"Greater Sudbury, Ontario",2022-06-01,122.0,121.93258461744138
+"Greater Sudbury, Ontario",2022-07-01,122.0,122.19565621017617
+"Greater Sudbury, Ontario",2022-08-01,122.0,122.13222312639172
+"Greater Sudbury, Ontario",2022-09-01,122.0,122.08897423211371
+"Greater Sudbury, Ontario",2022-10-01,122.0,122.0800757824861
+"Greater Sudbury, Ontario",2022-11-01,121.4,122.11835167080673
+"Greater Sudbury, Ontario",2022-12-01,121.4,121.39944298324386
+"Greater Sudbury, Ontario",2023-01-01,121.4,121.38322810948661
+"Greater Sudbury, Ontario",2023-02-01,121.4,121.38774171432419
+"Greater Sudbury, Ontario",2023-03-01,121.4,121.4246435347446
+"Greater Sudbury, Ontario",2023-04-01,121.4,121.42704723625955
+"Greater Sudbury, Ontario",2023-05-01,120.0,121.41877523194867
+"Greater Sudbury, Ontario",2023-06-01,120.7,119.8767120133515
+"Greater Sudbury, Ontario",2023-07-01,119.9,120.67724540787553
+"Greater Sudbury, Ontario",2023-08-01,119.9,119.74572586781146
+"Greater Sudbury, Ontario",2023-09-01,119.9,119.84015771969132
+"Greater Sudbury, Ontario",2023-10-01,119.9,119.76899134973833
+"Greater Sudbury, Ontario",2023-11-01,119.2,119.8324325561943
+"Greater Sudbury, Ontario",2023-12-01,119.2,119.17162939719479
+"Greater Sudbury, Ontario",2024-01-01,119.2,119.08402209094717
+"Greater Sudbury, Ontario",2024-02-01,119.2,119.13975667597587
+"Greater Sudbury, Ontario",2024-03-01,119.2,119.21114640603176
+"Greater Sudbury, Ontario",2024-04-01,119.2,119.19687543807117
+"Greater Sudbury, Ontario",2024-05-01,118.8,119.20347123117799
+"Greater Sudbury, Ontario",2024-06-01,118.8,118.80057766589199
+"Greater Sudbury, Ontario",2024-07-01,118.8,118.77001217979644
+"Greater Sudbury, Ontario",2024-08-01,118.8,118.79072502305355
+"Greater Sudbury, Ontario",2024-09-01,118.6,118.82505664600477
+"Greater Sudbury, Ontario",2024-10-01,118.6,118.59719711988042
+"Greater Sudbury, Ontario",2024-11-01,118.6,118.58188576332724
+"Greater Sudbury, Ontario",2024-12-01,117.8,118.63827489311592
+"Greater Sudbury, Ontario",2025-01-01,117.8,117.73173684539206
+"Greater Sudbury, Ontario",2025-02-01,117.8,117.74076893831528
+"Greater Sudbury, Ontario",2025-03-01,117.8,117.69837681015157
+"Greater Sudbury, Ontario",2025-04-01,117.8,117.81041804934003
+"Greater Sudbury, Ontario",2025-05-01,117.8,117.80616756730477
+"Greater Sudbury, Ontario",2025-06-01,116.7,117.79862893486099
+"Greater Sudbury, Ontario",2025-07-01,116.7,116.58672216899133
+"Greater Sudbury, Ontario",2025-08-01,116.5,116.58276077992008
+"Greater Sudbury, Ontario",2025-09-01,115.5,116.35364764810926
+"Greater Sudbury, Ontario",2025-10-01,115.5,115.35338336197964
+"Greater Sudbury, Ontario",2025-11-01,117.1,115.32462352495402
+"Greater Sudbury, Ontario",2025-12-01,118.9,117.11732206511729
+"Greater Sudbury, Ontario",2026-01-01,118.9,119.2421847626856
+"Guelph, Ontario",2018-12-01,105.1,
+"Guelph, Ontario",2019-01-01,105.1,
+"Guelph, Ontario",2019-02-01,105.0,
+"Guelph, Ontario",2019-03-01,104.9,
+"Guelph, Ontario",2019-04-01,104.9,
+"Guelph, Ontario",2019-05-01,105.3,
+"Guelph, Ontario",2019-06-01,105.5,
+"Guelph, Ontario",2019-07-01,105.8,
+"Guelph, Ontario",2019-08-01,105.8,
+"Guelph, Ontario",2019-09-01,105.8,
+"Guelph, Ontario",2019-10-01,106.6,
+"Guelph, Ontario",2019-11-01,107.0,
+"Guelph, Ontario",2019-12-01,107.0,
+"Guelph, Ontario",2020-01-01,107.0,
+"Guelph, Ontario",2020-02-01,107.2,
+"Guelph, Ontario",2020-03-01,107.9,
+"Guelph, Ontario",2020-04-01,108.5,
+"Guelph, Ontario",2020-05-01,108.8,
+"Guelph, Ontario",2020-06-01,109.3,
+"Guelph, Ontario",2020-07-01,110.0,
+"Guelph, Ontario",2020-08-01,110.3,
+"Guelph, Ontario",2020-09-01,112.2,
+"Guelph, Ontario",2020-10-01,113.2,
+"Guelph, Ontario",2020-11-01,114.4,
+"Guelph, Ontario",2020-12-01,114.5,
+"Guelph, Ontario",2021-01-01,114.6,
+"Guelph, Ontario",2021-02-01,119.0,
+"Guelph, Ontario",2021-03-01,119.4,
+"Guelph, Ontario",2021-04-01,120.4,
+"Guelph, Ontario",2021-05-01,120.4,
+"Guelph, Ontario",2021-06-01,123.0,
+"Guelph, Ontario",2021-07-01,123.0,
+"Guelph, Ontario",2021-08-01,123.0,
+"Guelph, Ontario",2021-09-01,123.3,
+"Guelph, Ontario",2021-10-01,123.3,
+"Guelph, Ontario",2021-11-01,123.9,
+"Guelph, Ontario",2021-12-01,124.0,
+"Guelph, Ontario",2022-01-01,124.0,
+"Guelph, Ontario",2022-02-01,124.0,
+"Guelph, Ontario",2022-03-01,124.0,
+"Guelph, Ontario",2022-04-01,124.0,
+"Guelph, Ontario",2022-05-01,124.0,
+"Guelph, Ontario",2022-06-01,124.0,
+"Guelph, Ontario",2022-07-01,124.0,
+"Guelph, Ontario",2022-08-01,124.0,
+"Guelph, Ontario",2022-09-01,124.0,
+"Guelph, Ontario",2022-10-01,124.0,
+"Guelph, Ontario",2022-11-01,124.0,
+"Guelph, Ontario",2022-12-01,124.0,
+"Guelph, Ontario",2023-01-01,124.0,
+"Guelph, Ontario",2023-02-01,124.0,
+"Guelph, Ontario",2023-03-01,124.0,
+"Guelph, Ontario",2023-04-01,123.0,
+"Guelph, Ontario",2023-05-01,123.0,
+"Guelph, Ontario",2023-06-01,123.0,
+"Guelph, Ontario",2023-07-01,123.0,
+"Guelph, Ontario",2023-08-01,123.0,
+"Guelph, Ontario",2023-09-01,123.0,
+"Guelph, Ontario",2023-10-01,123.0,
+"Guelph, Ontario",2023-11-01,123.0,
+"Guelph, Ontario",2023-12-01,123.0,
+"Guelph, Ontario",2024-01-01,123.0,
+"Guelph, Ontario",2024-02-01,123.0,
+"Guelph, Ontario",2024-03-01,123.0,
+"Guelph, Ontario",2024-04-01,123.0,
+"Guelph, Ontario",2024-05-01,123.0,
+"Guelph, Ontario",2024-06-01,122.8,
+"Guelph, Ontario",2024-07-01,122.8,
+"Guelph, Ontario",2024-08-01,122.8,
+"Guelph, Ontario",2024-09-01,122.2,
+"Guelph, Ontario",2024-10-01,122.2,
+"Guelph, Ontario",2024-11-01,122.2,
+"Guelph, Ontario",2024-12-01,122.2,
+"Guelph, Ontario",2025-01-01,122.2,
+"Guelph, Ontario",2025-02-01,122.4,
+"Guelph, Ontario",2025-03-01,123.0,
+"Guelph, Ontario",2025-04-01,122.4,
+"Guelph, Ontario",2025-05-01,122.4,
+"Guelph, Ontario",2025-06-01,121.7,
+"Guelph, Ontario",2025-07-01,120.7,
+"Guelph, Ontario",2025-08-01,120.7,
+"Guelph, Ontario",2025-09-01,120.7,
+"Guelph, Ontario",2025-10-01,120.7,
+"Guelph, Ontario",2025-11-01,120.7,
+"Guelph, Ontario",2025-12-01,120.7,
+"Guelph, Ontario",2026-01-01,120.7,
+"Halifax, Nova Scotia",2017-02-01,100.2,
+"Halifax, Nova Scotia",2017-03-01,100.2,
+"Halifax, Nova Scotia",2017-04-01,100.0,
+"Halifax, Nova Scotia",2017-05-01,100.4,
+"Halifax, Nova Scotia",2017-06-01,100.4,
+"Halifax, Nova Scotia",2017-07-01,100.8,
+"Halifax, Nova Scotia",2017-08-01,100.7,
+"Halifax, Nova Scotia",2017-09-01,100.8,
+"Halifax, Nova Scotia",2017-10-01,101.1,
+"Halifax, Nova Scotia",2017-11-01,101.1,
+"Halifax, Nova Scotia",2017-12-01,101.0,
+"Halifax, Nova Scotia",2018-01-01,101.0,
+"Halifax, Nova Scotia",2018-02-01,101.0,
+"Halifax, Nova Scotia",2018-03-01,101.5,
+"Halifax, Nova Scotia",2018-04-01,101.9,
+"Halifax, Nova Scotia",2018-05-01,101.8,
+"Halifax, Nova Scotia",2018-06-01,101.8,
+"Halifax, Nova Scotia",2018-07-01,102.0,
+"Halifax, Nova Scotia",2018-08-01,102.0,
+"Halifax, Nova Scotia",2018-09-01,101.7,
+"Halifax, Nova Scotia",2018-10-01,101.6,
+"Halifax, Nova Scotia",2018-11-01,101.6,
+"Halifax, Nova Scotia",2018-12-01,101.6,
+"Halifax, Nova Scotia",2019-01-01,101.9,
+"Halifax, Nova Scotia",2019-02-01,102.1,
+"Halifax, Nova Scotia",2019-03-01,102.1,
+"Halifax, Nova Scotia",2019-04-01,102.1,
+"Halifax, Nova Scotia",2019-05-01,102.5,
+"Halifax, Nova Scotia",2019-06-01,102.5,
+"Halifax, Nova Scotia",2019-07-01,102.7,
+"Halifax, Nova Scotia",2019-08-01,102.5,
+"Halifax, Nova Scotia",2019-09-01,102.5,
+"Halifax, Nova Scotia",2019-10-01,102.5,
+"Halifax, Nova Scotia",2019-11-01,102.5,
+"Halifax, Nova Scotia",2019-12-01,102.5,
+"Halifax, Nova Scotia",2020-01-01,102.9,
+"Halifax, Nova Scotia",2020-02-01,103.6,
+"Halifax, Nova Scotia",2020-03-01,103.8,
+"Halifax, Nova Scotia",2020-04-01,103.9,
+"Halifax, Nova Scotia",2020-05-01,104.4,
+"Halifax, Nova Scotia",2020-06-01,104.9,
+"Halifax, Nova Scotia",2020-07-01,105.4,
+"Halifax, Nova Scotia",2020-08-01,107.1,
+"Halifax, Nova Scotia",2020-09-01,108.0,
+"Halifax, Nova Scotia",2020-10-01,109.3,
+"Halifax, Nova Scotia",2020-11-01,110.1,
+"Halifax, Nova Scotia",2020-12-01,110.1,
+"Halifax, Nova Scotia",2021-01-01,110.1,
+"Halifax, Nova Scotia",2021-02-01,112.7,
+"Halifax, Nova Scotia",2021-03-01,113.8,
+"Halifax, Nova Scotia",2021-04-01,116.0,
+"Halifax, Nova Scotia",2021-05-01,117.8,
+"Halifax, Nova Scotia",2021-06-01,117.8,
+"Halifax, Nova Scotia",2021-07-01,117.8,
+"Halifax, Nova Scotia",2021-08-01,117.8,
+"Halifax, Nova Scotia",2021-09-01,117.8,
+"Halifax, Nova Scotia",2021-10-01,117.8,
+"Halifax, Nova Scotia",2021-11-01,117.8,
+"Halifax, Nova Scotia",2021-12-01,117.8,
+"Halifax, Nova Scotia",2022-01-01,117.8,
+"Halifax, Nova Scotia",2022-02-01,117.8,
+"Halifax, Nova Scotia",2022-03-01,119.1,
+"Halifax, Nova Scotia",2022-04-01,119.1,
+"Halifax, Nova Scotia",2022-05-01,122.0,
+"Halifax, Nova Scotia",2022-06-01,122.0,
+"Halifax, Nova Scotia",2022-07-01,122.0,
+"Halifax, Nova Scotia",2022-08-01,122.0,
+"Halifax, Nova Scotia",2022-09-01,122.0,
+"Halifax, Nova Scotia",2022-10-01,122.0,
+"Halifax, Nova Scotia",2022-11-01,122.0,
+"Halifax, Nova Scotia",2022-12-01,122.0,
+"Halifax, Nova Scotia",2023-01-01,121.6,
+"Halifax, Nova Scotia",2023-02-01,121.6,
+"Halifax, Nova Scotia",2023-03-01,122.0,
+"Halifax, Nova Scotia",2023-04-01,121.3,
+"Halifax, Nova Scotia",2023-05-01,121.3,
+"Halifax, Nova Scotia",2023-06-01,121.3,
+"Halifax, Nova Scotia",2023-07-01,121.3,
+"Halifax, Nova Scotia",2023-08-01,121.3,
+"Halifax, Nova Scotia",2023-09-01,121.3,
+"Halifax, Nova Scotia",2023-10-01,121.3,
+"Halifax, Nova Scotia",2023-11-01,121.3,
+"Halifax, Nova Scotia",2023-12-01,119.9,
+"Halifax, Nova Scotia",2024-01-01,119.9,
+"Halifax, Nova Scotia",2024-02-01,120.1,
+"Halifax, Nova Scotia",2024-03-01,120.1,
+"Halifax, Nova Scotia",2024-04-01,120.2,
+"Halifax, Nova Scotia",2024-05-01,121.5,
+"Halifax, Nova Scotia",2024-06-01,121.5,
+"Halifax, Nova Scotia",2024-07-01,121.5,
+"Halifax, Nova Scotia",2024-08-01,121.5,
+"Halifax, Nova Scotia",2024-09-01,121.7,
+"Halifax, Nova Scotia",2024-10-01,121.7,
+"Halifax, Nova Scotia",2024-11-01,121.7,
+"Halifax, Nova Scotia",2024-12-01,121.7,
+"Halifax, Nova Scotia",2025-01-01,121.7,
+"Halifax, Nova Scotia",2025-02-01,126.3,
+"Halifax, Nova Scotia",2025-03-01,126.3,
+"Halifax, Nova Scotia",2025-04-01,126.3,
+"Halifax, Nova Scotia",2025-05-01,127.3,
+"Halifax, Nova Scotia",2025-06-01,127.3,
+"Halifax, Nova Scotia",2025-07-01,127.3,
+"Halifax, Nova Scotia",2025-08-01,127.3,
+"Halifax, Nova Scotia",2025-09-01,127.2,
+"Halifax, Nova Scotia",2025-10-01,127.7,
+"Halifax, Nova Scotia",2025-11-01,127.7,
+"Halifax, Nova Scotia",2025-12-01,127.5,
+"Halifax, Nova Scotia",2026-01-01,127.5,
+"Hamilton, Ontario",2017-02-01,101.6,100.89608185716159
+"Hamilton, Ontario",2017-03-01,101.6,101.91007697412786
+"Hamilton, Ontario",2017-04-01,101.6,101.90463286939573
+"Hamilton, Ontario",2017-05-01,101.6,101.90897423662034
+"Hamilton, Ontario",2017-06-01,101.6,101.75600738711252
+"Hamilton, Ontario",2017-07-01,103.1,101.80537021927191
+"Hamilton, Ontario",2017-08-01,103.1,103.47954581262253
+"Hamilton, Ontario",2017-09-01,103.1,103.36813189682437
+"Hamilton, Ontario",2017-10-01,103.1,103.38185795757609
+"Hamilton, Ontario",2017-11-01,103.1,103.28430983537537
+"Hamilton, Ontario",2017-12-01,103.0,103.24044961967466
+"Hamilton, Ontario",2018-01-01,103.2,103.15708980454998
+"Hamilton, Ontario",2018-02-01,103.1,103.32854267135146
+"Hamilton, Ontario",2018-03-01,103.2,103.19664695756538
+"Hamilton, Ontario",2018-04-01,103.4,103.3237895599881
+"Hamilton, Ontario",2018-05-01,103.6,103.51031039671807
+"Hamilton, Ontario",2018-06-01,103.7,103.73671330987726
+"Hamilton, Ontario",2018-07-01,103.8,103.87136880473906
+"Hamilton, Ontario",2018-08-01,103.9,103.89227181863268
+"Hamilton, Ontario",2018-09-01,103.5,104.00988143602584
+"Hamilton, Ontario",2018-10-01,103.7,103.57945758755933
+"Hamilton, Ontario",2018-11-01,103.8,103.76901528983961
+"Hamilton, Ontario",2018-12-01,103.8,103.8553666976299
+"Hamilton, Ontario",2019-01-01,103.8,103.90805032314512
+"Hamilton, Ontario",2019-02-01,103.8,103.86838268348362
+"Hamilton, Ontario",2019-03-01,103.6,103.84445182546754
+"Hamilton, Ontario",2019-04-01,103.9,103.66902703613444
+"Hamilton, Ontario",2019-05-01,103.9,103.97116210174218
+"Hamilton, Ontario",2019-06-01,104.6,103.94801905006717
+"Hamilton, Ontario",2019-07-01,104.7,104.74733918350185
+"Hamilton, Ontario",2019-08-01,104.6,104.81827470539645
+"Hamilton, Ontario",2019-09-01,104.8,104.72095708720393
+"Hamilton, Ontario",2019-10-01,104.3,104.91779638552609
+"Hamilton, Ontario",2019-11-01,104.4,104.31722524266122
+"Hamilton, Ontario",2019-12-01,104.4,104.4544660590673
+"Hamilton, Ontario",2020-01-01,104.4,104.43253599797693
+"Hamilton, Ontario",2020-02-01,104.6,104.45040875018857
+"Hamilton, Ontario",2020-03-01,105.0,104.69270511932022
+"Hamilton, Ontario",2020-04-01,105.1,105.13491201270554
+"Hamilton, Ontario",2020-05-01,105.2,105.25080768291025
+"Hamilton, Ontario",2020-06-01,105.1,105.36223816936347
+"Hamilton, Ontario",2020-07-01,106.7,105.18399850294288
+"Hamilton, Ontario",2020-08-01,108.0,106.95185893537325
+"Hamilton, Ontario",2020-09-01,110.5,108.3849659638855
+"Hamilton, Ontario",2020-10-01,110.5,111.37787353904467
+"Hamilton, Ontario",2020-11-01,110.7,110.96858337167957
+"Hamilton, Ontario",2020-12-01,111.7,111.07320661974269
+"Hamilton, Ontario",2021-01-01,116.1,112.02726769270974
+"Hamilton, Ontario",2021-02-01,116.1,117.12322787583102
+"Hamilton, Ontario",2021-03-01,116.1,117.0154066050427
+"Hamilton, Ontario",2021-04-01,116.1,116.85183380867709
+"Hamilton, Ontario",2021-05-01,116.1,116.2180118372795
+"Hamilton, Ontario",2021-06-01,116.1,116.41991853478021
+"Hamilton, Ontario",2021-07-01,116.1,116.43549705574709
+"Hamilton, Ontario",2021-08-01,116.1,116.32789427166821
+"Hamilton, Ontario",2021-09-01,116.1,116.3964331473046
+"Hamilton, Ontario",2021-10-01,116.1,116.32137921756848
+"Hamilton, Ontario",2021-11-01,116.1,116.32859312625689
+"Hamilton, Ontario",2021-12-01,116.1,116.32848532998963
+"Hamilton, Ontario",2022-01-01,116.1,116.31354949084637
+"Hamilton, Ontario",2022-02-01,116.8,116.17814689866749
+"Hamilton, Ontario",2022-03-01,116.8,116.93423263516813
+"Hamilton, Ontario",2022-04-01,116.8,116.95721879282713
+"Hamilton, Ontario",2022-05-01,116.8,116.9312740345525
+"Hamilton, Ontario",2022-06-01,116.8,116.8756568199319
+"Hamilton, Ontario",2022-07-01,116.8,116.87413918402676
+"Hamilton, Ontario",2022-08-01,116.8,116.90586197891146
+"Hamilton, Ontario",2022-09-01,116.1,116.88011204650626
+"Hamilton, Ontario",2022-10-01,116.1,116.07251163884887
+"Hamilton, Ontario",2022-11-01,116.1,116.06341998095533
+"Hamilton, Ontario",2022-12-01,116.1,116.06408864600301
+"Hamilton, Ontario",2023-01-01,116.1,116.1288622129152
+"Hamilton, Ontario",2023-02-01,116.1,116.11320277302156
+"Hamilton, Ontario",2023-03-01,116.1,116.08155832715661
+"Hamilton, Ontario",2023-04-01,116.2,116.15689734776305
+"Hamilton, Ontario",2023-05-01,115.5,116.25872336299119
+"Hamilton, Ontario",2023-06-01,115.5,115.46073404782976
+"Hamilton, Ontario",2023-07-01,115.6,115.47317331007856
+"Hamilton, Ontario",2023-08-01,115.6,115.5580211097864
+"Hamilton, Ontario",2023-09-01,115.7,115.62562776447159
+"Hamilton, Ontario",2023-10-01,115.2,115.73268779089608
+"Hamilton, Ontario",2023-11-01,114.0,115.1274524735156
+"Hamilton, Ontario",2023-12-01,114.0,113.81949663633898
+"Hamilton, Ontario",2024-01-01,114.0,113.80877237281244
+"Hamilton, Ontario",2024-02-01,114.0,113.84047874220676
+"Hamilton, Ontario",2024-03-01,114.2,113.94458534919607
+"Hamilton, Ontario",2024-04-01,114.2,114.13341411871332
+"Hamilton, Ontario",2024-05-01,114.2,114.15014763363268
+"Hamilton, Ontario",2024-06-01,114.1,114.25511243066886
+"Hamilton, Ontario",2024-07-01,114.1,114.09940909580008
+"Hamilton, Ontario",2024-08-01,114.2,114.12657236202227
+"Hamilton, Ontario",2024-09-01,114.1,114.24225437960872
+"Hamilton, Ontario",2024-10-01,114.2,114.10985649013976
+"Hamilton, Ontario",2024-11-01,114.2,114.24824494623378
+"Hamilton, Ontario",2024-12-01,113.9,114.27872779743798
+"Hamilton, Ontario",2025-01-01,114.0,113.9313770780793
+"Hamilton, Ontario",2025-02-01,114.1,114.05971922559603
+"Hamilton, Ontario",2025-03-01,113.6,114.12129647655844
+"Hamilton, Ontario",2025-04-01,113.2,113.61271100725094
+"Hamilton, Ontario",2025-05-01,113.5,113.10250513135074
+"Hamilton, Ontario",2025-06-01,113.5,113.45497893430635
+"Hamilton, Ontario",2025-07-01,111.6,113.51065568282634
+"Hamilton, Ontario",2025-08-01,111.6,111.41504042715741
+"Hamilton, Ontario",2025-09-01,110.8,111.34663822662144
+"Hamilton, Ontario",2025-10-01,110.8,110.38364014824154
+"Hamilton, Ontario",2025-11-01,110.8,110.64738397494393
+"Hamilton, Ontario",2025-12-01,109.6,110.60089025761728
+"Hamilton, Ontario",2026-01-01,109.1,109.31287972573371
+"Kelowna, British Columbia",2018-12-01,103.2,
+"Kelowna, British Columbia",2019-01-01,103.2,
+"Kelowna, British Columbia",2019-02-01,103.2,
+"Kelowna, British Columbia",2019-03-01,103.2,
+"Kelowna, British Columbia",2019-04-01,103.2,
+"Kelowna, British Columbia",2019-05-01,102.9,
+"Kelowna, British Columbia",2019-06-01,103.3,
+"Kelowna, British Columbia",2019-07-01,103.4,
+"Kelowna, British Columbia",2019-08-01,103.3,
+"Kelowna, British Columbia",2019-09-01,103.0,
+"Kelowna, British Columbia",2019-10-01,103.3,
+"Kelowna, British Columbia",2019-11-01,103.4,
+"Kelowna, British Columbia",2019-12-01,103.4,
+"Kelowna, British Columbia",2020-01-01,104.0,
+"Kelowna, British Columbia",2020-02-01,103.8,
+"Kelowna, British Columbia",2020-03-01,103.8,
+"Kelowna, British Columbia",2020-04-01,103.8,
+"Kelowna, British Columbia",2020-05-01,103.8,
+"Kelowna, British Columbia",2020-06-01,104.2,
+"Kelowna, British Columbia",2020-07-01,104.3,
+"Kelowna, British Columbia",2020-08-01,105.1,
+"Kelowna, British Columbia",2020-09-01,105.4,
+"Kelowna, British Columbia",2020-10-01,105.4,
+"Kelowna, British Columbia",2020-11-01,106.8,
+"Kelowna, British Columbia",2020-12-01,106.8,
+"Kelowna, British Columbia",2021-01-01,107.6,
+"Kelowna, British Columbia",2021-02-01,109.6,
+"Kelowna, British Columbia",2021-03-01,111.8,
+"Kelowna, British Columbia",2021-04-01,113.5,
+"Kelowna, British Columbia",2021-05-01,117.3,
+"Kelowna, British Columbia",2021-06-01,118.5,
+"Kelowna, British Columbia",2021-07-01,119.4,
+"Kelowna, British Columbia",2021-08-01,119.4,
+"Kelowna, British Columbia",2021-09-01,119.4,
+"Kelowna, British Columbia",2021-10-01,119.9,
+"Kelowna, British Columbia",2021-11-01,119.9,
+"Kelowna, British Columbia",2021-12-01,120.6,
+"Kelowna, British Columbia",2022-01-01,120.6,
+"Kelowna, British Columbia",2022-02-01,120.9,
+"Kelowna, British Columbia",2022-03-01,123.2,
+"Kelowna, British Columbia",2022-04-01,123.2,
+"Kelowna, British Columbia",2022-05-01,124.4,
+"Kelowna, British Columbia",2022-06-01,124.4,
+"Kelowna, British Columbia",2022-07-01,124.6,
+"Kelowna, British Columbia",2022-08-01,124.6,
+"Kelowna, British Columbia",2022-09-01,124.6,
+"Kelowna, British Columbia",2022-10-01,124.2,
+"Kelowna, British Columbia",2022-11-01,123.8,
+"Kelowna, British Columbia",2022-12-01,123.4,
+"Kelowna, British Columbia",2023-01-01,123.1,
+"Kelowna, British Columbia",2023-02-01,123.1,
+"Kelowna, British Columbia",2023-03-01,123.1,
+"Kelowna, British Columbia",2023-04-01,123.1,
+"Kelowna, British Columbia",2023-05-01,123.8,
+"Kelowna, British Columbia",2023-06-01,123.6,
+"Kelowna, British Columbia",2023-07-01,123.6,
+"Kelowna, British Columbia",2023-08-01,123.6,
+"Kelowna, British Columbia",2023-09-01,122.8,
+"Kelowna, British Columbia",2023-10-01,122.3,
+"Kelowna, British Columbia",2023-11-01,122.1,
+"Kelowna, British Columbia",2023-12-01,122.1,
+"Kelowna, British Columbia",2024-01-01,122.1,
+"Kelowna, British Columbia",2024-02-01,122.1,
+"Kelowna, British Columbia",2024-03-01,122.0,
+"Kelowna, British Columbia",2024-04-01,121.9,
+"Kelowna, British Columbia",2024-05-01,121.6,
+"Kelowna, British Columbia",2024-06-01,121.2,
+"Kelowna, British Columbia",2024-07-01,122.2,
+"Kelowna, British Columbia",2024-08-01,122.1,
+"Kelowna, British Columbia",2024-09-01,122.8,
+"Kelowna, British Columbia",2024-10-01,122.2,
+"Kelowna, British Columbia",2024-11-01,122.3,
+"Kelowna, British Columbia",2024-12-01,122.5,
+"Kelowna, British Columbia",2025-01-01,122.5,
+"Kelowna, British Columbia",2025-02-01,122.8,
+"Kelowna, British Columbia",2025-03-01,122.6,
+"Kelowna, British Columbia",2025-04-01,123.3,
+"Kelowna, British Columbia",2025-05-01,123.3,
+"Kelowna, British Columbia",2025-06-01,122.4,
+"Kelowna, British Columbia",2025-07-01,121.4,
+"Kelowna, British Columbia",2025-08-01,120.9,
+"Kelowna, British Columbia",2025-09-01,121.3,
+"Kelowna, British Columbia",2025-10-01,120.0,
+"Kelowna, British Columbia",2025-11-01,119.5,
+"Kelowna, British Columbia",2025-12-01,118.9,
+"Kelowna, British Columbia",2026-01-01,118.4,
+"Kitchener-Cambridge-Waterloo, Ontario",2017-02-01,101.5,101.51186977323925
+"Kitchener-Cambridge-Waterloo, Ontario",2017-03-01,101.7,101.9776437609253
+"Kitchener-Cambridge-Waterloo, Ontario",2017-04-01,103.2,102.2577158808546
+"Kitchener-Cambridge-Waterloo, Ontario",2017-05-01,103.6,103.82396257109107
+"Kitchener-Cambridge-Waterloo, Ontario",2017-06-01,103.7,104.19473643708936
+"Kitchener-Cambridge-Waterloo, Ontario",2017-07-01,103.7,104.27740354040957
+"Kitchener-Cambridge-Waterloo, Ontario",2017-08-01,103.7,104.08275321573525
+"Kitchener-Cambridge-Waterloo, Ontario",2017-09-01,103.7,104.00362964814472
+"Kitchener-Cambridge-Waterloo, Ontario",2017-10-01,103.6,104.07436624736967
+"Kitchener-Cambridge-Waterloo, Ontario",2017-11-01,103.6,103.87879956161898
+"Kitchener-Cambridge-Waterloo, Ontario",2017-12-01,103.6,103.8485823196923
+"Kitchener-Cambridge-Waterloo, Ontario",2018-01-01,103.6,103.80641159848535
+"Kitchener-Cambridge-Waterloo, Ontario",2018-02-01,103.6,103.78643528974254
+"Kitchener-Cambridge-Waterloo, Ontario",2018-03-01,103.6,103.75897550939591
+"Kitchener-Cambridge-Waterloo, Ontario",2018-04-01,103.6,103.75838040410368
+"Kitchener-Cambridge-Waterloo, Ontario",2018-05-01,103.8,103.73909340929707
+"Kitchener-Cambridge-Waterloo, Ontario",2018-06-01,103.8,103.94334391619992
+"Kitchener-Cambridge-Waterloo, Ontario",2018-07-01,103.8,103.94596827706839
+"Kitchener-Cambridge-Waterloo, Ontario",2018-08-01,103.8,103.89080764845878
+"Kitchener-Cambridge-Waterloo, Ontario",2018-09-01,103.8,103.87845898249728
+"Kitchener-Cambridge-Waterloo, Ontario",2018-10-01,103.8,103.93701127734433
+"Kitchener-Cambridge-Waterloo, Ontario",2018-11-01,103.9,103.94165708926617
+"Kitchener-Cambridge-Waterloo, Ontario",2018-12-01,103.9,103.98708097894458
+"Kitchener-Cambridge-Waterloo, Ontario",2019-01-01,103.9,103.98989358523144
+"Kitchener-Cambridge-Waterloo, Ontario",2019-02-01,104.0,103.99454215768952
+"Kitchener-Cambridge-Waterloo, Ontario",2019-03-01,104.0,104.09284086359436
+"Kitchener-Cambridge-Waterloo, Ontario",2019-04-01,104.3,104.15228652556983
+"Kitchener-Cambridge-Waterloo, Ontario",2019-05-01,104.3,104.41860580381814
+"Kitchener-Cambridge-Waterloo, Ontario",2019-06-01,104.5,104.404317267225
+"Kitchener-Cambridge-Waterloo, Ontario",2019-07-01,104.4,104.62664045747194
+"Kitchener-Cambridge-Waterloo, Ontario",2019-08-01,106.0,104.50144354734906
+"Kitchener-Cambridge-Waterloo, Ontario",2019-09-01,107.6,106.33182911549886
+"Kitchener-Cambridge-Waterloo, Ontario",2019-10-01,107.7,108.0484421387595
+"Kitchener-Cambridge-Waterloo, Ontario",2019-11-01,107.8,108.13395719229707
+"Kitchener-Cambridge-Waterloo, Ontario",2019-12-01,107.8,108.12292112070881
+"Kitchener-Cambridge-Waterloo, Ontario",2020-01-01,107.8,108.05131793154555
+"Kitchener-Cambridge-Waterloo, Ontario",2020-02-01,108.8,108.02902265413061
+"Kitchener-Cambridge-Waterloo, Ontario",2020-03-01,109.4,109.19195674544088
+"Kitchener-Cambridge-Waterloo, Ontario",2020-04-01,109.9,109.84732355789185
+"Kitchener-Cambridge-Waterloo, Ontario",2020-05-01,110.0,110.43508853061763
+"Kitchener-Cambridge-Waterloo, Ontario",2020-06-01,110.8,110.4019024266136
+"Kitchener-Cambridge-Waterloo, Ontario",2020-07-01,111.6,111.22814242375291
+"Kitchener-Cambridge-Waterloo, Ontario",2020-08-01,112.3,112.23718118889838
+"Kitchener-Cambridge-Waterloo, Ontario",2020-09-01,113.1,112.9602325915715
+"Kitchener-Cambridge-Waterloo, Ontario",2020-10-01,114.9,113.70040053804763
+"Kitchener-Cambridge-Waterloo, Ontario",2020-11-01,117.3,115.64417589386285
+"Kitchener-Cambridge-Waterloo, Ontario",2020-12-01,118.4,118.47927783378324
+"Kitchener-Cambridge-Waterloo, Ontario",2021-01-01,121.8,119.58751934475335
+"Kitchener-Cambridge-Waterloo, Ontario",2021-02-01,126.2,123.2638142144811
+"Kitchener-Cambridge-Waterloo, Ontario",2021-03-01,128.2,127.88353445447027
+"Kitchener-Cambridge-Waterloo, Ontario",2021-04-01,134.0,130.13152668964088
+"Kitchener-Cambridge-Waterloo, Ontario",2021-05-01,139.7,135.8584716950673
+"Kitchener-Cambridge-Waterloo, Ontario",2021-06-01,141.5,141.8736722043212
+"Kitchener-Cambridge-Waterloo, Ontario",2021-07-01,142.5,143.56082590078012
+"Kitchener-Cambridge-Waterloo, Ontario",2021-08-01,142.5,144.0417542965269
+"Kitchener-Cambridge-Waterloo, Ontario",2021-09-01,143.1,143.14601829954944
+"Kitchener-Cambridge-Waterloo, Ontario",2021-10-01,148.5,143.91422265382013
+"Kitchener-Cambridge-Waterloo, Ontario",2021-11-01,151.3,150.26171045648704
+"Kitchener-Cambridge-Waterloo, Ontario",2021-12-01,154.7,153.41227598036753
+"Kitchener-Cambridge-Waterloo, Ontario",2022-01-01,154.7,156.89289184207882
+"Kitchener-Cambridge-Waterloo, Ontario",2022-02-01,157.9,155.95641326043034
+"Kitchener-Cambridge-Waterloo, Ontario",2022-03-01,159.5,159.48888784711414
+"Kitchener-Cambridge-Waterloo, Ontario",2022-04-01,159.5,161.19993121547057
+"Kitchener-Cambridge-Waterloo, Ontario",2022-05-01,159.5,160.78962583030378
+"Kitchener-Cambridge-Waterloo, Ontario",2022-06-01,160.2,160.10762803786577
+"Kitchener-Cambridge-Waterloo, Ontario",2022-07-01,159.0,160.73985801356227
+"Kitchener-Cambridge-Waterloo, Ontario",2022-08-01,159.4,159.27267460453552
+"Kitchener-Cambridge-Waterloo, Ontario",2022-09-01,158.4,159.81598865399812
+"Kitchener-Cambridge-Waterloo, Ontario",2022-10-01,158.8,158.4894767683846
+"Kitchener-Cambridge-Waterloo, Ontario",2022-11-01,158.8,159.13864293808493
+"Kitchener-Cambridge-Waterloo, Ontario",2022-12-01,158.8,159.0187889401056
+"Kitchener-Cambridge-Waterloo, Ontario",2023-01-01,157.3,158.98756562033446
+"Kitchener-Cambridge-Waterloo, Ontario",2023-02-01,156.2,157.14303789133447
+"Kitchener-Cambridge-Waterloo, Ontario",2023-03-01,156.3,155.61218672893474
+"Kitchener-Cambridge-Waterloo, Ontario",2023-04-01,157.1,155.98987260258244
+"Kitchener-Cambridge-Waterloo, Ontario",2023-05-01,157.5,157.1222485358224
+"Kitchener-Cambridge-Waterloo, Ontario",2023-06-01,158.8,157.6254499428119
+"Kitchener-Cambridge-Waterloo, Ontario",2023-07-01,158.5,159.13235332522234
+"Kitchener-Cambridge-Waterloo, Ontario",2023-08-01,158.5,158.63016074236975
+"Kitchener-Cambridge-Waterloo, Ontario",2023-09-01,158.5,158.68436339759447
+"Kitchener-Cambridge-Waterloo, Ontario",2023-10-01,158.8,158.55479640064888
+"Kitchener-Cambridge-Waterloo, Ontario",2023-11-01,157.5,158.95838889702077
+"Kitchener-Cambridge-Waterloo, Ontario",2023-12-01,156.8,157.54420767911498
+"Kitchener-Cambridge-Waterloo, Ontario",2024-01-01,156.9,156.6057531974037
+"Kitchener-Cambridge-Waterloo, Ontario",2024-02-01,156.9,156.7309007824755
+"Kitchener-Cambridge-Waterloo, Ontario",2024-03-01,156.5,156.9146853798645
+"Kitchener-Cambridge-Waterloo, Ontario",2024-04-01,155.9,156.47469163071523
+"Kitchener-Cambridge-Waterloo, Ontario",2024-05-01,155.3,155.6942727146613
+"Kitchener-Cambridge-Waterloo, Ontario",2024-06-01,154.9,155.0872474336438
+"Kitchener-Cambridge-Waterloo, Ontario",2024-07-01,154.2,154.66895349110004
+"Kitchener-Cambridge-Waterloo, Ontario",2024-08-01,154.0,153.96539954757458
+"Kitchener-Cambridge-Waterloo, Ontario",2024-09-01,154.1,153.79594548021518
+"Kitchener-Cambridge-Waterloo, Ontario",2024-10-01,154.3,153.91845711818735
+"Kitchener-Cambridge-Waterloo, Ontario",2024-11-01,154.7,154.2543533450331
+"Kitchener-Cambridge-Waterloo, Ontario",2024-12-01,154.6,154.8106603931532
+"Kitchener-Cambridge-Waterloo, Ontario",2025-01-01,154.6,154.66188185137614
+"Kitchener-Cambridge-Waterloo, Ontario",2025-02-01,156.1,154.71550517295512
+"Kitchener-Cambridge-Waterloo, Ontario",2025-03-01,156.3,156.3030604167713
+"Kitchener-Cambridge-Waterloo, Ontario",2025-04-01,156.3,156.56875582090245
+"Kitchener-Cambridge-Waterloo, Ontario",2025-05-01,155.6,156.5707698318025
+"Kitchener-Cambridge-Waterloo, Ontario",2025-06-01,155.6,155.6220136212842
+"Kitchener-Cambridge-Waterloo, Ontario",2025-07-01,155.1,155.59597790411422
+"Kitchener-Cambridge-Waterloo, Ontario",2025-08-01,155.1,155.13907677253275
+"Kitchener-Cambridge-Waterloo, Ontario",2025-09-01,153.5,155.0627510395905
+"Kitchener-Cambridge-Waterloo, Ontario",2025-10-01,152.9,153.17209646198557
+"Kitchener-Cambridge-Waterloo, Ontario",2025-11-01,153.4,152.48912380356825
+"Kitchener-Cambridge-Waterloo, Ontario",2025-12-01,153.0,153.23466714543892
+"Kitchener-Cambridge-Waterloo, Ontario",2026-01-01,153.0,152.86951452663308
+"London, Ontario",2017-02-01,101.0,101.21337113646652
+"London, Ontario",2017-03-01,101.2,101.17658404521059
+"London, Ontario",2017-04-01,103.2,101.4099002647258
+"London, Ontario",2017-05-01,104.7,103.6612106672727
+"London, Ontario",2017-06-01,104.6,105.20033493940237
+"London, Ontario",2017-07-01,105.5,105.0706876982249
+"London, Ontario",2017-08-01,106.6,105.88652373365842
+"London, Ontario",2017-09-01,106.8,106.99894098528631
+"London, Ontario",2017-10-01,106.8,107.32770562081849
+"London, Ontario",2017-11-01,107.2,107.18638928100933
+"London, Ontario",2017-12-01,107.3,107.42476608883919
+"London, Ontario",2018-01-01,107.8,107.62612583097007
+"London, Ontario",2018-02-01,108.2,108.19055443449591
+"London, Ontario",2018-03-01,109.0,108.49839198434124
+"London, Ontario",2018-04-01,109.2,109.47073741526282
+"London, Ontario",2018-05-01,109.5,109.58526978504551
+"London, Ontario",2018-06-01,109.6,109.79753645291422
+"London, Ontario",2018-07-01,110.1,109.86533637464859
+"London, Ontario",2018-08-01,110.4,110.4054370825025
+"London, Ontario",2018-09-01,110.9,110.69471066640598
+"London, Ontario",2018-10-01,111.0,111.23277360165329
+"London, Ontario",2018-11-01,111.1,111.27733339680461
+"London, Ontario",2018-12-01,111.2,111.34034105976826
+"London, Ontario",2019-01-01,111.2,111.4154648118639
+"London, Ontario",2019-02-01,111.9,111.37257681076406
+"London, Ontario",2019-03-01,112.2,112.1648783637638
+"London, Ontario",2019-04-01,112.6,112.43515710093052
+"London, Ontario",2019-05-01,112.8,112.87247196930467
+"London, Ontario",2019-06-01,113.2,113.01811668823214
+"London, Ontario",2019-07-01,113.4,113.44519632080697
+"London, Ontario",2019-08-01,113.4,113.63717950863337
+"London, Ontario",2019-09-01,114.1,113.6149292131139
+"London, Ontario",2019-10-01,114.3,114.33294287351333
+"London, Ontario",2019-11-01,114.4,114.5297605808241
+"London, Ontario",2019-12-01,114.4,114.63891577990249
+"London, Ontario",2020-01-01,114.7,114.57589101065219
+"London, Ontario",2020-02-01,114.8,114.88464418440952
+"London, Ontario",2020-03-01,115.5,115.01409879364827
+"London, Ontario",2020-04-01,115.8,115.77340436605303
+"London, Ontario",2020-05-01,116.2,116.03064244350631
+"London, Ontario",2020-06-01,116.3,116.49034167285078
+"London, Ontario",2020-07-01,116.7,116.51935023855893
+"London, Ontario",2020-08-01,117.3,116.94953890974304
+"London, Ontario",2020-09-01,117.8,117.65372368075627
+"London, Ontario",2020-10-01,117.9,118.15987602814705
+"London, Ontario",2020-11-01,118.1,118.19450887328871
+"London, Ontario",2020-12-01,119.0,118.37727184874032
+"London, Ontario",2021-01-01,121.2,119.34011771838713
+"London, Ontario",2021-02-01,121.8,121.76122682549459
+"London, Ontario",2021-03-01,124.4,122.38382587914299
+"London, Ontario",2021-04-01,125.0,125.41369626648442
+"London, Ontario",2021-05-01,130.1,125.57113841570411
+"London, Ontario",2021-06-01,131.1,131.5247462324359
+"London, Ontario",2021-07-01,131.2,132.11500253871915
+"London, Ontario",2021-08-01,136.3,132.14754321632378
+"London, Ontario",2021-09-01,136.3,137.36645967073312
+"London, Ontario",2021-10-01,139.6,137.14934832210008
+"London, Ontario",2021-11-01,143.5,141.03530032260304
+"London, Ontario",2021-12-01,143.5,144.91083894345115
+"London, Ontario",2022-01-01,144.7,144.68438763405547
+"London, Ontario",2022-02-01,145.2,145.87009155639004
+"London, Ontario",2022-03-01,147.2,145.77611344625535
+"London, Ontario",2022-04-01,147.2,148.36746855266915
+"London, Ontario",2022-05-01,147.8,148.03060669724294
+"London, Ontario",2022-06-01,147.8,148.42976378109543
+"London, Ontario",2022-07-01,148.1,148.1785139645018
+"London, Ontario",2022-08-01,148.1,148.7476342234533
+"London, Ontario",2022-09-01,148.1,148.4683963615937
+"London, Ontario",2022-10-01,147.5,148.51552148591767
+"London, Ontario",2022-11-01,147.5,147.64068159206892
+"London, Ontario",2022-12-01,147.1,147.5278313967959
+"London, Ontario",2023-01-01,147.1,147.09089299793672
+"London, Ontario",2023-02-01,146.4,147.081244195077
+"London, Ontario",2023-03-01,147.2,146.28796611271213
+"London, Ontario",2023-04-01,145.7,147.20869058738114
+"London, Ontario",2023-05-01,145.7,145.5273653322014
+"London, Ontario",2023-06-01,145.2,145.53743835259868
+"London, Ontario",2023-07-01,145.2,144.90009308476704
+"London, Ontario",2023-08-01,145.2,145.06601938983644
+"London, Ontario",2023-09-01,145.2,145.12373852414976
+"London, Ontario",2023-10-01,144.9,145.08819124524624
+"London, Ontario",2023-11-01,144.4,144.89549877711326
+"London, Ontario",2023-12-01,144.4,144.27412737446124
+"London, Ontario",2024-01-01,144.4,144.33254481994322
+"London, Ontario",2024-02-01,144.4,144.35320409490143
+"London, Ontario",2024-03-01,144.0,144.3985228918162
+"London, Ontario",2024-04-01,144.6,143.9220285550712
+"London, Ontario",2024-05-01,143.4,144.62152904373454
+"London, Ontario",2024-06-01,143.4,143.29311083504462
+"London, Ontario",2024-07-01,143.5,143.2907128473818
+"London, Ontario",2024-08-01,143.5,143.40761488363296
+"London, Ontario",2024-09-01,143.5,143.50936256496203
+"London, Ontario",2024-10-01,142.9,143.51274161046206
+"London, Ontario",2024-11-01,142.5,142.780147372415
+"London, Ontario",2024-12-01,142.5,142.45244269620665
+"London, Ontario",2025-01-01,142.5,142.42535320397388
+"London, Ontario",2025-02-01,141.0,142.4659859932104
+"London, Ontario",2025-03-01,140.5,140.80364608628625
+"London, Ontario",2025-04-01,140.0,140.1106366194479
+"London, Ontario",2025-05-01,140.0,139.59671978415082
+"London, Ontario",2025-06-01,139.2,139.84204079112035
+"London, Ontario",2025-07-01,139.2,138.94706743662113
+"London, Ontario",2025-08-01,139.2,138.98199426114698
+"London, Ontario",2025-09-01,139.0,139.04564724136912
+"London, Ontario",2025-10-01,138.9,138.9299584474611
+"London, Ontario",2025-11-01,137.8,138.81085031722898
+"London, Ontario",2025-12-01,137.8,137.5685812968851
+"London, Ontario",2026-01-01,137.9,137.64374193301023
+"Montréal, Quebec",2017-02-01,100.4,100.27958935208679
+"Montréal, Quebec",2017-03-01,100.4,100.52461767748926
+"Montréal, Quebec",2017-04-01,100.5,100.50683524665081
+"Montréal, Quebec",2017-05-01,100.6,100.59972191505119
+"Montréal, Quebec",2017-06-01,100.6,100.71559696362549
+"Montréal, Quebec",2017-07-01,100.9,100.71550122457907
+"Montréal, Quebec",2017-08-01,100.9,101.04277036849676
+"Montréal, Quebec",2017-09-01,101.1,101.02697155513219
+"Montréal, Quebec",2017-10-01,101.3,101.23378480088161
+"Montréal, Quebec",2017-11-01,101.3,101.43307978870115
+"Montréal, Quebec",2017-12-01,101.3,101.42928263940846
+"Montréal, Quebec",2018-01-01,101.8,101.42975260981021
+"Montréal, Quebec",2018-02-01,102.4,101.94316600126149
+"Montréal, Quebec",2018-03-01,102.4,102.59421488108289
+"Montréal, Quebec",2018-04-01,102.4,102.60139217043687
+"Montréal, Quebec",2018-05-01,102.5,102.54289358988132
+"Montréal, Quebec",2018-06-01,103.5,102.60255540307539
+"Montréal, Quebec",2018-07-01,103.6,103.75882360139867
+"Montréal, Quebec",2018-08-01,104.0,103.81197647313961
+"Montréal, Quebec",2018-09-01,104.1,104.25001991600935
+"Montréal, Quebec",2018-10-01,104.3,104.28455715946036
+"Montréal, Quebec",2018-11-01,104.7,104.49694787006632
+"Montréal, Quebec",2018-12-01,104.7,104.90245625361314
+"Montréal, Quebec",2019-01-01,104.8,104.89210074591436
+"Montréal, Quebec",2019-02-01,104.9,105.01487882600468
+"Montréal, Quebec",2019-03-01,104.9,105.02754130731364
+"Montréal, Quebec",2019-04-01,105.0,105.0401305333699
+"Montréal, Quebec",2019-05-01,105.3,105.1537499022967
+"Montréal, Quebec",2019-06-01,105.6,105.46617338349033
+"Montréal, Quebec",2019-07-01,107.3,105.76637128757332
+"Montréal, Quebec",2019-08-01,108.5,107.66305113848635
+"Montréal, Quebec",2019-09-01,109.2,108.89332863653311
+"Montréal, Quebec",2019-10-01,110.1,109.66535541058023
+"Montréal, Quebec",2019-11-01,111.3,110.53813733159257
+"Montréal, Quebec",2019-12-01,111.6,111.74783784393236
+"Montréal, Quebec",2020-01-01,111.9,112.08462445236772
+"Montréal, Quebec",2020-02-01,112.8,112.29135900269921
+"Montréal, Quebec",2020-03-01,113.6,113.18603941998184
+"Montréal, Quebec",2020-04-01,113.8,114.13908756263446
+"Montréal, Quebec",2020-05-01,113.8,114.27645074594089
+"Montréal, Quebec",2020-06-01,114.2,114.12255605715183
+"Montréal, Quebec",2020-07-01,114.8,114.55979592965849
+"Montréal, Quebec",2020-08-01,115.5,115.2379388325922
+"Montréal, Quebec",2020-09-01,116.5,115.98560073069811
+"Montréal, Quebec",2020-10-01,119.7,116.98543259954856
+"Montréal, Quebec",2020-11-01,121.3,120.71562406874602
+"Montréal, Quebec",2020-12-01,122.0,122.36003332592061
+"Montréal, Quebec",2021-01-01,122.1,122.98778766581373
+"Montréal, Quebec",2021-02-01,123.0,122.59543273046508
+"Montréal, Quebec",2021-03-01,124.7,123.58725358641291
+"Montréal, Quebec",2021-04-01,133.9,125.54321054200263
+"Montréal, Quebec",2021-05-01,135.8,135.5512737566162
+"Montréal, Quebec",2021-06-01,136.9,137.48710802515933
+"Montréal, Quebec",2021-07-01,137.8,138.23256574306535
+"Montréal, Quebec",2021-08-01,139.6,138.62453856291057
+"Montréal, Quebec",2021-09-01,142.0,140.47070461355148
+"Montréal, Quebec",2021-10-01,142.3,143.4040586773021
+"Montréal, Quebec",2021-11-01,143.8,143.457050582085
+"Montréal, Quebec",2021-12-01,144.4,145.04659946487104
+"Montréal, Quebec",2022-01-01,144.4,145.1016454745079
+"Montréal, Quebec",2022-02-01,146.3,145.29340460918317
+"Montréal, Quebec",2022-03-01,151.0,147.3419629103214
+"Montréal, Quebec",2022-04-01,150.4,152.62084012060774
+"Montréal, Quebec",2022-05-01,151.9,151.60584403949164
+"Montréal, Quebec",2022-06-01,151.7,152.90064562941208
+"Montréal, Quebec",2022-07-01,151.5,151.8391603225832
+"Montréal, Quebec",2022-08-01,151.5,151.95798620402647
+"Montréal, Quebec",2022-09-01,151.4,151.63927444331466
+"Montréal, Quebec",2022-10-01,152.0,151.45804797003802
+"Montréal, Quebec",2022-11-01,151.3,152.42717057371834
+"Montréal, Quebec",2022-12-01,151.7,151.4065952526946
+"Montréal, Quebec",2023-01-01,151.7,151.86780313200316
+"Montréal, Quebec",2023-02-01,151.7,151.8680727835572
+"Montréal, Quebec",2023-03-01,151.7,151.92271481739422
+"Montréal, Quebec",2023-04-01,152.5,151.7616898526578
+"Montréal, Quebec",2023-05-01,152.5,152.64374945274338
+"Montréal, Quebec",2023-06-01,151.9,152.63755088412643
+"Montréal, Quebec",2023-07-01,151.9,151.99748211241425
+"Montréal, Quebec",2023-08-01,151.9,151.87735053883918
+"Montréal, Quebec",2023-09-01,150.9,151.90040811772292
+"Montréal, Quebec",2023-10-01,151.0,150.86287717898227
+"Montréal, Quebec",2023-11-01,151.0,150.9024826417938
+"Montréal, Quebec",2023-12-01,151.0,150.90662096661498
+"Montréal, Quebec",2024-01-01,150.6,151.05242294709726
+"Montréal, Quebec",2024-02-01,151.2,150.53901761464198
+"Montréal, Quebec",2024-03-01,151.8,151.2060070642581
+"Montréal, Quebec",2024-04-01,151.7,151.9335818196095
+"Montréal, Quebec",2024-05-01,152.2,151.81703236386068
+"Montréal, Quebec",2024-06-01,151.6,152.32569653305873
+"Montréal, Quebec",2024-07-01,152.0,151.59982950988947
+"Montréal, Quebec",2024-08-01,151.9,152.14766703995477
+"Montréal, Quebec",2024-09-01,152.5,151.96296118143707
+"Montréal, Quebec",2024-10-01,152.6,152.64030649856068
+"Montréal, Quebec",2024-11-01,153.0,152.72080605836013
+"Montréal, Quebec",2024-12-01,153.2,153.18862546838224
+"Montréal, Quebec",2025-01-01,153.3,153.376719671614
+"Montréal, Quebec",2025-02-01,153.3,153.53023004811212
+"Montréal, Quebec",2025-03-01,153.9,153.45790428762592
+"Montréal, Quebec",2025-04-01,154.1,154.0692477808064
+"Montréal, Quebec",2025-05-01,154.0,154.3088432046599
+"Montréal, Quebec",2025-06-01,153.9,154.19871296269702
+"Montréal, Quebec",2025-07-01,154.2,154.0114439931543
+"Montréal, Quebec",2025-08-01,155.0,154.30368633298693
+"Montréal, Quebec",2025-09-01,157.6,155.24445201945005
+"Montréal, Quebec",2025-10-01,158.0,158.0683814329221
+"Montréal, Quebec",2025-11-01,158.2,158.40538873470356
+"Montréal, Quebec",2025-12-01,158.4,158.5610898942251
+"Montréal, Quebec",2026-01-01,158.8,158.54860167657483
+"Oshawa, Ontario",2018-12-01,103.8,
+"Oshawa, Ontario",2019-01-01,103.8,
+"Oshawa, Ontario",2019-02-01,103.6,
+"Oshawa, Ontario",2019-03-01,103.4,
+"Oshawa, Ontario",2019-04-01,103.4,
+"Oshawa, Ontario",2019-05-01,103.6,
+"Oshawa, Ontario",2019-06-01,103.7,
+"Oshawa, Ontario",2019-07-01,103.7,
+"Oshawa, Ontario",2019-08-01,103.3,
+"Oshawa, Ontario",2019-09-01,103.7,
+"Oshawa, Ontario",2019-10-01,103.1,
+"Oshawa, Ontario",2019-11-01,103.1,
+"Oshawa, Ontario",2019-12-01,103.2,
+"Oshawa, Ontario",2020-01-01,103.6,
+"Oshawa, Ontario",2020-02-01,104.1,
+"Oshawa, Ontario",2020-03-01,103.5,
+"Oshawa, Ontario",2020-04-01,103.5,
+"Oshawa, Ontario",2020-05-01,103.5,
+"Oshawa, Ontario",2020-06-01,103.5,
+"Oshawa, Ontario",2020-07-01,103.8,
+"Oshawa, Ontario",2020-08-01,105.7,
+"Oshawa, Ontario",2020-09-01,106.3,
+"Oshawa, Ontario",2020-10-01,106.3,
+"Oshawa, Ontario",2020-11-01,107.4,
+"Oshawa, Ontario",2020-12-01,110.7,
+"Oshawa, Ontario",2021-01-01,112.4,
+"Oshawa, Ontario",2021-02-01,113.7,
+"Oshawa, Ontario",2021-03-01,113.7,
+"Oshawa, Ontario",2021-04-01,113.7,
+"Oshawa, Ontario",2021-05-01,113.7,
+"Oshawa, Ontario",2021-06-01,113.7,
+"Oshawa, Ontario",2021-07-01,118.6,
+"Oshawa, Ontario",2021-08-01,118.8,
+"Oshawa, Ontario",2021-09-01,120.9,
+"Oshawa, Ontario",2021-10-01,120.6,
+"Oshawa, Ontario",2021-11-01,121.1,
+"Oshawa, Ontario",2021-12-01,121.1,
+"Oshawa, Ontario",2022-01-01,122.0,
+"Oshawa, Ontario",2022-02-01,122.0,
+"Oshawa, Ontario",2022-03-01,122.0,
+"Oshawa, Ontario",2022-04-01,122.0,
+"Oshawa, Ontario",2022-05-01,122.0,
+"Oshawa, Ontario",2022-06-01,122.0,
+"Oshawa, Ontario",2022-07-01,122.0,
+"Oshawa, Ontario",2022-08-01,122.0,
+"Oshawa, Ontario",2022-09-01,122.0,
+"Oshawa, Ontario",2022-10-01,122.0,
+"Oshawa, Ontario",2022-11-01,122.0,
+"Oshawa, Ontario",2022-12-01,122.0,
+"Oshawa, Ontario",2023-01-01,122.0,
+"Oshawa, Ontario",2023-02-01,122.0,
+"Oshawa, Ontario",2023-03-01,122.0,
+"Oshawa, Ontario",2023-04-01,121.6,
+"Oshawa, Ontario",2023-05-01,121.6,
+"Oshawa, Ontario",2023-06-01,121.6,
+"Oshawa, Ontario",2023-07-01,122.0,
+"Oshawa, Ontario",2023-08-01,121.6,
+"Oshawa, Ontario",2023-09-01,121.2,
+"Oshawa, Ontario",2023-10-01,121.2,
+"Oshawa, Ontario",2023-11-01,121.2,
+"Oshawa, Ontario",2023-12-01,121.2,
+"Oshawa, Ontario",2024-01-01,121.5,
+"Oshawa, Ontario",2024-02-01,121.5,
+"Oshawa, Ontario",2024-03-01,121.5,
+"Oshawa, Ontario",2024-04-01,121.5,
+"Oshawa, Ontario",2024-05-01,121.5,
+"Oshawa, Ontario",2024-06-01,121.5,
+"Oshawa, Ontario",2024-07-01,121.5,
+"Oshawa, Ontario",2024-08-01,121.7,
+"Oshawa, Ontario",2024-09-01,121.7,
+"Oshawa, Ontario",2024-10-01,121.2,
+"Oshawa, Ontario",2024-11-01,120.8,
+"Oshawa, Ontario",2024-12-01,120.8,
+"Oshawa, Ontario",2025-01-01,120.8,
+"Oshawa, Ontario",2025-02-01,120.5,
+"Oshawa, Ontario",2025-03-01,119.8,
+"Oshawa, Ontario",2025-04-01,119.6,
+"Oshawa, Ontario",2025-05-01,119.2,
+"Oshawa, Ontario",2025-06-01,119.0,
+"Oshawa, Ontario",2025-07-01,118.9,
+"Oshawa, Ontario",2025-08-01,118.9,
+"Oshawa, Ontario",2025-09-01,118.8,
+"Oshawa, Ontario",2025-10-01,117.9,
+"Oshawa, Ontario",2025-11-01,117.5,
+"Oshawa, Ontario",2025-12-01,116.9,
+"Oshawa, Ontario",2026-01-01,116.9,
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2017-02-01,100.2,100.23469769238481
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2017-03-01,100.8,100.33161478798327
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2017-04-01,101.1,101.00308648207486
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2017-05-01,101.5,101.33587147081633
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2017-06-01,102.4,101.78134751674585
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2017-07-01,102.7,102.72080083977121
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2017-08-01,103.1,103.02061686425833
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2017-09-01,103.1,103.45504003220827
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2017-10-01,104.1,103.35016530672351
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2017-11-01,104.6,104.44980898428213
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2017-12-01,104.7,104.96781807312456
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-01-01,104.8,105.02029299459731
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-02-01,105.2,105.04044268849188
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-03-01,106.6,105.46201872749282
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-04-01,106.7,107.02673461992742
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-05-01,106.8,107.06753930625743
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-06-01,107.5,107.10654843126035
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-07-01,107.6,107.76873408097374
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-08-01,108.2,107.87615479777787
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-09-01,108.4,108.54870865422353
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-10-01,109.0,108.68264776286554
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-11-01,109.7,109.34610179722578
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2018-12-01,110.1,110.06526220898144
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-01-01,110.3,110.43861614665573
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-02-01,110.4,110.62676632941357
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-03-01,110.5,110.68348488951243
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-04-01,111.1,110.73670191176677
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-05-01,111.8,111.40062629167062
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-06-01,112.5,112.1237867030823
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-07-01,113.5,112.87891944245989
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-08-01,114.1,113.9283667619348
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-09-01,115.2,114.51168593572196
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-10-01,116.2,115.708193026501
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-11-01,117.3,116.69337521958731
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2019-12-01,118.0,117.85650693923169
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-01-01,119.6,118.55892459259783
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-02-01,120.9,120.19928533333277
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-03-01,122.3,121.64666571198103
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-04-01,122.8,123.40238606529473
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-05-01,124.0,123.47679363666482
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-06-01,124.2,124.74727431570629
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-07-01,125.9,124.77195423518597
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-08-01,127.3,126.7120113134577
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-09-01,130.1,128.14975135214368
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-10-01,131.3,131.4876289795426
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-11-01,134.1,132.55748395538677
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2020-12-01,135.6,135.45891154676008
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-01-01,137.9,136.8808356536901
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-02-01,139.0,139.42320692424903
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-03-01,143.5,140.2063010769871
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-04-01,151.9,145.13549996678336
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-05-01,154.8,153.93530628332655
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-06-01,156.8,156.96523356941967
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-07-01,157.7,158.60309409490878
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-08-01,162.3,158.87373134695915
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-09-01,163.0,163.9754519734331
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-10-01,163.8,164.35419470108343
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-11-01,164.1,165.19851665797498
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2021-12-01,164.3,164.82460829967337
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-01-01,166.4,164.98401598564428
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-02-01,167.1,167.49689770335524
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-03-01,169.2,168.27118465378416
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-04-01,171.8,170.81958023658328
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-05-01,173.6,173.1567767270626
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-06-01,174.8,175.0421697402567
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-07-01,175.8,176.00356415502085
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-08-01,175.7,176.84264265318077
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-09-01,175.7,176.20547913445037
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-10-01,175.9,176.11712949644323
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-11-01,175.1,176.23330082289849
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2022-12-01,175.1,175.2244912943109
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-01-01,174.8,175.3371496250013
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-02-01,174.7,174.7511250243246
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-03-01,173.4,174.7819779860805
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-04-01,172.3,173.21331207773696
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-05-01,172.2,171.8015617366688
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-06-01,171.9,171.80569321582638
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-07-01,171.1,171.67632711934826
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-08-01,168.9,170.86807151173448
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-09-01,168.2,168.28528245395898
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-10-01,168.1,167.5942079407023
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-11-01,166.9,167.62650029788978
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2023-12-01,166.7,166.44555072340867
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-01-01,166.1,166.38542054151443
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-02-01,166.4,165.64470570998006
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-03-01,164.9,166.2856030372545
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-04-01,164.8,164.60943497838525
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-05-01,164.9,164.53258887457213
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-06-01,164.4,164.70014563240773
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-07-01,164.0,164.24294204993083
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-08-01,164.2,163.84511257302185
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-09-01,163.8,164.01961575132407
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-10-01,163.4,163.70371581458798
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-11-01,164.0,163.28196366309234
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2024-12-01,164.4,163.9630473907153
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-01-01,163.6,164.45924777514642
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-02-01,163.9,163.631973226842
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-03-01,163.9,163.8760433231794
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-04-01,162.7,163.86244182770074
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-05-01,162.7,162.63853003110648
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-06-01,162.6,162.5590227445247
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-07-01,162.3,162.41952201234014
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-08-01,161.8,162.25844516543705
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-09-01,160.7,161.6394574811757
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-10-01,160.7,160.42359947872816
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-11-01,160.7,160.48372907519052
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2025-12-01,160.4,160.51668668718716
+"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2026-01-01,161.0,160.29785871141453
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2018-12-01,102.4,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-01-01,102.4,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-02-01,102.4,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-03-01,102.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-04-01,103.2,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-05-01,103.4,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-06-01,104.4,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-07-01,104.6,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-08-01,104.5,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-09-01,104.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-10-01,105.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-11-01,105.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2019-12-01,105.7,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-01-01,106.2,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-02-01,106.5,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-03-01,107.1,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-04-01,107.4,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-05-01,107.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-06-01,107.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-07-01,107.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-08-01,107.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-09-01,108.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-10-01,109.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-11-01,112.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2020-12-01,112.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-01-01,112.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-02-01,112.5,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-03-01,113.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-04-01,114.1,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-05-01,114.6,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-06-01,114.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-07-01,115.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-08-01,115.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-09-01,115.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-10-01,114.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-11-01,115.7,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2021-12-01,115.7,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-01-01,115.7,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-02-01,115.7,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-03-01,115.7,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-04-01,115.7,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-05-01,116.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-06-01,116.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-07-01,116.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-08-01,116.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-09-01,116.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-10-01,116.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-11-01,116.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2022-12-01,116.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-01-01,116.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-02-01,115.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-03-01,115.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-04-01,115.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-05-01,115.3,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-06-01,115.3,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-07-01,115.3,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-08-01,115.3,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-09-01,115.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-10-01,115.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-11-01,115.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2023-12-01,115.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-01-01,115.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-02-01,115.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-03-01,115.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-04-01,115.9,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-05-01,115.6,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-06-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-07-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-08-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-09-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-10-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-11-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2024-12-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-01-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-02-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-03-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-04-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-05-01,116.0,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-06-01,115.8,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-07-01,116.1,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-08-01,116.1,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-09-01,116.2,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-10-01,116.2,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-11-01,116.2,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2025-12-01,116.2,
+"Ottawa-Gatineau, Quebec part, Ontario/Quebec",2026-01-01,115.6,
+"Québec, Quebec",2017-02-01,100.2,100.25168558011141
+"Québec, Quebec",2017-03-01,100.1,100.24205964006585
+"Québec, Quebec",2017-04-01,100.2,100.1719177784767
+"Québec, Quebec",2017-05-01,100.3,100.25575409363724
+"Québec, Quebec",2017-06-01,100.4,100.36179112196974
+"Québec, Quebec",2017-07-01,100.4,100.51412410595711
+"Québec, Quebec",2017-08-01,100.4,100.47959085502112
+"Québec, Quebec",2017-09-01,100.4,100.46209181565632
+"Québec, Quebec",2017-10-01,100.4,100.47234045164274
+"Québec, Quebec",2017-11-01,100.6,100.46857847121186
+"Québec, Quebec",2017-12-01,100.6,100.67524965168711
+"Québec, Quebec",2018-01-01,100.6,100.68617904327292
+"Québec, Quebec",2018-02-01,100.6,100.67772305094184
+"Québec, Quebec",2018-03-01,100.7,100.6552228102348
+"Québec, Quebec",2018-04-01,100.6,100.77527214439371
+"Québec, Quebec",2018-05-01,100.7,100.66612350475273
+"Québec, Quebec",2018-06-01,100.7,100.76851482543212
+"Québec, Quebec",2018-07-01,100.8,100.75024738441245
+"Québec, Quebec",2018-08-01,100.8,100.87180197885705
+"Québec, Quebec",2018-09-01,100.8,100.85699030686739
+"Québec, Quebec",2018-10-01,100.8,100.86813050385958
+"Québec, Quebec",2018-11-01,100.8,100.86717082921069
+"Québec, Quebec",2018-12-01,100.8,100.84717533088637
+"Québec, Quebec",2019-01-01,100.8,100.84768836536445
+"Québec, Quebec",2019-02-01,100.8,100.84912268126719
+"Québec, Quebec",2019-03-01,100.8,100.85383739633365
+"Québec, Quebec",2019-04-01,100.8,100.85795069753654
+"Québec, Quebec",2019-05-01,100.8,100.85319950218692
+"Québec, Quebec",2019-06-01,100.7,100.84595946721655
+"Québec, Quebec",2019-07-01,100.7,100.7395207367953
+"Québec, Quebec",2019-08-01,100.6,100.73091581160539
+"Québec, Quebec",2019-09-01,100.6,100.62224085057227
+"Québec, Quebec",2019-10-01,100.6,100.62542441256872
+"Québec, Quebec",2019-11-01,100.8,100.61630959221945
+"Québec, Quebec",2019-12-01,100.9,100.85096586891996
+"Québec, Quebec",2020-01-01,100.9,100.9726938029256
+"Québec, Quebec",2020-02-01,100.9,100.95908898329952
+"Québec, Quebec",2020-03-01,100.9,100.95908040347636
+"Québec, Quebec",2020-04-01,100.9,100.9581557208274
+"Québec, Quebec",2020-05-01,100.8,100.96128580878813
+"Québec, Quebec",2020-06-01,100.9,100.84733754019717
+"Québec, Quebec",2020-07-01,101.0,100.95693587625166
+"Québec, Quebec",2020-08-01,102.7,101.06446789032798
+"Québec, Quebec",2020-09-01,103.2,102.96074267541947
+"Québec, Quebec",2020-10-01,103.6,103.48623355194671
+"Québec, Quebec",2020-11-01,104.8,103.94771758386797
+"Québec, Quebec",2020-12-01,106.0,105.14291843317388
+"Québec, Quebec",2021-01-01,108.7,106.43546257094945
+"Québec, Quebec",2021-02-01,111.7,109.77495373048758
+"Québec, Quebec",2021-03-01,114.7,112.95174562504711
+"Québec, Quebec",2021-04-01,115.3,116.20847533283542
+"Québec, Quebec",2021-05-01,115.2,116.53125899295694
+"Québec, Quebec",2021-06-01,115.2,115.79637375871086
+"Québec, Quebec",2021-07-01,115.2,115.4358013456922
+"Québec, Quebec",2021-08-01,115.2,115.6008707085354
+"Québec, Quebec",2021-09-01,116.7,115.59474402919356
+"Québec, Quebec",2021-10-01,117.0,117.30344930665434
+"Québec, Quebec",2021-11-01,117.5,117.67530016864296
+"Québec, Quebec",2021-12-01,118.1,118.25912547592534
+"Québec, Quebec",2022-01-01,119.8,118.65453479494927
+"Québec, Quebec",2022-02-01,123.3,120.60669856374358
+"Québec, Quebec",2022-03-01,124.0,124.6897828894437
+"Québec, Quebec",2022-04-01,124.0,125.02886629596428
+"Québec, Quebec",2022-05-01,124.8,124.72750212327651
+"Québec, Quebec",2022-06-01,125.3,125.21165985852313
+"Québec, Quebec",2022-07-01,125.3,125.73628224274208
+"Québec, Quebec",2022-08-01,125.3,125.77750062723584
+"Québec, Quebec",2022-09-01,125.3,125.70546326427828
+"Québec, Quebec",2022-10-01,125.8,125.53171126574266
+"Québec, Quebec",2022-11-01,126.1,126.1609444875005
+"Québec, Quebec",2022-12-01,126.1,126.44051947171344
+"Québec, Quebec",2023-01-01,126.1,126.42823800604643
+"Québec, Quebec",2023-02-01,126.1,126.39247678012822
+"Québec, Quebec",2023-03-01,126.3,126.24138995836554
+"Québec, Quebec",2023-04-01,128.8,126.43349461326676
+"Québec, Quebec",2023-05-01,129.9,129.17497323901142
+"Québec, Quebec",2023-06-01,129.9,130.327646980342
+"Québec, Quebec",2023-07-01,129.7,130.3199290443177
+"Québec, Quebec",2023-08-01,129.7,129.80734901440096
+"Québec, Quebec",2023-09-01,129.7,129.7861138609544
+"Québec, Quebec",2023-10-01,130.1,129.82955960307712
+"Québec, Quebec",2023-11-01,130.1,130.29544174117981
+"Québec, Quebec",2023-12-01,130.2,130.25651874854233
+"Québec, Quebec",2024-01-01,130.3,130.39865245555603
+"Québec, Quebec",2024-02-01,130.3,130.4620485639277
+"Québec, Quebec",2024-03-01,130.3,130.4818540247857
+"Québec, Quebec",2024-04-01,130.3,130.51333906710613
+"Québec, Quebec",2024-05-01,131.2,130.42186054395876
+"Québec, Quebec",2024-06-01,131.2,131.34787300464524
+"Québec, Quebec",2024-07-01,131.2,131.33209217607475
+"Québec, Quebec",2024-08-01,131.2,131.35639081633792
+"Québec, Quebec",2024-09-01,132.7,131.27114971982004
+"Québec, Quebec",2024-10-01,132.7,132.93149868427562
+"Québec, Quebec",2024-11-01,135.1,132.91041175367627
+"Québec, Quebec",2024-12-01,135.1,135.75514766690344
+"Québec, Quebec",2025-01-01,135.8,135.36433729278025
+"Québec, Quebec",2025-02-01,137.6,136.28291594907668
+"Québec, Quebec",2025-03-01,141.0,137.90048531763242
+"Québec, Quebec",2025-04-01,141.0,141.99711415441098
+"Québec, Quebec",2025-05-01,141.0,141.91431178581402
+"Québec, Quebec",2025-06-01,141.1,141.35769222990507
+"Québec, Quebec",2025-07-01,141.7,141.15588887841105
+"Québec, Quebec",2025-08-01,141.7,142.09399083385483
+"Québec, Quebec",2025-09-01,141.5,142.11398319925544
+"Québec, Quebec",2025-10-01,142.1,141.73302433222068
+"Québec, Quebec",2025-11-01,142.1,142.4651004444767
+"Québec, Quebec",2025-12-01,143.1,142.3197530918489
+"Québec, Quebec",2026-01-01,143.1,143.55501252189373
+"Regina, Saskatchewan",2017-02-01,100.1,99.77050441941026
+"Regina, Saskatchewan",2017-03-01,100.2,100.15219360273763
+"Regina, Saskatchewan",2017-04-01,100.3,100.24177428824808
+"Regina, Saskatchewan",2017-05-01,100.2,100.36393308030263
+"Regina, Saskatchewan",2017-06-01,100.5,100.27424170236563
+"Regina, Saskatchewan",2017-07-01,100.5,100.57469496549706
+"Regina, Saskatchewan",2017-08-01,100.7,100.58242912540226
+"Regina, Saskatchewan",2017-09-01,100.4,100.81052660846056
+"Regina, Saskatchewan",2017-10-01,100.6,100.44687537808541
+"Regina, Saskatchewan",2017-11-01,100.2,100.66675502072812
+"Regina, Saskatchewan",2017-12-01,100.2,100.22474262977829
+"Regina, Saskatchewan",2018-01-01,100.4,100.21328644761053
+"Regina, Saskatchewan",2018-02-01,100.0,100.43283661265785
+"Regina, Saskatchewan",2018-03-01,99.9,100.02182699458605
+"Regina, Saskatchewan",2018-04-01,99.9,99.91638289065259
+"Regina, Saskatchewan",2018-05-01,99.5,99.8591458190682
+"Regina, Saskatchewan",2018-06-01,99.3,99.47475220078924
+"Regina, Saskatchewan",2018-07-01,99.3,99.26749398144239
+"Regina, Saskatchewan",2018-08-01,98.6,99.1943553635442
+"Regina, Saskatchewan",2018-09-01,98.5,98.48749778385596
+"Regina, Saskatchewan",2018-10-01,98.2,98.40920058164355
+"Regina, Saskatchewan",2018-11-01,97.6,98.04845289317103
+"Regina, Saskatchewan",2018-12-01,97.2,97.44262767780789
+"Regina, Saskatchewan",2019-01-01,97.4,96.99463718448051
+"Regina, Saskatchewan",2019-02-01,97.2,97.24117653005096
+"Regina, Saskatchewan",2019-03-01,97.1,97.11985260381388
+"Regina, Saskatchewan",2019-04-01,96.3,97.03684033404545
+"Regina, Saskatchewan",2019-05-01,96.8,96.10454712172583
+"Regina, Saskatchewan",2019-06-01,96.7,96.72920541273429
+"Regina, Saskatchewan",2019-07-01,96.5,96.6496976451818
+"Regina, Saskatchewan",2019-08-01,96.5,96.47161493116997
+"Regina, Saskatchewan",2019-09-01,96.6,96.455196129967
+"Regina, Saskatchewan",2019-10-01,96.5,96.57355194416232
+"Regina, Saskatchewan",2019-11-01,94.9,96.53233320823757
+"Regina, Saskatchewan",2019-12-01,94.9,94.69925628115539
+"Regina, Saskatchewan",2020-01-01,93.8,94.7070710850474
+"Regina, Saskatchewan",2020-02-01,93.3,93.3903376302126
+"Regina, Saskatchewan",2020-03-01,93.0,93.08014680490918
+"Regina, Saskatchewan",2020-04-01,92.8,92.7224731640617
+"Regina, Saskatchewan",2020-05-01,92.9,92.56281075987565
+"Regina, Saskatchewan",2020-06-01,92.4,92.81175319560738
+"Regina, Saskatchewan",2020-07-01,91.9,92.23391236585333
+"Regina, Saskatchewan",2020-08-01,92.4,91.74348006689267
+"Regina, Saskatchewan",2020-09-01,92.1,92.31078628433303
+"Regina, Saskatchewan",2020-10-01,92.5,92.05641583579737
+"Regina, Saskatchewan",2020-11-01,92.4,92.5660145783969
+"Regina, Saskatchewan",2020-12-01,92.7,92.37555361930444
+"Regina, Saskatchewan",2021-01-01,92.9,92.77067083078606
+"Regina, Saskatchewan",2021-02-01,92.7,93.0053093436453
+"Regina, Saskatchewan",2021-03-01,94.4,92.75752230770334
+"Regina, Saskatchewan",2021-04-01,93.9,94.67821291344804
+"Regina, Saskatchewan",2021-05-01,95.8,94.03593813567323
+"Regina, Saskatchewan",2021-06-01,96.9,96.2359640425245
+"Regina, Saskatchewan",2021-07-01,97.3,97.26315623872713
+"Regina, Saskatchewan",2021-08-01,97.4,97.8084806801067
+"Regina, Saskatchewan",2021-09-01,97.6,97.7508682512198
+"Regina, Saskatchewan",2021-10-01,99.0,97.79217445935002
+"Regina, Saskatchewan",2021-11-01,99.3,99.47864455439425
+"Regina, Saskatchewan",2021-12-01,99.3,99.79064225650215
+"Regina, Saskatchewan",2022-01-01,100.0,99.65312767780881
+"Regina, Saskatchewan",2022-02-01,100.1,100.3310838626698
+"Regina, Saskatchewan",2022-03-01,101.3,100.49123526475141
+"Regina, Saskatchewan",2022-04-01,103.0,101.93143277146625
+"Regina, Saskatchewan",2022-05-01,103.0,103.63142875520656
+"Regina, Saskatchewan",2022-06-01,103.1,103.48907732224478
+"Regina, Saskatchewan",2022-07-01,103.1,103.50512616175953
+"Regina, Saskatchewan",2022-08-01,103.1,103.26503636195157
+"Regina, Saskatchewan",2022-09-01,102.9,103.29859566282616
+"Regina, Saskatchewan",2022-10-01,102.5,103.09711939388005
+"Regina, Saskatchewan",2022-11-01,102.5,102.51342170054019
+"Regina, Saskatchewan",2022-12-01,102.1,102.52169934044784
+"Regina, Saskatchewan",2023-01-01,102.1,102.07139429713285
+"Regina, Saskatchewan",2023-02-01,101.9,102.09505311197164
+"Regina, Saskatchewan",2023-03-01,101.9,101.83569918366528
+"Regina, Saskatchewan",2023-04-01,102.9,101.88791052332982
+"Regina, Saskatchewan",2023-05-01,102.9,102.97593219327301
+"Regina, Saskatchewan",2023-06-01,102.9,102.98094594080872
+"Regina, Saskatchewan",2023-07-01,102.4,103.01239108119816
+"Regina, Saskatchewan",2023-08-01,102.3,102.35931628242794
+"Regina, Saskatchewan",2023-09-01,102.3,102.27278476533807
+"Regina, Saskatchewan",2023-10-01,102.3,102.2820809734963
+"Regina, Saskatchewan",2023-11-01,102.0,102.31556390451742
+"Regina, Saskatchewan",2023-12-01,101.1,101.99732184352794
+"Regina, Saskatchewan",2024-01-01,101.1,100.96087665475882
+"Regina, Saskatchewan",2024-02-01,101.1,100.97632448520143
+"Regina, Saskatchewan",2024-03-01,101.5,101.00601563272933
+"Regina, Saskatchewan",2024-04-01,101.2,101.53360638803098
+"Regina, Saskatchewan",2024-05-01,101.1,101.1676995961268
+"Regina, Saskatchewan",2024-06-01,101.1,101.06927898246053
+"Regina, Saskatchewan",2024-07-01,101.9,101.07846569108064
+"Regina, Saskatchewan",2024-08-01,102.2,101.99659781942178
+"Regina, Saskatchewan",2024-09-01,102.2,102.33040718195828
+"Regina, Saskatchewan",2024-10-01,102.2,102.28774630850475
+"Regina, Saskatchewan",2024-11-01,102.2,102.24229969318243
+"Regina, Saskatchewan",2024-12-01,102.2,102.28757284631115
+"Regina, Saskatchewan",2025-01-01,102.2,102.29400894808047
+"Regina, Saskatchewan",2025-02-01,102.2,102.29311295859232
+"Regina, Saskatchewan",2025-03-01,102.2,102.27380911026899
+"Regina, Saskatchewan",2025-04-01,103.5,102.26845701150413
+"Regina, Saskatchewan",2025-05-01,105.1,103.69290817070946
+"Regina, Saskatchewan",2025-06-01,105.4,105.44424207275578
+"Regina, Saskatchewan",2025-07-01,105.4,105.78134456186184
+"Regina, Saskatchewan",2025-08-01,105.8,105.64376020775204
+"Regina, Saskatchewan",2025-09-01,105.8,105.9391195532302
+"Regina, Saskatchewan",2025-10-01,106.1,105.97503812936617
+"Regina, Saskatchewan",2025-11-01,107.1,106.3226486143728
+"Regina, Saskatchewan",2025-12-01,107.0,107.33193020547783
+"Regina, Saskatchewan",2026-01-01,106.9,107.25288859800143
+"Saskatoon, Saskatchewan",2017-02-01,99.9,99.93741251750285
+"Saskatoon, Saskatchewan",2017-03-01,99.9,99.93496058634942
+"Saskatoon, Saskatchewan",2017-04-01,99.9,99.93587560359981
+"Saskatoon, Saskatchewan",2017-05-01,99.6,99.94974941343044
+"Saskatoon, Saskatchewan",2017-06-01,99.1,99.62680549328527
+"Saskatoon, Saskatchewan",2017-07-01,99.1,99.0700918401796
+"Saskatoon, Saskatchewan",2017-08-01,99.1,99.06816582391717
+"Saskatoon, Saskatchewan",2017-09-01,98.9,99.09658538468886
+"Saskatoon, Saskatchewan",2017-10-01,98.9,98.88831094747559
+"Saskatoon, Saskatchewan",2017-11-01,98.4,98.87474164727493
+"Saskatoon, Saskatchewan",2017-12-01,98.4,98.30310539948977
+"Saskatoon, Saskatchewan",2018-01-01,98.4,98.37310099130114
+"Saskatoon, Saskatchewan",2018-02-01,97.9,98.36240481568211
+"Saskatoon, Saskatchewan",2018-03-01,97.9,97.834297315012
+"Saskatoon, Saskatchewan",2018-04-01,98.4,97.83048880835955
+"Saskatoon, Saskatchewan",2018-05-01,98.2,98.39238175329601
+"Saskatoon, Saskatchewan",2018-06-01,98.1,98.2373611773443
+"Saskatoon, Saskatchewan",2018-07-01,98.3,98.11831721572383
+"Saskatoon, Saskatchewan",2018-08-01,98.3,98.28152587087091
+"Saskatoon, Saskatchewan",2018-09-01,98.0,98.33870332240083
+"Saskatoon, Saskatchewan",2018-10-01,98.0,98.05240756784497
+"Saskatoon, Saskatchewan",2018-11-01,98.1,97.98840715360267
+"Saskatoon, Saskatchewan",2018-12-01,98.0,98.11155496941603
+"Saskatoon, Saskatchewan",2019-01-01,97.7,98.04229065177336
+"Saskatoon, Saskatchewan",2019-02-01,97.8,97.69643718753463
+"Saskatoon, Saskatchewan",2019-03-01,97.8,97.79872714887397
+"Saskatoon, Saskatchewan",2019-04-01,97.3,97.83568538911956
+"Saskatoon, Saskatchewan",2019-05-01,96.8,97.28426385361776
+"Saskatoon, Saskatchewan",2019-06-01,96.9,96.66542560011862
+"Saskatoon, Saskatchewan",2019-07-01,96.8,96.77528503469328
+"Saskatoon, Saskatchewan",2019-08-01,96.5,96.76177944446052
+"Saskatoon, Saskatchewan",2019-09-01,96.7,96.44804413718315
+"Saskatoon, Saskatchewan",2019-10-01,96.9,96.63062527973905
+"Saskatoon, Saskatchewan",2019-11-01,96.6,96.89600230265144
+"Saskatoon, Saskatchewan",2019-12-01,96.9,96.6216660483782
+"Saskatoon, Saskatchewan",2020-01-01,96.4,96.92969734897251
+"Saskatoon, Saskatchewan",2020-02-01,96.5,96.34308865932137
+"Saskatoon, Saskatchewan",2020-03-01,96.3,96.52035779288411
+"Saskatoon, Saskatchewan",2020-04-01,96.4,96.2621581694122
+"Saskatoon, Saskatchewan",2020-05-01,96.5,96.4125077262004
+"Saskatoon, Saskatchewan",2020-06-01,96.6,96.546050225407
+"Saskatoon, Saskatchewan",2020-07-01,96.6,96.63893957608015
+"Saskatoon, Saskatchewan",2020-08-01,96.6,96.66776188866119
+"Saskatoon, Saskatchewan",2020-09-01,96.4,96.67560684259978
+"Saskatoon, Saskatchewan",2020-10-01,96.9,96.45873550859989
+"Saskatoon, Saskatchewan",2020-11-01,96.9,96.9960422492861
+"Saskatoon, Saskatchewan",2020-12-01,97.1,96.9953296072822
+"Saskatoon, Saskatchewan",2021-01-01,97.7,97.21907400649768
+"Saskatoon, Saskatchewan",2021-02-01,98.3,97.84732252656025
+"Saskatoon, Saskatchewan",2021-03-01,99.4,98.52740090873327
+"Saskatoon, Saskatchewan",2021-04-01,100.3,99.8006526445035
+"Saskatoon, Saskatchewan",2021-05-01,103.1,100.6900088419959
+"Saskatoon, Saskatchewan",2021-06-01,105.4,104.01900084071349
+"Saskatoon, Saskatchewan",2021-07-01,106.4,106.51345758329714
+"Saskatoon, Saskatchewan",2021-08-01,106.3,107.51855214627534
+"Saskatoon, Saskatchewan",2021-09-01,105.3,106.75881717199223
+"Saskatoon, Saskatchewan",2021-10-01,105.1,105.25521553794526
+"Saskatoon, Saskatchewan",2021-11-01,105.0,105.02814556195403
+"Saskatoon, Saskatchewan",2021-12-01,105.8,105.0120694107915
+"Saskatoon, Saskatchewan",2022-01-01,106.1,106.16553586821216
+"Saskatoon, Saskatchewan",2022-02-01,106.5,106.46781627125276
+"Saskatoon, Saskatchewan",2022-03-01,107.1,106.9043029618819
+"Saskatoon, Saskatchewan",2022-04-01,107.3,107.54888330091426
+"Saskatoon, Saskatchewan",2022-05-01,107.6,107.72998716030405
+"Saskatoon, Saskatchewan",2022-06-01,108.1,108.02374255489482
+"Saskatoon, Saskatchewan",2022-07-01,108.0,108.3486427235478
+"Saskatoon, Saskatchewan",2022-08-01,109.0,108.20946269200968
+"Saskatoon, Saskatchewan",2022-09-01,109.3,109.33919665059645
+"Saskatoon, Saskatchewan",2022-10-01,109.5,109.57857587489111
+"Saskatoon, Saskatchewan",2022-11-01,108.9,109.80773764344534
+"Saskatoon, Saskatchewan",2022-12-01,108.6,109.06582049768029
+"Saskatoon, Saskatchewan",2023-01-01,108.6,108.60282742255528
+"Saskatoon, Saskatchewan",2023-02-01,107.7,108.62346445875615
+"Saskatoon, Saskatchewan",2023-03-01,107.7,107.57373453934682
+"Saskatoon, Saskatchewan",2023-04-01,108.0,107.61365985631363
+"Saskatoon, Saskatchewan",2023-05-01,107.7,107.95713662763453
+"Saskatoon, Saskatchewan",2023-06-01,106.2,107.69573611065375
+"Saskatoon, Saskatchewan",2023-07-01,106.5,105.99018278989303
+"Saskatoon, Saskatchewan",2023-08-01,106.2,106.28630049221012
+"Saskatoon, Saskatchewan",2023-09-01,106.1,106.04061068897417
+"Saskatoon, Saskatchewan",2023-10-01,105.9,106.01234099587242
+"Saskatoon, Saskatchewan",2023-11-01,105.2,105.7408644012792
+"Saskatoon, Saskatchewan",2023-12-01,105.4,105.00459261507446
+"Saskatoon, Saskatchewan",2024-01-01,105.4,105.3572863671024
+"Saskatoon, Saskatchewan",2024-02-01,105.4,105.30754681640651
+"Saskatoon, Saskatchewan",2024-03-01,105.6,105.41443273473992
+"Saskatoon, Saskatchewan",2024-04-01,105.3,105.60569137858116
+"Saskatoon, Saskatchewan",2024-05-01,106.3,105.28689641800274
+"Saskatoon, Saskatchewan",2024-06-01,107.1,106.44824276591207
+"Saskatoon, Saskatchewan",2024-07-01,107.3,107.29281283241633
+"Saskatoon, Saskatchewan",2024-08-01,107.4,107.56213581496564
+"Saskatoon, Saskatchewan",2024-09-01,107.8,107.56141958603514
+"Saskatoon, Saskatchewan",2024-10-01,107.8,107.93374981306617
+"Saskatoon, Saskatchewan",2024-11-01,108.0,107.99445266457663
+"Saskatoon, Saskatchewan",2024-12-01,108.1,108.21504600241639
+"Saskatoon, Saskatchewan",2025-01-01,108.8,108.21943320100975
+"Saskatoon, Saskatchewan",2025-02-01,110.4,109.04660304267135
+"Saskatoon, Saskatchewan",2025-03-01,109.8,110.80407223138778
+"Saskatoon, Saskatchewan",2025-04-01,110.1,110.11182859402102
+"Saskatoon, Saskatchewan",2025-05-01,111.1,110.3987615149795
+"Saskatoon, Saskatchewan",2025-06-01,111.1,111.41721012462996
+"Saskatoon, Saskatchewan",2025-07-01,111.1,111.34925151466946
+"Saskatoon, Saskatchewan",2025-08-01,112.0,111.34317176742813
+"Saskatoon, Saskatchewan",2025-09-01,111.8,112.16607492677262
+"Saskatoon, Saskatchewan",2025-10-01,111.7,112.02944936750731
+"Saskatoon, Saskatchewan",2025-11-01,112.0,111.93272252542269
+"Saskatoon, Saskatchewan",2025-12-01,112.0,112.11603361114342
+"Saskatoon, Saskatchewan",2026-01-01,111.9,112.16524867494947
+"Sherbrooke, Quebec",2022-04-01,111.5,
+"Sherbrooke, Quebec",2022-05-01,111.5,
+"Sherbrooke, Quebec",2022-06-01,111.5,
+"Sherbrooke, Quebec",2022-07-01,111.5,
+"Sherbrooke, Quebec",2022-08-01,111.5,
+"Sherbrooke, Quebec",2022-09-01,111.5,
+"Sherbrooke, Quebec",2022-10-01,111.5,
+"Sherbrooke, Quebec",2022-11-01,111.5,
+"Sherbrooke, Quebec",2022-12-01,111.5,
+"Sherbrooke, Quebec",2023-01-01,111.3,
+"Sherbrooke, Quebec",2023-02-01,110.9,
+"Sherbrooke, Quebec",2023-03-01,112.2,
+"Sherbrooke, Quebec",2023-04-01,112.2,
+"Sherbrooke, Quebec",2023-05-01,111.4,
+"Sherbrooke, Quebec",2023-06-01,111.4,
+"Sherbrooke, Quebec",2023-07-01,112.7,
+"Sherbrooke, Quebec",2023-08-01,113.1,
+"Sherbrooke, Quebec",2023-09-01,112.8,
+"Sherbrooke, Quebec",2023-10-01,112.3,
+"Sherbrooke, Quebec",2023-11-01,111.0,
+"Sherbrooke, Quebec",2023-12-01,111.2,
+"Sherbrooke, Quebec",2024-01-01,111.1,
+"Sherbrooke, Quebec",2024-02-01,111.1,
+"Sherbrooke, Quebec",2024-03-01,111.0,
+"Sherbrooke, Quebec",2024-04-01,111.0,
+"Sherbrooke, Quebec",2024-05-01,111.0,
+"Sherbrooke, Quebec",2024-06-01,111.0,
+"Sherbrooke, Quebec",2024-07-01,111.3,
+"Sherbrooke, Quebec",2024-08-01,111.2,
+"Sherbrooke, Quebec",2024-09-01,111.2,
+"Sherbrooke, Quebec",2024-10-01,110.9,
+"Sherbrooke, Quebec",2024-11-01,110.9,
+"Sherbrooke, Quebec",2024-12-01,110.8,
+"Sherbrooke, Quebec",2025-01-01,111.1,
+"Sherbrooke, Quebec",2025-02-01,108.7,
+"Sherbrooke, Quebec",2025-03-01,109.0,
+"Sherbrooke, Quebec",2025-04-01,109.6,
+"Sherbrooke, Quebec",2025-05-01,109.6,
+"Sherbrooke, Quebec",2025-06-01,109.6,
+"Sherbrooke, Quebec",2025-07-01,110.8,
+"Sherbrooke, Quebec",2025-08-01,110.8,
+"Sherbrooke, Quebec",2025-09-01,110.8,
+"Sherbrooke, Quebec",2025-10-01,110.8,
+"Sherbrooke, Quebec",2025-11-01,110.8,
+"Sherbrooke, Quebec",2025-12-01,112.4,
+"Sherbrooke, Quebec",2026-01-01,112.1,
+"St. Catharines-Niagara, Ontario",2017-02-01,101.0,101.28164473683358
+"St. Catharines-Niagara, Ontario",2017-03-01,101.0,101.40376084108705
+"St. Catharines-Niagara, Ontario",2017-04-01,102.8,101.30674380141642
+"St. Catharines-Niagara, Ontario",2017-05-01,103.7,103.17749709475196
+"St. Catharines-Niagara, Ontario",2017-06-01,103.8,104.29016590122997
+"St. Catharines-Niagara, Ontario",2017-07-01,103.9,104.280803143123
+"St. Catharines-Niagara, Ontario",2017-08-01,103.9,104.15622895405288
+"St. Catharines-Niagara, Ontario",2017-09-01,104.5,104.12297807947566
+"St. Catharines-Niagara, Ontario",2017-10-01,104.5,104.84290464326743
+"St. Catharines-Niagara, Ontario",2017-11-01,104.5,104.77173265126585
+"St. Catharines-Niagara, Ontario",2017-12-01,104.5,104.7413920968084
+"St. Catharines-Niagara, Ontario",2018-01-01,104.5,104.71193820135481
+"St. Catharines-Niagara, Ontario",2018-02-01,104.9,104.65778051769362
+"St. Catharines-Niagara, Ontario",2018-03-01,105.1,105.11868687430997
+"St. Catharines-Niagara, Ontario",2018-04-01,105.1,105.33731652274135
+"St. Catharines-Niagara, Ontario",2018-05-01,105.2,105.26818858982004
+"St. Catharines-Niagara, Ontario",2018-06-01,105.7,105.3348640417298
+"St. Catharines-Niagara, Ontario",2018-07-01,105.8,105.86181223285257
+"St. Catharines-Niagara, Ontario",2018-08-01,105.8,105.9698072779132
+"St. Catharines-Niagara, Ontario",2018-09-01,105.7,105.96821327615939
+"St. Catharines-Niagara, Ontario",2018-10-01,106.0,105.79724551381682
+"St. Catharines-Niagara, Ontario",2018-11-01,106.2,106.13004415651518
+"St. Catharines-Niagara, Ontario",2018-12-01,106.4,106.34587641403175
+"St. Catharines-Niagara, Ontario",2019-01-01,106.6,106.55279077831298
+"St. Catharines-Niagara, Ontario",2019-02-01,106.6,106.7552695244378
+"St. Catharines-Niagara, Ontario",2019-03-01,106.4,106.74284054228956
+"St. Catharines-Niagara, Ontario",2019-04-01,106.4,106.52297701862462
+"St. Catharines-Niagara, Ontario",2019-05-01,106.7,106.48349843367029
+"St. Catharines-Niagara, Ontario",2019-06-01,106.7,106.81143176593567
+"St. Catharines-Niagara, Ontario",2019-07-01,106.6,106.80504119688614
+"St. Catharines-Niagara, Ontario",2019-08-01,106.2,106.68711667380101
+"St. Catharines-Niagara, Ontario",2019-09-01,106.5,106.19541887573361
+"St. Catharines-Niagara, Ontario",2019-10-01,107.1,106.56249813466998
+"St. Catharines-Niagara, Ontario",2019-11-01,107.0,107.21859862204279
+"St. Catharines-Niagara, Ontario",2019-12-01,107.4,107.09997367609799
+"St. Catharines-Niagara, Ontario",2020-01-01,107.4,107.51432898648396
+"St. Catharines-Niagara, Ontario",2020-02-01,108.6,107.4732696961362
+"St. Catharines-Niagara, Ontario",2020-03-01,108.7,108.86904008185766
+"St. Catharines-Niagara, Ontario",2020-04-01,108.9,108.92361766160276
+"St. Catharines-Niagara, Ontario",2020-05-01,109.0,109.11814143212622
+"St. Catharines-Niagara, Ontario",2020-06-01,110.1,109.15278113502293
+"St. Catharines-Niagara, Ontario",2020-07-01,110.5,110.38353773769583
+"St. Catharines-Niagara, Ontario",2020-08-01,110.5,110.89314844328845
+"St. Catharines-Niagara, Ontario",2020-09-01,111.1,110.82181075639629
+"St. Catharines-Niagara, Ontario",2020-10-01,113.5,111.39650734432655
+"St. Catharines-Niagara, Ontario",2020-11-01,114.7,114.04893318076991
+"St. Catharines-Niagara, Ontario",2020-12-01,115.2,115.59106841700016
+"St. Catharines-Niagara, Ontario",2021-01-01,115.7,115.91687315061688
+"St. Catharines-Niagara, Ontario",2021-02-01,117.1,116.11693875644835
+"St. Catharines-Niagara, Ontario",2021-03-01,120.8,117.66784793605467
+"St. Catharines-Niagara, Ontario",2021-04-01,123.8,122.12777426769702
+"St. Catharines-Niagara, Ontario",2021-05-01,124.0,125.21684489468166
+"St. Catharines-Niagara, Ontario",2021-06-01,125.5,125.17631466120524
+"St. Catharines-Niagara, Ontario",2021-07-01,125.5,126.45171434870329
+"St. Catharines-Niagara, Ontario",2021-08-01,125.5,125.94982956968809
+"St. Catharines-Niagara, Ontario",2021-09-01,126.0,125.990568719468
+"St. Catharines-Niagara, Ontario",2021-10-01,127.7,126.52637903776287
+"St. Catharines-Niagara, Ontario",2021-11-01,127.7,128.46979735519702
+"St. Catharines-Niagara, Ontario",2021-12-01,128.3,128.4203218540706
+"St. Catharines-Niagara, Ontario",2022-01-01,128.3,128.88421626653547
+"St. Catharines-Niagara, Ontario",2022-02-01,128.3,128.74730913955995
+"St. Catharines-Niagara, Ontario",2022-03-01,128.3,128.89274583455196
+"St. Catharines-Niagara, Ontario",2022-04-01,128.3,128.70096674128536
+"St. Catharines-Niagara, Ontario",2022-05-01,130.5,128.49217167708306
+"St. Catharines-Niagara, Ontario",2022-06-01,130.5,131.01298788958226
+"St. Catharines-Niagara, Ontario",2022-07-01,130.5,130.82873315327905
+"St. Catharines-Niagara, Ontario",2022-08-01,130.5,130.82960488951448
+"St. Catharines-Niagara, Ontario",2022-09-01,130.1,130.61924093831806
+"St. Catharines-Niagara, Ontario",2022-10-01,130.1,130.1649406396027
+"St. Catharines-Niagara, Ontario",2022-11-01,130.1,130.16983173449023
+"St. Catharines-Niagara, Ontario",2022-12-01,130.1,130.13221194187423
+"St. Catharines-Niagara, Ontario",2023-01-01,130.0,130.18824583188555
+"St. Catharines-Niagara, Ontario",2023-02-01,128.3,130.07821296031221
+"St. Catharines-Niagara, Ontario",2023-03-01,128.2,128.09360924003286
+"St. Catharines-Niagara, Ontario",2023-04-01,128.1,127.99837601862421
+"St. Catharines-Niagara, Ontario",2023-05-01,127.4,127.94913303962434
+"St. Catharines-Niagara, Ontario",2023-06-01,127.4,127.24098048953232
+"St. Catharines-Niagara, Ontario",2023-07-01,127.0,127.25027069664101
+"St. Catharines-Niagara, Ontario",2023-08-01,126.8,126.7611359451167
+"St. Catharines-Niagara, Ontario",2023-09-01,126.4,126.70695298881849
+"St. Catharines-Niagara, Ontario",2023-10-01,126.5,126.20519179844943
+"St. Catharines-Niagara, Ontario",2023-11-01,126.9,126.36729988073047
+"St. Catharines-Niagara, Ontario",2023-12-01,126.9,126.89230264695037
+"St. Catharines-Niagara, Ontario",2024-01-01,126.9,126.91460878620619
+"St. Catharines-Niagara, Ontario",2024-02-01,126.9,126.93064403574327
+"St. Catharines-Niagara, Ontario",2024-03-01,126.9,126.90756019969194
+"St. Catharines-Niagara, Ontario",2024-04-01,126.9,126.93149224638174
+"St. Catharines-Niagara, Ontario",2024-05-01,126.9,126.94984335729217
+"St. Catharines-Niagara, Ontario",2024-06-01,126.2,126.94894403878936
+"St. Catharines-Niagara, Ontario",2024-07-01,126.1,126.14261197580697
+"St. Catharines-Niagara, Ontario",2024-08-01,125.7,126.05826572711025
+"St. Catharines-Niagara, Ontario",2024-09-01,125.3,125.58265149330643
+"St. Catharines-Niagara, Ontario",2024-10-01,125.4,125.16584022907955
+"St. Catharines-Niagara, Ontario",2024-11-01,125.3,125.28586645694836
+"St. Catharines-Niagara, Ontario",2024-12-01,125.3,125.22240706023294
+"St. Catharines-Niagara, Ontario",2025-01-01,126.0,125.28748642429795
+"St. Catharines-Niagara, Ontario",2025-02-01,125.6,126.05522174055548
+"St. Catharines-Niagara, Ontario",2025-03-01,125.7,125.5945268483058
+"St. Catharines-Niagara, Ontario",2025-04-01,125.6,125.72295695109295
+"St. Catharines-Niagara, Ontario",2025-05-01,125.6,125.57450198451677
+"St. Catharines-Niagara, Ontario",2025-06-01,125.6,125.6254159842778
+"St. Catharines-Niagara, Ontario",2025-07-01,125.5,125.63027435999224
+"St. Catharines-Niagara, Ontario",2025-08-01,125.3,125.49408616230821
+"St. Catharines-Niagara, Ontario",2025-09-01,124.2,125.29711905429234
+"St. Catharines-Niagara, Ontario",2025-10-01,123.7,124.04937157194472
+"St. Catharines-Niagara, Ontario",2025-11-01,122.7,123.48636484362895
+"St. Catharines-Niagara, Ontario",2025-12-01,122.7,122.23961670339314
+"St. Catharines-Niagara, Ontario",2026-01-01,121.9,122.46854089196195
+"St. John's, Newfoundland and Labrador",2017-02-01,99.6,99.5914069139263
+"St. John's, Newfoundland and Labrador",2017-03-01,99.5,99.59166019977215
+"St. John's, Newfoundland and Labrador",2017-04-01,99.5,99.48794676618735
+"St. John's, Newfoundland and Labrador",2017-05-01,99.5,99.52851267523255
+"St. John's, Newfoundland and Labrador",2017-06-01,99.4,99.5292978228915
+"St. John's, Newfoundland and Labrador",2017-07-01,99.4,99.42145189044668
+"St. John's, Newfoundland and Labrador",2017-08-01,98.9,99.43489464209492
+"St. John's, Newfoundland and Labrador",2017-09-01,98.9,98.88016244257044
+"St. John's, Newfoundland and Labrador",2017-10-01,98.9,98.88694075803772
+"St. John's, Newfoundland and Labrador",2017-11-01,99.0,98.88796661554495
+"St. John's, Newfoundland and Labrador",2017-12-01,99.0,99.03263119557033
+"St. John's, Newfoundland and Labrador",2018-01-01,99.0,99.02845201249265
+"St. John's, Newfoundland and Labrador",2018-02-01,99.0,99.02200742540484
+"St. John's, Newfoundland and Labrador",2018-03-01,99.0,99.05023310445848
+"St. John's, Newfoundland and Labrador",2018-04-01,99.0,99.04960916564623
+"St. John's, Newfoundland and Labrador",2018-05-01,98.9,99.04698049039165
+"St. John's, Newfoundland and Labrador",2018-06-01,98.7,98.93290622333333
+"St. John's, Newfoundland and Labrador",2018-07-01,98.9,98.71642823831009
+"St. John's, Newfoundland and Labrador",2018-08-01,98.9,98.92802545588694
+"St. John's, Newfoundland and Labrador",2018-09-01,98.5,98.93456153697714
+"St. John's, Newfoundland and Labrador",2018-10-01,98.4,98.52964229157755
+"St. John's, Newfoundland and Labrador",2018-11-01,98.0,98.38175156565136
+"St. John's, Newfoundland and Labrador",2018-12-01,98.1,97.93865742307567
+"St. John's, Newfoundland and Labrador",2019-01-01,98.1,98.0864666837594
+"St. John's, Newfoundland and Labrador",2019-02-01,98.1,98.08457549759375
+"St. John's, Newfoundland and Labrador",2019-03-01,98.1,98.10884642495755
+"St. John's, Newfoundland and Labrador",2019-04-01,97.8,98.12572187871345
+"St. John's, Newfoundland and Labrador",2019-05-01,97.8,97.78512610633304
+"St. John's, Newfoundland and Labrador",2019-06-01,97.3,97.79342375144375
+"St. John's, Newfoundland and Labrador",2019-07-01,97.1,97.23603664265019
+"St. John's, Newfoundland and Labrador",2019-08-01,96.9,97.01999946216559
+"St. John's, Newfoundland and Labrador",2019-09-01,97.0,96.81187955101727
+"St. John's, Newfoundland and Labrador",2019-10-01,97.3,96.95457045231747
+"St. John's, Newfoundland and Labrador",2019-11-01,97.4,97.3229560012858
+"St. John's, Newfoundland and Labrador",2019-12-01,97.4,97.42822571265884
+"St. John's, Newfoundland and Labrador",2020-01-01,97.4,97.45916898497626
+"St. John's, Newfoundland and Labrador",2020-02-01,97.4,97.4310596436318
+"St. John's, Newfoundland and Labrador",2020-03-01,97.2,97.44697426969527
+"St. John's, Newfoundland and Labrador",2020-04-01,97.2,97.2364531462903
+"St. John's, Newfoundland and Labrador",2020-05-01,97.2,97.2310759341122
+"St. John's, Newfoundland and Labrador",2020-06-01,97.2,97.22600498121729
+"St. John's, Newfoundland and Labrador",2020-07-01,96.9,97.24459709117761
+"St. John's, Newfoundland and Labrador",2020-08-01,96.9,96.9249439698993
+"St. John's, Newfoundland and Labrador",2020-09-01,98.0,96.92608065381958
+"St. John's, Newfoundland and Labrador",2020-10-01,100.0,98.12940820451578
+"St. John's, Newfoundland and Labrador",2020-11-01,100.5,100.37620771818344
+"St. John's, Newfoundland and Labrador",2020-12-01,100.7,100.86990955318163
+"St. John's, Newfoundland and Labrador",2021-01-01,100.7,100.97078294212807
+"St. John's, Newfoundland and Labrador",2021-02-01,100.7,100.85138582019782
+"St. John's, Newfoundland and Labrador",2021-03-01,101.5,100.89765179115798
+"St. John's, Newfoundland and Labrador",2021-04-01,102.1,101.81790453018844
+"St. John's, Newfoundland and Labrador",2021-05-01,101.7,102.40625279373982
+"St. John's, Newfoundland and Labrador",2021-06-01,102.2,102.00783193780008
+"St. John's, Newfoundland and Labrador",2021-07-01,102.3,102.45393735837088
+"St. John's, Newfoundland and Labrador",2021-08-01,102.8,102.53120587174138
+"St. John's, Newfoundland and Labrador",2021-09-01,102.3,103.25761617879694
+"St. John's, Newfoundland and Labrador",2021-10-01,102.3,102.54326416172533
+"St. John's, Newfoundland and Labrador",2021-11-01,103.5,102.40584383075405
+"St. John's, Newfoundland and Labrador",2021-12-01,103.5,103.7640317336511
+"St. John's, Newfoundland and Labrador",2022-01-01,104.7,103.72737924533227
+"St. John's, Newfoundland and Labrador",2022-02-01,104.7,105.09200536129208
+"St. John's, Newfoundland and Labrador",2022-03-01,104.7,104.9521218404595
+"St. John's, Newfoundland and Labrador",2022-04-01,104.7,104.98012488728862
+"St. John's, Newfoundland and Labrador",2022-05-01,104.7,104.85593463026545
+"St. John's, Newfoundland and Labrador",2022-06-01,105.2,104.82109448372438
+"St. John's, Newfoundland and Labrador",2022-07-01,105.2,105.38512555623453
+"St. John's, Newfoundland and Labrador",2022-08-01,105.2,105.3784943281525
+"St. John's, Newfoundland and Labrador",2022-09-01,105.6,105.34778029791815
+"St. John's, Newfoundland and Labrador",2022-10-01,105.6,105.75324169212575
+"St. John's, Newfoundland and Labrador",2022-11-01,105.6,105.76746105568569
+"St. John's, Newfoundland and Labrador",2022-12-01,105.6,105.7358724995606
+"St. John's, Newfoundland and Labrador",2023-01-01,106.2,105.70689440357422
+"St. John's, Newfoundland and Labrador",2023-02-01,106.2,106.32163450742584
+"St. John's, Newfoundland and Labrador",2023-03-01,106.2,106.32595818373998
+"St. John's, Newfoundland and Labrador",2023-04-01,105.8,106.32258791087224
+"St. John's, Newfoundland and Labrador",2023-05-01,105.8,105.83052852141746
+"St. John's, Newfoundland and Labrador",2023-06-01,105.8,105.8488415572645
+"St. John's, Newfoundland and Labrador",2023-07-01,106.9,105.85844745538219
+"St. John's, Newfoundland and Labrador",2023-08-01,106.9,107.03896368014087
+"St. John's, Newfoundland and Labrador",2023-09-01,106.9,107.04765889510738
+"St. John's, Newfoundland and Labrador",2023-10-01,106.9,107.01666669166367
+"St. John's, Newfoundland and Labrador",2023-11-01,105.8,106.9606932310246
+"St. John's, Newfoundland and Labrador",2023-12-01,105.8,105.74887658510387
+"St. John's, Newfoundland and Labrador",2024-01-01,105.8,105.77777102154184
+"St. John's, Newfoundland and Labrador",2024-02-01,105.8,105.691191738748
+"St. John's, Newfoundland and Labrador",2024-03-01,105.7,105.80513111844303
+"St. John's, Newfoundland and Labrador",2024-04-01,105.7,105.68110509414915
+"St. John's, Newfoundland and Labrador",2024-05-01,106.1,105.67197064931318
+"St. John's, Newfoundland and Labrador",2024-06-01,107.1,106.1875950659376
+"St. John's, Newfoundland and Labrador",2024-07-01,107.1,107.32534979794225
+"St. John's, Newfoundland and Labrador",2024-08-01,107.1,107.25214054908334
+"St. John's, Newfoundland and Labrador",2024-09-01,107.1,107.20744135135942
+"St. John's, Newfoundland and Labrador",2024-10-01,107.1,107.14323894620179
+"St. John's, Newfoundland and Labrador",2024-11-01,107.1,107.18517607122226
+"St. John's, Newfoundland and Labrador",2024-12-01,107.1,107.20575552050751
+"St. John's, Newfoundland and Labrador",2025-01-01,107.1,107.17564530052815
+"St. John's, Newfoundland and Labrador",2025-02-01,109.1,107.20978761238638
+"St. John's, Newfoundland and Labrador",2025-03-01,109.1,109.36797313908662
+"St. John's, Newfoundland and Labrador",2025-04-01,109.8,109.32815021020153
+"St. John's, Newfoundland and Labrador",2025-05-01,109.8,110.1502668665564
+"St. John's, Newfoundland and Labrador",2025-06-01,109.8,109.94100086907194
+"St. John's, Newfoundland and Labrador",2025-07-01,109.8,109.93054606757653
+"St. John's, Newfoundland and Labrador",2025-08-01,109.8,109.92089725182473
+"St. John's, Newfoundland and Labrador",2025-09-01,109.8,109.875658680868
+"St. John's, Newfoundland and Labrador",2025-10-01,109.8,109.93478831238494
+"St. John's, Newfoundland and Labrador",2025-11-01,109.8,109.91058758509125
+"St. John's, Newfoundland and Labrador",2025-12-01,109.8,109.90811525321823
+"St. John's, Newfoundland and Labrador",2026-01-01,109.8,109.91790691010134
+"Trois-Rivières, Quebec",2018-12-01,101.1,
+"Trois-Rivières, Quebec",2019-01-01,101.4,
+"Trois-Rivières, Quebec",2019-02-01,101.4,
+"Trois-Rivières, Quebec",2019-03-01,101.6,
+"Trois-Rivières, Quebec",2019-04-01,101.6,
+"Trois-Rivières, Quebec",2019-05-01,101.6,
+"Trois-Rivières, Quebec",2019-06-01,101.6,
+"Trois-Rivières, Quebec",2019-07-01,101.6,
+"Trois-Rivières, Quebec",2019-08-01,102.1,
+"Trois-Rivières, Quebec",2019-09-01,103.1,
+"Trois-Rivières, Quebec",2019-10-01,103.1,
+"Trois-Rivières, Quebec",2019-11-01,103.1,
+"Trois-Rivières, Quebec",2019-12-01,103.1,
+"Trois-Rivières, Quebec",2020-01-01,103.1,
+"Trois-Rivières, Quebec",2020-02-01,103.1,
+"Trois-Rivières, Quebec",2020-03-01,103.1,
+"Trois-Rivières, Quebec",2020-04-01,103.1,
+"Trois-Rivières, Quebec",2020-05-01,103.1,
+"Trois-Rivières, Quebec",2020-06-01,103.1,
+"Trois-Rivières, Quebec",2020-07-01,103.5,
+"Trois-Rivières, Quebec",2020-08-01,103.7,
+"Trois-Rivières, Quebec",2020-09-01,105.3,
+"Trois-Rivières, Quebec",2020-10-01,107.6,
+"Trois-Rivières, Quebec",2020-11-01,107.6,
+"Trois-Rivières, Quebec",2020-12-01,107.6,
+"Trois-Rivières, Quebec",2021-01-01,108.0,
+"Trois-Rivières, Quebec",2021-02-01,108.3,
+"Trois-Rivières, Quebec",2021-03-01,108.3,
+"Trois-Rivières, Quebec",2021-04-01,108.3,
+"Trois-Rivières, Quebec",2021-05-01,108.3,
+"Trois-Rivières, Quebec",2021-06-01,109.5,
+"Trois-Rivières, Quebec",2021-07-01,109.5,
+"Trois-Rivières, Quebec",2021-08-01,109.5,
+"Trois-Rivières, Quebec",2021-09-01,109.5,
+"Trois-Rivières, Quebec",2021-10-01,109.5,
+"Trois-Rivières, Quebec",2021-11-01,109.5,
+"Trois-Rivières, Quebec",2021-12-01,109.5,
+"Trois-Rivières, Quebec",2022-01-01,111.0,
+"Trois-Rivières, Quebec",2022-02-01,111.0,
+"Trois-Rivières, Quebec",2022-03-01,111.0,
+"Trois-Rivières, Quebec",2022-04-01,111.0,
+"Trois-Rivières, Quebec",2022-05-01,111.0,
+"Trois-Rivières, Quebec",2022-06-01,111.0,
+"Trois-Rivières, Quebec",2022-07-01,111.0,
+"Trois-Rivières, Quebec",2022-08-01,111.0,
+"Trois-Rivières, Quebec",2022-09-01,111.0,
+"Trois-Rivières, Quebec",2022-10-01,111.0,
+"Trois-Rivières, Quebec",2022-11-01,111.0,
+"Trois-Rivières, Quebec",2022-12-01,111.0,
+"Trois-Rivières, Quebec",2023-01-01,111.0,
+"Trois-Rivières, Quebec",2023-02-01,111.2,
+"Trois-Rivières, Quebec",2023-03-01,111.2,
+"Trois-Rivières, Quebec",2023-04-01,111.2,
+"Trois-Rivières, Quebec",2023-05-01,111.2,
+"Trois-Rivières, Quebec",2023-06-01,111.2,
+"Trois-Rivières, Quebec",2023-07-01,111.2,
+"Trois-Rivières, Quebec",2023-08-01,111.2,
+"Trois-Rivières, Quebec",2023-09-01,111.2,
+"Trois-Rivières, Quebec",2023-10-01,111.2,
+"Trois-Rivières, Quebec",2023-11-01,111.8,
+"Trois-Rivières, Quebec",2023-12-01,111.8,
+"Trois-Rivières, Quebec",2024-01-01,112.3,
+"Trois-Rivières, Quebec",2024-02-01,112.3,
+"Trois-Rivières, Quebec",2024-03-01,112.3,
+"Trois-Rivières, Quebec",2024-04-01,112.3,
+"Trois-Rivières, Quebec",2024-05-01,114.6,
+"Trois-Rivières, Quebec",2024-06-01,114.6,
+"Trois-Rivières, Quebec",2024-07-01,114.6,
+"Trois-Rivières, Quebec",2024-08-01,114.6,
+"Trois-Rivières, Quebec",2024-09-01,114.6,
+"Trois-Rivières, Quebec",2024-10-01,114.6,
+"Trois-Rivières, Quebec",2024-11-01,114.6,
+"Trois-Rivières, Quebec",2024-12-01,114.6,
+"Trois-Rivières, Quebec",2025-01-01,114.6,
+"Trois-Rivières, Quebec",2025-02-01,115.9,
+"Trois-Rivières, Quebec",2025-03-01,115.9,
+"Trois-Rivières, Quebec",2025-04-01,115.9,
+"Trois-Rivières, Quebec",2025-05-01,115.9,
+"Trois-Rivières, Quebec",2025-06-01,115.9,
+"Trois-Rivières, Quebec",2025-07-01,115.9,
+"Trois-Rivières, Quebec",2025-08-01,115.9,
+"Trois-Rivières, Quebec",2025-09-01,115.9,
+"Trois-Rivières, Quebec",2025-10-01,119.1,
+"Trois-Rivières, Quebec",2025-11-01,119.1,
+"Trois-Rivières, Quebec",2025-12-01,119.5,
+"Trois-Rivières, Quebec",2026-01-01,119.6,
+"Vancouver, British Columbia",2017-02-01,99.8,99.98056062313819
+"Vancouver, British Columbia",2017-03-01,100.5,99.89244266104681
+"Vancouver, British Columbia",2017-04-01,101.7,100.70152118314296
+"Vancouver, British Columbia",2017-05-01,103.9,102.09220982642225
+"Vancouver, British Columbia",2017-06-01,105.5,104.66291065923534
+"Vancouver, British Columbia",2017-07-01,107.6,106.35591205571721
+"Vancouver, British Columbia",2017-08-01,107.6,108.5249184042944
+"Vancouver, British Columbia",2017-09-01,108.4,108.04871986953117
+"Vancouver, British Columbia",2017-10-01,108.7,108.9217633357034
+"Vancouver, British Columbia",2017-11-01,108.7,109.02826881219488
+"Vancouver, British Columbia",2017-12-01,108.9,109.04860232921895
+"Vancouver, British Columbia",2018-01-01,108.9,109.22181680428513
+"Vancouver, British Columbia",2018-02-01,108.9,109.140916313114
+"Vancouver, British Columbia",2018-03-01,108.9,109.24339804917724
+"Vancouver, British Columbia",2018-04-01,108.9,109.17453365949038
+"Vancouver, British Columbia",2018-05-01,108.9,109.12550152848851
+"Vancouver, British Columbia",2018-06-01,109.1,109.12012861369372
+"Vancouver, British Columbia",2018-07-01,108.9,109.31810097682514
+"Vancouver, British Columbia",2018-08-01,108.7,108.97656680952396
+"Vancouver, British Columbia",2018-09-01,109.1,108.72554886796736
+"Vancouver, British Columbia",2018-10-01,109.1,109.16895001593994
+"Vancouver, British Columbia",2018-11-01,108.8,109.15738586322522
+"Vancouver, British Columbia",2018-12-01,108.7,108.82539108658497
+"Vancouver, British Columbia",2019-01-01,108.6,108.64856039645224
+"Vancouver, British Columbia",2019-02-01,108.3,108.55668610644845
+"Vancouver, British Columbia",2019-03-01,108.4,108.26780732172685
+"Vancouver, British Columbia",2019-04-01,108.2,108.38870594177497
+"Vancouver, British Columbia",2019-05-01,107.9,108.15078215860153
+"Vancouver, British Columbia",2019-06-01,107.8,107.83579438813948
+"Vancouver, British Columbia",2019-07-01,107.3,107.72220953679809
+"Vancouver, British Columbia",2019-08-01,107.3,107.1486132798728
+"Vancouver, British Columbia",2019-09-01,106.7,107.20532474592234
+"Vancouver, British Columbia",2019-10-01,106.4,106.51142037235729
+"Vancouver, British Columbia",2019-11-01,105.8,106.21511829606392
+"Vancouver, British Columbia",2019-12-01,106.2,105.55632028429804
+"Vancouver, British Columbia",2020-01-01,106.0,106.09122796437877
+"Vancouver, British Columbia",2020-02-01,106.4,105.89393987840907
+"Vancouver, British Columbia",2020-03-01,106.9,106.36739447875283
+"Vancouver, British Columbia",2020-04-01,106.9,106.97593649803547
+"Vancouver, British Columbia",2020-05-01,106.9,106.98971614623021
+"Vancouver, British Columbia",2020-06-01,107.0,106.98044850050702
+"Vancouver, British Columbia",2020-07-01,107.8,107.04820399358343
+"Vancouver, British Columbia",2020-08-01,108.9,107.98743659961212
+"Vancouver, British Columbia",2020-09-01,111.1,109.2879625648518
+"Vancouver, British Columbia",2020-10-01,112.5,111.87433131422176
+"Vancouver, British Columbia",2020-11-01,112.8,113.36699121738286
+"Vancouver, British Columbia",2020-12-01,112.8,113.39474426446462
+"Vancouver, British Columbia",2021-01-01,113.1,113.15822075523329
+"Vancouver, British Columbia",2021-02-01,117.6,113.44728594944242
+"Vancouver, British Columbia",2021-03-01,118.2,118.65668450179004
+"Vancouver, British Columbia",2021-04-01,120.0,119.31705192466671
+"Vancouver, British Columbia",2021-05-01,120.9,121.07330170760841
+"Vancouver, British Columbia",2021-06-01,120.5,121.5448594849499
+"Vancouver, British Columbia",2021-07-01,120.9,120.98886880494418
+"Vancouver, British Columbia",2021-08-01,121.5,121.3125817465544
+"Vancouver, British Columbia",2021-09-01,122.6,122.06109813268607
+"Vancouver, British Columbia",2021-10-01,123.8,123.38299979217736
+"Vancouver, British Columbia",2021-11-01,124.7,124.58511415916848
+"Vancouver, British Columbia",2021-12-01,124.8,125.37920582651365
+"Vancouver, British Columbia",2022-01-01,127.1,125.44696103811077
+"Vancouver, British Columbia",2022-02-01,128.0,128.13545045666459
+"Vancouver, British Columbia",2022-03-01,128.3,128.89461904473808
+"Vancouver, British Columbia",2022-04-01,128.6,129.23677868443852
+"Vancouver, British Columbia",2022-05-01,128.6,129.0272244932013
+"Vancouver, British Columbia",2022-06-01,128.7,128.88413726186178
+"Vancouver, British Columbia",2022-07-01,129.4,129.03898310083596
+"Vancouver, British Columbia",2022-08-01,129.4,129.86257801849933
+"Vancouver, British Columbia",2022-09-01,129.4,129.76253931897557
+"Vancouver, British Columbia",2022-10-01,128.4,129.72689190974685
+"Vancouver, British Columbia",2022-11-01,128.2,128.3384435208551
+"Vancouver, British Columbia",2022-12-01,128.2,128.0702431000466
+"Vancouver, British Columbia",2023-01-01,127.7,128.19756884808368
+"Vancouver, British Columbia",2023-02-01,127.6,127.57876506446286
+"Vancouver, British Columbia",2023-03-01,127.6,127.44505855533885
+"Vancouver, British Columbia",2023-04-01,127.6,127.47231387161163
+"Vancouver, British Columbia",2023-05-01,127.8,127.59557223678401
+"Vancouver, British Columbia",2023-06-01,128.5,127.81380327438261
+"Vancouver, British Columbia",2023-07-01,128.4,128.61686409717325
+"Vancouver, British Columbia",2023-08-01,129.1,128.47410436374636
+"Vancouver, British Columbia",2023-09-01,128.6,129.25715812391937
+"Vancouver, British Columbia",2023-10-01,128.6,128.6491414735698
+"Vancouver, British Columbia",2023-11-01,128.6,128.64558197555536
+"Vancouver, British Columbia",2023-12-01,128.7,128.6149948805188
+"Vancouver, British Columbia",2024-01-01,128.3,128.7673878270801
+"Vancouver, British Columbia",2024-02-01,128.5,128.329839148084
+"Vancouver, British Columbia",2024-03-01,128.5,128.5355852502568
+"Vancouver, British Columbia",2024-04-01,129.2,128.54340287028427
+"Vancouver, British Columbia",2024-05-01,129.2,129.39847556844055
+"Vancouver, British Columbia",2024-06-01,128.4,129.32631920308697
+"Vancouver, British Columbia",2024-07-01,128.8,128.3790868231353
+"Vancouver, British Columbia",2024-08-01,128.9,128.85783734427915
+"Vancouver, British Columbia",2024-09-01,128.6,128.9324226618916
+"Vancouver, British Columbia",2024-10-01,127.8,128.65403877238833
+"Vancouver, British Columbia",2024-11-01,127.8,127.59930466304263
+"Vancouver, British Columbia",2024-12-01,127.8,127.65435602681234
+"Vancouver, British Columbia",2025-01-01,128.0,127.75010739255673
+"Vancouver, British Columbia",2025-02-01,127.9,128.04781429297117
+"Vancouver, British Columbia",2025-03-01,127.8,127.83971413706685
+"Vancouver, British Columbia",2025-04-01,127.6,127.7518888178214
+"Vancouver, British Columbia",2025-05-01,127.1,127.56921906703542
+"Vancouver, British Columbia",2025-06-01,126.8,126.99795883866857
+"Vancouver, British Columbia",2025-07-01,126.8,126.62182234727564
+"Vancouver, British Columbia",2025-08-01,125.8,126.66018337876133
+"Vancouver, British Columbia",2025-09-01,126.1,125.58216250621551
+"Vancouver, British Columbia",2025-10-01,125.9,126.00331858448112
+"Vancouver, British Columbia",2025-11-01,125.7,125.74263178487536
+"Vancouver, British Columbia",2025-12-01,125.4,125.5990612100429
+"Vancouver, British Columbia",2026-01-01,125.0,125.25153876736009
+"Victoria, British Columbia",2017-02-01,101.4,100.72342302428733
+"Victoria, British Columbia",2017-03-01,101.4,101.83829656181665
+"Victoria, British Columbia",2017-04-01,101.4,101.87956310266762
+"Victoria, British Columbia",2017-05-01,101.4,101.75175408957624
+"Victoria, British Columbia",2017-06-01,101.4,101.64386821598687
+"Victoria, British Columbia",2017-07-01,101.4,101.70550121912333
+"Victoria, British Columbia",2017-08-01,101.4,101.64974673344723
+"Victoria, British Columbia",2017-09-01,101.4,101.56536181712545
+"Victoria, British Columbia",2017-10-01,101.6,101.5665419679473
+"Victoria, British Columbia",2017-11-01,101.6,101.79407249497835
+"Victoria, British Columbia",2017-12-01,101.6,101.72636279691594
+"Victoria, British Columbia",2018-01-01,101.6,101.73618553806335
+"Victoria, British Columbia",2018-02-01,101.6,101.70625622911389
+"Victoria, British Columbia",2018-03-01,102.8,101.66454819740403
+"Victoria, British Columbia",2018-04-01,102.8,103.01123318199964
+"Victoria, British Columbia",2018-05-01,102.8,102.97256293957838
+"Victoria, British Columbia",2018-06-01,102.8,102.97524617150954
+"Victoria, British Columbia",2018-07-01,102.8,102.90098463156112
+"Victoria, British Columbia",2018-08-01,102.8,102.88779315830857
+"Victoria, British Columbia",2018-09-01,102.7,102.94249015237006
+"Victoria, British Columbia",2018-10-01,102.7,102.79367360619375
+"Victoria, British Columbia",2018-11-01,102.6,102.76342399345968
+"Victoria, British Columbia",2018-12-01,102.6,102.64851297004599
+"Victoria, British Columbia",2019-01-01,102.5,102.64398974478372
+"Victoria, British Columbia",2019-02-01,102.8,102.53492561126008
+"Victoria, British Columbia",2019-03-01,102.4,102.89819451554935
+"Victoria, British Columbia",2019-04-01,101.8,102.42335578549286
+"Victoria, British Columbia",2019-05-01,101.4,101.69540291010586
+"Victoria, British Columbia",2019-06-01,101.0,101.20215141651573
+"Victoria, British Columbia",2019-07-01,101.0,100.7960289436676
+"Victoria, British Columbia",2019-08-01,101.1,100.87751780599204
+"Victoria, British Columbia",2019-09-01,101.5,101.02863329146845
+"Victoria, British Columbia",2019-10-01,101.5,101.48348362355613
+"Victoria, British Columbia",2019-11-01,101.6,101.50735377702499
+"Victoria, British Columbia",2019-12-01,101.8,101.60625874385106
+"Victoria, British Columbia",2020-01-01,101.8,101.87033378604377
+"Victoria, British Columbia",2020-02-01,102.8,101.8572504433469
+"Victoria, British Columbia",2020-03-01,102.6,102.99661985222568
+"Victoria, British Columbia",2020-04-01,102.6,102.73713623947098
+"Victoria, British Columbia",2020-05-01,102.6,102.75232239850159
+"Victoria, British Columbia",2020-06-01,102.6,102.67029572350525
+"Victoria, British Columbia",2020-07-01,102.6,102.71044896470616
+"Victoria, British Columbia",2020-08-01,103.0,102.77284395358197
+"Victoria, British Columbia",2020-09-01,105.6,103.18518888978716
+"Victoria, British Columbia",2020-10-01,105.8,106.05553475641646
+"Victoria, British Columbia",2020-11-01,106.5,106.3048105325346
+"Victoria, British Columbia",2020-12-01,107.7,106.96196358097866
+"Victoria, British Columbia",2021-01-01,107.8,108.08453766109872
+"Victoria, British Columbia",2021-02-01,108.5,108.29294603204374
+"Victoria, British Columbia",2021-03-01,111.0,109.01472013122036
+"Victoria, British Columbia",2021-04-01,112.4,111.68684918335866
+"Victoria, British Columbia",2021-05-01,112.7,113.43385441542134
+"Victoria, British Columbia",2021-06-01,113.0,113.78329364711858
+"Victoria, British Columbia",2021-07-01,114.3,113.42068806329236
+"Victoria, British Columbia",2021-08-01,114.3,115.0109941852002
+"Victoria, British Columbia",2021-09-01,116.3,115.01901080374836
+"Victoria, British Columbia",2021-10-01,120.1,117.00917914482827
+"Victoria, British Columbia",2021-11-01,120.1,121.34110275351183
+"Victoria, British Columbia",2021-12-01,120.5,121.26255880154228
+"Victoria, British Columbia",2022-01-01,121.7,121.31232812819266
+"Victoria, British Columbia",2022-02-01,122.2,122.2637337410422
+"Victoria, British Columbia",2022-03-01,125.3,123.13006528192892
+"Victoria, British Columbia",2022-04-01,125.3,126.65363731769706
+"Victoria, British Columbia",2022-05-01,125.3,125.95085560101438
+"Victoria, British Columbia",2022-06-01,125.3,125.90749440766513
+"Victoria, British Columbia",2022-07-01,125.3,125.55130023255569
+"Victoria, British Columbia",2022-08-01,125.3,125.66222155092083
+"Victoria, British Columbia",2022-09-01,125.3,125.71636067045158
+"Victoria, British Columbia",2022-10-01,125.0,125.57400173890203
+"Victoria, British Columbia",2022-11-01,125.0,125.06009645868
+"Victoria, British Columbia",2022-12-01,125.0,125.07439703288284
+"Victoria, British Columbia",2023-01-01,123.6,125.13408293761846
+"Victoria, British Columbia",2023-02-01,122.5,123.41036914069235
+"Victoria, British Columbia",2023-03-01,121.9,121.96972595462807
+"Victoria, British Columbia",2023-04-01,121.9,121.37475990460668
+"Victoria, British Columbia",2023-05-01,121.9,121.66434107613557
+"Victoria, British Columbia",2023-06-01,121.7,121.74493914691058
+"Victoria, British Columbia",2023-07-01,120.7,121.5470147891682
+"Victoria, British Columbia",2023-08-01,120.7,120.39961877486871
+"Victoria, British Columbia",2023-09-01,120.7,120.47598886783592
+"Victoria, British Columbia",2023-10-01,120.7,120.53898527619822
+"Victoria, British Columbia",2023-11-01,119.7,120.60739811478886
+"Victoria, British Columbia",2023-12-01,119.7,119.45692406982694
+"Victoria, British Columbia",2024-01-01,119.7,119.51061428756505
+"Victoria, British Columbia",2024-02-01,119.7,119.57243747079693
+"Victoria, British Columbia",2024-03-01,120.3,119.66127894773571
+"Victoria, British Columbia",2024-04-01,120.3,120.31404108840135
+"Victoria, British Columbia",2024-05-01,121.0,120.31906484132992
+"Victoria, British Columbia",2024-06-01,119.4,121.16567189738038
+"Victoria, British Columbia",2024-07-01,119.4,119.33762306471088
+"Victoria, British Columbia",2024-08-01,119.4,119.28246429454555
+"Victoria, British Columbia",2024-09-01,119.4,119.32218332410193
+"Victoria, British Columbia",2024-10-01,119.3,119.3847309787731
+"Victoria, British Columbia",2024-11-01,119.2,119.26229010753562
+"Victoria, British Columbia",2024-12-01,119.1,119.11723498432478
+"Victoria, British Columbia",2025-01-01,119.1,119.12057929719161
+"Victoria, British Columbia",2025-02-01,120.8,119.13799499489876
+"Victoria, British Columbia",2025-03-01,121.8,121.05049147092939
+"Victoria, British Columbia",2025-04-01,121.5,122.11048818624157
+"Victoria, British Columbia",2025-05-01,121.5,121.74567858174706
+"Victoria, British Columbia",2025-06-01,122.4,121.59014573685461
+"Victoria, British Columbia",2025-07-01,122.4,122.57574960880608
+"Victoria, British Columbia",2025-08-01,122.3,122.64597159435216
+"Victoria, British Columbia",2025-09-01,122.3,122.47534145894963
+"Victoria, British Columbia",2025-10-01,121.6,122.3820301181492
+"Victoria, British Columbia",2025-11-01,122.1,121.56636757329798
+"Victoria, British Columbia",2025-12-01,122.0,122.22285053254825
+"Victoria, British Columbia",2026-01-01,121.9,122.08392038667091
+"Windsor, Ontario",2017-02-01,101.2,100.95448429199291
+"Windsor, Ontario",2017-03-01,101.6,101.59303548200818
+"Windsor, Ontario",2017-04-01,101.6,102.00647276163532
+"Windsor, Ontario",2017-05-01,101.5,101.88348407939593
+"Windsor, Ontario",2017-06-01,101.5,101.75496157431631
+"Windsor, Ontario",2017-07-01,101.5,101.6692917240879
+"Windsor, Ontario",2017-08-01,101.8,101.65808144114665
+"Windsor, Ontario",2017-09-01,101.8,102.04204924916104
+"Windsor, Ontario",2017-10-01,101.8,102.02082939937415
+"Windsor, Ontario",2017-11-01,102.2,101.93173829049985
+"Windsor, Ontario",2017-12-01,102.4,102.33373497985421
+"Windsor, Ontario",2018-01-01,102.6,102.5530834582669
+"Windsor, Ontario",2018-02-01,102.8,102.7655397875884
+"Windsor, Ontario",2018-03-01,103.2,102.92697025883801
+"Windsor, Ontario",2018-04-01,104.2,103.36560863119463
+"Windsor, Ontario",2018-05-01,104.5,104.5210822792266
+"Windsor, Ontario",2018-06-01,104.5,104.80335567022206
+"Windsor, Ontario",2018-07-01,104.6,104.7323444669287
+"Windsor, Ontario",2018-08-01,104.6,104.7618952033236
+"Windsor, Ontario",2018-09-01,104.7,104.72133987233083
+"Windsor, Ontario",2018-10-01,105.6,104.88921461961888
+"Windsor, Ontario",2018-11-01,105.6,105.84371466284367
+"Windsor, Ontario",2018-12-01,105.6,105.78989207235414
+"Windsor, Ontario",2019-01-01,105.6,105.79894173545185
+"Windsor, Ontario",2019-02-01,106.2,105.69134484777285
+"Windsor, Ontario",2019-03-01,106.4,106.37533423676966
+"Windsor, Ontario",2019-04-01,106.6,106.63179743025395
+"Windsor, Ontario",2019-05-01,106.7,106.76813432114278
+"Windsor, Ontario",2019-06-01,106.7,106.82063887539432
+"Windsor, Ontario",2019-07-01,106.5,106.82882017340337
+"Windsor, Ontario",2019-08-01,106.6,106.59059515410405
+"Windsor, Ontario",2019-09-01,106.7,106.67946890240206
+"Windsor, Ontario",2019-10-01,107.3,106.80495467387348
+"Windsor, Ontario",2019-11-01,107.6,107.44517088277517
+"Windsor, Ontario",2019-12-01,107.8,107.75497069587863
+"Windsor, Ontario",2020-01-01,107.8,107.98125411728934
+"Windsor, Ontario",2020-02-01,108.6,107.93783860309179
+"Windsor, Ontario",2020-03-01,108.6,108.79944871254976
+"Windsor, Ontario",2020-04-01,108.6,108.78086056372578
+"Windsor, Ontario",2020-05-01,108.6,108.7678857270704
+"Windsor, Ontario",2020-06-01,108.6,108.67750050527397
+"Windsor, Ontario",2020-07-01,109.4,108.68615982712238
+"Windsor, Ontario",2020-08-01,109.9,109.64928849358338
+"Windsor, Ontario",2020-09-01,111.9,110.12993245563347
+"Windsor, Ontario",2020-10-01,112.9,112.39986647521668
+"Windsor, Ontario",2020-11-01,113.1,113.44282807868713
+"Windsor, Ontario",2020-12-01,113.4,113.54330712775554
+"Windsor, Ontario",2021-01-01,115.3,113.72319616341284
+"Windsor, Ontario",2021-02-01,116.3,115.79756883470867
+"Windsor, Ontario",2021-03-01,118.0,116.95009652323367
+"Windsor, Ontario",2021-04-01,128.0,119.10198555871378
+"Windsor, Ontario",2021-05-01,131.0,129.4916253667416
+"Windsor, Ontario",2021-06-01,133.4,132.82731256794855
+"Windsor, Ontario",2021-07-01,134.6,135.26820346881576
+"Windsor, Ontario",2021-08-01,134.9,135.58985639994148
+"Windsor, Ontario",2021-09-01,137.5,135.74535963782762
+"Windsor, Ontario",2021-10-01,137.6,138.66191906801816
+"Windsor, Ontario",2021-11-01,138.9,138.36474862530542
+"Windsor, Ontario",2021-12-01,139.0,140.18741287554212
+"Windsor, Ontario",2022-01-01,139.5,139.701579049651
+"Windsor, Ontario",2022-02-01,140.4,140.35985108257506
+"Windsor, Ontario",2022-03-01,143.5,141.40249173414898
+"Windsor, Ontario",2022-04-01,144.3,145.017297979038
+"Windsor, Ontario",2022-05-01,146.7,145.58648181988207
+"Windsor, Ontario",2022-06-01,148.7,148.0469160940741
+"Windsor, Ontario",2022-07-01,148.7,149.76232120913377
+"Windsor, Ontario",2022-08-01,148.7,149.64101014942366
+"Windsor, Ontario",2022-09-01,147.8,149.11525827170507
+"Windsor, Ontario",2022-10-01,147.8,147.71395014192808
+"Windsor, Ontario",2022-11-01,147.8,147.90472235150082
+"Windsor, Ontario",2022-12-01,147.8,147.88625421832546
+"Windsor, Ontario",2023-01-01,147.8,147.99221136754196
+"Windsor, Ontario",2023-02-01,147.3,147.9887069138719
+"Windsor, Ontario",2023-03-01,146.8,147.31775631440985
+"Windsor, Ontario",2023-04-01,146.0,146.71832253343652
+"Windsor, Ontario",2023-05-01,146.0,145.78985889518344
+"Windsor, Ontario",2023-06-01,145.6,145.87344224079897
+"Windsor, Ontario",2023-07-01,145.6,145.468303716506
+"Windsor, Ontario",2023-08-01,145.9,145.47576663855406
+"Windsor, Ontario",2023-09-01,145.9,145.86109490521892
+"Windsor, Ontario",2023-10-01,145.9,145.89277271821416
+"Windsor, Ontario",2023-11-01,145.9,145.9248964374312
+"Windsor, Ontario",2023-12-01,145.9,145.90076479037083
+"Windsor, Ontario",2024-01-01,145.9,145.93909907573692
+"Windsor, Ontario",2024-02-01,145.9,145.9403531573064
+"Windsor, Ontario",2024-03-01,145.9,145.95140169547412
+"Windsor, Ontario",2024-04-01,145.9,145.95568313193928
+"Windsor, Ontario",2024-05-01,145.9,145.96376551802967
+"Windsor, Ontario",2024-06-01,145.9,145.95848566040536
+"Windsor, Ontario",2024-07-01,145.9,145.940343918152
+"Windsor, Ontario",2024-08-01,145.9,145.96595438147716
+"Windsor, Ontario",2024-09-01,145.9,145.94702510447306
+"Windsor, Ontario",2024-10-01,145.0,145.93746028042665
+"Windsor, Ontario",2024-11-01,145.0,144.94089120682173
+"Windsor, Ontario",2024-12-01,145.0,144.97031213422858
+"Windsor, Ontario",2025-01-01,145.0,144.96683442787756
+"Windsor, Ontario",2025-02-01,145.0,145.04428371814677
+"Windsor, Ontario",2025-03-01,145.0,145.0039774850753
+"Windsor, Ontario",2025-04-01,145.0,144.99412551210534
+"Windsor, Ontario",2025-05-01,145.0,145.06548537189101
+"Windsor, Ontario",2025-06-01,145.0,145.05348302835748
+"Windsor, Ontario",2025-07-01,145.0,145.03666313997059
+"Windsor, Ontario",2025-08-01,145.0,145.04704909921125
+"Windsor, Ontario",2025-09-01,144.7,145.03921303412466
+"Windsor, Ontario",2025-10-01,144.7,144.72432992624567
+"Windsor, Ontario",2025-11-01,144.5,144.7043683038233
+"Windsor, Ontario",2025-12-01,144.5,144.4873754926649
+"Windsor, Ontario",2026-01-01,144.5,144.51899686630756
+"Winnipeg, Manitoba",2017-02-01,100.5,100.43967090747022
+"Winnipeg, Manitoba",2017-03-01,100.5,100.68626607336573
+"Winnipeg, Manitoba",2017-04-01,101.3,100.69726866723168
+"Winnipeg, Manitoba",2017-05-01,101.8,101.5371995121065
+"Winnipeg, Manitoba",2017-06-01,102.2,102.05867340574898
+"Winnipeg, Manitoba",2017-07-01,102.3,102.56807952994237
+"Winnipeg, Manitoba",2017-08-01,102.6,102.53355211903276
+"Winnipeg, Manitoba",2017-09-01,102.9,102.83226533261562
+"Winnipeg, Manitoba",2017-10-01,103.0,103.17651433434631
+"Winnipeg, Manitoba",2017-11-01,103.2,103.23676935470912
+"Winnipeg, Manitoba",2017-12-01,103.3,103.39111519899292
+"Winnipeg, Manitoba",2018-01-01,103.3,103.49906835155285
+"Winnipeg, Manitoba",2018-02-01,103.4,103.48424559246183
+"Winnipeg, Manitoba",2018-03-01,103.5,103.55234863304695
+"Winnipeg, Manitoba",2018-04-01,103.5,103.67566511685918
+"Winnipeg, Manitoba",2018-05-01,103.7,103.65174471168494
+"Winnipeg, Manitoba",2018-06-01,103.9,103.85029616742722
+"Winnipeg, Manitoba",2018-07-01,104.0,104.02560316599569
+"Winnipeg, Manitoba",2018-08-01,104.1,104.1534532278041
+"Winnipeg, Manitoba",2018-09-01,104.1,104.23804320376621
+"Winnipeg, Manitoba",2018-10-01,104.4,104.20104478644166
+"Winnipeg, Manitoba",2018-11-01,104.4,104.54929463114357
+"Winnipeg, Manitoba",2018-12-01,104.3,104.49936438420515
+"Winnipeg, Manitoba",2019-01-01,104.5,104.38468116262995
+"Winnipeg, Manitoba",2019-02-01,104.5,104.58015453625354
+"Winnipeg, Manitoba",2019-03-01,104.7,104.5763838377273
+"Winnipeg, Manitoba",2019-04-01,104.8,104.82144031383673
+"Winnipeg, Manitoba",2019-05-01,104.6,104.90122045186837
+"Winnipeg, Manitoba",2019-06-01,104.4,104.68038812464687
+"Winnipeg, Manitoba",2019-07-01,104.7,104.44749200019288
+"Winnipeg, Manitoba",2019-08-01,104.7,104.74511518775006
+"Winnipeg, Manitoba",2019-09-01,104.9,104.76946742427108
+"Winnipeg, Manitoba",2019-10-01,105.0,105.01780610646378
+"Winnipeg, Manitoba",2019-11-01,104.7,105.05711296362942
+"Winnipeg, Manitoba",2019-12-01,105.1,104.74433461108148
+"Winnipeg, Manitoba",2020-01-01,105.3,105.21442283138359
+"Winnipeg, Manitoba",2020-02-01,105.5,105.36619526671366
+"Winnipeg, Manitoba",2020-03-01,105.5,105.65493189344784
+"Winnipeg, Manitoba",2020-04-01,105.6,105.60776849632163
+"Winnipeg, Manitoba",2020-05-01,105.5,105.67761866232993
+"Winnipeg, Manitoba",2020-06-01,105.8,105.59014108407227
+"Winnipeg, Manitoba",2020-07-01,106.0,105.94220330499691
+"Winnipeg, Manitoba",2020-08-01,106.9,106.1185193097837
+"Winnipeg, Manitoba",2020-09-01,108.7,107.1570995624059
+"Winnipeg, Manitoba",2020-10-01,108.8,109.11769387826624
+"Winnipeg, Manitoba",2020-11-01,109.1,109.20357316758073
+"Winnipeg, Manitoba",2020-12-01,109.1,109.48030830362883
+"Winnipeg, Manitoba",2021-01-01,110.4,109.2728146511678
+"Winnipeg, Manitoba",2021-02-01,112.3,110.7989986971239
+"Winnipeg, Manitoba",2021-03-01,113.5,112.90811469130942
+"Winnipeg, Manitoba",2021-04-01,116.8,114.4066421237661
+"Winnipeg, Manitoba",2021-05-01,122.7,117.98412241940098
+"Winnipeg, Manitoba",2021-06-01,125.0,124.24880655792947
+"Winnipeg, Manitoba",2021-07-01,125.4,126.60919107622128
+"Winnipeg, Manitoba",2021-08-01,126.6,126.50581383063644
+"Winnipeg, Manitoba",2021-09-01,126.8,127.23209152920066
+"Winnipeg, Manitoba",2021-10-01,128.9,127.20983117560216
+"Winnipeg, Manitoba",2021-11-01,129.7,129.91308286629612
+"Winnipeg, Manitoba",2021-12-01,133.3,130.71775335197276
+"Winnipeg, Manitoba",2022-01-01,135.2,134.92440481364392
+"Winnipeg, Manitoba",2022-02-01,136.5,136.95827242627985
+"Winnipeg, Manitoba",2022-03-01,141.1,138.06579195343775
+"Winnipeg, Manitoba",2022-04-01,142.4,142.92494689557896
+"Winnipeg, Manitoba",2022-05-01,143.6,143.970415582812
+"Winnipeg, Manitoba",2022-06-01,143.6,145.10656908029176
+"Winnipeg, Manitoba",2022-07-01,143.6,144.02163964397548
+"Winnipeg, Manitoba",2022-08-01,143.6,144.0191502100786
+"Winnipeg, Manitoba",2022-09-01,143.6,143.90936649188825
+"Winnipeg, Manitoba",2022-10-01,142.6,144.0364603787458
+"Winnipeg, Manitoba",2022-11-01,142.6,142.65737818314554
+"Winnipeg, Manitoba",2022-12-01,142.2,142.68069494544918
+"Winnipeg, Manitoba",2023-01-01,140.4,142.17754028529055
+"Winnipeg, Manitoba",2023-02-01,140.6,140.02570201863938
+"Winnipeg, Manitoba",2023-03-01,140.0,140.3941070740467
+"Winnipeg, Manitoba",2023-04-01,141.5,139.66696540946782
+"Winnipeg, Manitoba",2023-05-01,141.5,141.62778435335468
+"Winnipeg, Manitoba",2023-06-01,141.4,141.50493244863893
+"Winnipeg, Manitoba",2023-07-01,141.4,141.42256706756058
+"Winnipeg, Manitoba",2023-08-01,141.5,141.39029660072362
+"Winnipeg, Manitoba",2023-09-01,141.5,141.51892803340058
+"Winnipeg, Manitoba",2023-10-01,141.5,141.60234496562816
+"Winnipeg, Manitoba",2023-11-01,140.8,141.544005940812
+"Winnipeg, Manitoba",2023-12-01,140.9,140.7589433234247
+"Winnipeg, Manitoba",2024-01-01,141.0,140.90552379470253
+"Winnipeg, Manitoba",2024-02-01,139.8,141.00737491929922
+"Winnipeg, Manitoba",2024-03-01,139.9,139.71392545939267
+"Winnipeg, Manitoba",2024-04-01,139.3,139.81678559770015
+"Winnipeg, Manitoba",2024-05-01,139.4,139.12320056254808
+"Winnipeg, Manitoba",2024-06-01,139.5,139.35288124386165
+"Winnipeg, Manitoba",2024-07-01,139.4,139.41230630832982
+"Winnipeg, Manitoba",2024-08-01,139.4,139.35954413954516
+"Winnipeg, Manitoba",2024-09-01,139.7,139.426600688019
+"Winnipeg, Manitoba",2024-10-01,140.2,139.71028507408994
+"Winnipeg, Manitoba",2024-11-01,140.2,140.3308688930063
+"Winnipeg, Manitoba",2024-12-01,140.5,140.33307621316197
+"Winnipeg, Manitoba",2025-01-01,141.0,140.61424993188663
+"Winnipeg, Manitoba",2025-02-01,141.0,141.20479614575657
+"Winnipeg, Manitoba",2025-03-01,142.5,141.15965151724046
+"Winnipeg, Manitoba",2025-04-01,142.5,142.82781962268177
+"Winnipeg, Manitoba",2025-05-01,144.1,142.71567752281388
+"Winnipeg, Manitoba",2025-06-01,144.5,144.61959252968754
+"Winnipeg, Manitoba",2025-07-01,144.5,144.80376669967333
+"Winnipeg, Manitoba",2025-08-01,145.0,144.79497498063898
+"Winnipeg, Manitoba",2025-09-01,145.5,145.28536275230897
+"Winnipeg, Manitoba",2025-10-01,144.5,145.7895557436081
+"Winnipeg, Manitoba",2025-11-01,145.0,144.69187011399666
+"Winnipeg, Manitoba",2025-12-01,145.4,145.18624260685309
+"Winnipeg, Manitoba",2026-01-01,145.4,145.62466579572563
