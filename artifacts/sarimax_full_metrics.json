@@ -1,0 +1,144 @@
+{
+  "rmse_24": 0.7604221908937683,
+  "rmse_16": 0.8002614883652457,
+  "naive_24": 0.8932024829583542,
+  "naive_16": 0.9563899377152413,
+  "gain_pct_24": 14.865642964270274,
+  "gain_pct_16": 16.324769133704727,
+  "control_16only_rmse_16": 0.7997859422264555,
+  "config": {
+    "features": [
+      "rollmean_3",
+      "rollmean_12"
+    ],
+    "alpha": 0.001,
+    "nnz": 2,
+    "intercept": 0.12772469008264464,
+    "coef": [
+      0.16778251642540717,
+      0.07579057370225672
+    ]
+  },
+  "per_cma": {
+    "Charlottetown, Prince Edward Island": {
+      "rmse": 0.7443530934899313,
+      "naive": 0.8349209682693415,
+      "n": 86.0
+    },
+    "Edmonton, Alberta": {
+      "rmse": 0.5213508010366832,
+      "naive": 0.5771096564393595,
+      "n": 108.0
+    },
+    "Greater Sudbury, Ontario": {
+      "rmse": 0.9083361562535482,
+      "naive": 0.9755814980099106,
+      "n": 108.0
+    },
+    "Guelph, Ontario": {
+      "rmse": 0.6183997235130373,
+      "naive": 0.6853109971324683,
+      "n": 86.0
+    },
+    "Halifax, Nova Scotia": {
+      "rmse": 0.7001894081693869,
+      "naive": 0.7579822141957135,
+      "n": 108.0
+    },
+    "Hamilton, Ontario": {
+      "rmse": 0.6293208712023206,
+      "naive": 0.6492873586279607,
+      "n": 108.0
+    },
+    "Kelowna, British Columbia": {
+      "rmse": 0.6271057638061828,
+      "naive": 0.7626453349865475,
+      "n": 86.0
+    },
+    "Kitchener-Cambridge-Waterloo, Ontario": {
+      "rmse": 1.061045106803456,
+      "naive": 1.391242450313947,
+      "n": 108.0
+    },
+    "London, Ontario": {
+      "rmse": 0.8675231440505095,
+      "naive": 1.0697005465359264,
+      "n": 108.0
+    },
+    "Montr\u00e9al, Quebec": {
+      "rmse": 1.1100150880292106,
+      "naive": 1.2698060510989098,
+      "n": 108.0
+    },
+    "Oshawa, Ontario": {
+      "rmse": 0.7476820012739733,
+      "naive": 0.8018873086749492,
+      "n": 86.0
+    },
+    "Ottawa-Gatineau, Ontario part, Ontario/Quebec": {
+      "rmse": 1.0393203772516797,
+      "naive": 1.427150748610413,
+      "n": 108.0
+    },
+    "Ottawa-Gatineau, Quebec part, Ontario/Quebec": {
+      "rmse": 0.389475896804032,
+      "naive": 0.4318699201229194,
+      "n": 86.0
+    },
+    "Qu\u00e9bec, Quebec": {
+      "rmse": 0.7582906270698557,
+      "naive": 0.8896004096721682,
+      "n": 108.0
+    },
+    "Regina, Saskatchewan": {
+      "rmse": 0.51329575789104,
+      "naive": 0.5500000000000003,
+      "n": 108.0
+    },
+    "Saskatoon, Saskatchewan": {
+      "rmse": 0.5238803308719442,
+      "naive": 0.5741338081228365,
+      "n": 108.0
+    },
+    "Sherbrooke, Quebec": {
+      "rmse": 0.6754897772965561,
+      "naive": 0.6153825250800609,
+      "n": 46.0
+    },
+    "St. Catharines-Niagara, Ontario": {
+      "rmse": 0.6510935304284924,
+      "naive": 0.7516648189186447,
+      "n": 108.0
+    },
+    "St. John's, Newfoundland and Labrador": {
+      "rmse": 0.4337139707879198,
+      "naive": 0.4375859703892273,
+      "n": 108.0
+    },
+    "Trois-Rivi\u00e8res, Quebec": {
+      "rmse": 0.5961458620792376,
+      "naive": 0.604344734517919,
+      "n": 86.0
+    },
+    "Vancouver, British Columbia": {
+      "rmse": 0.6820409870114676,
+      "naive": 0.793083527430422,
+      "n": 108.0
+    },
+    "Victoria, British Columbia": {
+      "rmse": 0.7204848267112456,
+      "naive": 0.7977398629182878,
+      "n": 108.0
+    },
+    "Windsor, Ontario": {
+      "rmse": 1.0476123710244107,
+      "naive": 1.2435016269777435,
+      "n": 108.0
+    },
+    "Winnipeg, Manitoba": {
+      "rmse": 0.8696593366974926,
+      "naive": 1.0990315602248961,
+      "n": 108.0
+    }
+  }
+}
